@@ -1,0 +1,15 @@
+{
+  "name": "mateusz-archicinski.pl",
+  "description": "",
+  "main": "gulpfile.js",
+  "authors": [
+    "Mateusz Archiciński"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "private": true,
+  "dependencies": {
+    "normalize-css": "^7.0.0"
+  },
+  "devDependencies": {}
+}
