@@ -1,0 +1,71 @@
+//-
+    Head
+
+//Define Unicode
+meta(charset="utf-8")
+
+if config.baseUrl
+    //Define Base URL Address
+    base(href=config.baseUrl)
+
+//Define a Compatibility with IE
+meta(http-equiv="x-ua-compatible" content="ie=edge")
+
+//Define Flexible Viewport for Mobile Devices
+meta(name="viewport" content="width=device-width, initial-scale=1")
+
+//Phone Numbers Detection
+meta(name="format-detection" content="telephone=no")
+
+//Search Engine Optimization Sources
+title= data.title || "Normal - Template"
+meta(name="description" content=data.description)
+meta(name="keywords" content=data.keywords)
+meta(name="author" content=data.author)
+if config.facebookApps.appId
+    meta(property="fb:app_id" content=config.facebookApps.appId)
+meta(property="og:url" content=config.host)
+meta(property="og:type" content="website")
+meta(property="og:title" content=data.ogTitle)
+meta(property="og:description" content=data.ogDescription)
+meta(property="og:image" content=config.host + "tile-1200x630px.png")
+meta(name="robots" content="index, follow, noodp, noydir")
+meta(name="country" content=lang)
+meta(name="language" content=lang)
+each lang in langs
+    link(rel="alternate" href=config.host + lang hreflang=lang)
+link(rel="alternate" href=config.host hreflang="x-default")
+
+//Web application manifest which provides information about an application
+link(rel="manifest" href="manifest.json")
+
+//Icon Sources
+//Favicons
+link(rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16")
+link(rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32")
+//iOS & Android
+link(rel="apple-touch-icon" href="apple-touch-icon.png")
+//Windows
+if config.tileColor
+    meta(name="msapplication-TileColor" content=config.tileColor)
+meta(name="msapplication-TileImage" content="images/logo/logo-144x144.png")
+
+if config.themeColor
+    //Google Chrome - Theme Color
+    meta(name="theme-color" content=config.themeColor)
+
+//Cascading Style Sheets Sources
+//build:css css/main.min.css
+
+//Bower Components
+//bower:css
+
+//endbower
+
+//Web Page - Style Sheets Sources
+link(rel="stylesheet" href="css/main.css")
+
+//endbuild
+
+//removeIf(remove)
+//endRemoveIf(remove)

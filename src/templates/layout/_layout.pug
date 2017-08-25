@@ -1,0 +1,15 @@
+//-
+    Layout
+
+doctype html
+html(lang=lang)
+    head
+        include ../components/_head
+    body
+        include ../components/_body-after-open
+        
+        //[if lt IE 8]><p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/" target="_blank">upgrade your browser</a> to improve your experience.</p><![endif]
+        
+        block content
+        
+        include ../components/_body-before-close

@@ -1,0 +1,34 @@
+//~~~~~~~~~~~~~~~~~~~~~//
+//~~~~~~* LINKS *~~~~~~//+
+//~~~~~~~~~~~~~~~~~~~~~//
+
+
+$a__text-decoration: none !default;
+$a__color: darken($color__navy-blue, 4%) !default;
+$a__transition: 0.25s color ease !default;
+// a :link - :visited
+$a__link-visited__color: $a__color !default;
+// a :hover
+$a__hover__color: $primary-color !default;
+// a :active
+$a__active__color: $primary-color-dark !default;
+
+
+a {
+    text-decoration: $a__text-decoration;
+    color: $a__color;
+    transition: $a__transition;
+    &:link,
+    &:visited {
+        color: $a__link-visited__color;
+    }
+    &:hover {
+        color: $a__hover__color;
+    }
+    &:active {
+        color: $a__active__color;
+    }
+    &.no-link {
+        color: inherit;
+    }
+}
