@@ -1,9 +1,35 @@
 {
     "lang": "pl",
-    "title": "",
-    "description": "",
+    "title": "#Mateusz Archiciński",
+    "description": "Strona internetowa młodego frontend developera, freelancera z okolic Warszawy. Zajmuje się odświeżaniem obecnych i tworzeniem nowych stron wizytówek. Ostatnimi czasy zagłebiam się w tajniki webdesignu i poznawaniu bardziej złożonych technologii oraz pozycjoonowania.",
     "keywords": "",
     "author": "Mateusz Archiciński",
     "ogTitle": "",
-    "ogDescription": ""
+    "ogDescription": "Strona internetowa młodego frontend developera, freelancera z okolic Warszawy. Zajmuje się odświeżaniem obecnych i tworzeniem nowych stron wizytówek. Ostatnimi czasy zagłebiam się w tajniki webdesignu i poznawaniu bardziej złożonych technologii oraz pozycjoonowania.",
+    "header": {
+        "sideLogo": {
+            "alt": "#MA - Logo strony internetowej"
+        },
+        "sideNav": {
+            "home": "Strona główna",
+            "aboutMe": "O mnie",
+            "services": "Usługi",
+            "portfolio": "Portfolio",
+            "contact": "Kontakt"
+        }
+    },
+    "wrapper": {
+        "home": {
+            "headline": "Front-End Developer",
+            "description": "Mateusz Archiciński",
+            "buttons": {
+                "aboutMe": "Poznaj mnie",
+                "services": "Usługi",
+                "arrowBtnAriaLabel": "Przejdz do sekcji o mnie"
+            }
+        }
+    },
+    "footer": {
+
+    }
 }

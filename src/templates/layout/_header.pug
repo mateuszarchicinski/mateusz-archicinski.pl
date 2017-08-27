@@ -1,0 +1,22 @@
+//-
+    Main Header
+
+header.main-header.main-header__fixed
+    .container
+        .row.no-gutters.align-items-center.justify-content-between
+            .site-logo__wrapper
+                img(src="images/logo/logo.png" alt=data.header.sideLogo.alt width="94" height="28" class="side-logo__img")
+            nav.side-nav__wrapper
+                ul.side-nav__list
+                    li
+                        a(href="#home" class="side-nav__link")= data.header.sideNav.home
+                    li
+                        a(href="#about-me" class="side-nav__link")= data.header.sideNav.aboutMe
+                    li
+                        a(href="#services" class="side-nav__link")= data.header.sideNav.services
+                    li
+                        a(href="#portfolio" class="side-nav__link")= data.header.sideNav.portfolio
+                    li
+                        a(href="#contact" class="side-nav__link")= data.header.sideNav.contact
+                    //li
+                        a(href="#contact" class="side-nav__link language-settings__language")= data.header.sideNav.contact

@@ -1,9 +1,9 @@
 {
-    "name": "#Mateusz Archiciński",
-    "short_name": "#MA",
+    "name": "#Mateusz Archiciński Page",
+    "short_name": "#MA Page",
     "start_url": ".",
     "theme_color": "#f44336",
-    "background_color": "#0a0a0a",
+    "background_color": "#212121",
     "orientation": "portrait",
     "display": "browser",
     "description": "Strona internetowa młodego frontend developera, freelancera z okolic Warszawy. Zajmuje się odświeżaniem obecnych i tworzeniem nowych stron wizytówek. Ostatnimi czasy zagłebiam się w tajniki webdesignu i poznawaniu bardziej złożonych technologii oraz pozycjoonowania.",

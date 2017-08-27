@@ -5,5 +5,31 @@
     "keywords": "",
     "author": "Mateusz Archiciński",
     "ogTitle": "",
-    "ogDescription": ""
+    "ogDescription": "",
+    "header": {
+        "sideLogo": {
+            "alt": "#MA - Site logo"
+        },
+        "sideNav": {
+            "home": "Home",
+            "aboutMe": "About me",
+            "services": "Services",
+            "portfolio": "Portfolio",
+            "contact": "Contact"
+        }
+    },
+    "wrapper": {
+        "home": {
+            "headline": "Front-End Developer",
+            "description": "Mateusz Archiciński",
+            "buttons": {
+                "aboutMe": "Get to know me",
+                "services": "Services",
+                "arrowBtnAriaLabel": "Go to section about me"
+            }
+        }
+    },
+    "footer": {
+
+    }
 }

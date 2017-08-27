@@ -9,8 +9,9 @@ exports.task = () => {
     return gulp.src(`${gulpConfig.directories.test}/karma.conf.js`, { /* eslint-disable */
             base: gulpConfig.directories.test
         }) /* eslint-enable */
+        .pipe($.plumber())
         .pipe(wiredep.stream({ // https://github.com/taptapship/wiredep#configuration
-            exclude: [],
+            exclude: ['bootstrap', 'jquery', 'popper'],
             ignorePath: '../',
             fileTypes: {
                 js: {

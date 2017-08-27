@@ -27,7 +27,7 @@ exports.task = (callback) => {
                         lang: language,
                         langs: languages,
                         config: gulpConfig,
-                        data: require(`../../translations/${language}.json`)
+                        data: JSON.parse(fs.readFileSync(`./translations/${language}.json`, 'utf8'))
                     };
                 }))
                 .pipe($.pug({ // https://pugjs.org/api/getting-started.html
@@ -35,7 +35,7 @@ exports.task = (callback) => {
                     compileDebug: true
                 }))
                 .pipe(wiredep({ // https://github.com/taptapship/wiredep#wiredep--
-                    exclude: [],
+                    exclude: ['bootstrap', 'jquery', 'popper'],
                     ignorePath: '../'
                 }))
                 .pipe($.rename({
