@@ -6,11 +6,11 @@
     "author": "Mateusz Archiciński",
     "ogTitle": "",
     "ogDescription": "",
-    "header": {
-        "sideLogo": {
+    "mainHeader": {
+        "siteLogo": {
             "alt": "#MA - Site logo"
         },
-        "sideNav": {
+        "siteNav": {
             "home": "Home",
             "aboutMe": "About me",
             "services": "Services",
@@ -18,7 +18,7 @@
             "contact": "Contact"
         }
     },
-    "wrapper": {
+    "mainWrapper": {
         "home": {
             "headline": "Front-End Developer",
             "description": "Mateusz Archiciński",
@@ -29,7 +29,7 @@
             }
         }
     },
-    "footer": {
+    "mainFooter": {
 
     }
 }

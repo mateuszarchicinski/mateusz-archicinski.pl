@@ -34,13 +34,15 @@ $primary-color-light:  $color__we-peep;
 $accent-color:         $color__denim;
 $primary-text-color:   $color__nero;
 $secondary-text-color: $color__grey;
+$tertiary-text-color:  $color__silver;
 $divider-color:        $color__silver;
 
 // Breaks Points
 $break-point__1:       959px;
 $break-point__2:       645px;
 
-// Modules & Components
+// Components & Layout
+$site-nav__main-header__height: 65px;
 
 
 // *--------- TYPOGRAPHY ---------*

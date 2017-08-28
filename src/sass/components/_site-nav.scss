@@ -1,0 +1,56 @@
+//~~~~~~~~~~~~~~~~~~~~~~~~//
+//~~~~~~* SITE NAV *~~~~~~//+
+//~~~~~~~~~~~~~~~~~~~~~~~~//
+
+
+// .side-nav
+$side-nav__wrapper__height: $site-nav__main-header__height !default;
+// .side-nav__link
+$side-nav__link__height: $side-nav__wrapper__height !default;
+$side-nav__link__font-size: 0.85em !default;
+$side-nav__link__color: $tertiary-text-color !default;
+// .side-nav__link:hover
+$side-nav__link-hover__color: $color__white !default;
+// .side-nav__link:after
+$side-nav__link-after__background-color: $primary-color !default;
+
+
+.site-nav {
+    &__wrapper {
+        height: $side-nav__wrapper__height;
+    }
+    &__list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    &__link {
+        height: $side-nav__link__height;
+        position: relative;
+        display: flex;
+        align-items: center;
+        font-size: 0.85em;
+        font-weight: 700;
+        text-decoration: none;
+        text-transform: uppercase;
+        color: $side-nav__link__color;
+        padding: 20px;
+        transition: 0.3s color ease-in-out;
+        &:hover {
+            color: $side-nav__link-hover__color;
+            &::after {
+                height: 3px;
+            }
+        }
+        &::after {
+            content: "";
+            width: 60%;
+            height: 0;
+            background-color: $side-nav__link-after__background-color;
+            position: absolute;
+            left: 20%;
+            bottom: 14px;
+            transition: 0.2s height ease-in-out;
+        }
+    }
+}

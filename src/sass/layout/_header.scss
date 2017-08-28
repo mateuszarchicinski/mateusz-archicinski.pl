@@ -3,15 +3,18 @@
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~//
 
 
+// .main-header
+$main-header__height: $site-nav__main-header__height !default;
 // .main-header__fixed
-$main-header__fixed__background-color: $primary-text-color !default;
-$main-header__fixed__box-shadow: 0 0 8px 0 rgba($color__black, 0.8) !default;
+$main-header__fixed__background-color: $color__nero !default;
+$main-header__fixed__box-shadow: 0 0 8px 0 rgba($color__black-1, 0.8) !default;
 
 
 .main-header {
     width: 100%;
-    height: 65px;
+    height: $main-header__height;
     position: absolute;
+    z-index: 10;
     left: 0;
     top: 0;
     transition: 0.2s background-color ease,

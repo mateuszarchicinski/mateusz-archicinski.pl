@@ -14,21 +14,21 @@ $a__hover__color: $primary-color !default;
 $a__active__color: $primary-color-dark !default;
 
 
-a {
-    text-decoration: $a__text-decoration;
-    color: $a__color;
-    transition: $a__transition;
-    &:link,
-    &:visited {
-        color: $a__link-visited__color;
-    }
-    &:hover {
-        color: $a__hover__color;
-    }
-    &:active {
-        color: $a__active__color;
-    }
-    &.no-link {
-        color: inherit;
-    }
-}
+//a {
+//    text-decoration: $a__text-decoration;
+//    color: $a__color;
+//    transition: $a__transition;
+//    &:link,
+//    &:visited {
+//        color: $a__link-visited__color;
+//    }
+//    &:hover {
+//        color: $a__hover__color;
+//    }
+//    &:active {
+//        color: $a__active__color;
+//    }
+//    &.no-link {
+//        color: inherit;
+//    }
+//}

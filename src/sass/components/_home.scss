@@ -1,0 +1,38 @@
+//~~~~~~~~~~~~~~~~~~~~//
+//~~~~~~* HOME *~~~~~~//+
+//~~~~~~~~~~~~~~~~~~~~//
+
+
+// .home-wrapper
+
+
+
+.home {
+    &-wrapper {
+        min-height: 100vh;
+        background-image: url(https://aazztech.com/demos/themes/html/rida/rida/images/Img_4.jpg);
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+        &::after {
+            content: '';
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, #0a0a0a 0%, rgba(19,19,19,0.25) 50%, rgba(19,19,19,0.25) 50%, #0a0a0a 100%), url(../images/noise.png);
+            //background-image: url(../images/noise.png);
+            position: absolute;
+            z-index: 1;
+            left: 0;
+            top: 0;
+        }
+        h1 {
+            margin: 0;
+        }
+    }
+}
+
+.about-me-wrapper {
+    height: 1000px;
+}

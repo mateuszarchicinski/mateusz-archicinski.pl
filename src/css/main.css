@@ -1559,29 +1559,71 @@ html {
                 -ms-grid-row-align: stretch !important;
             align-self: stretch !important; } }
 
-a {
-  text-decoration: none;
-  color: #0069c5;
-  transition: 0.25s color ease; }
-  a:link, a:visited {
-    color: #0069c5; }
-  a:hover {
-    color: #f44336; }
-  a:active {
-    color: #c62828; }
-  a.no-link {
-    color: inherit; }
-
-.side-logo__img {
+.site-logo__img {
   max-width: 100%;
   display: inline-block;
   vertical-align: middle; }
 
-.side-nav__wrapper {
+.site-nav__wrapper {
   height: 65px; }
 
-.side-nav__list {
-  list-style: none; }
+.site-nav__list {
+  list-style: none;
+  padding: 0;
+  margin: 0; }
+
+.site-nav__link {
+  height: 65px;
+  position: relative;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 0.85em;
+  font-weight: 700;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #bdbdbd;
+  padding: 20px;
+  transition: 0.3s color ease-in-out; }
+  .site-nav__link:hover {
+    color: #fff; }
+    .site-nav__link:hover::after {
+      height: 3px; }
+  .site-nav__link::after {
+    content: "";
+    width: 60%;
+    height: 0;
+    background-color: #f44336;
+    position: absolute;
+    left: 20%;
+    bottom: 14px;
+    transition: 0.2s height ease-in-out; }
+
+.home-wrapper {
+  min-height: 100vh;
+  background-image: url(https://aazztech.com/demos/themes/html/rida/rida/images/Img_4.jpg);
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative; }
+  .home-wrapper::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, #0a0a0a 0%, rgba(19, 19, 19, 0.25) 50%, rgba(19, 19, 19, 0.25) 50%, #0a0a0a 100%), url(../images/noise.png);
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top: 0; }
+  .home-wrapper h1 {
+    margin: 0; }
+
+.about-me-wrapper {
+  height: 1000px; }
 
 *,
 *::before,
@@ -1600,13 +1642,14 @@ body {
   width: 100%;
   height: 65px;
   position: absolute;
+  z-index: 10;
   left: 0;
   top: 0;
   transition: 0.2s background-color ease, 0.2s box-shadow ease; }
   .main-header__fixed {
     position: fixed;
     background-color: #212121;
-    box-shadow: 0 0 8px 0 rgba(10, 10, 10, 0.8); }
+    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.8); }
 
 .clearfix::before, .clearfix::after {
   content: "";
