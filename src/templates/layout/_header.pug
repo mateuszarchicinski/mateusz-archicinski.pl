@@ -6,6 +6,7 @@ header.main-header
         .row.no-gutters.align-items-center.justify-content-between
             a(href="/" class="site-logo__wrapper")
                 img(src="images/logo/logo.png" alt=data.mainHeader.siteLogo.alt width="94" height="28" class="site-logo__img")
+            h1.text-hidden= data.mainHeader.h1 
             nav.site-nav__wrapper
                 ul.row.site-nav__list
                     li
@@ -18,3 +19,9 @@ header.main-header
                         a(href="#portfolio" class="site-nav__link")= data.mainHeader.siteNav.portfolio
                     li
                         a(href="#contact" class="site-nav__link")= data.mainHeader.siteNav.contact
+                    li
+                        ul.row.language-settings
+                            each value in langs
+                                if lang !== value
+                                    li
+                                        a(href="/" + value class="site-nav__link language-settings__link")= value

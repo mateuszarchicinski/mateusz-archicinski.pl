@@ -2,10 +2,18 @@
     Main Wrapper
 
 main.main-wrapper
-    section.home-wrapper
+    section(class="row no-gutters align-items-center justify-content-center home-wrapper")
         header
-            h1 Front-End Developer
-                            
+            h2.primary-heading= data.mainWrapper.homeWrapper.h2
+            .heading-separator
+                .heading-separator__line
+                .heading-separator__rotated-box
+                .heading-separator__line
+            h3.tertiary-heading= data.mainWrapper.homeWrapper.h3
+            .buttons
+                a(href="/" clas="btn")= data.mainWrapper.homeWrapper.buttons.aboutMe
+                a(href="/" clas="btn")= data.mainWrapper.homeWrapper.buttons.services
+        a(href="/" clas="btn btn-arrow-down") Arrow
     section.about-me-wrapper
         .container
             .row

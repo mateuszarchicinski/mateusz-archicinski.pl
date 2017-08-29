@@ -1,0 +1,28 @@
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+//~~~~~~* LANGUAGE SETTINGS *~~~~~~//+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+
+
+// .language-settings::before
+$language-settings__before__border: 1px solid $accent-color !default;
+$language-settings__before__margin-top: ($site-nav__main-header__height - 20px)/2 !default;
+
+
+.language-settings {
+    list-style: none;
+    @extend %no-padding-margin;
+    &::before {
+        content: "";
+        width: 1px;
+        height: 20px;
+        padding-right: 15px;
+        border-left: $language-settings__before__border;
+        margin-top: 22.5px;
+    }
+    &__link {
+        padding: 20px 5px;
+        &::after {
+            display: none;
+        }
+    }
+}

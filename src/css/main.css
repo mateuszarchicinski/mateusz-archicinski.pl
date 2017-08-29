@@ -178,6 +178,38 @@
   font-weight: 900;
   src: url("../fonts/Source_Sans_Pro/SourceSansPro-BlackItalic.ttf") format("truetype"); }
 
+.primary-heading {
+  font-size: 2em;
+  font-weight: 300;
+  text-transform: uppercase; }
+  .primary-heading::after {
+    content: "";
+    width: 9.375em;
+    height: 0.1875em;
+    background: #f44336;
+    display: block;
+    font-size: 0.5em;
+    border-radius: 20%;
+    margin: 0.3125em auto 0; }
+
+.secondary-heading {
+  font-size: 1.5em; }
+
+.tertiary-heading {
+  font-size: 1.25em; }
+
+.secondary-heading,
+.tertiary-heading,
+.quaternary-heading {
+  font-weight: 400;
+  padding-bottom: 0.25em;
+  border-bottom: 1px solid #f44336; }
+
+.quaternary-heading {
+  font-size: 1.15em;
+  border-bottom: 0;
+  margin: 0; }
+
 .text-small {
   font-size: 0.85em; }
 
@@ -1568,9 +1600,7 @@ html {
   height: 65px; }
 
 .site-nav__list {
-  list-style: none;
-  padding: 0;
-  margin: 0; }
+  list-style: none; }
 
 .site-nav__link {
   height: 65px;
@@ -1602,8 +1632,22 @@ html {
     bottom: 14px;
     transition: 0.2s height ease-in-out; }
 
+.language-settings {
+  list-style: none; }
+  .language-settings::before {
+    content: "";
+    width: 1px;
+    height: 20px;
+    padding-right: 15px;
+    border-left: 1px solid #1565c0;
+    margin-top: 22.5px; }
+  .language-settings__link {
+    padding: 20px 5px; }
+    .language-settings__link::after {
+      display: none; }
+
 .home-wrapper {
-  min-height: 100vh;
+  min-height: calc(100vh + 200px);
   background-image: url(https://aazztech.com/demos/themes/html/rida/rida/images/Img_4.jpg);
   background-attachment: fixed;
   background-position: center;
@@ -1657,5 +1701,9 @@ body {
 
 .clearfix::after {
   clear: both; }
+
+.site-nav__list, .language-settings {
+  padding: 0;
+  margin: 0; }
 
 /*# sourceMappingURL=maps/main.css.map */

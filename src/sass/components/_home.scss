@@ -9,7 +9,7 @@
 
 .home {
     &-wrapper {
-        min-height: 100vh;
+        min-height: calc(100vh + 200px);
         background-image: url(https://aazztech.com/demos/themes/html/rida/rida/images/Img_4.jpg);
         background-attachment: fixed;
         background-position: center;

@@ -6,3 +6,9 @@
 %clearfix {
     @include clearfix;
 }
+
+
+%no-padding-margin {
+    padding: 0;
+    margin: 0;
+}

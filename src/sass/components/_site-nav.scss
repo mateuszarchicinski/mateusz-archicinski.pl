@@ -21,8 +21,7 @@ $side-nav__link-after__background-color: $primary-color !default;
     }
     &__list {
         list-style: none;
-        padding: 0;
-        margin: 0;
+        @extend %no-padding-margin;
     }
     &__link {
         height: $side-nav__link__height;

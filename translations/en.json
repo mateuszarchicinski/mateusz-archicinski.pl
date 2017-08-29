@@ -1,6 +1,6 @@
 {
     "lang": "en",
-    "title": "",
+    "title": "Mateusz Archiciński / Front-End Developer",
     "description": "",
     "keywords": "",
     "author": "Mateusz Archiciński",
@@ -10,6 +10,7 @@
         "siteLogo": {
             "alt": "#MA - Site logo"
         },
+        "h1": "#Mateusz Archiciński",
         "siteNav": {
             "home": "Home",
             "aboutMe": "About me",
@@ -19,9 +20,9 @@
         }
     },
     "mainWrapper": {
-        "home": {
-            "headline": "Front-End Developer",
-            "description": "Mateusz Archiciński",
+        "homeWrapper": {
+            "h2": "Front-End Developer",
+            "h3": "Mateusz Archiciński",
             "buttons": {
                 "aboutMe": "Get to know me",
                 "services": "Services",

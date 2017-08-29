@@ -58,43 +58,43 @@ $headings__border-bottom: 1px solid $primary-color !default;
 $quaternary-heading__font-size: $tertiary-heading__font-size - 0.1 !default;
 
 
-//.primary-heading {
-//    font-size: $primary-heading__font-size;
-//    font-weight: $primary-heading__font-weight;
-//    text-transform: $primary-heading__text-transform;
-//    @include after {
-//        content: "";
-//        width: $primary-heading__after__width;
-//        height: $primary-heading__after__height;
-//        background: $primary-heading__after__background;
-//        display: block;
-//        font-size: $primary-heading__after__font-size;
-//        border-radius: $primary-heading__after__border-radius;
-//        margin: $primary-heading__after__margin;
-//    }
-//}
-//
-//.secondary-heading {
-//    font-size: $secondary-heading__font-size;
-//}
-//
-//.tertiary-heading {
-//    font-size: $tertiary-heading__font-size;
-//}
-//
-//.secondary-heading,
-//.tertiary-heading,
-//.quaternary-heading {
-//    font-weight: $headings__font-weight;
-//    padding-bottom: $headings__padding-bottom;
-//    border-bottom: $headings__border-bottom;
-//}
-//
-//.quaternary-heading {
-//    font-size: $quaternary-heading__font-size;
-//    border-bottom: 0;
-//    margin: 0;
-//}
+.primary-heading {
+    font-size: $primary-heading__font-size;
+    font-weight: $primary-heading__font-weight;
+    text-transform: $primary-heading__text-transform;
+    @include after {
+        content: "";
+        width: $primary-heading__after__width;
+        height: $primary-heading__after__height;
+        background: $primary-heading__after__background;
+        display: block;
+        font-size: $primary-heading__after__font-size;
+        border-radius: $primary-heading__after__border-radius;
+        margin: $primary-heading__after__margin;
+    }
+}
+
+.secondary-heading {
+    font-size: $secondary-heading__font-size;
+}
+
+.tertiary-heading {
+    font-size: $tertiary-heading__font-size;
+}
+
+.secondary-heading,
+.tertiary-heading,
+.quaternary-heading {
+    font-weight: $headings__font-weight;
+    padding-bottom: $headings__padding-bottom;
+    border-bottom: $headings__border-bottom;
+}
+
+.quaternary-heading {
+    font-size: $quaternary-heading__font-size;
+    border-bottom: 0;
+    margin: 0;
+}
 
 
 //* TEXT *//
