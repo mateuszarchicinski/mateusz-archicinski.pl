@@ -2,24 +2,26 @@
     Main Wrapper
 
 main.main-wrapper
-    section(class="row no-gutters align-items-center justify-content-center home-wrapper")
-        header
-            h2.primary-heading= data.mainWrapper.homeWrapper.h2
-            .heading-separator
-                .heading-separator__line
-                .heading-separator__rotated-box
-                .heading-separator__line
-            h3.tertiary-heading= data.mainWrapper.homeWrapper.h3
-            .buttons
-                a(href="/" clas="btn")= data.mainWrapper.homeWrapper.buttons.aboutMe
-                a(href="/" clas="btn")= data.mainWrapper.homeWrapper.buttons.services
-        a(href="/" clas="btn btn-arrow-down") Arrow
-    section.about-me-wrapper
+    section(id="home" class="home-wrapper")
+        .container
+            .row.no-gutters.flex-column.align-items-center.justify-content-center.home-row
+                header.home-header
+                    h2.primary-heading= data.mainWrapper.homeWrapper.h2
+                    .heading-separator
+                        .heading-separator__line
+                        .heading-separator__box
+                        .heading-separator__line
+                    h3.tertiary-heading= data.mainWrapper.homeWrapper.h3
+                    .home-header-buttons
+                        a(href="#aboutMe" class="btn btn-accent")= data.mainWrapper.homeWrapper.buttons.aboutMe
+                        a(href="#services" class="btn btn-primary-dark")= data.mainWrapper.homeWrapper.buttons.services
+                a(href="#aboutMe" aria-label=data.mainWrapper.homeWrapper.buttons.arrowBtnAriaLabel class="btn btn-arrow-down")
+    section(id="aboutMe" class="about-me-wrapper")
         .container
             .row
                 .col-4
                 .col-4
                 .col-4
-    sectin.services-wrapper
-    section.portfolio-wrapper
-    section.contact-wrapper
+    sectin(id="services" class="services-wrapper")
+    section(id="portfolio" class="portfolio-wrapper")
+    section(id="contact" class="contact-wrapper")

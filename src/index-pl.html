@@ -59,7 +59,7 @@
           <h1 class="text-hidden">#Mateusz Archiciński</h1>
           <nav class="site-nav__wrapper">
             <ul class="row site-nav__list">
-              <li><a class="site-nav__link" href="#home">Strona główna</a></li>
+              <li><a class="site-nav__link site-nav__link-active" href="#home">Strona główna</a></li>
               <li><a class="site-nav__link" href="#about-me">O mnie</a></li>
               <li><a class="site-nav__link" href="#services">Usługi</a></li>
               <li><a class="site-nav__link" href="#portfolio">Portfolio</a></li>
@@ -75,19 +75,23 @@
       </div>
     </header>
     <main class="main-wrapper">
-      <section class="row no-gutters align-items-center justify-content-center home-wrapper">
-        <header>
-          <h2 class="primary-heading">Front-End Developer</h2>
-          <div class="heading-separator">
-            <div class="heading-separator__line"></div>
-            <div class="heading-separator__rotated-box"></div>
-            <div class="heading-separator__line"></div>
+      <section class="home-wrapper" id="home">
+        <div class="container">
+          <div class="row no-gutters flex-column align-items-center justify-content-center home-row">
+            <header class="home-header">
+              <h2 class="primary-heading">Front-End Developer</h2>
+              <div class="heading-separator">
+                <div class="heading-separator__line"></div>
+                <div class="heading-separator__box"></div>
+                <div class="heading-separator__line"></div>
+              </div>
+              <h3 class="tertiary-heading">Mateusz Archiciński</h3>
+              <div class="home-header-buttons"><a class="btn btn-accent" href="#aboutMe">Poznaj mnie</a><a class="btn btn-primary-dark" href="#services">Usługi</a></div>
+            </header><a class="btn btn-arrow-down" href="#aboutMe" aria-label="Przejdz do sekcji o mnie"></a>
           </div>
-          <h3 class="tertiary-heading">Mateusz Archiciński</h3>
-          <div class="buttons"><a href="/" clas="btn">Poznaj mnie</a><a href="/" clas="btn">Usługi</a></div>
-        </header><a href="/" clas="btn btn-arrow-down">Arrow</a>
+        </div>
       </section>
-      <section class="about-me-wrapper">
+      <section class="about-me-wrapper" id="aboutMe">
         <div class="container">
           <div class="row">
             <div class="col-4"></div>
@@ -96,9 +100,9 @@
           </div>
         </div>
       </section>
-      <sectin class="services-wrapper"></sectin>
-      <section class="portfolio-wrapper"></section>
-      <section class="contact-wrapper"></section>
+      <sectin class="services-wrapper" id="services"></sectin>
+      <section class="portfolio-wrapper" id="portfolio"></section>
+      <section class="contact-wrapper" id="contact"></section>
     </main>
     <footer class="main-footer"></footer>
     <!--JavaScript Sources-->

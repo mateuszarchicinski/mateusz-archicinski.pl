@@ -179,35 +179,23 @@
   src: url("../fonts/Source_Sans_Pro/SourceSansPro-BlackItalic.ttf") format("truetype"); }
 
 .primary-heading {
-  font-size: 2em;
-  font-weight: 300;
-  text-transform: uppercase; }
-  .primary-heading::after {
-    content: "";
-    width: 9.375em;
-    height: 0.1875em;
-    background: #f44336;
-    display: block;
-    font-size: 0.5em;
-    border-radius: 20%;
-    margin: 0.3125em auto 0; }
-
-.secondary-heading {
-  font-size: 1.5em; }
+  font-size: 4.75em;
+  font-weight: 900; }
 
 .tertiary-heading {
-  font-size: 1.25em; }
+  font-size: 1.55em;
+  font-weight: 400;
+  letter-spacing: 10px; }
 
+.primary-heading,
+.tertiary-heading {
+  color: #fff; }
+
+.primary-heading,
 .secondary-heading,
 .tertiary-heading,
 .quaternary-heading {
-  font-weight: 400;
-  padding-bottom: 0.25em;
-  border-bottom: 1px solid #f44336; }
-
-.quaternary-heading {
-  font-size: 1.15em;
-  border-bottom: 0;
+  font-family: "Raleway";
   margin: 0; }
 
 .text-small {
@@ -1591,6 +1579,39 @@ html {
                 -ms-grid-row-align: stretch !important;
             align-self: stretch !important; } }
 
+.btn {
+  background-color: rgba(255, 255, 255, 0.1);
+  display: inline-block;
+  font-size: 1em;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #fff;
+  padding: 17.5px 20px;
+  border-radius: 2px;
+  border: 1px solid #fff;
+  transition: 0.2s background-color ease-in-out, 0.3s color ease-in-out; }
+  .btn:hover {
+    background-color: #fff; }
+  .btn:nth-child(n+2) {
+    margin-left: 25px; }
+  .btn-primary-dark {
+    background-color: rgba(198, 40, 40, 0.1);
+    border-color: #c62828; }
+    .btn-primary-dark:hover {
+      background-color: #c62828; }
+  .btn-primary-light {
+    background-color: rgba(254, 204, 209, 0.1);
+    border-color: #feccd1; }
+    .btn-primary-light:hover {
+      background-color: #feccd1; }
+  .btn-accent {
+    background-color: rgba(21, 101, 192, 0.1);
+    border-color: #1565c0; }
+    .btn-accent:hover {
+      background-color: #1565c0; }
+
 .site-logo__img {
   max-width: 100%;
   display: inline-block;
@@ -1631,6 +1652,11 @@ html {
     left: 20%;
     bottom: 14px;
     transition: 0.2s height ease-in-out; }
+  .site-nav__link-active {
+    color: #fff; }
+    .site-nav__link-active::after {
+      height: 3px;
+      background-color: #c62828; }
 
 .language-settings {
   list-style: none; }
@@ -1647,27 +1673,33 @@ html {
       display: none; }
 
 .home-wrapper {
-  min-height: calc(100vh + 200px);
-  background-image: url(https://aazztech.com/demos/themes/html/rida/rida/images/Img_4.jpg);
+  background-image: url(https://t4.ftcdn.net/jpg/01/01/49/89/240_F_101498911_eR4DpsDTpdcwuD4UNOjdr9RDiFFAwn3Q.jpg);
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative; }
   .home-wrapper::after {
-    content: '';
+    content: "";
     width: 100%;
     height: 100%;
-    background: linear-gradient(to top, #0a0a0a 0%, rgba(19, 19, 19, 0.25) 50%, rgba(19, 19, 19, 0.25) 50%, #0a0a0a 100%), url(../images/noise.png);
+    background-image: linear-gradient(to top, #0a0a0a 0%, rgba(19, 19, 19, 0.25) 50%, rgba(19, 19, 19, 0.25) 50%, #0a0a0a 100%), url(../images/noise.png);
     position: absolute;
     z-index: 1;
     left: 0;
     top: 0; }
-  .home-wrapper h1 {
-    margin: 0; }
 
-.about-me-wrapper {
-  height: 1000px; }
+.home-row {
+  position: relative;
+  z-index: 2; }
+
+.home-wrapper, .home-row {
+  min-height: calc(100vh + 200px); }
+
+.home-header-buttons {
+  text-align: center; }
+  .home-header-buttons > * {
+    width: 180px; }
 
 *,
 *::before,

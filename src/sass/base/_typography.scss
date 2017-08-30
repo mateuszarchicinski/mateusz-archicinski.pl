@@ -22,7 +22,6 @@
 @include font-face("Raleway", "../fonts/Raleway/Raleway-ExtraBoldItalic", italic, 800, ttf);
 @include font-face("Raleway", "../fonts/Raleway/Raleway-Black", normal, 900, ttf);
 @include font-face("Raleway", "../fonts/Raleway/Raleway-BlackItalic", italic, 900, ttf);
-
 @include font-face("Source Sans Pro", "../fonts/Source_Sans_Pro/SourceSansPro-ExtraLight", normal, 200, ttf);
 @include font-face("Source Sans Pro", "../fonts/Source_Sans_Pro/SourceSansPro-ExtraLightItalic", italic, 200, ttf);
 @include font-face("Source Sans Pro", "../fonts/Source_Sans_Pro/SourceSansPro-Light", normal, 300, ttf);
@@ -39,60 +38,47 @@
 
 //* HEADINGS *//
 // .primary-heading
-$primary-heading__font-size: $base__font-size * 2 !default;
-$primary-heading__font-weight: $font-weight__lighter !default;
-$primary-heading__text-transform: uppercase !default;
-// ::after
-$primary-heading__after__width: #{(150 / 16)}em !default;
-$primary-heading__after__height: #{(3 / 16)}em !default;
-$primary-heading__after__background: $primary-color !default;
-$primary-heading__after__font-size: $primary-heading__font-size / 4 !default;
-$primary-heading__after__border-radius: 20% !default;
-$primary-heading__after__margin: #{(5 / 16)}em auto 0 !default;
-// .secondary-heading .tertiary-heading .quaternary-heading
-$secondary-heading__font-size: $primary-heading__font-size - 0.5 !default;
-$tertiary-heading__font-size: $secondary-heading__font-size - 0.25 !default;
-$headings__font-weight: $base__font-weight !default;
-$headings__padding-bottom: #{(4 / 16)}em !default;
-$headings__border-bottom: 1px solid $primary-color !default;
-$quaternary-heading__font-size: $tertiary-heading__font-size - 0.1 !default;
+$primary-heading__font-size: $base__font-size * 4.75 !default;
+$primary-heading__font-weight: $font-weight__bolder-9 !default;
+// .secondary-heading
+
+// .tertiary-heading
+$tertiary-heading__font-size: $base__font-size * 1.55 !default;
+$tertiary-heading__font-weight: $font-weight__normal !default;
+// .primary-heading & .tertiary-heading
+$primary-tertiary-heading__color: $color__white !default;
 
 
 .primary-heading {
     font-size: $primary-heading__font-size;
     font-weight: $primary-heading__font-weight;
-    text-transform: $primary-heading__text-transform;
-    @include after {
-        content: "";
-        width: $primary-heading__after__width;
-        height: $primary-heading__after__height;
-        background: $primary-heading__after__background;
-        display: block;
-        font-size: $primary-heading__after__font-size;
-        border-radius: $primary-heading__after__border-radius;
-        margin: $primary-heading__after__margin;
-    }
 }
 
 .secondary-heading {
-    font-size: $secondary-heading__font-size;
+    
 }
 
 .tertiary-heading {
     font-size: $tertiary-heading__font-size;
+    font-weight: $tertiary-heading__font-weight;
+    letter-spacing: 10px;
 }
 
+.quaternary-heading {
+    
+}
+
+.primary-heading,
+.tertiary-heading {
+    color: $primary-tertiary-heading__color;
+    //text-align: center;
+}
+
+.primary-heading,
 .secondary-heading,
 .tertiary-heading,
 .quaternary-heading {
-    font-weight: $headings__font-weight;
-    padding-bottom: $headings__padding-bottom;
-    border-bottom: $headings__border-bottom;
-}
-
-.quaternary-heading {
-    font-size: $quaternary-heading__font-size;
-    border-bottom: 0;
+    font-family: "Raleway";
     margin: 0;
 }
 
@@ -110,8 +96,6 @@ $text-large__font-size: $text-medium__font-size+0.15 !default;
 $text-muted__color: $secondary-text-color !default;
 // strong
 $strong__font-weight: $font-weight__bold !default;
-
-
 .text {
     &-small {
         font-size: $text-small__font-size;

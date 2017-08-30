@@ -3,4 +3,76 @@
 //~~~~~~~~~~~~~~~~~~~~~~~//
 
 
-//.btn {}
+// .btn
+$btn__background-color: rgba($color__white, 0.1) !default;
+$btn__font-size: 1em !default;
+$btn__font-weight: $font-weight__bolder-7 !default;
+$btn__color: $color__white !default;
+$btn__border: 1px solid $color__white !default;
+// .btn:hover
+$btn__hover__background-color: $color__white !default;
+$btn__hover__color: $color__black-1 !default;
+
+// .btn-primary-dark
+$btn-primary-dark__background-color: rgba($primary-color-dark, 0.1) !default;
+$btn-primary-dark__border-color: $primary-color-dark !default;
+// .btn-primary-dark:hover
+$btn-primary-dark__hover__background-color: $primary-color-dark !default;
+
+// .btn-primary-light
+$btn-primary-light__background-color: rgba($primary-color-light, 0.1) !default;
+$btn-primary-light__border-color: $primary-color-light !default;
+// .btn-primary-light:hover
+$btn-primary-light__hover__background-color: $primary-color-light !default;
+
+// .btn-accent
+$btn-accent__background-color: rgba($accent-color, 0.1) !default;
+$btn-accent__border-color: $accent-color !default;
+// .btn-accent:hover
+$btn-accent__hover__background-color: $accent-color !default;
+
+
+.btn {
+    background-color: $btn__background-color;
+    display: inline-block;
+    font-size: $btn__font-size;
+    font-weight: $btn__font-weight;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: $btn__color;
+    padding: 17.5px 20px;
+    border-radius: 2px;
+    border: $btn__border;
+    transition: 0.2s background-color ease-in-out, 0.3s color ease-in-out;
+    &:hover {
+        background-color: $btn__hover__background-color;
+        //color: $btn__hover__color;
+    }
+    &:nth-child(n+2) {
+        margin-left: 25px;
+    }
+    &-primary {
+        &-dark {
+            background-color: $btn-primary-dark__background-color;
+            border-color: $btn-primary-dark__border-color;
+            &:hover {
+                background-color: $btn-primary-dark__hover__background-color;
+            }
+        }
+        &-light {
+            background-color: $btn-primary-light__background-color;
+            border-color: $btn-primary-light__border-color;
+            &:hover {
+                background-color: $btn-primary-light__hover__background-color;
+            }
+        }
+    }
+    &-accent {
+        background-color: $btn-accent__background-color;
+        border-color: $btn-accent__border-color;
+        &:hover {
+            background-color: $btn-accent__hover__background-color;
+        }
+    }
+}
