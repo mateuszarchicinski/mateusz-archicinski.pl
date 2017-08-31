@@ -37,8 +37,10 @@ $home-wrapper__after__background-image: linear-gradient(to top, $color__black-2 
         min-height: calc(100vh + 200px);
     }
     &-header {
+        margin-bottom: 100px;
         &-buttons {
             text-align: center;
+            margin-top: 50px;
             & > * {
                 width: 180px;
             }

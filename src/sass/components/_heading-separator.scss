@@ -1,0 +1,31 @@
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+//~~~~~~* HEADING SEPARATOR *~~~~~~//+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+
+
+// .heading-separator__line
+$heading-separator__line__background-color: $color__white !default;
+// .heading-separator__square
+$heading-separator__square__border: 1px solid $color__white !default;
+
+
+
+
+.heading-separator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 14px 0 18px;
+    &__line {
+        width: 240px;
+        height: 1px;
+        background-color: $heading-separator__line__background-color;
+    }
+    &__square {
+        width: 20px;
+        height: 20px;
+        transform: rotate(45deg);
+        border: $heading-separator__square__border;
+        margin: 0 20px;
+    }
+}

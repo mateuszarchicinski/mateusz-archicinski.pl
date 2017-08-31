@@ -9,12 +9,12 @@ main.main-wrapper
                     h2.primary-heading= data.mainWrapper.homeWrapper.h2
                     .heading-separator
                         .heading-separator__line
-                        .heading-separator__box
+                        .heading-separator__square
                         .heading-separator__line
                     h3.tertiary-heading= data.mainWrapper.homeWrapper.h3
                     .home-header-buttons
-                        a(href="#aboutMe" class="btn btn-accent")= data.mainWrapper.homeWrapper.buttons.aboutMe
-                        a(href="#services" class="btn btn-primary-dark")= data.mainWrapper.homeWrapper.buttons.services
+                        a(href="#aboutMe" class="btn btn-accent to-top")= data.mainWrapper.homeWrapper.buttons.aboutMe
+                        a(href="#services" class="btn btn-primary-dark to-top")= data.mainWrapper.homeWrapper.buttons.services
                 a(href="#aboutMe" aria-label=data.mainWrapper.homeWrapper.buttons.arrowBtnAriaLabel class="btn btn-arrow-down")
     section(id="aboutMe" class="about-me-wrapper")
         .container
