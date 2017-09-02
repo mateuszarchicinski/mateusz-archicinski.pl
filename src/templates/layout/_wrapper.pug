@@ -19,45 +19,40 @@ main.main-wrapper
     section(id="aboutMe" class="about-me-wrapper")
         .container
             .row
-                header.col-12
-                    h2.secondary-heading sd
+                header.section-header
+                    h2.secondary-heading= data.mainWrapper.aboutMeWrapper.header.h2
                     .heading-separator
                         .heading-separator__line
                         .heading-separator__square
                         .heading-separator__line
-                    p
-                .col-6 sd
-                .col-6 sd
-    sectin(id="services" class="services-wrapper")
+                    p.section-header-description= data.mainWrapper.aboutMeWrapper.header.p
+    section(id="services" class="services-wrapper")
         .container
             .row
-                header.col-12
-                    h2.secondary-heading sd
+                header.section-header
+                    h2.secondary-heading= data.mainWrapper.servicesWrapper.header.h2
                     .heading-separator
                         .heading-separator__line
                         .heading-separator__square
                         .heading-separator__line
-                .col-6 sd
-                .col-6 sd
+                    p.section-header-description= data.mainWrapper.servicesWrapper.header.p
     section(id="portfolio" class="portfolio-wrapper")
         .container
             .row
-                header.col-12
-                    h2.secondary-heading sd
+                header.section-header
+                    h2.secondary-heading= data.mainWrapper.portfolioWrapper.header.h2
                     .heading-separator
                         .heading-separator__line
                         .heading-separator__square
                         .heading-separator__line
-                .col-6 sd
-                .col-6 sd
+                    p.section-header-description= data.mainWrapper.portfolioWrapper.header.p
     section(id="contact" class="contact-wrapper")
         .container
             .row
-                header.col-12
-                    h2.secondary-heading sd
+                header.section-header
+                    h2.secondary-heading= data.mainWrapper.contactWrapper.header.h2
                     .heading-separator
                         .heading-separator__line
                         .heading-separator__square
                         .heading-separator__line
-                .col-6 sd
-                .col-6 sd
+                    p.section-header-description= data.mainWrapper.contactWrapper.header.p

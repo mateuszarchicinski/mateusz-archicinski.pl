@@ -28,7 +28,32 @@
                 "services": "Services",
                 "arrowBtnAriaLabel": "Go to section about me"
             }
+        },
+        "aboutMeWrapper": {
+            "header": {
+                "h2": "O mnie",
+                "p": "Pełen zestaw informacji na mój temat"
+            }
+        },
+        "servicesWrapper": {
+            "header": {
+                "h2": "Usługi",
+                "p": "Sprawdź co mogę ci zaoferować"
+            }
+        },
+        "portfolioWrapper": {
+            "header": {
+                "h2": "Portfolio",
+                "p": "Stworzone przeze mnie projekty, samodzielnie jak i w grupie"
+            }
+        },
+        "contactWrapper": {
+            "header": {
+                "h2": "Kontakt",
+                "p": "Jeżeli masz jakieś pytania skontaktuj się zemną, wybór należy do ciebie z jakiej formy kontaktu skorzystasz"
+            }
         }
+
     },
     "mainFooter": {
 
