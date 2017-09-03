@@ -1,0 +1,49 @@
+//~~~~~~~~~~~~~~~~~~~~~~~//
+//~~~~~~* SECTION *~~~~~~//+
+//~~~~~~~~~~~~~~~~~~~~~~~//
+
+
+// .section
+$section__box-shadow: 0 0 5px 0 rgba($color__black-1, 0.1) !default;
+// .section:nth-child(odd)
+$section__odd__background-color: $color__snow !default;
+// .section-decoration
+$section-decoration__background-color: $primary-color !default;
+$section-decoration__border: 10px solid $color__white !default;
+$section-decoration__box-shadow: 0 0 10px 0 rgba($color__black-1, 0.1) !default;
+// .section-header-description
+$section-header-description__font-size: 1.05em !default;
+
+
+.section {
+    position: relative;
+    //box-shadow: $section__box-shadow;
+    &:nth-child(odd) {
+        background-color: $section__odd__background-color;
+    }
+    &:last-child {
+        box-shadow: none;
+    }
+    &-decoration {
+        width: 75px;
+        height: 75px;
+        background-color: $section-decoration__background-color;
+        position: absolute;
+        z-index: 4;
+        transform: rotate(45deg);
+        border: $section-decoration__border;
+        box-shadow: $section-decoration__box-shadow;
+        margin-top: -38px;
+        &-icon {
+            transform: translate(9px, 9px) rotate(-45deg);
+        }
+    }
+    &-header {
+        padding: 165px 0 65px;
+        &-description {
+            font-size: $section-header-description__font-size;
+            text-align: center;
+            margin: 0;
+        }
+    }
+}

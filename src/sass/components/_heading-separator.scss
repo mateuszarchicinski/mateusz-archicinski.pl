@@ -4,11 +4,20 @@
 
 
 // .heading-separator__line
-$heading-separator__line__background-color: $color__white !default;
+$heading-separator__line__background-color: $primary-text-color !default;
+// .heading-separator__line.black
+$heading-separator__line-black__background-color: $color__black-1 !default;
+// .heading-separator__line.white
+$heading-separator__line-white__background-color: $color__white !default;
+// .heading-separator__line.primary
+$heading-separator__line-primary__background-color: $primary-color !default;
+// .heading-separator__line.accent
+$heading-separator__line-accent__background-color: $accent-color !default;
 // .heading-separator__square
+$heading-separator__square__background-color: $primary-color !default;
 $heading-separator__square__border: 1px solid $color__white !default;
-
-
+// .heading-separator__square.primary
+$heading-separator__square-primary__background-color: $primary-color !default;
 
 
 .heading-separator {
@@ -17,15 +26,35 @@ $heading-separator__square__border: 1px solid $color__white !default;
     justify-content: center;
     margin: 14px 0 18px;
     &__line {
-        width: 240px;
+        width: 30.80872%;
         height: 1px;
         background-color: $heading-separator__line__background-color;
+        &.black {
+            background-color: $heading-separator__line-black__background-color;
+        }
+        &.white {
+            background-color: $heading-separator__line-white__background-color;
+        }
+        &.primary {
+            background-color: $heading-separator__line-primary__background-color;
+        }
+        &.accent {
+            background-color: $heading-separator__line-accent__background-color;
+        }
     }
     &__square {
-        width: 20px;
-        height: 20px;
+        width: 10px;
+        height: 10px;
         transform: rotate(45deg);
         border: $heading-separator__square__border;
         margin: 0 20px;
+        &.medium {
+            width: 20px;
+            height: 20px;
+        }
+        &.primary {
+            background-color: $heading-separator__square-primary__background-color;
+            border: 0;
+        }
     }
 }

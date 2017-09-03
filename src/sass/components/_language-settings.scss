@@ -15,6 +15,7 @@ $language-settings__before__margin-top: ($site-nav__main-header__height - 20px)/
         content: "";
         width: 1px;
         height: 20px;
+        display: block;
         padding-right: 15px;
         border-left: $language-settings__before__border;
         margin-top: 22.5px;

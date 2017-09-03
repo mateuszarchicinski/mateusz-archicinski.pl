@@ -1,3 +1,16 @@
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~//
 //~~~~~~* MAIN FOOTER *~~~~~~//+
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+
+
+// .main-footer
+$main-footer__background-color: $color__nero !default;
+$main-footer__box-shadow: 0 0 8px 0 rgba($color__black-1, 0.8) !default;
+
+
+.main-footer {
+    background-color: $main-footer__background-color;
+    position: relative;
+    box-shadow: $main-footer__box-shadow;
+    color: $color__white;
+}

@@ -50,7 +50,10 @@
         "contactWrapper": {
             "header": {
                 "h2": "Kontakt",
-                "p": "Jeżeli masz jakieś pytania skontaktuj się zemną, wybór należy do ciebie z jakiej formy kontaktu skorzystasz"
+                "p": [
+                    "Jeżeli masz jakieś pytania skontaktuj się zemną,",
+                    "wybór należy do ciebie z jakiej formy kontaktu skorzystasz"
+                ]
             }
         }
 

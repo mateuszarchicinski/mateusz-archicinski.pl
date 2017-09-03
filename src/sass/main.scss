@@ -49,6 +49,10 @@
     @import 'components/break-lines/break-lines';
 
 
+    // *--------- SPRITES ---------*
+    @import 'components/sprites/sprite';
+
+
     // *--------- BUTTONS ---------*
     @import 'components/buttons/buttons';
 
@@ -60,10 +64,6 @@
 
     // *--------- LINKS ---------*
     @import 'components/links/links';
-
-
-    // *--------- SPRITES ---------*
-    @import 'components/sprites/sprite';
 
 
     // *--------- SITE LOGO ---------*
@@ -78,8 +78,28 @@
     @import 'components/language-settings';
 
 
+    // *--------- SECTION ---------*
+    @import 'components/section';
+
+
     // *--------- HOME ---------*
     @import 'components/home';
+
+
+    // *--------- ABOUT ME ---------*
+    @import 'components/about-me';
+
+
+    // *--------- SERVICES ---------*
+    @import 'components/services';
+
+
+    // *--------- PORTFOLIO ---------*
+    @import 'components/portfolio';
+
+
+    // *--------- CONTACT ---------*
+    @import 'components/contact';
 
 
     // *--------- HEADING SEPARATOR ---------*

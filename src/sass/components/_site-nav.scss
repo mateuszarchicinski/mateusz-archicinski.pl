@@ -51,6 +51,7 @@ $side-nav__link-active-after__background-color: $primary-color-dark !default;
             height: 0;
             background-color: $side-nav__link-after__background-color;
             position: absolute;
+            display: block;
             left: 20%;
             bottom: 14px;
             transition: 0.2s height ease-in-out;

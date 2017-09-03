@@ -41,7 +41,10 @@
 $primary-heading__font-size: $base__font-size * 4.75 !default;
 $primary-heading__font-weight: $font-weight__bolder-9 !default;
 // .secondary-heading
-
+$secondary-heading__font-size: 3em !default;
+// .secondary-heading:first-letter
+$secondary-heading__first-letter__font-size: 3em !default;
+$secondary-heading__first-letter__color: $primary-color !default;
 // .tertiary-heading
 $tertiary-heading__font-size: $base__font-size * 1.55 !default;
 $tertiary-heading__font-weight: $font-weight__normal !default;
@@ -55,7 +58,13 @@ $primary-tertiary-heading__color: $color__white !default;
 }
 
 .secondary-heading {
-    
+    font-size: $secondary-heading__font-size;
+    font-weight: 800;
+    &:first-letter {
+        line-height: 0;
+        font-size: $secondary-heading__first-letter__font-size;
+        color: $secondary-heading__first-letter__color;
+    }    
 }
 
 .tertiary-heading {
@@ -69,9 +78,14 @@ $primary-tertiary-heading__color: $color__white !default;
 }
 
 .primary-heading,
+.secondary-heading,
+.tertiary-heading {
+    text-align: center;
+}
+
+.primary-heading,
 .tertiary-heading {
     color: $primary-tertiary-heading__color;
-    text-align: center;
 }
 
 .primary-heading,

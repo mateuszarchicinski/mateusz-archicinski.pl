@@ -3,4 +3,30 @@
 //~~~~~~~~~~~~~~~~~~~~~//
 
 
-// .icon {}
+.icon {
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+    &-person {
+        @include sprite-image($person_white);
+        @include sprite-position($person_white);
+    }
+    &-build {
+        @include sprite-image($build_white);
+        @include sprite-position($build_white);
+    }
+    &-code {
+        @include sprite-image($code_white);
+        @include sprite-position($code_white);
+    }
+    &-call {
+        @include sprite-image($call_white);
+        @include sprite-position($call_white);
+    }
+    &-arrow {
+        &-up {
+            @include sprite-image($arrow-up-white);
+            @include sprite-position($arrow-up-white);
+        }
+    }
+}
