@@ -3,43 +3,40 @@
 //~~~~~~~~~~~~~~~~~~~~~~~//
 
 
-// .section
-$section__box-shadow: 0 0 5px 0 rgba($color__black-1, 0.1) !default;
 // .section:nth-child(odd)
 $section__odd__background-color: $color__snow !default;
 // .section-decoration
-$section-decoration__background-color: $primary-color !default;
 $section-decoration__border: 10px solid $color__white !default;
-$section-decoration__box-shadow: 0 0 10px 0 rgba($color__black-1, 0.1) !default;
+$section-decoration__box-shadow: 2.5px 2.5px 10px 0 rgba($color__black-1, 0.1) !default;
+// .section-decoration-icon
+$section-decoration-icon__background-color: $primary-color !default;
+$section-decoration-icon__box-shadow: 0 0 0 25px $primary-color !default;
 // .section-header-description
 $section-header-description__font-size: 1.05em !default;
 
 
 .section {
     position: relative;
-    //box-shadow: $section__box-shadow;
     &:nth-child(odd) {
         background-color: $section__odd__background-color;
     }
-    &:last-child {
-        box-shadow: none;
-    }
     &-decoration {
-        width: 75px;
-        height: 75px;
-        background-color: $section-decoration__background-color;
-        position: absolute;
+        width: 75.5px;
+        height: 75.5px;
         z-index: 4;
         transform: rotate(45deg);
+        overflow: hidden;
         border: $section-decoration__border;
         box-shadow: $section-decoration__box-shadow;
         margin-top: -38px;
         &-icon {
+            background-color: $section-decoration-icon__background-color;
             transform: translate(9px, 9px) rotate(-45deg);
+            box-shadow: $section-decoration-icon__box-shadow;
         }
     }
     &-header {
-        padding: 165px 0 65px;
+        padding: 115px 0 65px;
         &-description {
             font-size: $section-header-description__font-size;
             text-align: center;

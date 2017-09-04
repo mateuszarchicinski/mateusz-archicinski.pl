@@ -1759,26 +1759,25 @@ html {
   position: relative; }
   .section:nth-child(odd) {
     background-color: #fafafa; }
-  .section:last-child {
-    box-shadow: none; }
   .section-decoration {
-    width: 75px;
-    height: 75px;
-    background-color: #f44336;
-    position: absolute;
+    width: 75.5px;
+    height: 75.5px;
     z-index: 4;
     -webkit-transform: rotate(45deg);
         -ms-transform: rotate(45deg);
             transform: rotate(45deg);
+    overflow: hidden;
     border: 10px solid #fff;
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 2.5px 2.5px 10px 0 rgba(0, 0, 0, 0.1);
     margin-top: -38px; }
     .section-decoration-icon {
+      background-color: #f44336;
       -webkit-transform: translate(9px, 9px) rotate(-45deg);
           -ms-transform: translate(9px, 9px) rotate(-45deg);
-              transform: translate(9px, 9px) rotate(-45deg); }
+              transform: translate(9px, 9px) rotate(-45deg);
+      box-shadow: 0 0 0 25px #f44336; }
   .section-header {
-    padding: 165px 0 65px; }
+    padding: 115px 0 65px; }
     .section-header-description {
       font-size: 1.05em;
       text-align: center;
