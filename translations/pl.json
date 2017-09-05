@@ -59,6 +59,15 @@
 
     },
     "mainFooter": {
-
+        "recommendedProjects": {
+            "h3": "Polecane projekty"
+        },
+        "recentChanges": {
+            "h3": "Ostatnie zmiany"
+        },
+        "findMe": {
+            "h3": "Znajdź mnie"
+        },
+        "copyright": "2015 - 2017 Mateusz Archiciński - Wszelkie prawa zastrzeżone"
     }
 }

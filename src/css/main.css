@@ -1763,18 +1763,16 @@ html {
     width: 75.5px;
     height: 75.5px;
     z-index: 4;
-    -webkit-transform: rotate(45deg);
-        -ms-transform: rotate(45deg);
-            transform: rotate(45deg);
+    -webkit-transform: perspective(99px) translateZ(1px) rotate(45deg);
+            transform: perspective(99px) translateZ(1px) rotate(45deg);
     overflow: hidden;
     border: 10px solid #fff;
     box-shadow: 2.5px 2.5px 10px 0 rgba(0, 0, 0, 0.1);
     margin-top: -38px; }
     .section-decoration-icon {
       background-color: #f44336;
-      -webkit-transform: translate(9px, 9px) rotate(-45deg);
-          -ms-transform: translate(9px, 9px) rotate(-45deg);
-              transform: translate(9px, 9px) rotate(-45deg);
+      -webkit-transform: perspective(99px) translate3d(9px, 9px, 1px) rotate(-45deg);
+              transform: perspective(99px) translate3d(9px, 9px, 1px) rotate(-45deg);
       box-shadow: 0 0 0 25px #f44336; }
   .section-header {
     padding: 115px 0 65px; }
@@ -1807,10 +1805,11 @@ html {
   z-index: 2; }
 
 .home-wrapper, .home-row {
-  height: calc(100vh + 200px); }
+  height: calc(100vh + 64px); }
 
 .home-header {
-  margin-bottom: 100px; }
+  padding: 175px 0 65px;
+  margin-bottom: 25px; }
   .home-header-buttons {
     text-align: center;
     margin-top: 38px; }
@@ -1834,6 +1833,10 @@ html {
     width: 30.80872%;
     height: 1px;
     background-color: #212121; }
+    .heading-separator__line-reduced-2 {
+      width: 15%; }
+    .heading-separator__line-bolded-3 {
+      height: 3px; }
     .heading-separator__line.black {
       background-color: #000; }
     .heading-separator__line.white {
@@ -1886,8 +1889,33 @@ body {
 .main-footer {
   background-color: #212121;
   position: relative;
-  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.8);
-  color: #fff; }
+  padding: 35px 0 25px;
+  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.8); }
+  .main-footer__heading {
+    font-family: "Raleway";
+    font-size: 1.05em;
+    font-weight: 800; }
+  .main-footer__list {
+    list-style: none;
+    padding: 0 0 25px 65px; }
+    .main-footer__list > li {
+      overflow-wrap: break-word; }
+  .main-footer__copyright {
+    position: relative;
+    padding-top: 25px; }
+    .main-footer__copyright::after {
+      content: '';
+      width: 45%;
+      height: 1px;
+      background-color: rgba(255, 255, 255, 0.1);
+      position: absolute;
+      left: 27.5%;
+      top: 0; }
+  .main-footer__heading, .main-footer__list, .main-footer__copyright {
+    color: #fff; }
+  .main-footer__heading, .main-footer__copyright {
+    text-align: center;
+    margin: 0; }
 
 .clearfix::before, .clearfix::after {
   content: "";

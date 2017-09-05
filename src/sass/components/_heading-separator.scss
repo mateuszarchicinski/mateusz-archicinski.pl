@@ -29,6 +29,12 @@ $heading-separator__square-primary__background-color: $primary-color !default;
         width: 30.80872%;
         height: 1px;
         background-color: $heading-separator__line__background-color;
+        &-reduced-2 {
+            width: 15%;
+        }
+        &-bolded-3 {
+            height: 3px;
+        }
         &.black {
             background-color: $heading-separator__line-black__background-color;
         }

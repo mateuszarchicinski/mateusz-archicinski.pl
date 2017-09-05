@@ -24,14 +24,14 @@ $section-header-description__font-size: 1.05em !default;
         width: 75.5px;
         height: 75.5px;
         z-index: 4;
-        transform: rotate(45deg);
+        transform: perspective(99px) translateZ(1px) rotate(45deg);
         overflow: hidden;
         border: $section-decoration__border;
         box-shadow: $section-decoration__box-shadow;
         margin-top: -38px;
         &-icon {
             background-color: $section-decoration-icon__background-color;
-            transform: translate(9px, 9px) rotate(-45deg);
+            transform: perspective(99px) translate3d(9px, 9px, 1px) rotate(-45deg);
             box-shadow: $section-decoration-icon__box-shadow;
         }
     }

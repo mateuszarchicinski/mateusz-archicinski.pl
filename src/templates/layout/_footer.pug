@@ -4,13 +4,32 @@
 footer.main-footer
     .container
         .row
-            .col-3
-                h3 Polecane projekty
-            .col-3
-                h3 Ostatnie modyfikacje
-            .col-3
-                h3 Przydatne linki
+            .col-4
+                h3.main-footer__heading= data.mainFooter.recommendedProjects.h3
+                .heading-separator
+                    .heading-separator__line.heading-separator__line-reduced-2.heading-separator__line-bolded-3.accent
+                ul.main-footer__list
+                    li 1
+                    li 2
+                    li 3
+            .col-4
+                h3.main-footer__heading= data.mainFooter.recentChanges.h3
+                .heading-separator
+                    .heading-separator__line.heading-separator__line-reduced-2.heading-separator__line-bolded-3.accent
+                ul.main-footer__list
+                    li 1
+                    li 2
+                    li 3
+            .col-4
+                h3.main-footer__heading= data.mainFooter.findMe.h3
+                .heading-separator
+                    .heading-separator__line.heading-separator__line-reduced-2.heading-separator__line-bolded-3.accent
+                ul.main-footer__list
+                    li
+                        a(href="#") 1
+                    li 2
+                    li 3
             .col-12
-                p
-                    small Copyright 2015 - 2016 Mateusz Archiciński © All rights reserved
+                p.main-footer__copyright
+                    small &#169; #{data.mainFooter.copyright}
                         

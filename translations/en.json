@@ -59,6 +59,15 @@
 
     },
     "mainFooter": {
-
+        "recommendedProjects": {
+            "h3": "Recommended projects"
+        },
+        "recentChanges": {
+            "h3": "Recent changes"
+        },
+        "findMe": {
+            "h3": "Find me"
+        },
+        "copyright": "2015 - 2017 Mateusz Archiciński - All rights reserved"
     }
 }

@@ -37,10 +37,11 @@ $home-wrapper__after__background-image: linear-gradient(to top, $color__black-2 
     }
     &-wrapper,
     &-row {
-        height: calc(100vh + 200px);
+        height: calc(100vh + 64px);
     }
     &-header {
-        margin-bottom: 100px;
+        padding: 175px 0 65px;
+        margin-bottom: 25px;
         &-buttons {
             text-align: center;
             margin-top: 38px;
