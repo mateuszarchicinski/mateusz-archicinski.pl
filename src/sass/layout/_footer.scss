@@ -11,7 +11,11 @@ $main-footer__heading__font-family: $font__raleway !default;
 $main-footer__heading__font-size: 1.05em !default;
 $main-footer__heading__font-weight: $font-weight__bolder-8 !default;
 // .main-footer__copyright::after
-$main-footer__copyright__after__background-color: rgba($color__white, 0.1);
+// sass-lint:disable no-color-literals
+$main-footer__copyright__after__background-image: radial-gradient(ellipse at center, rgba($color__white, 0.1) 0, rgba($color__black-1, 0) 100%) !default;
+// sass-lint:enable no-color-literals
+// .main-footer__link:hover
+$main-footer__link__hover__color: $tertiary-text-color !default;
 // .main-footer__heading .main-footer__list .main-footer__copyright
 $main-footer__heading-list-copyright__color: $color__white !default;
 
@@ -19,7 +23,7 @@ $main-footer__heading-list-copyright__color: $color__white !default;
 .main-footer {
     background-color: $main-footer__background-color;
     position: relative;
-    padding: 35px 0 25px;
+    padding: 35px 0 30px;
     box-shadow: $main-footer__box-shadow;
     &__heading {
         font-family: $main-footer__heading__font-family;
@@ -29,20 +33,27 @@ $main-footer__heading-list-copyright__color: $color__white !default;
     &__list {
         list-style: none;
         padding: 0 0 25px 65px;
-        & > li {
+        &>li {
             overflow-wrap: break-word;
+        }
+    }
+    &__link {
+        transition: 0.3s color ease-in-out;
+        &:hover {
+            color: $main-footer__link__hover__color;
         }
     }
     &__copyright {
         position: relative;
-        padding-top: 25px;
+        padding-top: 28px;
         &::after {
             content: '';
-            width: 45%;
-            height: 1px;
-            background-color: $main-footer__copyright__after__background-color;
+            width: 40%;
+            height: 3px;
+            background-image: $main-footer__copyright__after__background-image;
             position: absolute;
-            left: 27.5%;
+            display: block;
+            left: 30%;
             top: 0;
         }
     }
