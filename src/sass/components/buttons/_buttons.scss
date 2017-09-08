@@ -45,6 +45,7 @@ $btn-primary_btn-accent__hover__color: $color__white !default;
     background-color: $btn__background-color;
     position: relative;
     display: inline-block;
+    z-index: 1;
     overflow: hidden;
     font-size: $btn__font-size;
     font-weight: $btn__font-weight;
@@ -54,64 +55,79 @@ $btn-primary_btn-accent__hover__color: $color__white !default;
     color: $btn__color;
     padding: 16.5px 20px;
     border: $btn__border;
-    transition: 0.15s color linear;
+    transition: 0.15s color ease-in-out;
+    &-square,
     &-round {
-        padding: 16.5px;
+        width: 54px;
+        height: 54px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+    }
+    &-round {
         border-radius: 50%;
     }
+    &,
     &.to-left {
         &::after {
-            width: 0;
-            height: 100%;
-            left: auto;
-            right: 0;
+            left: 100%;
+            top: 0;
+        }
+        &:hover {
+            &::after {
+                transform: translate3d(-100%, 0, 1px);
+            }
         }
     }
     &.to-right {
         &::after {
-            width: 0;
-            height: 100%;
+            left: -100%;
+        }
+        &:hover {
+            &::after {
+                transform: translate3d(100%, 0, 1px);
+            }
         }
     }
     &.to-top {
         &::after {
-            width: 100%;
-            height: 0;
-            top: auto;
-            bottom: 0;
+            top: 100%;
+        }
+        &:hover {
+            &::after {
+                transform: translate3d(0, -100%, 1px);
+            }
         }
     }
     &.to-bottom {
         &::after {
-            width: 100%;
-            height: 0;
+            top: -100%;
+        }
+        &:hover {
+            &::after {
+                transform: translate3d(0, 100%, 1px);
+            }
         }
     }
     &.to-top,
     &.to-bottom {
-        &:hover {
-            &::after {
-                height: 100%;
-            }
+        &::after {
+            left: 0;
         }
     }
     &::after {
         content: "";
-        width: 0;
+        width: 100%;
         height: 100%;
         position: absolute;
         display: block;
         z-index: -1;
-        left: 0;
-        top: 0;
-        transition: 0.2s width ease-in-out,
-                    0.2s height ease-in-out,
-                    0.3s background-color ease-in-out;
+        transition: 0.2s transform ease-in-out, 0.3s background-color ease-in-out;
     }
     &:hover {
         color: $btn__hover__color;
         &::after {
-            width: 100%;
             background-color: $btn__hover__after__background-color;
         }
     }
@@ -157,16 +173,6 @@ $btn-primary_btn-accent__hover__color: $color__white !default;
     &-accent {
         &:hover {
             color: $btn-primary_btn-accent__hover__color;
-        }
-    }
-    &-arrow-down {
-        width: 48px;
-        height: 48px;
-        background-image: url(../images/icons/arrow_down_white.png);
-        background-position: -1px 1px;
-        transition: 0.15s background-image linear;
-        &:hover {
-            background-image: url(../images/icons/arrow_down_black.png);
         }
     }
 }

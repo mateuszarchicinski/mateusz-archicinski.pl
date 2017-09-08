@@ -4,29 +4,82 @@
 
 
 .icon {
-    display: inline-block;
-    width: 36px;
-    height: 36px;
-    &-person {
-        @include sprite-image($person_white);
-        @include sprite-position($person_white);
+    &::before {
+        display: inline-block;
+        font-family: "Fontello";
+        font-size: 16px;
+        font-style: normal;
+        font-variant: normal;
+        font-weight: normal;
+        text-decoration: inherit;
+        text-transform: none;
+        speak: none;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
     }
-    &-build {
-        @include sprite-image($build_white);
-        @include sprite-position($build_white);
-    }
-    &-code {
-        @include sprite-image($code_white);
-        @include sprite-position($code_white);
-    }
-    &-call {
-        @include sprite-image($call_white);
-        @include sprite-position($call_white);
-    }
-    &-arrow {
-        &-up {
-            @include sprite-image($arrow-up-white);
-            @include sprite-position($arrow-up-white);
+    &-125 {
+        &::before {
+            font-size: 20px;
         }
+    }
+    &-cancel:before {
+        content: '\e800';
+    }
+    &-wrench:before {
+        content: '\e801';
+    }
+    &-phone:before {
+        content: '\e802';
+    }
+    &-user:before {
+        content: '\e803';
+    }
+    &-star:before {
+        content: '\e804';
+    }
+    &-down-open-1:before {
+        content: '\e805';
+    }
+    &-up-open-1:before {
+        content: '\e806';
+    }
+    &-left-open:before {
+        content: '\e807';
+    }
+    &-right-open:before {
+        content: '\e808';
+    }
+    &-briefcase:before {
+        content: '\e809';
+    }
+    &-twitter:before {
+        content: '\f099';
+    }
+    &-facebook:before {
+        content: '\f09a';
+    }
+    &-gplus:before {
+        content: '\f0d5';
+    }
+    &-linkedin:before {
+        content: '\f0e1';
+    }
+    &-lightbulb:before {
+        content: '\f0eb';
+    }
+    &-desktop:before {
+        content: '\f108';
+    }
+    &-laptop:before {
+        content: '\f109';
+    }
+    &-github:before {
+        content: '\f113';
+    }
+    &-code:before {
+        content: '\f121';
+    }
+    &-codeopen:before {
+        content: '\f1cb';
     }
 }

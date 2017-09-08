@@ -33,15 +33,32 @@ $main-footer__heading-list-copyright__color: $color__white !default;
     &__list {
         list-style: none;
         padding: 0 0 25px 65px;
-        &>li {
+        & > li {
             overflow-wrap: break-word;
         }
     }
     &__link {
+        text-decoration: none;
+        color: inherit;
         transition: 0.3s color ease-in-out;
         &:hover {
             color: $main-footer__link__hover__color;
         }
+    }
+    &__findme {
+        display: flex;
+        flex-direction: column;
+        &-body {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-bottom: 25px;
+            & > .btn:nth-child(n+2) {
+                margin-left: 15px;
+            }
+        }
+        
     }
     &__copyright {
         position: relative;

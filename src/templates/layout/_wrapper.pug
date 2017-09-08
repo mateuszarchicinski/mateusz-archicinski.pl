@@ -15,12 +15,13 @@ main.main-wrapper
                     .home-header-buttons
                         a(href="#aboutMe" class="btn to-top btn-accent")= data.mainWrapper.homeWrapper.buttons.aboutMe
                         a(href="#services" class="btn to-top btn-primary-dark")= data.mainWrapper.homeWrapper.buttons.services
-                a(href="#about-me" aria-label=data.mainWrapper.homeWrapper.buttons.arrowBtnAriaLabel class="btn btn-round to-top btn-arrow-down")
+                a(href="#about-me" aria-label=data.mainWrapper.homeWrapper.buttons.arrowBtnAriaLabel class="btn btn-round to-top")
+                    span(aria-hidden="true" class="icon icon-125 icon-down-open-1")
     section(id="about-me" class="section about-me-wrapper")
         .container
             .row.no-gutters.flex-column.align-items-center
                 .section-decoration
-                    span.icon.icon-person.section-decoration-icon
+                    span.icon.icon-user.section-decoration-icon
                 header.section-header
                     h2.secondary-heading= data.mainWrapper.aboutMeWrapper.header.h2
                     .heading-separator
@@ -32,7 +33,7 @@ main.main-wrapper
         .container
             .row.no-gutters.flex-column.align-items-center
                 .section-decoration
-                    span.icon.icon-build.section-decoration-icon
+                    span.icon.icon-wrench.section-decoration-icon
                 header.section-header
                     h2.secondary-heading= data.mainWrapper.servicesWrapper.header.h2
                     .heading-separator
@@ -56,7 +57,7 @@ main.main-wrapper
         .container
             .row.no-gutters.flex-column.align-items-center
                 .section-decoration
-                    span.icon.icon-call.section-decoration-icon
+                    span.icon.icon-phone.section-decoration-icon
                 header.section-header
                     h2.secondary-heading= data.mainWrapper.contactWrapper.header.h2
                     .heading-separator

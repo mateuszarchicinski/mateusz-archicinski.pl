@@ -3,7 +3,7 @@
 //~~~~~~~~~~~~~~~~~~~~~~~~~~//
 
 
-//* FONTS: Raleway & Source Sans Pro *//
+//* FONTS: Raleway & Source Sans Pro & Fontello *//
 @include font-face("Raleway", "../fonts/Raleway/Raleway-Thin", normal, 100, ttf);
 @include font-face("Raleway", "../fonts/Raleway/Raleway-ThinItalic", italic, 100, ttf);
 @include font-face("Raleway", "../fonts/Raleway/Raleway-ExtraLight", normal, 200, ttf);
@@ -34,6 +34,7 @@
 @include font-face("Source Sans Pro", "../fonts/Source_Sans_Pro/SourceSansPro-BoldItalic", italic, 700, ttf);
 @include font-face("Source Sans Pro", "../fonts/Source_Sans_Pro/SourceSansPro-Black", normal, 900, ttf);
 @include font-face("Source Sans Pro", "../fonts/Source_Sans_Pro/SourceSansPro-BlackItalic", italic, 900, ttf);
+@include font-face("Fontello", "../fonts/Fontello/Fontello", normal, normal, ttf);
 
 
 //* HEADINGS *//
