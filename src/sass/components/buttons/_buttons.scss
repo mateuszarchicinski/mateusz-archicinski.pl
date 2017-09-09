@@ -37,6 +37,42 @@ $btn-accent__border-color: $accent-color !default;
 // .btn-accent:hover::after
 $btn-accent__hover__after__background-color: $accent-color !default;
 
+// .btn-codepen
+$btn-codepen__background-color: rgba($color__codepen, 0.1) !default;
+$btn-codepen__border-color: $color__codepen !default;
+// .btn-codepen:hover::after
+$btn-codepen__hover__after__background-color: $color__codepen !default;
+
+// .btn-facebook
+$btn-facebook__background-color: rgba($color__facebook, 0.1) !default;
+$btn-facebook__border-color: $color__facebook !default;
+// .btn-facebook:hover::after
+$btn-facebook__hover__after__background-color: $color__facebook !default;
+
+// .btn-github
+$btn-github__background-color: rgba($color__github, 0.1) !default;
+$btn-github__border-color: $color__github !default;
+// .btn-github:hover::after
+$btn-github__hover__after__background-color: $color__github !default;
+
+// .btn-gplus
+$btn-gplus__background-color: rgba($color__gplus, 0.1) !default;
+$btn-gplus__border-color: $color__gplus !default;
+// .btn-gplus:hover::after
+$btn-gplus__hover__after__background-color: $color__gplus !default;
+
+// .btn-linkedin
+$btn-linkedin__background-color: rgba($color__linkedin, 0.1) !default;
+$btn-linkedin__border-color: $color__linkedin !default;
+// .btn-linkedin:hover::after
+$btn-linkedin__hover__after__background-color: $color__linkedin !default;
+
+// .btn-twitter
+$btn-twitter__background-color: rgba($color__twitter, 0.1) !default;
+$btn-twitter__border-color: $color__twitter !default;
+// .btn-twitter:hover::after
+$btn-twitter__hover__after__background-color: $color__twitter !default;
+
 // .btn-primary~ & .btn-accent
 $btn-primary_btn-accent__hover__color: $color__white !default;
 
@@ -167,10 +203,70 @@ $btn-primary_btn-accent__hover__color: $color__white !default;
             }
         }
     }
+    &-codepen {
+        background-color: $btn-codepen__background-color;
+        border-color: $btn-codepen__border-color;
+        &:hover {
+            &::after {
+                background-color: $btn-codepen__hover__after__background-color;
+            }
+        }
+    }
+    &-facebook {
+        background-color: $btn-facebook__background-color;
+        border-color: $btn-facebook__border-color;
+        &:hover {
+            &::after {
+                background-color: $btn-facebook__hover__after__background-color;
+            }
+        }
+    }
+    &-github {
+        background-color: $btn-github__background-color;
+        border-color: $btn-github__border-color;
+        &:hover {
+            &::after {
+                background-color: $btn-github__hover__after__background-color;
+            }
+        }
+    }
+    &-gplus {
+        background-color: $btn-gplus__background-color;
+        border-color: $btn-gplus__border-color;
+        &:hover {
+            &::after {
+                background-color: $btn-gplus__hover__after__background-color;
+            }
+        }
+    }
+    &-linkedin {
+        background-color: $btn-linkedin__background-color;
+        border-color: $btn-linkedin__border-color;
+        &:hover {
+            &::after {
+                background-color: $btn-linkedin__hover__after__background-color;
+            }
+        }
+    }
+    &-twitter {
+        background-color: $btn-twitter__background-color;
+        border-color: $btn-twitter__border-color;
+        &:hover {
+            &::after {
+                background-color: $btn-twitter__hover__after__background-color;
+            }
+        }
+    }
     &-primary,
     &-primary-dark,
     &-primary-light,
-    &-accent {
+    &-accent,
+    &-codepen,
+    &-facebook,
+    &-github,
+    &-gplus,
+    &-linkedin,
+    &-twitter {
         &:hover {
             color: $btn-primary_btn-accent__hover__color;
         }

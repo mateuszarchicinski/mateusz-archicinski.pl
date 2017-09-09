@@ -22,64 +22,64 @@
             font-size: 20px;
         }
     }
-    &-cancel:before {
-        content: '\e800';
-    }
-    &-wrench:before {
-        content: '\e801';
-    }
-    &-phone:before {
-        content: '\e802';
-    }
-    &-user:before {
-        content: '\e803';
-    }
-    &-star:before {
-        content: '\e804';
-    }
-    &-down-open-1:before {
-        content: '\e805';
-    }
-    &-up-open-1:before {
-        content: '\e806';
-    }
-    &-left-open:before {
-        content: '\e807';
-    }
-    &-right-open:before {
-        content: '\e808';
-    }
     &-briefcase:before {
         content: '\e809';
     }
-    &-twitter:before {
-        content: '\f099';
-    }
-    &-facebook:before {
-        content: '\f09a';
-    }
-    &-gplus:before {
-        content: '\f0d5';
-    }
-    &-linkedin:before {
-        content: '\f0e1';
-    }
-    &-lightbulb:before {
-        content: '\f0eb';
-    }
-    &-desktop:before {
-        content: '\f108';
-    }
-    &-laptop:before {
-        content: '\f109';
-    }
-    &-github:before {
-        content: '\f113';
+    &-cancel:before {
+        content: '\e800';
     }
     &-code:before {
         content: '\f121';
     }
-    &-codeopen:before {
+    &-codepen:before {
         content: '\f1cb';
+    }
+    &-desktop:before {
+        content: '\f108';
+    }
+    &-down-open-1:before {
+        content: '\e805';
+    }
+    &-facebook:before {
+        content: '\f09a';
+    }
+    &-github:before {
+        content: '\f113';
+    }
+    &-gplus:before {
+        content: '\f0d5';
+    }
+    &-laptop:before {
+        content: '\f109';
+    }
+    &-left-open:before {
+        content: '\e807';
+    }
+    &-lightbulb:before {
+        content: '\f0eb';
+    }
+    &-linkedin:before {
+        content: '\f0e1';
+    }
+    &-phone:before {
+        content: '\e802';
+    }
+    &-right-open:before {
+        content: '\e808';
+    }
+    &-star:before {
+        content: '\e804';
+    }
+    &-twitter:before {
+        content: '\f099';
+    }
+    &-up-open-1:before {
+        content: '\e806';
+    }
+    &-user:before {
+        content: '\e803';
+    }
+    &-wrench:before {
+        content: '\e801';
     }
 }

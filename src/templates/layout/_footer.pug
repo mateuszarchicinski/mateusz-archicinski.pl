@@ -5,10 +5,14 @@ footer.main-footer
     .container
         .row
             .col-4
-                h3.main-footer__heading= data.mainFooter.recommendedProjects.h3
+                h3.heading.heading-5.white.text-center= data.mainFooter.recommendedProjects.h3
                 .heading-separator
                     .heading-separator__line.heading-separator__line-reduced-2.heading-separator__line-bolded-3.accent
                 ul.main-footer__list
+                    li
+                        a(href="#" class="main-footer__link") 123
+                    li
+                        a(href="#" class="main-footer__link") 123
                     li
                         a(href="#" class="main-footer__link") 123
                     li
@@ -16,7 +20,7 @@ footer.main-footer
                     li
                         a(href="#" class="main-footer__link") 123
             .col-4
-                h3.main-footer__heading= data.mainFooter.recentChanges.h3
+                h3.heading.heading-5.white.text-center= data.mainFooter.recentChanges.h3
                 .heading-separator
                     .heading-separator__line.heading-separator__line-reduced-2.heading-separator__line-bolded-3.accent
                 ul.main-footer__list
@@ -26,14 +30,27 @@ footer.main-footer
                         a(href="#" class="main-footer__link") 123
                     li
                         a(href="#" class="main-footer__link") 123
+                    li
+                        a(href="#" class="main-footer__link") 123
+                    li
+                        a(href="#" class="main-footer__link") 123
             .col-4.main-footer__findme
-                h3.main-footer__heading= data.mainFooter.findMe.h3
+                h3.heading.heading-5.white.text-center= data.mainFooter.findMe.h3
                 .heading-separator
                     .heading-separator__line.heading-separator__line-reduced-2.heading-separator__line-bolded-3.accent
                 .main-footer__findme-body
-                    a.btn.btn-square.to-top
-                    a.btn.btn-square.to-top
+                    a.btn.btn-square.to-top.btn-codepen
+                        span.icon.icon-codepen
+                    a.btn.btn-square.to-top.btn-facebook
+                        span.icon.icon-facebook
+                    a.btn.btn-square.to-top.btn-github
+                        span.icon.icon-github
+                    a.btn.btn-square.to-top.btn-gplus
+                        span.icon.icon-gplus
+                    a.btn.btn-square.to-top.btn-linkedin
+                        span.icon.icon-linkedin
+                    a.btn.btn-square.to-top.btn-twitter
+                        span.icon.icon-twitter
             .col-12
                 p.main-footer__copyright
                     small &#169; #{data.mainFooter.copyright}
-                        

@@ -184,38 +184,28 @@
   font-weight: normal;
   src: url("../fonts/Fontello/Fontello.ttf") format("truetype"); }
 
-.primary-heading {
-  font-size: 4.75em;
-  font-weight: 900; }
-
-.secondary-heading {
-  font-size: 3em;
-  font-weight: 800; }
-  .secondary-heading:first-letter {
+.heading {
+  font-family: "Raleway";
+  margin: 0; }
+  .heading.white {
+    color: #fff; }
+  .heading-unique-1:first-letter {
     line-height: 0;
     font-size: 3em;
     color: #f44336; }
-
-.tertiary-heading {
-  font-size: 1.55em;
-  font-weight: 400;
-  letter-spacing: 10px; }
-
-.primary-heading,
-.secondary-heading,
-.tertiary-heading {
-  text-align: center; }
-
-.primary-heading,
-.tertiary-heading {
-  color: #fff; }
-
-.primary-heading,
-.secondary-heading,
-.tertiary-heading,
-.quaternary-heading {
-  font-family: "Raleway";
-  margin: 0; }
+  .heading-1 {
+    font-size: 4.75em;
+    font-weight: 900; }
+  .heading-2 {
+    font-size: 3em; }
+  .heading-3 {
+    font-size: 1.55em;
+    font-weight: 400;
+    letter-spacing: 10px; }
+  .heading-5 {
+    font-size: 1.05em; }
+  .heading-2, .heading-5 {
+    font-weight: 800; }
 
 .text-small {
   font-size: 0.85em; }
@@ -1685,7 +1675,37 @@ html {
     border-color: #1565c0; }
     .btn-accent:hover::after {
       background-color: #1565c0; }
-  .btn-primary:hover, .btn-primary-dark:hover, .btn-primary-light:hover, .btn-accent:hover {
+  .btn-codepen {
+    background-color: rgba(255, 107, 107, 0.1);
+    border-color: #ff6b6b; }
+    .btn-codepen:hover::after {
+      background-color: #ff6b6b; }
+  .btn-facebook {
+    background-color: rgba(59, 89, 152, 0.1);
+    border-color: #3b5998; }
+    .btn-facebook:hover::after {
+      background-color: #3b5998; }
+  .btn-github {
+    background-color: rgba(97, 67, 129, 0.1);
+    border-color: #614381; }
+    .btn-github:hover::after {
+      background-color: #614381; }
+  .btn-gplus {
+    background-color: rgba(221, 75, 57, 0.1);
+    border-color: #dd4b39; }
+    .btn-gplus:hover::after {
+      background-color: #dd4b39; }
+  .btn-linkedin {
+    background-color: rgba(0, 119, 181, 0.1);
+    border-color: #0077b5; }
+    .btn-linkedin:hover::after {
+      background-color: #0077b5; }
+  .btn-twitter {
+    background-color: rgba(0, 172, 237, 0.1);
+    border-color: #00aced; }
+    .btn-twitter:hover::after {
+      background-color: #00aced; }
+  .btn-primary:hover, .btn-primary-dark:hover, .btn-primary-light:hover, .btn-accent:hover, .btn-codepen:hover, .btn-facebook:hover, .btn-github:hover, .btn-gplus:hover, .btn-linkedin:hover, .btn-twitter:hover {
     color: #fff; }
 
 .icon::before {
@@ -1704,65 +1724,65 @@ html {
 .icon-125::before {
   font-size: 20px; }
 
-.icon-cancel:before {
-  content: '\e800'; }
-
-.icon-wrench:before {
-  content: '\e801'; }
-
-.icon-phone:before {
-  content: '\e802'; }
-
-.icon-user:before {
-  content: '\e803'; }
-
-.icon-star:before {
-  content: '\e804'; }
-
-.icon-down-open-1:before {
-  content: '\e805'; }
-
-.icon-up-open-1:before {
-  content: '\e806'; }
-
-.icon-left-open:before {
-  content: '\e807'; }
-
-.icon-right-open:before {
-  content: '\e808'; }
-
 .icon-briefcase:before {
   content: '\e809'; }
 
-.icon-twitter:before {
-  content: '\f099'; }
-
-.icon-facebook:before {
-  content: '\f09a'; }
-
-.icon-gplus:before {
-  content: '\f0d5'; }
-
-.icon-linkedin:before {
-  content: '\f0e1'; }
-
-.icon-lightbulb:before {
-  content: '\f0eb'; }
-
-.icon-desktop:before {
-  content: '\f108'; }
-
-.icon-laptop:before {
-  content: '\f109'; }
-
-.icon-github:before {
-  content: '\f113'; }
+.icon-cancel:before {
+  content: '\e800'; }
 
 .icon-code:before {
   content: '\f121'; }
 
-.icon-codeopen:before {
+.icon-codepen:before {
   content: '\f1cb'; }
+
+.icon-desktop:before {
+  content: '\f108'; }
+
+.icon-down-open-1:before {
+  content: '\e805'; }
+
+.icon-facebook:before {
+  content: '\f09a'; }
+
+.icon-github:before {
+  content: '\f113'; }
+
+.icon-gplus:before {
+  content: '\f0d5'; }
+
+.icon-laptop:before {
+  content: '\f109'; }
+
+.icon-left-open:before {
+  content: '\e807'; }
+
+.icon-lightbulb:before {
+  content: '\f0eb'; }
+
+.icon-linkedin:before {
+  content: '\f0e1'; }
+
+.icon-phone:before {
+  content: '\e802'; }
+
+.icon-right-open:before {
+  content: '\e808'; }
+
+.icon-star:before {
+  content: '\e804'; }
+
+.icon-twitter:before {
+  content: '\f099'; }
+
+.icon-up-open-1:before {
+  content: '\e806'; }
+
+.icon-user:before {
+  content: '\e803'; }
+
+.icon-wrench:before {
+  content: '\e801'; }
 
 a.link {
   transition: 0.25s color ease-in-out; }
@@ -1982,10 +2002,6 @@ body {
   position: relative;
   padding: 35px 0 30px;
   box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.8); }
-  .main-footer__heading {
-    font-family: "Raleway";
-    font-size: 1.05em;
-    font-weight: 800; }
   .main-footer__list {
     list-style: none;
     padding: 0 0 25px 65px; }
@@ -2005,12 +2021,18 @@ body {
         -ms-flex-direction: column;
             flex-direction: column; }
     .main-footer__findme-body {
-      -webkit-flex: 1;
-          -ms-flex: 1;
-              flex: 1;
       display: -webkit-flex;
       display: -ms-flexbox;
       display: flex;
+      -webkit-flex: 1;
+          -ms-flex: 1;
+              flex: 1;
+      -webkit-flex-wrap: wrap;
+          -ms-flex-wrap: wrap;
+              flex-wrap: wrap;
+      -webkit-align-content: center;
+          -ms-flex-line-pack: center;
+              align-content: center;
       -webkit-align-items: center;
           -ms-flex-align: center;
               align-items: center;
@@ -2018,13 +2040,16 @@ body {
           -ms-flex-pack: center;
               justify-content: center;
       padding-bottom: 25px; }
-      .main-footer__findme-body > .btn:nth-child(n+2) {
-        margin-left: 15px; }
+      .main-footer__findme-body > .btn {
+        width: 48px;
+        height: 48px;
+        margin: 5px; }
   .main-footer__copyright {
     position: relative;
+    text-align: center;
     padding-top: 28px; }
     .main-footer__copyright::after {
-      content: '';
+      content: "";
       width: 40%;
       height: 3px;
       background-image: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.1) 0, transparent 100%);
@@ -2032,10 +2057,8 @@ body {
       display: block;
       left: 30%;
       top: 0; }
-  .main-footer__heading, .main-footer__list, .main-footer__copyright {
-    color: #fff; }
-  .main-footer__heading, .main-footer__copyright {
-    text-align: center;
+  .main-footer__list, .main-footer__copyright {
+    color: #fff;
     margin: 0; }
 
 .clearfix::before, .clearfix::after {

@@ -2,69 +2,8 @@
     Main Wrapper
 
 main.main-wrapper
-    section(id="home" class="section home-wrapper")
-        .container
-            .row.no-gutters.flex-column.align-items-center.justify-content-center.home-row
-                header.home-header
-                    h2.primary-heading= data.mainWrapper.homeWrapper.h2
-                    .heading-separator
-                        .heading-separator__line.primary
-                        .heading-separator__square.medium
-                        .heading-separator__line.accent
-                    h3.tertiary-heading= data.mainWrapper.homeWrapper.h3
-                    .home-header-buttons
-                        a(href="#aboutMe" class="btn to-top btn-accent")= data.mainWrapper.homeWrapper.buttons.aboutMe
-                        a(href="#services" class="btn to-top btn-primary-dark")= data.mainWrapper.homeWrapper.buttons.services
-                a(href="#about-me" aria-label=data.mainWrapper.homeWrapper.buttons.arrowBtnAriaLabel class="btn btn-round to-top")
-                    span(aria-hidden="true" class="icon icon-125 icon-down-open-1")
-    section(id="about-me" class="section about-me-wrapper")
-        .container
-            .row.no-gutters.flex-column.align-items-center
-                .section-decoration
-                    span.icon.icon-user.section-decoration-icon
-                header.section-header
-                    h2.secondary-heading= data.mainWrapper.aboutMeWrapper.header.h2
-                    .heading-separator
-                        .heading-separator__line
-                        .heading-separator__square.primary
-                        .heading-separator__line
-                    p.section-header-description= data.mainWrapper.aboutMeWrapper.header.p
-    section(id="services" class="section services-wrapper")
-        .container
-            .row.no-gutters.flex-column.align-items-center
-                .section-decoration
-                    span.icon.icon-wrench.section-decoration-icon
-                header.section-header
-                    h2.secondary-heading= data.mainWrapper.servicesWrapper.header.h2
-                    .heading-separator
-                        .heading-separator__line
-                        .heading-separator__square.primary
-                        .heading-separator__line
-                    p.section-header-description= data.mainWrapper.servicesWrapper.header.p
-    section(id="portfolio" class="section portfolio-wrapper")
-        .container
-            .row.no-gutters.flex-column.align-items-center
-                .section-decoration
-                    span.icon.icon-code.section-decoration-icon
-                header.section-header
-                    h2.secondary-heading= data.mainWrapper.portfolioWrapper.header.h2
-                    .heading-separator
-                        .heading-separator__line
-                        .heading-separator__square.primary
-                        .heading-separator__line
-                    p.section-header-description= data.mainWrapper.portfolioWrapper.header.p
-    section(id="contact" class="section contact-wrapper")
-        .container
-            .row.no-gutters.flex-column.align-items-center
-                .section-decoration
-                    span.icon.icon-phone.section-decoration-icon
-                header.section-header
-                    h2.secondary-heading= data.mainWrapper.contactWrapper.header.h2
-                    .heading-separator
-                        .heading-separator__line
-                        .heading-separator__square.primary
-                        .heading-separator__line
-                    p.section-header-description
-                        | #{data.mainWrapper.contactWrapper.header.p[0]} 
-                        br
-                        | #{data.mainWrapper.contactWrapper.header.p[1]}
+    include ../components/sections/_home
+    include ../components/sections/_about-me
+    include ../components/sections/_services
+    include ../components/sections/_portfolio
+    include ../components/sections/_contact

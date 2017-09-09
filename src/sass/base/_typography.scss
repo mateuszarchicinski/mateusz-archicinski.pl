@@ -38,63 +38,62 @@
 
 
 //* HEADINGS *//
-// .primary-heading
-$primary-heading__font-size: $base__font-size * 4.75 !default;
-$primary-heading__font-weight: $font-weight__bolder-9 !default;
-// .secondary-heading
-$secondary-heading__font-size: 3em !default;
-// .secondary-heading:first-letter
-$secondary-heading__first-letter__font-size: 3em !default;
-$secondary-heading__first-letter__color: $primary-color !default;
-// .tertiary-heading
-$tertiary-heading__font-size: $base__font-size * 1.55 !default;
-$tertiary-heading__font-weight: $font-weight__normal !default;
-// .primary-heading & .tertiary-heading
-$primary-tertiary-heading__color: $color__white !default;
+// .heading.white
+$heading__white__color: $color__white !default;
+// .heading.unique-1::first-letter
+$heading__unique-1__font-size: 3em !default;
+$heading__unique-1__color: $primary-color !default;
+// .heading-1
+$heading-1__font-size: $base__font-size * 4.75 !default;
+$heading-1__font-weight: $font-weight__bolder-9 !default;
+// .heading-2
+$heading-2__font-size: 3em !default;
+// .heading-3
+$heading-3__font-size: $base__font-size * 1.55 !default;
+$heading-3__font-weight: $font-weight__normal !default;
+// .heading-4
+
+// .heading-5
+$heading-5__font-size: 1.05em !default;
+// .heading-2 & .heading-5
+$heading-2-5__font-weight: $font-weight__bolder-8 !default;
 
 
-.primary-heading {
-    font-size: $primary-heading__font-size;
-    font-weight: $primary-heading__font-weight;
-}
-
-.secondary-heading {
-    font-size: $secondary-heading__font-size;
-    font-weight: 800;
-    &:first-letter {
-        line-height: 0;
-        font-size: $secondary-heading__first-letter__font-size;
-        color: $secondary-heading__first-letter__color;
-    }    
-}
-
-.tertiary-heading {
-    font-size: $tertiary-heading__font-size;
-    font-weight: $tertiary-heading__font-weight;
-    letter-spacing: 10px;
-}
-
-.quaternary-heading {
-    
-}
-
-.primary-heading,
-.secondary-heading,
-.tertiary-heading {
-    text-align: center;
-}
-
-.primary-heading,
-.tertiary-heading {
-    color: $primary-tertiary-heading__color;
-}
-
-.primary-heading,
-.secondary-heading,
-.tertiary-heading,
-.quaternary-heading {
+.heading {
     font-family: "Raleway";
     margin: 0;
+    &.white {
+        color: $heading__white__color;
+    }
+    &-unique-1 {
+        &:first-letter {
+            line-height: 0;
+            font-size: $heading__unique-1__font-size;
+            color: $heading__unique-1__color;
+        }
+    }
+    &-1 {
+        font-size: $heading-1__font-size;
+        font-weight: $heading-1__font-weight;
+    }
+    &-2 {
+        font-size: $heading-2__font-size;
+    }
+    &-3 {
+        font-size: $heading-3__font-size;
+        font-weight: $heading-3__font-weight;
+        letter-spacing: 10px;
+    }
+    &-4 {
+        
+    }
+    &-5 {
+        font-size: $heading-5__font-size;
+    }
+    &-2,
+    &-5 {
+        font-weight: $heading-2-5__font-weight;
+    }
 }
 
 
@@ -104,9 +103,9 @@ $text-normal__font-size: $base__font-size !default;
 // __small
 $text-small__font-size: $text-normal__font-size - 0.15 !default;
 // __medium
-$text-medium__font-size: $text-normal__font-size+0.15 !default;
+$text-medium__font-size: $text-normal__font-size + 0.15 !default;
 // __large
-$text-large__font-size: $text-medium__font-size+0.15 !default;
+$text-large__font-size: $text-medium__font-size + 0.15 !default;
 // -muted
 $text-muted__color: $secondary-text-color !default;
 // strong

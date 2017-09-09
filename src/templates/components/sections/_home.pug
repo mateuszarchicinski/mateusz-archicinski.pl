@@ -1,0 +1,18 @@
+//-
+    Home Wrapper
+
+section(id="home" class="section home-wrapper")
+    .container
+        .row.no-gutters.flex-column.align-items-center.justify-content-center.home-row
+            header.home-header
+                h2.heading.heading-1.white.text-center= data.mainWrapper.homeWrapper.h2
+                .heading-separator
+                    .heading-separator__line.primary
+                    .heading-separator__square.medium
+                    .heading-separator__line.accent
+                h3.heading.heading-3.white.text-center= data.mainWrapper.homeWrapper.h3
+                .home-header-buttons
+                    a(href="#aboutMe" class="btn to-top btn-accent")= data.mainWrapper.homeWrapper.buttons.aboutMe
+                    a(href="#services" class="btn to-top btn-primary-dark")= data.mainWrapper.homeWrapper.buttons.services
+            a(href="#about-me" aria-label=data.mainWrapper.homeWrapper.buttons.arrowBtnAriaLabel class="btn btn-round to-top")
+                span(aria-hidden="true" class="icon icon-125 icon-down-open-1")
