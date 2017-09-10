@@ -5,7 +5,7 @@
 
 // .language-settings::before
 $language-settings__before__border: 1px solid $accent-color !default;
-$language-settings__before__margin-top: ($site-nav__main-header__height - 20px)/2 !default;
+$language-settings__before__margin-top: ($site-nav__main-header__height - 20px) / 2 !default;
 
 
 .language-settings {
@@ -18,7 +18,7 @@ $language-settings__before__margin-top: ($site-nav__main-header__height - 20px)/
         display: block;
         padding-right: 15px;
         border-left: $language-settings__before__border;
-        margin-top: 22.5px;
+        margin-top: $language-settings__before__margin-top;
     }
     &__link {
         padding: 20px 5px;

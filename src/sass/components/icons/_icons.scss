@@ -3,13 +3,19 @@
 //~~~~~~~~~~~~~~~~~~~~~//
 
 
+// .icon
+$icon__font-family: "Fontello" !default;
+$icon__font-size: 16px !default;
+$icon__font-weight: normal !default;
+
+
 .icon {
     &::before {
         display: inline-block;
-        font-family: "Fontello";
-        font-size: 16px;
+        font-family: $icon__font-family;
+        font-size: $icon__font-size;
         font-style: normal;
-        font-variant: normal;
+        font-variant: $icon__font-weight;
         font-weight: normal;
         text-decoration: inherit;
         text-transform: none;

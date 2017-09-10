@@ -14,7 +14,6 @@ $heading-separator__line-primary__background-color: $primary-color !default;
 // .heading-separator__line.accent
 $heading-separator__line-accent__background-color: $accent-color !default;
 // .heading-separator__square
-$heading-separator__square__background-color: $primary-color !default;
 $heading-separator__square__border: 1px solid $color__white !default;
 // .heading-separator__square.primary
 $heading-separator__square-primary__background-color: $primary-color !default;
@@ -54,7 +53,7 @@ $heading-separator__square-primary__background-color: $primary-color !default;
         transform: rotate(45deg);
         border: $heading-separator__square__border;
         margin: 0 20px;
-        &.medium {
+        &-incresed-2 {
             width: 20px;
             height: 20px;
         }

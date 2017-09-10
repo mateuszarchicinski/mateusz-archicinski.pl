@@ -3,6 +3,25 @@
 //~~~~~~~~~~~~~~~~~~~~~~//
 
 
+// Colorful button
+@mixin colorfulButton($name, $color) {
+    $background-color: rgba($color, 0.1);
+    $border-color: $color;
+    $hover__after__background-color: $color;
+    
+    &-#{$name} {
+        background-color: $background-color;
+        border-color: $border-color;
+        &:hover {
+            @extend %keep-white-color-on-hover;
+            &::after {
+                background-color: $hover__after__background-color;
+            }
+        }
+    }
+}
+
+
 // Comment
 @mixin comment($text) {
 /*------------------------
@@ -104,15 +123,6 @@
 }
 
 
-// Opacity
-@mixin opacity($value) {
-    $IEValue: $value * 100;
-    opacity: $value;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=" + $IEValue + ")";
-    filter: alpha(opacity=$IEValue);
-}
-
-
 // Transform
 @mixin transform($transforms) {
     transform: $transforms;
@@ -123,6 +133,15 @@
 // Scale
 @mixin scale($scale) {
     @include transform(scale($scale));
+}
+
+
+// Opacity
+@mixin opacity($value) {
+    $IEValue: $value * 100;
+    opacity: $value;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=" + $IEValue + ")";
+    filter: alpha(opacity=$IEValue);
 }
 
 

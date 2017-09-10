@@ -3,17 +3,18 @@
 //~~~~~~~~~~~~~~~~~~~~~~~~//
 
 
-// .side-nav
+// .side-nav__wrapper
 $side-nav__wrapper__height: $site-nav__main-header__height !default;
 // .side-nav__link
 $side-nav__link__height: $side-nav__wrapper__height !default;
 $side-nav__link__font-size: 0.85em !default;
+$side-nav__link__font-weight: $font-weight__bolder-7 !default;
 $side-nav__link__color: $tertiary-text-color !default;
 // .side-nav__link:hover
 $side-nav__link-hover__color: $color__white !default;
 // .side-nav__link:after
 $side-nav__link-after__background-color: $primary-color !default;
-// .side-nav__link-active:hover
+// .side-nav__link-active
 $side-nav__link-active__color: $color__white !default;
 // .side-nav__link-active:after
 $side-nav__link-active-after__background-color: $primary-color-dark !default;
@@ -32,8 +33,8 @@ $side-nav__link-active-after__background-color: $primary-color-dark !default;
         position: relative;
         display: flex;
         align-items: center;
-        font-size: 0.85em;
-        font-weight: 700;
+        font-size: $side-nav__link__font-size;
+        font-weight: $side-nav__link__font-weight;
         text-decoration: none;
         text-transform: uppercase;
         color: $side-nav__link__color;

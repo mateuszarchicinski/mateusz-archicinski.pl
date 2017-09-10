@@ -63,7 +63,15 @@
             "h3": "Ostatnie zmiany"
         },
         "findMe": {
-            "h3": "Znajdź mnie"
+            "h3": "Znajdź mnie",
+            "body": {
+                "codepenAriaLabel": "Przejdź do Codepen Mateusz Archiciński",
+                "facebookAriaLabel": "Przejdź do Facebook Mateusz Archiciński",
+                "githubAriaLabel": "Przejdź do Github Mateusz Archiciński",
+                "gplusAriaLabel": "Przejdź do Google+ Mateusz Archiciński",
+                "linkedinAriaLabel": "Przejdź do Linkedin Mateusz Archiciński",
+                "twitterAriaLabel": "Przejdź do Twitter Mateusz Archiciński"
+            }
         },
         "copyright": "2015 - 2017 Mateusz Archiciński - Wszelkie prawa zastrzeżone"
     }

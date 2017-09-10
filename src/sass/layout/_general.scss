@@ -4,8 +4,10 @@
 
 
 $box-sizing: border-box !default;
+
 // html
 $html__line-height: $base__line-height !default;
+
 // body
 $body__font-family: $base__font-family !default;
 $body__font-size: $base__font-size !default;
@@ -15,7 +17,7 @@ $body__color: $primary-text-color !default;
 *,
 *::before,
 *::after {
-    box-sizing: $box-sizing;
+    @include box-sizing($box-sizing);
 }
 
 

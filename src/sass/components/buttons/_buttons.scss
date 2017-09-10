@@ -11,77 +11,33 @@ $btn__color: $color__white !default;
 $btn__border: 1px solid $color__white !default;
 // .btn:hover::after
 $btn__hover__after__background-color: $color__white !default;
+// .btn:hover
 $btn__hover__color: $color__black-1 !default;
 
-// .btn-primary
-$btn-primary__background-color: rgba($primary-color, 0.1) !default;
-$btn-primary__border-color: $primary-color !default;
-// .btn-primary:hover::after
-$btn-primary__hover__after__background-color: $primary-color !default;
-
-// .btn-primary-dark
-$btn-primary-dark__background-color: rgba($primary-color-dark, 0.1) !default;
-$btn-primary-dark__border-color: $primary-color-dark !default;
-// .btn-primary-dark:hover::after
-$btn-primary-dark__hover__after__background-color: $primary-color-dark !default;
-
-// .btn-primary-light
-$btn-primary-light__background-color: rgba($primary-color-light, 0.1) !default;
-$btn-primary-light__border-color: $primary-color-light !default;
-// .btn-primary-light:hover::after
-$btn-primary-light__hover__after__background-color: $primary-color-light !default;
-
-// .btn-accent
-$btn-accent__background-color: rgba($accent-color, 0.1) !default;
-$btn-accent__border-color: $accent-color !default;
-// .btn-accent:hover::after
-$btn-accent__hover__after__background-color: $accent-color !default;
-
 // .btn-codepen
-$btn-codepen__background-color: rgba($color__codepen, 0.1) !default;
-$btn-codepen__border-color: $color__codepen !default;
-// .btn-codepen:hover::after
-$btn-codepen__hover__after__background-color: $color__codepen !default;
+$btn-codepen__color: $color__codepen !default;
 
 // .btn-facebook
-$btn-facebook__background-color: rgba($color__facebook, 0.1) !default;
-$btn-facebook__border-color: $color__facebook !default;
-// .btn-facebook:hover::after
-$btn-facebook__hover__after__background-color: $color__facebook !default;
+$btn-facebook__color: $color__facebook !default;
 
 // .btn-github
-$btn-github__background-color: rgba($color__github, 0.1) !default;
-$btn-github__border-color: $color__github !default;
-// .btn-github:hover::after
-$btn-github__hover__after__background-color: $color__github !default;
+$btn-github__color: $color__github !default;
 
 // .btn-gplus
-$btn-gplus__background-color: rgba($color__gplus, 0.1) !default;
-$btn-gplus__border-color: $color__gplus !default;
-// .btn-gplus:hover::after
-$btn-gplus__hover__after__background-color: $color__gplus !default;
+$btn-gplus__color: $color__gplus !default;
 
 // .btn-linkedin
-$btn-linkedin__background-color: rgba($color__linkedin, 0.1) !default;
-$btn-linkedin__border-color: $color__linkedin !default;
-// .btn-linkedin:hover::after
-$btn-linkedin__hover__after__background-color: $color__linkedin !default;
+$btn-linkedin__color: $color__linkedin !default;
 
 // .btn-twitter
-$btn-twitter__background-color: rgba($color__twitter, 0.1) !default;
-$btn-twitter__border-color: $color__twitter !default;
-// .btn-twitter:hover::after
-$btn-twitter__hover__after__background-color: $color__twitter !default;
-
-// .btn-primary~ & .btn-accent
-$btn-primary_btn-accent__hover__color: $color__white !default;
+$btn-twitter__color: $color__twitter !default;
 
 
 .btn {
     background-color: $btn__background-color;
     position: relative;
     display: inline-block;
-    z-index: 1;
+    z-index: 0;
     overflow: hidden;
     font-size: $btn__font-size;
     font-weight: $btn__font-weight;
@@ -91,6 +47,7 @@ $btn-primary_btn-accent__hover__color: $color__white !default;
     color: $btn__color;
     padding: 16.5px 20px;
     border: $btn__border;
+    outline: 0;
     transition: 0.15s color ease-in-out;
     &-square,
     &-round {
@@ -112,7 +69,7 @@ $btn-primary_btn-accent__hover__color: $color__white !default;
         }
         &:hover {
             &::after {
-                transform: translate3d(-100%, 0, 1px);
+                transform: translate3d(-100%, 0, 0);
             }
         }
     }
@@ -122,7 +79,7 @@ $btn-primary_btn-accent__hover__color: $color__white !default;
         }
         &:hover {
             &::after {
-                transform: translate3d(100%, 0, 1px);
+                transform: translate3d(100%, 0, 0);
             }
         }
     }
@@ -132,7 +89,7 @@ $btn-primary_btn-accent__hover__color: $color__white !default;
         }
         &:hover {
             &::after {
-                transform: translate3d(0, -100%, 1px);
+                transform: translate3d(0, -100%, 0);
             }
         }
     }
@@ -142,7 +99,7 @@ $btn-primary_btn-accent__hover__color: $color__white !default;
         }
         &:hover {
             &::after {
-                transform: translate3d(0, 100%, 1px);
+                transform: translate3d(0, 100%, 0);
             }
         }
     }
@@ -167,108 +124,34 @@ $btn-primary_btn-accent__hover__color: $color__white !default;
             background-color: $btn__hover__after__background-color;
         }
     }
-    &-primary {
-        background-color: $btn-primary__background-color;
-        border-color: $btn-primary__border-color;
-        &:hover {
-            &::after {
-                background-color: $btn-primary__hover__after__background-color;
-            }
-        }
-        &-dark {
-            background-color: $btn-primary-dark__background-color;
-            border-color: $btn-primary-dark__border-color;
-            &:hover {
-                &::after {
-                    background-color: $btn-primary-dark__hover__after__background-color;
-                }
-            }
-        }
-        &-light {
-            background-color: $btn-primary-light__background-color;
-            border-color: $btn-primary-light__border-color;
-            &:hover {
-                &::after {
-                    background-color: $btn-primary-light__hover__after__background-color;
-                }
-            }
-        }
-    }
-    &-accent {
-        background-color: $btn-accent__background-color;
-        border-color: $btn-accent__border-color;
-        &:hover {
-            &::after {
-                background-color: $btn-accent__hover__after__background-color;
-            }
-        }
-    }
-    &-codepen {
-        background-color: $btn-codepen__background-color;
-        border-color: $btn-codepen__border-color;
-        &:hover {
-            &::after {
-                background-color: $btn-codepen__hover__after__background-color;
-            }
-        }
-    }
-    &-facebook {
-        background-color: $btn-facebook__background-color;
-        border-color: $btn-facebook__border-color;
-        &:hover {
-            &::after {
-                background-color: $btn-facebook__hover__after__background-color;
-            }
-        }
-    }
-    &-github {
-        background-color: $btn-github__background-color;
-        border-color: $btn-github__border-color;
-        &:hover {
-            &::after {
-                background-color: $btn-github__hover__after__background-color;
-            }
-        }
-    }
-    &-gplus {
-        background-color: $btn-gplus__background-color;
-        border-color: $btn-gplus__border-color;
-        &:hover {
-            &::after {
-                background-color: $btn-gplus__hover__after__background-color;
-            }
-        }
-    }
-    &-linkedin {
-        background-color: $btn-linkedin__background-color;
-        border-color: $btn-linkedin__border-color;
-        &:hover {
-            &::after {
-                background-color: $btn-linkedin__hover__after__background-color;
-            }
-        }
-    }
-    &-twitter {
-        background-color: $btn-twitter__background-color;
-        border-color: $btn-twitter__border-color;
-        &:hover {
-            &::after {
-                background-color: $btn-twitter__hover__after__background-color;
-            }
-        }
-    }
-    &-primary,
-    &-primary-dark,
-    &-primary-light,
-    &-accent,
-    &-codepen,
-    &-facebook,
-    &-github,
-    &-gplus,
-    &-linkedin,
-    &-twitter {
-        &:hover {
-            color: $btn-primary_btn-accent__hover__color;
-        }
-    }
+    
+    // Primary
+    @include colorfulButton("primary", $primary-color);
+    
+    // Primary Dark
+    @include colorfulButton("primary-dark", $primary-color-dark);
+    
+    // Primary Light
+    @include colorfulButton("primary-light", $primary-color-light);
+    
+    // Accent
+    @include colorfulButton("accent", $accent-color);
+    
+    // Codepen
+    @include colorfulButton("codepen", $btn-codepen__color);
+    
+    // Facebook
+    @include colorfulButton("facebook", $btn-facebook__color);
+    
+    // Github
+    @include colorfulButton("github", $btn-github__color);
+    
+    // Gplus
+    @include colorfulButton("gplus", $btn-gplus__color);
+    
+    // Linkedin
+    @include colorfulButton("linkedin", $btn-linkedin__color);
+    
+    // Twitter
+    @include colorfulButton("twitter", $btn-twitter__color);
 }

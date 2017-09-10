@@ -3,7 +3,14 @@
 //~~~~~~~~~~~~~~~~~~~~~~~~~//
 
 
+// .site-logo__wrapper
+$site-logo__wrapper__line-height: $site-nav__main-header__height !default;
+
+
 .site-logo {
+    &__wrapper {
+        line-height: $site-logo__wrapper__line-height;
+    }
     &__img {
         max-width: 100%;
         display: inline-block;

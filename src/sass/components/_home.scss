@@ -2,11 +2,13 @@
 //~~~~~~* HOME *~~~~~~//+
 //~~~~~~~~~~~~~~~~~~~~//
 
+
 // .home-wrapper
 $home-wrapper__box-shadow: 0 1px 8px 0 rgba($color__black-1, 0.8) !default;
 // .home-wrapper::after
 // sass-lint:disable no-color-literals
-$home-wrapper__after__background-image: linear-gradient(to top, $color__black-2 0%, rgba($color__seal-brown, 0.25) 50%, rgba($color__seal-brown, 0.25) 50%, $color__black-2 100%), url(../images/noise.png) !default;
+$home-wrapper__after__background-image: linear-gradient(to top, $color__black-2 0%, rgba($color__seal-brown, 0.25) 50%, rgba($color__seal-brown, 0.25) 50%, $color__black-2 100%),
+url(../images/noise.png) !default;
 // sass-lint:enable no-color-literals
 
 
@@ -26,14 +28,13 @@ $home-wrapper__after__background-image: linear-gradient(to top, $color__black-2 
             background-image: $home-wrapper__after__background-image;
             position: absolute;
             display: block;
-            z-index: 1;
             left: 0;
             top: 0;
         }
     }
     &-row {
         position: relative;
-        z-index: 2;
+        z-index: 1;
     }
     &-wrapper,
     &-row {
@@ -45,10 +46,10 @@ $home-wrapper__after__background-image: linear-gradient(to top, $color__black-2 
         &-buttons {
             text-align: center;
             margin-top: 38px;
-            & > .btn {
+            &>.btn {
                 width: 180px;
             }
-            & > .btn:nth-child(n+2) {
+            &>.btn:nth-child(n+2) {
                 margin-left: 25px;
             }
         }

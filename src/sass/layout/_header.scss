@@ -17,11 +17,22 @@ $main-header__fixed__box-shadow: 0 0 8px 0 rgba($color__black-1, 0.8) !default;
     z-index: 10;
     left: 0;
     top: 0;
-    transition: 0.2s background-color ease,
-                0.2s box-shadow ease;
     &__fixed {
-        position: fixed;
         background-color: $main-header__fixed__background-color;
+        position: fixed;
         box-shadow: $main-header__fixed__box-shadow;
+        &,
+        &.hide {
+            @include transform(translate3d(0, -100%, 0));
+            @include opacity(0);
+        }
+        &.hide,
+        &.show {
+            transition: 0.3s transform ease-in-out, 0.3s opacity ease-in-out;
+        }
+        &.show {
+            @include transform(translate3d(0, 0, 0));
+            @include opacity(1);
+        }
     }
 }
