@@ -36,15 +36,9 @@ $main-footer__list-copyright__color: $color__white !default;
         }
     }
     &__findme {
-        display: flex;
-        flex-direction: column;
         &-body {
-            display: flex;
+            min-height: 120px;
             flex: 1;
-            flex-wrap: wrap;
-            align-content: center;
-            align-items: center;
-            justify-content: center;
             padding-bottom: 25px;
             &>.btn {
                 width: 48px;
