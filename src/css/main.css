@@ -1929,6 +1929,9 @@ a.link, a.no-link {
     .home-header-buttons > .btn:nth-child(n+2) {
       margin-left: 25px; }
 
+.about-me-section {
+  padding: 20px 0; }
+
 .heading-separator {
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1970,6 +1973,41 @@ a.link, a.no-link {
     .heading-separator__square.primary {
       background-color: #f44336;
       border: 0; }
+
+.dev-face__wrapper {
+  padding: 25px 0; }
+
+.dev-face__img {
+  border-radius: 50%;
+  box-shadow: 0 0 8px 1px rgba(0, 0, 0, 0.8);
+  margin: 0 auto; }
+  .dev-face__img-rotate-28 {
+    -webkit-transform: rotate(28deg);
+        -ms-transform: rotate(28deg);
+            transform: rotate(28deg); }
+  .dev-face__img-caption {
+    margin-top: 15px; }
+    .dev-face__img-caption::after {
+      content: "";
+      width: 20%;
+      height: 4px;
+      background-color: #f44336;
+      margin: 7.5px auto; }
+
+.dev-face__name {
+  font-size: 1.25em;
+  font-weight: 800; }
+
+.dev-face__profession {
+  font-size: 0.875em;
+  font-weight: 600; }
+
+.dev-face__name, .dev-face__profession {
+  font-family: "Raleway";
+  text-align: center; }
+
+.dev-face__img, .dev-face__img-caption::after, .dev-face__name, .dev-face__profession {
+  display: block; }
 
 *,
 *::before,

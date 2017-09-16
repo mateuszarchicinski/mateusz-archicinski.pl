@@ -1,0 +1,59 @@
+//~~~~~~~~~~~~~~~~~~~~~~~~//
+//~~~~~~* DEV FACE *~~~~~~//+
+//~~~~~~~~~~~~~~~~~~~~~~~~//
+
+
+// .dev-face__img
+$dev-face__img__box-shadow: 0 0 8px 1px rgba($color__black-1, 0.8) !default;
+// .dev-face__img-caption
+$dev-face__img-caption__after__background-color: $primary-color !default;
+// .dev-face__name
+$dev-face__name__font-size: 1.25em !default;
+$dev-face__name__font-weight: $font-weight__bolder-8 !default;
+// .dev-face__profession
+$dev-face__profession__font-size: 0.875em !default;
+$dev-face__profession__font-weight: $font-weight__bolder !default;
+
+
+.dev-face {
+    &__wrapper {
+        padding: 25px 0;
+    }
+    &__img {
+        border-radius: 50%;
+        box-shadow: $dev-face__img__box-shadow;
+        margin: 0 auto;
+        &-rotate-28 {
+            transform: rotate(28deg);
+        }
+        &-caption {
+            margin-top: 15px;
+            &::after {
+                content: "";
+                width: 20%;
+                height: 4px;
+                background-color: $dev-face__img-caption__after__background-color;
+                margin: 7.5px auto;
+            }
+        }
+    }
+    &__name {
+        font-size: $dev-face__name__font-size;
+        font-weight: $dev-face__name__font-weight;
+    }
+    &__profession {
+        font-size: $dev-face__profession__font-size;
+        font-weight: $dev-face__profession__font-weight;
+    }
+    &__name,
+    &__profession {
+        font-family: "Raleway";
+        text-align: center;
+    }
+    &__img,
+    &__img-caption::after,
+    &__name,
+    &__profession {
+        display: block;
+    }
+}
