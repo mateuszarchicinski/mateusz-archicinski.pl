@@ -5,7 +5,7 @@ section(id="about-me" class="section about-me-wrapper")
     .container
         .row.no-gutters.flex-column.align-items-center
             .section-decoration
-                span.icon.icon-user.section-decoration-icon
+                span.icon.icon-2.icon-user.section-decoration-icon
             header.section-header
                 h2.heading.heading-2.heading-unique-1.text-center= data.mainWrapper.aboutMeWrapper.header.h2
                 .heading-separator
@@ -13,31 +13,72 @@ section(id="about-me" class="section about-me-wrapper")
                     .heading-separator__square.primary
                     .heading-separator__line
                 p.section-header-description= data.mainWrapper.aboutMeWrapper.header.p
-        .row
+        .row.justify-content-center
             .col-6
                 figure.dev-face__wrapper
-                    img(src="../images/Mateusz-Archiciński_Front-End-Developer.jpg" alt="Mateusz Archiciński Avatar" width="190" height="190" class="dev-face__img dev-face__img-rotate-28")
+                    img(src="../images/Mateusz-Archiciński_Front-End-Developer.jpg" alt=data.mainWrapper.aboutMeWrapper.devFace.imgAlt width="190" height="190" class="dev-face__img dev-face__img-rotate-28")
                     figcaption.dev-face__img-caption
-                        span.dev-face__name Mateusz Archiciński
-                        span.dev-face__profession Front-End Developer
+                        span.dev-face__name= data.mainWrapper.aboutMeWrapper.devFace.name
+                        span.dev-face__profession= data.mainWrapper.aboutMeWrapper.devFace.profession
                 .about-me-section
-                    header.about-me-section-header
-                        h3 Profil
+                    header.row.no-gutters.align-items-center.about-me-section-header
+                        span.icon.icon-15.icon-user.about-me-section-icon
+                        span.filling-line
+                        h3.heading.heading-4.text-center= data.mainWrapper.aboutMeWrapper.profile.h3
+                        span.filling-line.ending
+                    .about-me-section-body
+                        p lorem ipsum
                 .about-me-section
-                    header.about-me-section-header
-                        h3 Informacje i kontakt
+                    header.row.no-gutters.align-items-center.about-me-section-header
+                        span.icon.icon-15.icon-phone.about-me-section-icon
+                        span.filling-line
+                        h3.heading.heading-4.text-center
+                            | #{data.mainWrapper.aboutMeWrapper.informationContact.h3[0]}
+                            br
+                            | #{data.mainWrapper.aboutMeWrapper.informationContact.h3[1]}
+                        span.filling-line.ending
+                    .about-me-section-body
+                        p lorem ipsum
                 .about-me-section
-                    header.about-me-section-header
-                        h3 Atrybuty i cechy
+                    header.row.no-gutters.align-items-center.about-me-section-header
+                        span.icon.icon-15.icon-lightbulb.about-me-section-icon
+                        span.filling-line
+                        h3.heading.heading-4.text-center
+                            | #{data.mainWrapper.aboutMeWrapper.attributesQualities.h3[0]}
+                            br
+                            | #{data.mainWrapper.aboutMeWrapper.attributesQualities.h3[1]}
+                        span.filling-line.ending
+                    .about-me-section-body
+                        p lorem ipsum
             .col-6
                 .about-me-section
-                    header.about-me-section-header
-                        h3 Edukacja
+                    header.row.no-gutters.align-items-center.about-me-section-header
+                        span.icon.icon-15.icon-star.about-me-section-icon
+                        span.filling-line
+                        h3.heading.heading-4.text-center= data.mainWrapper.aboutMeWrapper.education.h3
+                        span.filling-line.ending
+                    .about-me-section-body
+                        p lorem ipsum
                 .about-me-section
-                    header.about-me-section-header
-                        h3 Doświadczenie i kursy
-            .col-12
+                    header.row.no-gutters.align-items-center.about-me-section-header
+                        span.icon.icon-15.icon-briefcase.about-me-section-icon
+                        span.filling-line
+                        h3.heading.heading-4.text-center
+                            | #{data.mainWrapper.aboutMeWrapper.experiencesCourses.h3[0]}
+                            br
+                            | #{data.mainWrapper.aboutMeWrapper.experiencesCourses.h3[1]}
+                        span.filling-line.ending
+                    .about-me-section-body
+                        p lorem ipsum
+            .col-8
                 .about-me-section
-                    header.about-me-section-header
-                        h3 Umiejętności i technologie
-                        
+                    header.row.no-gutters.align-items-center.about-me-section-header
+                        span.icon.icon-15.icon-desktop.about-me-section-icon
+                        span.filling-line
+                        h3.heading.heading-4.text-center
+                            | #{data.mainWrapper.aboutMeWrapper.skillsTechnologies.h3[0]}
+                            br
+                            | #{data.mainWrapper.aboutMeWrapper.skillsTechnologies.h3[1]}
+                        span.filling-line.ending
+                    .about-me-section-body
+                        p lorem ipsum

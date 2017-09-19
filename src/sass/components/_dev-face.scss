@@ -4,7 +4,7 @@
 
 
 // .dev-face__img
-$dev-face__img__box-shadow: 0 0 8px 1px rgba($color__black-1, 0.8) !default;
+$dev-face__img__box-shadow: 0 0 8px 0 rgba($color__black-1, 0.8) !default;
 // .dev-face__img-caption
 $dev-face__img-caption__after__background-color: $primary-color !default;
 // .dev-face__name
@@ -17,7 +17,8 @@ $dev-face__profession__font-weight: $font-weight__bolder !default;
 
 .dev-face {
     &__wrapper {
-        padding: 25px 0;
+        padding: 25px 0 35px 89px;
+        margin: 0;
     }
     &__img {
         border-radius: 50%;
@@ -33,7 +34,7 @@ $dev-face__profession__font-weight: $font-weight__bolder !default;
                 width: 20%;
                 height: 4px;
                 background-color: $dev-face__img-caption__after__background-color;
-                margin: 7.5px auto;
+                margin: 7.5px auto 0;
             }
         }
     }

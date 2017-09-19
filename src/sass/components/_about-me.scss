@@ -3,11 +3,37 @@
 //~~~~~~~~~~~~~~~~~~~~~~~~//
 
 
+// .icon-round
+$about-me-section-icon__background-color: $primary-color !default;
+$about-me-section-icon__color: $color__white !default;
+$about-me-section-icon__box-shadow: 0 0 0 5px $color__white,
+                                    0 0 8px 5px rgba($color__black-1, 0.15) !default;
+
+
 .about-me {
     &-wrapper {
-        
+        padding-bottom: 119px;
     }
     &-section {
-        padding: 20px 0;
+        padding: 25px 0 35px;
+        &-header {
+            padding-bottom: 10px;
+        }
+        &-icon {
+            &::before {
+                width: 54px;
+                height: 54px;
+                line-height: 56px;
+                background-color: $about-me-section-icon__background-color;
+                vertical-align: middle;
+                text-align: center;
+                color: $about-me-section-icon__color;
+                border-radius: 50%;
+                box-shadow: $about-me-section-icon__box-shadow;
+            }
+        }
+        &-body {
+            padding-left: 89px;
+        }
     }
 }

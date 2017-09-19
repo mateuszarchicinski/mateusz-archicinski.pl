@@ -1,0 +1,22 @@
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+//~~~~~~* FILLING LINE *~~~~~~//+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+
+
+// .filling-line
+$filling-line__background-color: $divider-color !default;
+
+
+.filling-line {
+    height: 1px;
+    background-color: $filling-line__background-color;
+    flex: 1;
+    margin-left: 35px;
+    margin-right: 35px;
+    &.beginning {
+        margin-left: 0;
+    }
+    &.ending {
+        margin-right: 0;
+    }
+}

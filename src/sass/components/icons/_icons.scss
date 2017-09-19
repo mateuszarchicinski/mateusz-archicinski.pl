@@ -7,6 +7,12 @@
 $icon__font-family: "Fontello" !default;
 $icon__font-size: 16px !default;
 $icon__font-weight: normal !default;
+// .icon-125
+$icon-125__font-size: $icon__font-size * 1.25 !default;
+// .icon-15
+$icon-15__font-size: $icon__font-size * 1.5 !default;
+// .icon-2
+$icon-2__font-size: $icon__font-size * 2 !default;
 
 
 .icon {
@@ -25,67 +31,77 @@ $icon__font-weight: normal !default;
     }
     &-125 {
         &::before {
-            font-size: 20px;
+            font-size: $icon-125__font-size;
         }
     }
-    &-briefcase:before {
+    &-15 {
+        &::before {
+            font-size: $icon-15__font-size;
+        }
+    }
+    &-2 {
+        &::before {
+            font-size: $icon-2__font-size;
+        }
+    }
+    &-briefcase::before {
         content: '\e809';
     }
-    &-cancel:before {
+    &-cancel::before {
         content: '\e800';
     }
-    &-code:before {
+    &-code::before {
         content: '\f121';
     }
-    &-codepen:before {
+    &-codepen::before {
         content: '\f1cb';
     }
-    &-desktop:before {
+    &-desktop::before {
         content: '\f108';
     }
-    &-down-open-1:before {
+    &-down-open-1::before {
         content: '\e805';
     }
-    &-facebook:before {
+    &-facebook::before {
         content: '\f09a';
     }
-    &-github:before {
+    &-github::before {
         content: '\f113';
     }
-    &-gplus:before {
+    &-gplus::before {
         content: '\f0d5';
     }
-    &-laptop:before {
+    &-laptop::before {
         content: '\f109';
     }
-    &-left-open:before {
+    &-left-open::before {
         content: '\e807';
     }
-    &-lightbulb:before {
+    &-lightbulb::before {
         content: '\f0eb';
     }
-    &-linkedin:before {
+    &-linkedin::before {
         content: '\f0e1';
     }
-    &-phone:before {
+    &-phone::before {
         content: '\e802';
     }
-    &-right-open:before {
+    &-right-open::before {
         content: '\e808';
     }
-    &-star:before {
+    &-star::before {
         content: '\e804';
     }
-    &-twitter:before {
+    &-twitter::before {
         content: '\f099';
     }
-    &-up-open-1:before {
+    &-up-open-1::before {
         content: '\e806';
     }
-    &-user:before {
+    &-user::before {
         content: '\e803';
     }
-    &-wrench:before {
+    &-wrench::before {
         content: '\e801';
     }
 }

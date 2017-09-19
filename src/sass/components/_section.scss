@@ -10,7 +10,6 @@ $section-decoration__border: 10px solid $color__white !default;
 $section-decoration__box-shadow: 2.5px 2.5px 10px 0 rgba($color__black-1, 0.1) !default;
 // .section-decoration-icon::before
 $section-decoration-icon__before__background-color: $primary-color !default;
-$section-decoration-icon__before__font-size: 32px !default;
 $section-decoration-icon__before__color: $color__white !default;
 $section-decoration-icon__before__box-shadow: 0 0 0 25px $primary-color !default;
 // .section-header-description
@@ -18,6 +17,7 @@ $section-header-description__font-size: 1.05em !default;
 
 
 .section {
+    padding-bottom: 163px;
     &:nth-child(odd) {
         background-color: $section__odd__background-color;
     }
@@ -35,7 +35,6 @@ $section-header-description__font-size: 1.05em !default;
                 background-color: $section-decoration-icon__before__background-color;
                 display: block;
                 transform: perspective(99px) translate3d(0px, 11px, 1px) rotate(-45deg);
-                font-size: $section-decoration-icon__before__font-size;
                 text-align: center;
                 color: $section-decoration-icon__before__color;
                 box-shadow: $section-decoration-icon__before__box-shadow;

@@ -33,6 +33,41 @@
             "header": {
                 "h2": "O mnie",
                 "p": "Pełen zestaw informacji na mój temat"
+            },
+            "devFace": {
+                "imgAlt": "Zdjęcie twarzy Mateusza Archicińskiego",
+                "name": "Mateusz Archiciński",
+                "profession": "Front-End Developer"
+            },
+            "profile": {
+                "h3": "Profil"
+            },
+            "informationContact": {
+                "h3": [
+                    "Informacje",
+                    "i kontakt"
+                ]
+            },
+            "attributesQualities": {
+                "h3": [
+                    "Atrybuty",
+                    "i cechy"
+                ]
+            },
+            "education": {
+                "h3": "Edukacja"
+            },
+            "experiencesCourses": {
+                "h3": [
+                    "Doświadczenie",
+                    "i kursy"
+                ]
+            },
+            "skillsTechnologies": {
+                "h3": [
+                    "Umiejętności",
+                    "i technologie"
+                ]
             }
         },
         "servicesWrapper": {

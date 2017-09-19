@@ -52,6 +52,8 @@ $heading-2__font-size: 3em !default;
 $heading-3__font-size: $base__font-size * 1.55 !default;
 $heading-3__font-weight: $font-weight__normal !default;
 // .heading-4
+$heading-4__font-size: $base__font-size * 1.25 !default;
+$heading-4__font-weight: $font-weight__bolder-8 !default;
 // .heading-5
 $heading-5__font-size: 1.05em !default;
 // .heading-2 & .heading-5
@@ -83,7 +85,10 @@ $heading-2-5__font-weight: $font-weight__bolder-8 !default;
         font-weight: $heading-3__font-weight;
         letter-spacing: 10px;
     }
-    &-4 {}
+    &-4 {
+        font-size: $heading-4__font-size;
+        font-weight: $heading-4__font-weight;
+    }
     &-5 {
         font-size: $heading-5__font-size;
     }
