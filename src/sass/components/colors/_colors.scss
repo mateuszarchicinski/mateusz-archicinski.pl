@@ -1,0 +1,38 @@
+//~~~~~~~~~~~~~~~~~~~~~~//
+//~~~~~~* COLORS *~~~~~~//+
+//~~~~~~~~~~~~~~~~~~~~~~//
+
+
+// .color-primary
+$color-primary__color: $primary-color !default;
+
+// .color-primary-text
+$color-primary-text__color: $primary-text-color !default;
+
+// .color-accent
+$color-accent__color: $accent-color !default;
+
+// .color-accent-light
+$color-accent-light__color: $accent-color-light !default;
+
+// .color-github
+$color-github__color: $color__github !default;
+
+
+.color {
+    &-primary {
+        color: $color-primary__color;
+        &-text {
+            color: $color-primary-text__color;
+        }
+    }
+    &-accent {
+        color: $color-accent__color;
+        &-light {
+            color: $color-accent-light__color;
+        }
+    }
+    &-github {
+        color: $color-github__color;
+    }
+}

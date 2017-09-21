@@ -20,6 +20,7 @@ url(../images/noise.png) !default;
         background-repeat: no-repeat;
         background-size: cover;
         position: relative;
+        padding: 0;
         box-shadow: $home-wrapper__box-shadow;
         &::after {
             content: "";

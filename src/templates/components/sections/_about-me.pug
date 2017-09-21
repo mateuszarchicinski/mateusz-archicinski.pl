@@ -27,7 +27,9 @@ section(id="about-me" class="section about-me-wrapper")
                         h3.heading.heading-4.text-center= data.mainWrapper.aboutMeWrapper.profile.h3
                         span.filling-line.ending
                     .about-me-section-body
-                        p lorem ipsum
+                        p.text-bolded.text-justify.paragraph.beginning= data.mainWrapper.aboutMeWrapper.profile.p[0]
+                        p.text-justify.paragraph= data.mainWrapper.aboutMeWrapper.profile.p[1]
+                        p.text-justify.paragraph.ending= data.mainWrapper.aboutMeWrapper.profile.p[2]
                 .about-me-section
                     header.row.no-gutters.align-items-center.about-me-section-header
                         span.icon.icon-15.icon-phone.about-me-section-icon
@@ -38,7 +40,35 @@ section(id="about-me" class="section about-me-wrapper")
                             | #{data.mainWrapper.aboutMeWrapper.informationContact.h3[1]}
                         span.filling-line.ending
                     .about-me-section-body
-                        p lorem ipsum
+                        ul.about-me-list
+                            li.info-block
+                                .info-title.text-bolded #{data.mainWrapper.aboutMeWrapper.informationContact.address.title}:
+                                .info-description
+                                    | #{data.mainWrapper.aboutMeWrapper.informationContact.address.description}
+                                    span(aria-hidden="true" class="icon icon-location color-accent-light info-icon")
+                            li.info-block
+                                .info-title.text-bolded #{data.mainWrapper.aboutMeWrapper.informationContact.birthDate.title}:
+                                info-description
+                                    | #{data.mainWrapper.aboutMeWrapper.informationContact.birthDate.description}
+                                    span(aria-hidden="true" class="icon icon-birthday color-accent-light info-icon")
+                            li.info-block
+                                .info-title.text-bolded #{data.mainWrapper.aboutMeWrapper.informationContact.email.title}:
+                                .info-description
+                                    a(href="mailto:" + data.mainWrapper.aboutMeWrapper.informationContact.email.link class="about-me-link")
+                                        | #{data.mainWrapper.aboutMeWrapper.informationContact.email.link}
+                                        span(aria-hidden="true" class="icon icon-mail-alt color-accent-light info-icon")
+                            li.info-block
+                                .info-title.text-bolded #{data.mainWrapper.aboutMeWrapper.informationContact.website.title}:
+                                .info-description
+                                    a(href=data.mainWrapper.aboutMeWrapper.informationContact.website.link class="about-me-link")
+                                        | #{data.mainWrapper.aboutMeWrapper.informationContact.website.link}
+                                        span(aria-hidden="true" class="icon icon-globe color-accent-light info-icon")
+                            li.info-block
+                                .info-title.text-bolded #{data.mainWrapper.aboutMeWrapper.informationContact.phone.title}:
+                                .info-description
+                                    a(href="tel:" + data.mainWrapper.aboutMeWrapper.informationContact.phone.link class="about-me-link")
+                                        | #{data.mainWrapper.aboutMeWrapper.informationContact.phone.link}
+                                        span(aria-hidden="true" class="icon icon-mobile color-accent-light info-icon")
                 .about-me-section
                     header.row.no-gutters.align-items-center.about-me-section-header
                         span.icon.icon-15.icon-lightbulb.about-me-section-icon
@@ -48,8 +78,19 @@ section(id="about-me" class="section about-me-wrapper")
                             br
                             | #{data.mainWrapper.aboutMeWrapper.attributesQualities.h3[1]}
                         span.filling-line.ending
-                    .about-me-section-body
-                        p lorem ipsum
+                    .row.no-gutters.about-me-section-body.text-center
+                        ul(data-title="Jaki jestem ?" class="col-6 about-me-list about-me-list-titled")
+                            li Dokładny
+                            li Odpowiedzialny
+                            li Rzetelny
+                            li Samodzielny
+                            li Terminowy
+                        ul(data-title="W czym jestem dobry ?" class="col-6 about-me-list about-me-list-titled")
+                            li Dzielę się wiedzą
+                            li Potrafię szukać
+                            li Przyjmuję krytykę
+                            li Skupiam sie na celach
+                            li Współpracuję w zespole, komunikuję się
             .col-6
                 .about-me-section
                     header.row.no-gutters.align-items-center.about-me-section-header

@@ -1,0 +1,33 @@
+//~~~~~~~~~~~~~~~~~~~~//
+//~~~~~~* INFO *~~~~~~//+
+//~~~~~~~~~~~~~~~~~~~~//
+
+
+.info {
+    &-block {
+        display: block;
+        white-space: nowrap;
+    }
+    &-title {
+        width: 36.5%;
+    }
+    &-description {
+        width: 63.5%;
+    }
+    &-title,
+    &-description {
+        display: inline-block;
+        white-space: normal;
+        overflow-wrap: break-word;
+    }
+    &-link {
+        &,
+        &:link,
+        &:visited {
+            color: inherit;
+        }
+    }
+    &-icon {
+        margin-left: 10px;
+    }
+}

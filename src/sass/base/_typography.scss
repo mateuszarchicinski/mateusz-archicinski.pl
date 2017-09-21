@@ -100,18 +100,18 @@ $heading-2-5__font-weight: $font-weight__bolder-8 !default;
 
 
 //* TEXT *//
-// __normal
+// -normal
 $text-normal__font-size: $base__font-size !default;
-// __small
+// -small
 $text-small__font-size: $text-normal__font-size - 0.15 !default;
-// __medium
+// -medium
 $text-medium__font-size: $text-normal__font-size+0.15 !default;
-// __large
+// -large
 $text-large__font-size: $text-medium__font-size+0.15 !default;
+// -bolded & strong
+$text-bolded-strong__font-weight: $font-weight__bolder !default;
 // -muted
 $text-muted__color: $secondary-text-color !default;
-// strong
-$strong__font-weight: $font-weight__bold !default;
 
 
 .text {
@@ -127,6 +127,10 @@ $strong__font-weight: $font-weight__bold !default;
     &-large {
         font-size: $text-large__font-size;
     }
+    &-bolded,
+    strong {
+        font-weight: $text-bolded-strong__font-weight;
+    }
     // sass-lint:disable no-important
     &-center {
         text-align: center !important;
@@ -136,6 +140,9 @@ $strong__font-weight: $font-weight__bold !default;
     }
     &-right {
         text-align: right !important;
+    }
+    &-justify {
+        text-align: justify !important;
     }
     // sass-lint:enable no-important
     &-hidden {
@@ -149,6 +156,15 @@ $strong__font-weight: $font-weight__bold !default;
     }
 }
 
-strong {
-    font-weight: $strong__font-weight;
+
+//* PARAGRAPH *//
+
+
+.paragraph {
+    &.beginning {
+        margin-top: 0.5em;
+    }
+    &.ending {
+        margin-bottom: 0.5em;
+    }
 }

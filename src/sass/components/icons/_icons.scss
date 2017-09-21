@@ -44,6 +44,9 @@ $icon-2__font-size: $icon__font-size * 2 !default;
             font-size: $icon-2__font-size;
         }
     }
+    &-birthday:before {
+        content: '\f1fd';
+    }
     &-briefcase::before {
         content: '\e809';
     }
@@ -68,6 +71,9 @@ $icon-2__font-size: $icon__font-size * 2 !default;
     &-github::before {
         content: '\f113';
     }
+    &-globe:before {
+        content: '\e80c';
+    }
     &-gplus::before {
         content: '\f0d5';
     }
@@ -82,6 +88,18 @@ $icon-2__font-size: $icon__font-size * 2 !default;
     }
     &-linkedin::before {
         content: '\f0e1';
+    }
+    &-location:before {
+        content: '\e80b';
+    }
+    &-mail:before {
+        content: '\e80a';
+    }
+    &-mail-alt:before {
+        content: '\f0e0';
+    }
+    &-mobile:before {
+        content: '\f10b';
     }
     &-phone::before {
         content: '\e802';

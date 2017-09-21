@@ -222,6 +222,10 @@
 .text-large {
   font-size: 1.3em; }
 
+.text-bolded,
+.text strong {
+  font-weight: 600; }
+
 .text-center {
   text-align: center !important; }
 
@@ -230,6 +234,9 @@
 
 .text-right {
   text-align: right !important; }
+
+.text-justify {
+  text-align: justify !important; }
 
 .text-hidden {
   line-height: 0;
@@ -243,8 +250,11 @@
 .text-muted {
   color: #757575; }
 
-strong {
-  font-weight: 500; }
+.paragraph.beginning {
+  margin-top: 0.5em; }
+
+.paragraph.ending {
+  margin-bottom: 0.5em; }
 
 @-ms-viewport {
   width: device-width; }
@@ -1710,6 +1720,19 @@ html {
     .btn-twitter:hover::after {
       background-color: #00aced; }
 
+.color-primary {
+  color: #f44336; }
+  .color-primary-text {
+    color: #212121; }
+
+.color-accent {
+  color: #1565c0; }
+  .color-accent-light {
+    color: #2196f3; }
+
+.color-github {
+  color: #614381; }
+
 .icon::before {
   display: inline-block;
   font-family: "Fontello";
@@ -1731,6 +1754,9 @@ html {
 
 .icon-2::before {
   font-size: 32px; }
+
+.icon-birthday:before {
+  content: '\f1fd'; }
 
 .icon-briefcase::before {
   content: '\e809'; }
@@ -1756,6 +1782,9 @@ html {
 .icon-github::before {
   content: '\f113'; }
 
+.icon-globe:before {
+  content: '\e80c'; }
+
 .icon-gplus::before {
   content: '\f0d5'; }
 
@@ -1770,6 +1799,18 @@ html {
 
 .icon-linkedin::before {
   content: '\f0e1'; }
+
+.icon-location:before {
+  content: '\e80b'; }
+
+.icon-mail:before {
+  content: '\e80a'; }
+
+.icon-mail-alt:before {
+  content: '\f0e0'; }
+
+.icon-mobile:before {
+  content: '\f10b'; }
 
 .icon-phone::before {
   content: '\e802'; }
@@ -1908,6 +1949,7 @@ a.link, a.no-link {
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
+  padding: 0;
   box-shadow: 0 1px 8px 0 rgba(0, 0, 0, 0.8); }
   .home-wrapper::after {
     content: "";
@@ -1938,12 +1980,12 @@ a.link, a.no-link {
       margin-left: 25px; }
 
 .about-me-wrapper {
-  padding-bottom: 119px; }
+  padding-bottom: 144px; }
 
 .about-me-section {
-  padding: 25px 0 35px; }
+  padding: 25px 0 10px; }
   .about-me-section-header {
-    padding-bottom: 10px; }
+    padding-bottom: 15px; }
   .about-me-section-icon::before {
     width: 54px;
     height: 54px;
@@ -1956,6 +1998,49 @@ a.link, a.no-link {
     box-shadow: 0 0 0 5px #fff, 0 0 8px 5px rgba(0, 0, 0, 0.15); }
   .about-me-section-body {
     padding-left: 89px; }
+
+.about-me-list {
+  list-style: none; }
+  .about-me-list > li {
+    padding: 1.5em 0; }
+    .about-me-list > li:first-child {
+      padding-top: 0.75em; }
+    .about-me-list > li:last-child {
+      padding-bottom: 0.75em; }
+  .about-me-list-titled {
+    padding-left: 28px !important; }
+    .about-me-list-titled::before, .about-me-list-titled::after {
+      height: 100%;
+      position: absolute;
+      top: 0; }
+    .about-me-list-titled::before {
+      content: attr(data-title);
+      width: 56px;
+      line-height: 56px;
+      left: -28px;
+      -webkit-transform: rotate(180deg);
+          -ms-transform: rotate(180deg);
+              transform: rotate(180deg);
+      font-size: 18px;
+      font-weight: 800;
+      text-align: center;
+      text-orientation: sideways-right;
+      -webkit-writing-mode: vertical-rl;
+          -ms-writing-mode: tb-rl;
+              writing-mode: vertical-rl;
+      color: #2196f3; }
+    .about-me-list-titled::after {
+      content: "";
+      width: 1px;
+      left: 0.5px;
+      border-top: 40px solid #2196f3;
+      border-bottom: 40px solid #2196f3; }
+
+.about-me-link {
+  text-decoration: none;
+  color: inherit; }
+  .about-me-link:hover {
+    text-decoration: underline; }
 
 .heading-separator {
   display: -webkit-flex;
@@ -2000,7 +2085,7 @@ a.link, a.no-link {
       border: 0; }
 
 .dev-face__wrapper {
-  padding: 25px 0 35px 89px;
+  padding: 25px 0 10px 89px;
   margin: 0; }
 
 .dev-face__img {
@@ -2047,6 +2132,27 @@ a.link, a.no-link {
     margin-left: 0; }
   .filling-line.ending {
     margin-right: 0; }
+
+.info-block {
+  display: block;
+  white-space: nowrap; }
+
+.info-title {
+  width: 36.5%; }
+
+.info-description {
+  width: 63.5%; }
+
+.info-title, .info-description {
+  display: inline-block;
+  white-space: normal;
+  overflow-wrap: break-word; }
+
+.info-link, .info-link:link, .info-link:visited {
+  color: inherit; }
+
+.info-icon {
+  margin-left: 10px; }
 
 *,
 *::before,
@@ -2140,7 +2246,7 @@ body {
 .clearfix::after {
   clear: both; }
 
-.site-nav__list, .language-settings {
+.site-nav__list, .language-settings, .about-me-list {
   padding: 0;
   margin: 0; }
 

@@ -40,13 +40,38 @@
                 "profession": "Front-End Developer"
             },
             "profile": {
-                "h3": "Profil"
+                "h3": "Profil",
+                "p": [
+                    "Cześć! Mam na imię Mateusz. Zajmuję się tworzeniem nowoczesnych stron internetowych w oparciu o technologie HTML, CSS i JavaScript.",
+                    "Swoją karierę zawodową powiązaną z zawodem Front-End Developera rozpocząłem na stanowisku Web Content Editora w jednej z Warszawskich korporacji interaktywnych. Wspomniane stanowisko umożliwiło mi wzięcie udziału w wielu ciekawych projektach/kampaniach prowadzonych dla różnych klientów z rynku Polskiego i zagranicznego. Miałem przyjemność poznać ciekawych ludzi i wiele się nauczyć.",
+                    "W chwili obecnej ponownie szukam zatrudnienia na stałe lub zdalnie w zależności od potrzeb klienta. Jeżeli jesteś zainteresowany/a współpraca skontaktuj się ze mną!"
+                ]
             },
             "informationContact": {
                 "h3": [
                     "Informacje",
                     "i kontakt"
-                ]
+                ],
+                "address": {
+                    "title": "Adres",
+                    "description": "Warszawa"
+                },
+                "birthDate": {
+                    "title": "Data urodzenia",
+                    "description": "07-01-1993 r."
+                },
+                "email": {
+                    "title": "E-mail",
+                    "link": "mateusz.archicinski@gmail.com"
+                },
+                "website": {
+                    "title": "Strona internetowa",
+                    "link": "https://www.mateusz-archicinski.pl"
+                },
+                "phone": {
+                    "title": "Telefon",
+                    "link": "505-072-776"
+                }
             },
             "attributesQualities": {
                 "h3": [
