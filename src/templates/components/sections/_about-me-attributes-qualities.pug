@@ -1,0 +1,19 @@
+//-
+    About Me ~ Attributes & Qualities
+
+.about-me-section
+    header.row.no-gutters.align-items-center.about-me-section-header
+        span.icon.icon-15.icon-lightbulb.about-me-section-icon
+        span.filling-line
+        h3.heading.heading-4.text-center
+            | #{data.mainWrapper.aboutMeWrapper.attributesQualities.h3[0]}
+            br
+            | #{data.mainWrapper.aboutMeWrapper.attributesQualities.h3[1]}
+        span.filling-line.ending
+    .row.no-gutters.about-me-section-body.text-center
+        ul(data-title=data.mainWrapper.aboutMeWrapper.attributesQualities.whatAmILike.title + " ?" class="col-6 about-me-list about-me-list-titled")
+            each value in data.mainWrapper.aboutMeWrapper.attributesQualities.whatAmILike.array
+                li= value
+        ul(data-title=data.mainWrapper.aboutMeWrapper.attributesQualities.inWhatAmIGood.title + " ?" class="col-6 about-me-list about-me-list-titled")
+            each value in data.mainWrapper.aboutMeWrapper.attributesQualities.inWhatAmIGood.array
+                li= value

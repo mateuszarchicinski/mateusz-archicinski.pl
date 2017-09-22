@@ -1,0 +1,42 @@
+//-
+    About Me ~ Information & Contact
+
+.about-me-section
+    header.row.no-gutters.align-items-center.about-me-section-header
+        span.icon.icon-15.icon-phone.about-me-section-icon
+        span.filling-line
+        h3.heading.heading-4.text-center
+            | #{data.mainWrapper.aboutMeWrapper.informationContact.h3[0]}
+            br
+            | #{data.mainWrapper.aboutMeWrapper.informationContact.h3[1]}
+        span.filling-line.ending
+    .about-me-section-body
+        ul.about-me-list
+            li.info-block
+                .info-title.text-bolded #{data.mainWrapper.aboutMeWrapper.informationContact.address.title}:
+                .info-description
+                    | #{data.mainWrapper.aboutMeWrapper.informationContact.address.description}
+                    span(aria-hidden="true" class="icon icon-location color-accent-light info-icon")
+            li.info-block
+                .info-title.text-bolded #{data.mainWrapper.aboutMeWrapper.informationContact.birthDate.title}:
+                info-description
+                    | #{data.mainWrapper.aboutMeWrapper.informationContact.birthDate.description}
+                    span(aria-hidden="true" class="icon icon-birthday color-accent-light info-icon")
+            li.info-block
+                .info-title.text-bolded #{data.mainWrapper.aboutMeWrapper.informationContact.email.title}:
+                .info-description
+                    a(href="mailto:" + data.mainWrapper.aboutMeWrapper.informationContact.email.link class="info-link")
+                        | #{data.mainWrapper.aboutMeWrapper.informationContact.email.link}
+                        span(aria-hidden="true" class="icon icon-mail-alt color-accent-light info-icon")
+            li.info-block
+                .info-title.text-bolded #{data.mainWrapper.aboutMeWrapper.informationContact.website.title}:
+                .info-description
+                    a(href=data.mainWrapper.aboutMeWrapper.informationContact.website.link class="info-link")
+                        | #{data.mainWrapper.aboutMeWrapper.informationContact.website.link}
+                        span(aria-hidden="true" class="icon icon-globe color-accent-light info-icon")
+            li.info-block
+                .info-title.text-bolded #{data.mainWrapper.aboutMeWrapper.informationContact.phone.title}:
+                .info-description
+                    a(href="tel:" + data.mainWrapper.aboutMeWrapper.informationContact.phone.link class="info-link")
+                        | #{data.mainWrapper.aboutMeWrapper.informationContact.phone.link}
+                        span(aria-hidden="true" class="icon icon-mobile color-accent-light info-icon")

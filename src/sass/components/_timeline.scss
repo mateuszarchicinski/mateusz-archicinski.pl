@@ -1,0 +1,91 @@
+//~~~~~~~~~~~~~~~~~~~~~~~~//
+//~~~~~~* TIMELINE *~~~~~~//+
+//~~~~~~~~~~~~~~~~~~~~~~~~//
+
+
+// .timeline-point::before
+$timeline-point__before__border: 2.5px solid $accent-color-light !default;
+// .timeline-point::after
+$timeline-point__after__background-color: $accent-color-light !default;
+// .timeline-point-period
+$timeline-point-period__font-size: 1.05em !default;
+// .timeline-point-title
+$timeline-point-title__font-family: "Raleway" !default;
+$timeline-point-title__font-size: 1.15em !default;
+$timeline-point-title__font-weight: $font-weight__bolder !default;
+// .timeline-point-period & .timeline-point-description & .timeline-point-link
+$timeline-point-period-description-link__color: $secondary-text-color !default;
+// .timeline-point-period & .timeline-point-link
+$timeline-point-period-link__font-weight: $font-weight__lighter !default;
+
+
+.timeline {
+    &__list {
+        list-style: none;
+        @extend %no-padding-margin;
+    }
+    &-point {
+        position: relative;
+        padding: 15px 0 25px 22.5px;
+        &::before {
+            width: 15px;
+            height: 15px;
+            left: -7px;
+            top: 15px;
+            border-radius: 50%;
+            border: $timeline-point__before__border;
+            transition: 0.2s background-color linear;
+        }
+        &::after {
+            width: 1px;
+            height: calc(100% - 15px);
+            background-color: $timeline-point__after__background-color;
+            left: 0;
+            top: 30px;
+        }
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            display: block;
+        }
+        &.beginning {
+            padding-bottom: 15px;
+            &::after {
+                display: none;
+            }
+        }
+        &-period {
+            font-size: $timeline-point-period__font-size;
+        }
+        &-title {
+            font-family: $timeline-point-title__font-family;
+            font-size: $timeline-point-title__font-size;
+            font-weight: $timeline-point-title__font-weight;
+        }
+        &-description,
+        &-period,
+        &-link {
+            color: $timeline-point-period-description-link__color;
+        }
+        &-period,
+        &-link {
+            font-weight: $timeline-point-period-link__font-weight;
+        }
+        &-period,
+        &-title,
+        &-description,
+        &-link {
+            display: block;
+            text-align: justify;
+            margin: 0;
+            margin-bottom: 0.5em;
+            &.beginning {
+                margin-top: -3px;
+            }
+            &.ending {
+                margin-bottom: 0;
+            }
+        }
+    }
+}

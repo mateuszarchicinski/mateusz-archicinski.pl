@@ -63,6 +63,7 @@ $about-me-list-titled__after__border: 40px solid $accent-color-light !default;
             &::after {
                 height: 100%;
                 position: absolute;
+                display: block;
                 top: 0;
             }
             &::before {
@@ -77,21 +78,16 @@ $about-me-list-titled__after__border: 40px solid $accent-color-light !default;
                 text-orientation: sideways-right;
                 writing-mode: vertical-rl;
                 color: $about-me-list-titled__color;
+                padding: 55px 0;
             }
             &::after {
                 content: "";
                 width: 1px;
+                z-index: -1;
                 left: 0.5px;
                 border-top: $about-me-list-titled__after__border;
                 border-bottom: $about-me-list-titled__after__border;
             }
-        }
-    }
-    &-link {
-        text-decoration: none;
-        color: inherit;
-        &:hover {
-            text-decoration: underline;
         }
     }
 }

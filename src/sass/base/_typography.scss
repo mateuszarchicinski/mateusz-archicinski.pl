@@ -105,9 +105,9 @@ $text-normal__font-size: $base__font-size !default;
 // -small
 $text-small__font-size: $text-normal__font-size - 0.15 !default;
 // -medium
-$text-medium__font-size: $text-normal__font-size+0.15 !default;
+$text-medium__font-size: $text-normal__font-size + 0.15 !default;
 // -large
-$text-large__font-size: $text-medium__font-size+0.15 !default;
+$text-large__font-size: $text-medium__font-size + 0.15 !default;
 // -bolded & strong
 $text-bolded-strong__font-weight: $font-weight__bolder !default;
 // -muted

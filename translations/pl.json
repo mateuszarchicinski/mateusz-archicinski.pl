@@ -32,7 +32,7 @@
         "aboutMeWrapper": {
             "header": {
                 "h2": "O mnie",
-                "p": "Pełen zestaw informacji na mój temat"
+                "p": "Pełen zestaw informacji na mój temat."
             },
             "devFace": {
                 "imgAlt": "Zdjęcie twarzy Mateusza Archicińskiego",
@@ -44,7 +44,7 @@
                 "p": [
                     "Cześć! Mam na imię Mateusz. Zajmuję się tworzeniem nowoczesnych stron internetowych w oparciu o technologie HTML, CSS i JavaScript.",
                     "Swoją karierę zawodową powiązaną z zawodem Front-End Developera rozpocząłem na stanowisku Web Content Editora w jednej z Warszawskich korporacji interaktywnych. Wspomniane stanowisko umożliwiło mi wzięcie udziału w wielu ciekawych projektach/kampaniach prowadzonych dla różnych klientów z rynku Polskiego i zagranicznego. Miałem przyjemność poznać ciekawych ludzi i wiele się nauczyć.",
-                    "W chwili obecnej ponownie szukam zatrudnienia na stałe lub zdalnie w zależności od potrzeb klienta. Jeżeli jesteś zainteresowany/a współpraca skontaktuj się ze mną!"
+                    "Obecnie ponownie szukam zatrudnienia na stałe lub zdalnie w zależności od potrzeb klienta. Jeżeli jesteś zainteresowany/a współpraca skontaktuj się ze mną!"
                 ]
             },
             "informationContact": {
@@ -58,7 +58,7 @@
                 },
                 "birthDate": {
                     "title": "Data urodzenia",
-                    "description": "07-01-1993 r."
+                    "description": "07.01.1993 r."
                 },
                 "email": {
                     "title": "E-mail",
@@ -77,15 +77,91 @@
                 "h3": [
                     "Atrybuty",
                     "i cechy"
-                ]
+                ],
+                "whatAmILike": {
+                    "title": "Jaki jestem",
+                    "array": [
+                        "Dokładny",
+                        "Odpowiedzialny",
+                        "Rzetelny",
+                        "Samodzielny",
+                        "Terminowy"
+                    ]
+                },
+                "inWhatAmIGood": {
+                    "title": "W czym jestem dobry",
+                    "array": [
+                        "Dzielę się wiedzą",
+                        "Potrafię szukać",
+                        "Przyjmuję krytykę",
+                        "Skupiam się na celach",
+                        "Współpracuję w zespole, komunikuję się"
+                    ]
+                }
             },
             "education": {
-                "h3": "Edukacja"
+                "h3": "Edukacja",
+                "timelinePoints": [
+                    {
+                        "period": "10.2015 - Obecnie",
+                        "title": "Edukacja indywidualna",
+                        "description": "Nauka zagadnień zwianych z szeroko pojętym front-endu internetowym i web designem."
+                    },
+                    {
+                        "period": "09.2012 - Obecnie",
+                        "title": "Wykształcenie: Wyższe",
+                        "description": "Studia inżynierskie w Szkole Głównej Gospodarstwa Wiejskiego w Warszawie, kierunek: Informatyka, specjalizacja: Systemy komputerowe."
+                    },
+                    {
+                        "period": "09.2009 - 06.2012",
+                        "title": "Wykształcenie: Średnie",
+                        "description": "Ukończenie nauki w Liceum Ogólnokształcącym im. Marii Sadzewiczowej w Łochowie na profilu matematyczno-informatycznym."
+                    }
+                ]
+
             },
             "experiencesCourses": {
                 "h3": [
                     "Doświadczenie",
                     "i kursy"
+                ],
+                "timelinePoints": [
+                    {
+                        "period": "01.2017 - Obecnie",
+                        "title": "Front-End Developer / Freelancer",
+                        "description": "Wykonywanie różnego rodzaju zleceń zdalnie dla klientów pozyskanych za pośrednictwem sieci.",
+                        "link": "https://github.com/mateuszarchicinski/mateusz-archicinski.pl",
+                        "linkIconName": "github",
+                        "linkIconColor": "github"
+                    },
+                    {
+                        "period": "04.2016 - 01.2017",
+                        "title": "Web Content Editor w K2 Internet S.A.",
+                        "description": "Do głównych obowiązków zaliczało się obsługiwanie różnorodnych systemów zarządzania treścią w sieci, tworzenie stron kampanijno-produktowych typu landing page, long page i mailingów a także automatyzacja pracy za pomocą skryptów po stronie serwera/klienta js/nodejs."
+                    },
+                    {
+                        "period": "30.11.2015 - 18.12.2015",
+                        "title": "Pracownik biurowy / Praktykant w GUS",
+                        "description": "Praktyka studencka odbywana w Głównym Urzędzie Statystycznym w Warszawie, wykonywane czynności: tester systemu szkoleń wewnętrznych dla pracowników GUS z dostępem do cms'a Moodle."
+                    },
+                    {
+                        "period": "02.11.2015 - 27.11.2015",
+                        "title": "Pracownik biurowy w Kancelarii Adwokackiej",
+                        "description": "Zatrudnienie na umowe zlecenie w Kancelarii Adwokackiej, wykonywane czynności: prace biurowe."
+                    },
+                    {
+                        "period": "10.2015 - Obecnie",
+                        "title": "Projekty / W ramach nauki",
+                        "description": "Wykonane i udostępnione projekty  w ramach nauki różnych technologii na moim Githubie.",
+                        "link": "https://github.com/mateuszarchicinski?tab=repositories",
+                        "linkIconName": "github",
+                        "linkIconColor": "github"
+                    },
+                    {
+                        "period": "10.2015 - Obecnie",
+                        "title": "Kursy internetowe",
+                        "description": "Ukończenie dużej ilości kursów internetowych z zakresu: HTML5, Pug, CSS3, Less, Sass, Bootstrap, Materialize, Foundation, RWD, JS, jQuery, AngularJS, Angular Material, NodeJS, NPM, MongoDB, PHP, MySql, Git i Photoshop."
+                    }
                 ]
             },
             "skillsTechnologies": {
@@ -98,19 +174,19 @@
         "servicesWrapper": {
             "header": {
                 "h2": "Usługi",
-                "p": "Sprawdź co mogę ci zaoferować"
+                "p": "Sprawdź co mogę ci zaoferować."
             }
         },
         "portfolioWrapper": {
             "header": {
                 "h2": "Portfolio",
-                "p": "Stworzone przeze mnie projekty, samodzielnie jak i w grupie"
+                "p": "Stworzone przeze mnie projekty, samodzielnie jak i w grupie."
             }
         },
         "contactWrapper": {
             "header": {
                 "h2": "Kontakt",
-                "p": "Jeżeli masz jakieś pytania skontaktuj się zemną"
+                "p": "Jeżeli masz jakieś pytania skontaktuj się zemną."
             }
         }
 

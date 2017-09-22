@@ -1,0 +1,32 @@
+//-
+    About Me ~ Education
+
+.about-me-section
+    header.row.no-gutters.align-items-center.about-me-section-header
+        span.icon.icon-15.icon-star.about-me-section-icon
+        span.filling-line
+        h3.heading.heading-4.text-center= data.mainWrapper.aboutMeWrapper.education.h3
+        span.filling-line.ending
+    .about-me-section-body
+        ul.timeline__list
+            each obj, index in data.mainWrapper.aboutMeWrapper.education.timelinePoints
+                if index === data.mainWrapper.aboutMeWrapper.education.timelinePoints.length - 1
+                    li.timeline-point.beginning
+                        span.timeline-point-period.beginning= obj.period
+                        h4.timeline-point-title= obj.title
+                        if !obj.link
+                            p.timeline-point-description.ending= obj.description
+                        else
+                            p.timeline-point-description= obj.description
+                            a(href=obj.link class="info-link timeline-point-link ending")= obj.link
+                                span(aria-hidden="true" class="icon icon-" + obj.linkIconName + " color-" + obj.linkIconColor + " info-icon")
+                else
+                    li.timeline-point
+                        span.timeline-point-period.beginning= obj.period
+                        h4.timeline-point-title= obj.title
+                        if !obj.link
+                            p.timeline-point-description.ending= obj.description
+                        else
+                            p.timeline-point-description= obj.description
+                            a(href=obj.link class="info-link timeline-point-link ending")= obj.link
+                                span(aria-hidden="true" class="icon icon-" + obj.linkIconName + " color-" + obj.linkIconColor + " info-icon")
