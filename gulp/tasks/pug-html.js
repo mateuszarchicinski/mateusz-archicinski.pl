@@ -35,7 +35,7 @@ exports.task = (callback) => {
                     compileDebug: true
                 }))
                 .pipe(wiredep({ // https://github.com/taptapship/wiredep#wiredep--
-                    exclude: ['bootstrap', 'jquery', 'popper'],
+                    exclude: ['bootstrap', 'popper'],
                     ignorePath: '../'
                 }))
                 .pipe($.rename({

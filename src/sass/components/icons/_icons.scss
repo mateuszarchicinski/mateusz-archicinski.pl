@@ -122,4 +122,71 @@ $icon-2__font-size: $icon__font-size * 2 !default;
     &-wrench::before {
         content: '\e801';
     }
+    // Icons Img
+    &-img {
+        width: 48px;
+        height: 48px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        display: inline-block;
+    }
+    &-html5 {
+        background-image: url(../images/skills-technologies/html5-logo.svg);
+        
+    }
+    &-pug {
+        background-image: url(../images/skills-technologies/pug-logo.svg);
+    }
+    &-json {
+        background-image: url(../images/skills-technologies/json-logo.svg);
+    }
+    &-css3 {
+        background-image: url(../images/skills-technologies/css3-logo.svg);
+    }
+    &-sass {
+        background-image: url(../images/skills-technologies/sass-logo.svg);
+    }
+    &-bootstrap {
+        background-image: url(../images/skills-technologies/bootstrap-logo.svg);
+    }
+    &-rwd {
+        background-image: url(../images/skills-technologies/rwd-logo.svg);
+    }
+    &-javascript {
+        background-image: url(../images/skills-technologies/javascript-logo.svg);
+    }
+    &-es6 {
+        background-image: url(../images/skills-technologies/es6-logo.png);
+    }
+    &-jquery {
+        background-image: url(../images/skills-technologies/jquery-logo.svg);
+    }
+    &-angularjs {
+        background-image: url(../images/skills-technologies/angularjs-logo.svg);
+    }
+    &-ajax {
+        background-image: url(../images/skills-technologies/ajax-logo.svg);
+    }
+    &-nodejs {
+        background-image: url(../images/skills-technologies/nodejs-logo.svg);
+    }
+    &-npm {
+        background-image: url(../images/skills-technologies/npm-logo.svg);
+    }
+    &-bower {
+        background-image: url(../images/skills-technologies/bower-logo.svg);
+    }
+    &-gulp {
+        background-image: url(../images/skills-technologies/gulp-logo.svg);
+    }
+    &-wordpress {
+        background-image: url(../images/skills-technologies/wordpress-logo.svg);
+    }
+    &-git {
+        background-image: url(../images/skills-technologies/git-logo.svg);
+    }
+    &-photoshop {
+        background-image: url(../images/skills-technologies/photoshop-logo.svg);
+    }
 }

@@ -105,7 +105,7 @@
                     {
                         "period": "10.2015 - Obecnie",
                         "title": "Edukacja indywidualna",
-                        "description": "Nauka zagadnień zwianych z szeroko pojętym front-endu internetowym i web designem."
+                        "description": "Nauka zagadnień zwianych z szeroko pojętym front-endem internetowym i web designem."
                     },
                     {
                         "period": "09.2012 - Obecnie",
@@ -129,30 +129,30 @@
                     {
                         "period": "01.2017 - Obecnie",
                         "title": "Front-End Developer / Freelancer",
-                        "description": "Wykonywanie różnego rodzaju zleceń zdalnie dla klientów pozyskanych za pośrednictwem sieci.",
-                        "link": "https://github.com/mateuszarchicinski/mateusz-archicinski.pl",
-                        "linkIconName": "github",
-                        "linkIconColor": "github"
+                        "description": "Krótkoterminowe zlecenia zadań do wykonania zdalnie.",
+                        "link": "https://www.mateusz-archicinski.pl",
+                        "linkIconName": "globe",
+                        "linkIconColor": "primary"
                     },
                     {
                         "period": "04.2016 - 01.2017",
                         "title": "Web Content Editor w K2 Internet S.A.",
-                        "description": "Do głównych obowiązków zaliczało się obsługiwanie różnorodnych systemów zarządzania treścią w sieci, tworzenie stron kampanijno-produktowych typu landing page, long page i mailingów a także automatyzacja pracy za pomocą skryptów po stronie serwera/klienta js/nodejs."
+                        "description": "Do głównych obowiązków zaliczało się obsługiwanie różnorodnych systemów zarządzania treścią w sieci, tworzenie stron kampanijno-produktowych typu landing page, long page i mailingów, a także automatyzacja pracy za pomocą skryptów po stronie serwera/klienta js/nodejs."
                     },
                     {
                         "period": "30.11.2015 - 18.12.2015",
                         "title": "Pracownik biurowy / Praktykant w GUS",
-                        "description": "Praktyka studencka odbywana w Głównym Urzędzie Statystycznym w Warszawie, wykonywane czynności: tester systemu szkoleń wewnętrznych dla pracowników GUS z dostępem do cms'a Moodle."
+                        "description": "Praktyka studencka odbywana w Głównym Urzędzie Statystycznym w Warszawie, wykonywane czynności: tester systemu szkoleń wewnętrznych dla pracowników GUS z dostępem do cmsa Moodle."
                     },
                     {
                         "period": "02.11.2015 - 27.11.2015",
                         "title": "Pracownik biurowy w Kancelarii Adwokackiej",
-                        "description": "Zatrudnienie na umowe zlecenie w Kancelarii Adwokackiej, wykonywane czynności: prace biurowe."
+                        "description": "Zatrudnienie na umowę zlecenie w Kancelarii Adwokackiej, wykonywane czynności: prace biurowe."
                     },
                     {
                         "period": "10.2015 - Obecnie",
-                        "title": "Projekty / W ramach nauki",
-                        "description": "Wykonane i udostępnione projekty  w ramach nauki różnych technologii na moim Githubie.",
+                        "title": "Projekty w ramach nauki",
+                        "description": "Wykonane i udostępnione projekty w ramach nauki różnych technologii. Zachęcam do odwiedzenia mojego Githuba.",
                         "link": "https://github.com/mateuszarchicinski?tab=repositories",
                         "linkIconName": "github",
                         "linkIconColor": "github"
@@ -160,7 +160,7 @@
                     {
                         "period": "10.2015 - Obecnie",
                         "title": "Kursy internetowe",
-                        "description": "Ukończenie dużej ilości kursów internetowych z zakresu: HTML5, Pug, CSS3, Less, Sass, Bootstrap, Materialize, Foundation, RWD, JS, jQuery, AngularJS, Angular Material, NodeJS, NPM, MongoDB, PHP, MySql, Git i Photoshop."
+                        "description": "Ukończenie dużej ilości kursów internetowych z zakresu: HTML5, Pug, JSON, CSS3, Less, Sass, Bootstrap, Materialize, Foundation, RWD, JS, ES6, jQuery, AngularJS, AJAX, Angular Material, NodeJS, NPM, Bower, Gulp, MongoDB, Mongoose, PHP, WordPress, MySql, Git i Photoshop."
                     }
                 ]
             },
@@ -168,7 +168,8 @@
                 "h3": [
                     "Umiejętności",
                     "i technologie"
-                ]
+                ],
+                "p": "Wybrane umiejętności i technologie, które wykorzystuje w swoich projektach na co dzień."
             }
         },
         "servicesWrapper": {

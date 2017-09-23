@@ -19,5 +19,8 @@ exports.output = {
     file: `${gulpConfig.directories.work}/js/main.js`,
     format: 'iife',
     name: 'mainBundle',
-    sourcemap: true
+    sourcemap: true,
+    globals: {
+        jQuery: '$'
+    }
 };

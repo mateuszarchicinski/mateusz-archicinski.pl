@@ -1,3 +1,6 @@
+import $ from 'jQuery';
+
+
 console.info('JavaScript running...');
 
 
@@ -16,4 +19,11 @@ window.addEventListener('click', () => {
     mainHeader.classList.remove('show');
     mainHeader.classList.add('hide');
     status = false;
+});
+
+
+$(document).ready(() => {
+    $('.owl-carousel-js').owlCarousel({
+        loop: true
+    });
 });

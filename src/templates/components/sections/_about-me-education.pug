@@ -18,7 +18,7 @@
                             p.timeline-point-description.ending= obj.description
                         else
                             p.timeline-point-description= obj.description
-                            a(href=obj.link class="info-link timeline-point-link ending")= obj.link
+                            a(href=obj.link target="_blank" class="info-link timeline-point-link ending")= obj.link
                                 span(aria-hidden="true" class="icon icon-" + obj.linkIconName + " color-" + obj.linkIconColor + " info-icon")
                 else
                     li.timeline-point
@@ -28,5 +28,5 @@
                             p.timeline-point-description.ending= obj.description
                         else
                             p.timeline-point-description= obj.description
-                            a(href=obj.link class="info-link timeline-point-link ending")= obj.link
+                            a(href=obj.link target="_blank" class="info-link timeline-point-link ending")= obj.link
                                 span(aria-hidden="true" class="icon icon-" + obj.linkIconName + " color-" + obj.linkIconColor + " info-icon")

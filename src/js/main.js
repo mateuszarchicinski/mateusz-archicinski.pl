@@ -1,5 +1,7 @@
-(function () {
+(function ($) {
 'use strict';
+
+$ = $ && $.hasOwnProperty('default') ? $['default'] : $;
 
 console.info('JavaScript running...');
 
@@ -19,5 +21,11 @@ window.addEventListener('click', function () {
     status = false;
 });
 
-}());
+$(document).ready(function () {
+    $('.owl-carousel-js').owlCarousel({
+        loop: true
+    });
+});
+
+}($));
 //# sourceMappingURL=main.js.map
