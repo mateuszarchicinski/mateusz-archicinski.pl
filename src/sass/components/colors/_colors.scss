@@ -3,6 +3,12 @@
 //~~~~~~~~~~~~~~~~~~~~~~//
 
 
+// .color-white
+$color-white__color: $color__white !default;
+
+// .color-black
+$color-black__color: $color__black-1 !default;
+
 // .color-primary
 $color-primary__color: $primary-color !default;
 
@@ -20,6 +26,12 @@ $color-github__color: $color__github !default;
 
 
 .color {
+    &-white {
+        color: $color-white__color;
+    }
+    &-black {
+        color: $color-black__color;
+    }
     &-primary {
         color: $color-primary__color;
         &-text {

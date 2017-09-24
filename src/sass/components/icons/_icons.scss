@@ -13,6 +13,8 @@ $icon-125__font-size: $icon__font-size * 1.25 !default;
 $icon-15__font-size: $icon__font-size * 1.5 !default;
 // .icon-2
 $icon-2__font-size: $icon__font-size * 2 !default;
+// .icon-5
+$icon-5__font-size: $icon__font-size * 5 !default;
 
 
 .icon {
@@ -42,6 +44,11 @@ $icon-2__font-size: $icon__font-size * 2 !default;
     &-2 {
         &::before {
             font-size: $icon-2__font-size;
+        }
+    }
+    &-5 {
+        &::before {
+            font-size: $icon-5__font-size;
         }
     }
     &-birthday:before {

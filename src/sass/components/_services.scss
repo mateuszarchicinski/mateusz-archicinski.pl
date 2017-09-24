@@ -1,10 +1,126 @@
-//~~~~~~~~~~~~~~~~~~~~~~~~//
-//~~~~~~* SERVICES *~~~~~~//+
-//~~~~~~~~~~~~~~~~~~~~~~~~//
+//++++++++++++++++++++++++//
+//++++++* SERVICES *++++++//+
+//++++++++++++++++++++++++//
+
+
+// .services-1-item
+$services-1-item__background-color: $color__white !default;
+$services-1-item__border: 1px solid rgba($color__black-1, 0.1) !default;
+$services-1-item__box-shadow: 0 5px 8px 0 rgba($color__black-1, 0.1) !default;
+
+
+// .owl-carousel-services .center .services-1-item-icon
+$services-1-item-icon__color-1: $primary-color !default;
+// .owl-carousel-services  .center + .owl-item .services-1-item-icon
+$services-1-item-icon__color-2: $accent-color !default;
+
+
+// .owl-carousel-services .center .services-1-item-heading-separator__line
+$services-1-item-heading-separator__line__background-color-1: $primary-color !default;
+// .owl-carousel-services .center + .owl-item .services-1-item-heading-separator__line
+$services-1-item-heading-separator__line__background-color-2: $accent-color !default;
+
+
+// .owl-carousel-services .center .services-1-item-button
+$services-1-item-button__color-1: $primary-color !default;
+$services-1-item-button__border-color-1: $primary-color !default;
+// .owl-carousel-services .center + .owl-item .services-1-item-button
+$services-1-item-button__color-2: $accent-color !default;
+$services-1-item-button__border-color-2: $accent-color !default;
+
+
+// .owl-carousel-services .center .services-1-item-button:hover
+$services-1-item-button__hover__color-1: $color__white !default;
+// .owl-carousel-services .center + .owl-item .services-1-item-button:hover
+$services-1-item-button__hover__color-2: $color__white !default;
+
+
+// .owl-carousel-services .center .services-1-item-button:hover::after
+$services-1-item-button__hover__after__border-color-1: $primary-color !default;
+// .owl-carousel-services .center + .owl-item .services-1-item-button:hover::after
+$services-1-item-button__hover__after__border-color-2: $accent-color !default;
 
 
 .services {
     &-wrapper {
-        color: $primary-color;
+        
+    }
+    &-1-item {
+        background-color: $services-1-item__background-color;
+        border: $services-1-item__border;
+        box-shadow: $services-1-item__box-shadow;
+        padding: 25px;
+        margin: 50px;
+        transition: 0.3s padding ease-in-out, 0.3s margin ease-in-out;
+        .owl-carousel-services .center > & {
+            padding: 40px 25px;
+            margin: 35px 50px;
+        }
+        &-icon {
+            display: block;
+            transition: 0.3s color ease-in-out;
+            .owl-carousel-services .center & {
+                color: $services-1-item-icon__color-1;
+            }
+            .owl-carousel-services .center + .owl-item & {
+                color: $services-1-item-icon__color-2;
+            }
+        }
+        &-title {
+            margin-top: 15px;
+        }
+        &-heading-separator__line {
+            .owl-carousel-services .center & {
+                background-color: $services-1-item-heading-separator__line__background-color-1;
+            }
+            .owl-carousel-services .center + .owl-item & {
+                background-color: $services-1-item-heading-separator__line__background-color-2;
+            }
+        }
+        &-button {
+            background-color: transparent;
+            display: block;
+            margin: 25px auto 0;
+            transition: 0.3s color ease-in-out, 0.3s border-color ease-in-out;
+            .owl-carousel-services .center & {
+                color: $services-1-item-button__color-1;
+                border-color: $services-1-item-button__border-color-1;
+                &:hover {
+                    color: $services-1-item-button__hover__color-1;
+                    &::after {
+                        background-color: $services-1-item-button__hover__after__border-color-1;
+                    }
+                }
+            }
+            .owl-carousel-services .center + .owl-item & {
+                color: $services-1-item-button__color-2;
+                border-color: $services-1-item-button__border-color-2;
+                &:hover {
+                    color: $services-1-item-button__hover__color-2;
+                    &::after {
+                        background-color: $services-1-item-button__hover__after__border-color-2;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+// .owl-carousel-services.owl-carousel .owl-dot.active span
+$owl-carousel-services__owl-carousel__owl-dot-active__span__background-color: $primary-color !default;
+
+
+.owl-carousel-services {
+    &.owl-carousel {
+        .owl-dot {
+            span {
+                transition: 0.15s transform cubic-bezier(.25,.95,.95,1.35);
+            }
+            &.active span {
+                background-color: $owl-carousel-services__owl-carousel__owl-dot-active__span__background-color;
+                transform: scale(1.5);
+            }
+        }
     }
 }

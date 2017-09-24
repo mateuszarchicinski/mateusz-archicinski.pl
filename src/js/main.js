@@ -22,8 +22,18 @@ window.addEventListener('click', function () {
 });
 
 $(document).ready(function () {
-    $('.owl-carousel-js').owlCarousel({
-        loop: true
+    var owlCaruselServices = $('.owl-carousel-services-js');
+
+    owlCaruselServices.owlCarousel({
+        loop: true,
+        center: true,
+        autoplay: true,
+        autoplayHoverPause: true
+    });
+
+    owlCaruselServices.on('mouseleave', function () {
+        owlCaruselServices.trigger('stop.owl.autoplay');
+        owlCaruselServices.trigger('play.owl.autoplay');
     });
 });
 

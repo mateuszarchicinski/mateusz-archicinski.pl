@@ -7,7 +7,6 @@
 $btn__background-color: rgba($color__white, 0.1) !default;
 $btn__font-size: 1em !default;
 $btn__font-weight: $font-weight__bolder-7 !default;
-$btn__color: $color__white !default;
 $btn__border: 1px solid $color__white !default;
 // .btn:hover::after
 $btn__hover__after__background-color: $color__white !default;
@@ -44,7 +43,7 @@ $btn-twitter__color: $color__twitter !default;
     text-align: center;
     text-decoration: none;
     text-transform: uppercase;
-    color: $btn__color;
+    color: inherit;
     padding: 16.5px 20px;
     border: $btn__border;
     outline: 0;
@@ -64,7 +63,7 @@ $btn-twitter__color: $color__twitter !default;
     &,
     &.to-left {
         &::after {
-            left: 100%;
+            left: 101%;
             top: 0;
         }
         &:hover {
@@ -75,7 +74,7 @@ $btn-twitter__color: $color__twitter !default;
     }
     &.to-right {
         &::after {
-            left: -100%;
+            left: -101%;
         }
         &:hover {
             &::after {
@@ -85,7 +84,7 @@ $btn-twitter__color: $color__twitter !default;
     }
     &.to-top {
         &::after {
-            top: 100%;
+            top: 101%;
         }
         &:hover {
             &::after {
@@ -95,7 +94,7 @@ $btn-twitter__color: $color__twitter !default;
     }
     &.to-bottom {
         &::after {
-            top: -100%;
+            top: -101%;
         }
         &:hover {
             &::after {
@@ -111,8 +110,8 @@ $btn-twitter__color: $color__twitter !default;
     }
     &::after {
         content: "";
-        width: 100%;
-        height: 100%;
+        width: 101%;
+        height: 101%;
         position: absolute;
         display: block;
         z-index: -1;
@@ -133,6 +132,9 @@ $btn-twitter__color: $color__twitter !default;
     
     // Primary Light
     @include colorfulButton("primary-light", $primary-color-light);
+    
+    // Primary Text
+    @include colorfulButton("primary-text", $primary-text-color);
     
     // Accent
     @include colorfulButton("accent", $accent-color);

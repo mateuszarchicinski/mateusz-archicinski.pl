@@ -23,7 +23,17 @@ window.addEventListener('click', () => {
 
 
 $(document).ready(() => {
-    $('.owl-carousel-js').owlCarousel({
-        loop: true
+    const owlCaruselServices = $('.owl-carousel-services-js');
+
+    owlCaruselServices.owlCarousel({
+        loop: true,
+        center: true,
+        autoplay: true,
+        autoplayHoverPause: true
+    });
+
+    owlCaruselServices.on('mouseleave', () => {
+        owlCaruselServices.trigger('stop.owl.autoplay');
+        owlCaruselServices.trigger('play.owl.autoplay');
     });
 });
