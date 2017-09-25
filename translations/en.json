@@ -175,7 +175,39 @@
             "header": {
                 "h2": "Services",
                 "p": "Sprawdź co mogę ci zaoferować."
-            }
+            },
+            "services": [
+                {
+                    "iconName": "website",
+                    "title": "Kodowanie PSD do HTML/CSS/JS",
+                    "description": "Pocięcie i zakodowanie do HTML5, CSS3 i JavaScript dostarczonego projektu graficznego strony internetowej, mailingu, szablonu WordPress i innych.",
+                    "button": "Więcej"
+                },
+                {
+                    "iconName": "devices",
+                    "title": "Dostosowanie do różnych przeglądarek i urządzeń",
+                    "description": "Dostosowanie strony internetowej do wybranych przeglądarek <br>i urządzeń mobilnych <br>z uwzględnieniem różnych rozdzielczości.",
+                    "button": "Więcej"
+                },
+                {
+                    "iconName": "admin",
+                    "title": "Administracja stron internetowych",
+                    "description": "Wdrożenie i utrzymanie strony/aplikacji internetowej w tym okresowe raporty z testów automatycznych wybranych funkcjonalności.",
+                    "button": "Więcej"
+                },
+                {
+                    "iconName": "spa",
+                    "title": "SPA / Aplikacje internetowe",
+                    "description": "Tworzenie całej warstwy klienta aplikacji internetowej lub wybranych komponentów w oparciu <br>o framework AngularJS, HTML5, CSS3, ES6/TypeScript.",
+                    "button": "Więcej"
+                },
+                {
+                    "iconName": "api",
+                    "title": "API / Interfejsy programowania aplikacji",
+                    "description": "Tworzenie całej warstwy serwera lub wybranych usług zapewniających dostęp do zasobów serwera za pośrednictwem protokołu HTTP <br>w oparciu o framework Express.",
+                    "button": "Więcej"
+                }
+            ]
         },
         "portfolioWrapper": {
             "header": {

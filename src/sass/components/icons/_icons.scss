@@ -196,4 +196,19 @@ $icon-5__font-size: $icon__font-size * 5 !default;
     &-photoshop {
         background-image: url(../images/skills-technologies/photoshop-logo.svg);
     }
+    &-services-website {
+        background-image: url(../images/services/browser-2.svg);
+    }
+    &-services-devices {
+        background-image: url(../images/services/transfer.svg);
+    }
+    &-services-admin {
+        background-image: url(../images/services/015-analytics.svg);
+    }
+    &-services-spa {
+        background-image: url(../images/services/browser-7.svg);
+    }
+    &-services-api {
+        background-image: url(../images/services/database-3.svg);
+    }
 }

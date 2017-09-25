@@ -4,41 +4,27 @@
 
 
 // .services-1-item
-$services-1-item__background-color: $color__white !default;
+$services-1-item__background-color-0: darken($color__white, 1.05%) !default;
 $services-1-item__border: 1px solid rgba($color__black-1, 0.1) !default;
 $services-1-item__box-shadow: 0 5px 8px 0 rgba($color__black-1, 0.1) !default;
-
+// .owl-carousel-services .center .services-1-item
+$services-1-item__background-color-1: $color__white !default;
 
 // .owl-carousel-services .center .services-1-item-icon
 $services-1-item-icon__color-1: $primary-color !default;
-// .owl-carousel-services  .center + .owl-item .services-1-item-icon
-$services-1-item-icon__color-2: $accent-color !default;
-
 
 // .owl-carousel-services .center .services-1-item-heading-separator__line
 $services-1-item-heading-separator__line__background-color-1: $primary-color !default;
-// .owl-carousel-services .center + .owl-item .services-1-item-heading-separator__line
-$services-1-item-heading-separator__line__background-color-2: $accent-color !default;
-
 
 // .owl-carousel-services .center .services-1-item-button
 $services-1-item-button__color-1: $primary-color !default;
 $services-1-item-button__border-color-1: $primary-color !default;
-// .owl-carousel-services .center + .owl-item .services-1-item-button
-$services-1-item-button__color-2: $accent-color !default;
-$services-1-item-button__border-color-2: $accent-color !default;
-
 
 // .owl-carousel-services .center .services-1-item-button:hover
 $services-1-item-button__hover__color-1: $color__white !default;
-// .owl-carousel-services .center + .owl-item .services-1-item-button:hover
-$services-1-item-button__hover__color-2: $color__white !default;
-
 
 // .owl-carousel-services .center .services-1-item-button:hover::after
 $services-1-item-button__hover__after__border-color-1: $primary-color !default;
-// .owl-carousel-services .center + .owl-item .services-1-item-button:hover::after
-$services-1-item-button__hover__after__border-color-2: $accent-color !default;
 
 
 .services {
@@ -46,24 +32,24 @@ $services-1-item-button__hover__after__border-color-2: $accent-color !default;
         
     }
     &-1-item {
-        background-color: $services-1-item__background-color;
+        background-color: $services-1-item__background-color-0;
         border: $services-1-item__border;
         box-shadow: $services-1-item__box-shadow;
         padding: 25px;
-        margin: 50px;
-        transition: 0.3s padding ease-in-out, 0.3s margin ease-in-out;
+        margin: 50px 35px;
+        transition: 0.3s background-color ease-in-out, 0.3s padding ease-in-out, 0.3s margin ease-in-out;
         .owl-carousel-services .center > & {
-            padding: 40px 25px;
-            margin: 35px 50px;
+            background-color: $services-1-item__background-color-1;
+            padding: 40px;
+            margin: 35px 20px;
         }
         &-icon {
+            width: 100%;
+            height: 115px;
             display: block;
             transition: 0.3s color ease-in-out;
             .owl-carousel-services .center & {
                 color: $services-1-item-icon__color-1;
-            }
-            .owl-carousel-services .center + .owl-item & {
-                color: $services-1-item-icon__color-2;
             }
         }
         &-title {
@@ -72,9 +58,6 @@ $services-1-item-button__hover__after__border-color-2: $accent-color !default;
         &-heading-separator__line {
             .owl-carousel-services .center & {
                 background-color: $services-1-item-heading-separator__line__background-color-1;
-            }
-            .owl-carousel-services .center + .owl-item & {
-                background-color: $services-1-item-heading-separator__line__background-color-2;
             }
         }
         &-button {
@@ -89,16 +72,6 @@ $services-1-item-button__hover__after__border-color-2: $accent-color !default;
                     color: $services-1-item-button__hover__color-1;
                     &::after {
                         background-color: $services-1-item-button__hover__after__border-color-1;
-                    }
-                }
-            }
-            .owl-carousel-services .center + .owl-item & {
-                color: $services-1-item-button__color-2;
-                border-color: $services-1-item-button__border-color-2;
-                &:hover {
-                    color: $services-1-item-button__hover__color-2;
-                    &::after {
-                        background-color: $services-1-item-button__hover__after__border-color-2;
                     }
                 }
             }

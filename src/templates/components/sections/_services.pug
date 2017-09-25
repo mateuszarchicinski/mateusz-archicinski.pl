@@ -16,38 +16,16 @@ section(id="services" class="section services-wrapper")
         .row
             .col-12
                 .owl-carousel.owl-theme.owl-carousel-services.owl-carousel-services-js
-                    .services-1-item
-                        span.icon.icon-5.icon-star.services-1-item-icon.text-center
-                        h3.heading.heading-4.services-1-item-title.text-center Kodowanie PSD do HTML/CSS/JS
-                        .heading-separator
-                            .heading-separator__line.heading-separator__line-bolded-3.services-1-item-heading-separator__line
-                        p.paragraph.text-justify Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                        button(type="button" class="btn to-top btn-primary-text services-1-item-button") Więcej
-                    .services-1-item
-                        span.icon.icon-5.icon-github.services-1-item-icon.text-center
-                        h3.heading.heading-4.services-1-item-title.text-center Kodowanie PSD do HTML/CSS/JS
-                        .heading-separator
-                            .heading-separator__line.heading-separator__line-bolded-3.services-1-item-heading-separator__line
-                        p.paragraph.text-justify Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                        button(type="button" class="btn to-top btn-primary-text services-1-item-button") Więcej
-                    .services-1-item
-                        span.icon.icon-5.icon-desktop.services-1-item-icon.text-center
-                        h3.heading.heading-4.services-1-item-title.text-center Kodowanie PSD do HTML/CSS/JS
-                        .heading-separator
-                            .heading-separator__line.heading-separator__line-bolded-3.services-1-item-heading-separator__line
-                        p.paragraph.text-justify Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                        button(type="button" class="btn to-top btn-primary-text services-1-item-button") Więcej
-                    .services-1-item
-                        span.icon.icon-5.icon-mobile.services-1-item-icon.text-center
-                        h3.heading.heading-4.services-1-item-title.text-center Kodowanie PSD do HTML/CSS/JS
-                        .heading-separator
-                            .heading-separator__line.heading-separator__line-bolded-3.services-1-item-heading-separator__line
-                        p.paragraph.text-justify Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                        button(type="button" class="btn to-top btn-primary-text services-1-item-button") Więcej
-                    .services-1-item
-                        span.icon.icon-5.icon-codepen.services-1-item-icon.text-center
-                        h3.heading.heading-4.services-1-item-title.text-center Kodowanie PSD do HTML/CSS/JS
-                        .heading-separator
-                            .heading-separator__line.heading-separator__line-bolded-3.services-1-item-heading-separator__line
-                        p.paragraph.text-justify Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                        button(type="button" class="btn to-top btn-primary-text services-1-item-button") Więcej
+                    each obj in data.mainWrapper.servicesWrapper.services
+                        .services-1-item.text-center
+                            span(aria-hidden="true" class="icon-img icon-5 icon-services-" + obj.iconName + " services-1-item-icon")
+                            h3.heading.heading-4.services-1-item-title= obj.title
+                            .heading-separator
+                                .heading-separator__line.heading-separator__line-bolded-3.services-1-item-heading-separator__line
+                            if obj.description.length >= 165
+                                - var description = obj.description.substring(0, 165)
+                                - var dots = description[description.length - 1] === "." ? ".." : "..."
+                                p.paragraph.text-justify!= description + dots
+                            else
+                                p.paragraph!= obj.description
+                            button(type="button" class="btn to-top btn-primary-text services-1-item-button")= obj.button

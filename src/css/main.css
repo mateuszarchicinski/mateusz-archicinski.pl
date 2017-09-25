@@ -1912,6 +1912,21 @@ html {
 .icon-photoshop {
   background-image: url(../images/skills-technologies/photoshop-logo.svg); }
 
+.icon-services-website {
+  background-image: url(../images/services/browser-2.svg); }
+
+.icon-services-devices {
+  background-image: url(../images/services/transfer.svg); }
+
+.icon-services-admin {
+  background-image: url(../images/services/015-analytics.svg); }
+
+.icon-services-spa {
+  background-image: url(../images/services/browser-7.svg); }
+
+.icon-services-api {
+  background-image: url(../images/services/database-3.svg); }
+
 a.link {
   transition: 0.25s color ease-in-out; }
   a.link, a.link:link, a.link:visited {
@@ -2119,28 +2134,27 @@ a.link, a.no-link {
       border-bottom: 40px solid #2196f3; }
 
 .services-1-item {
-  background-color: #fff;
+  background-color: #fcfcfc;
   border: 1px solid rgba(0, 0, 0, 0.1);
   box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.1);
   padding: 25px;
-  margin: 50px;
-  transition: 0.3s padding ease-in-out, 0.3s margin ease-in-out; }
+  margin: 50px 35px;
+  transition: 0.3s background-color ease-in-out, 0.3s padding ease-in-out, 0.3s margin ease-in-out; }
   .owl-carousel-services .center > .services-1-item {
-    padding: 40px 25px;
-    margin: 35px 50px; }
+    background-color: #fff;
+    padding: 40px;
+    margin: 35px 20px; }
   .services-1-item-icon {
+    width: 100%;
+    height: 115px;
     display: block;
     transition: 0.3s color ease-in-out; }
     .owl-carousel-services .center .services-1-item-icon {
       color: #f44336; }
-    .owl-carousel-services .center + .owl-item .services-1-item-icon {
-      color: #1565c0; }
   .services-1-item-title {
     margin-top: 15px; }
   .owl-carousel-services .center .services-1-item-heading-separator__line {
     background-color: #f44336; }
-  .owl-carousel-services .center + .owl-item .services-1-item-heading-separator__line {
-    background-color: #1565c0; }
   .services-1-item-button {
     background-color: transparent;
     display: block;
@@ -2153,13 +2167,6 @@ a.link, a.no-link {
         color: #fff; }
         .owl-carousel-services .center .services-1-item-button:hover::after {
           background-color: #f44336; }
-    .owl-carousel-services .center + .owl-item .services-1-item-button {
-      color: #1565c0;
-      border-color: #1565c0; }
-      .owl-carousel-services .center + .owl-item .services-1-item-button:hover {
-        color: #fff; }
-        .owl-carousel-services .center + .owl-item .services-1-item-button:hover::after {
-          background-color: #1565c0; }
 
 .owl-carousel-services.owl-carousel .owl-dot span {
   transition: 0.15s -webkit-transform cubic-bezier(0.25, 0.95, 0.95, 1.35);
