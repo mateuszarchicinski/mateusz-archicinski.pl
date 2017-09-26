@@ -44,6 +44,7 @@ $btn-twitter__color: $color__twitter !default;
     text-decoration: none;
     text-transform: uppercase;
     color: inherit;
+    cursor: pointer;
     padding: 16.5px 20px;
     border: $btn__border;
     outline: 0;
@@ -110,8 +111,8 @@ $btn-twitter__color: $color__twitter !default;
     }
     &::after {
         content: "";
-        width: 101%;
-        height: 101%;
+        width: 102%;
+        height: 102%;
         position: absolute;
         display: block;
         z-index: -1;
@@ -122,6 +123,9 @@ $btn-twitter__color: $color__twitter !default;
         &::after {
             background-color: $btn__hover__after__background-color;
         }
+    }
+    & > span {
+        position: relative;
     }
     
     // Primary

@@ -28,4 +28,5 @@ section(id="services" class="section services-wrapper")
                                 p.paragraph.text-justify!= description + dots
                             else
                                 p.paragraph!= obj.description
-                            button(type="button" class="btn to-top btn-primary-text services-1-item-button")= obj.button
+                            button(type="button" class="btn to-top btn-primary-text services-1-item-button")
+                                span= obj.button

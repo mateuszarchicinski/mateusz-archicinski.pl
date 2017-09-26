@@ -187,13 +187,13 @@
                 {
                     "iconName": "devices",
                     "title": "Dostosowanie do różnych przeglądarek i urządzeń",
-                    "description": "Dostosowanie strony internetowej do wybranych przeglądarek <br>i urządzeń mobilnych <br>z uwzględnieniem różnych rozdzielczości.",
+                    "description": "Dostosowanie strony internetowej do wybranych przeglądarek i urządzeń mobilnych z uwzględnieniem różnych rozdzielczości (tzw. Responsive Web Design).",
                     "button": "Więcej"
                 },
                 {
                     "iconName": "admin",
                     "title": "Administracja stron internetowych",
-                    "description": "Wdrożenie i utrzymanie strony/aplikacji internetowej w tym okresowe raporty z testów automatycznych wybranych funkcjonalności.",
+                    "description": "Wdrożenie i utrzymanie strony/aplikacji internetowej w tym okresowe raporty z testów automatycznych i manualnych wybranych funkcjonalności.",
                     "button": "Więcej"
                 },
                 {

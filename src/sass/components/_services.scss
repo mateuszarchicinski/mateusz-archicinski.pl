@@ -36,12 +36,12 @@ $services-1-item-button__hover__after__border-color-1: $primary-color !default;
         border: $services-1-item__border;
         box-shadow: $services-1-item__box-shadow;
         padding: 25px;
-        margin: 50px 35px;
+        margin: 50px 32.5px;
         transition: 0.3s background-color ease-in-out, 0.3s padding ease-in-out, 0.3s margin ease-in-out;
         .owl-carousel-services .center > & {
             background-color: $services-1-item__background-color-1;
             padding: 40px;
-            margin: 35px 20px;
+            margin: 35px 17.5px;
         }
         &-icon {
             width: 100%;
