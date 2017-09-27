@@ -1,5 +1,7 @@
 import $ from 'jQuery';
-import {portfolio} from './portfolio';
+import {
+    Portfolio
+} from './portfolio';
 
 
 console.info('JavaScript running...');
@@ -24,6 +26,7 @@ window.addEventListener('click', () => {
 
 
 $(document).ready(() => {
+    // SERVICES
     const owlCaruselServices = $('.owl-carousel-services-js');
 
     owlCaruselServices.owlCarousel({
@@ -37,10 +40,9 @@ $(document).ready(() => {
         owlCaruselServices.trigger('stop.owl.autoplay');
         owlCaruselServices.trigger('play.owl.autoplay');
     });
-    
-    
-    const filters = [].slice.call(document.querySelectorAll('.portfolio-filters-js button[data-filter-type]'));
-    const items = [].slice.call(document.querySelectorAll('.portfolio-items-js div[data-type]'));
-    const devPortfolio = new portfolio(filters, items);
+
+
+    // PORTFOLIO
+    const devPortfolio = new Portfolio();
     devPortfolio.init();
 });

@@ -1,7 +1,7 @@
-(function ($) {
+(function ($$1) {
 'use strict';
 
-$ = $ && $.hasOwnProperty('default') ? $['default'] : $;
+$$1 = $$1 && $$1.hasOwnProperty('default') ? $$1['default'] : $$1;
 
 var classCallCheck = function (instance, Constructor) {
   if (!(instance instanceof Constructor)) {
@@ -27,56 +27,94 @@ var createClass = function () {
   };
 }();
 
-var portfolio = function () {
-    function portfolio(filters, items, filterActiveCls, itemHideCls, itemShowCls) {
-        classCallCheck(this, portfolio);
+var Portfolio = function () {
+    function Portfolio(filtersSelector, itemsSelector, filterActiveCls, itemHideCls, itemShowCls) {
+        classCallCheck(this, Portfolio);
 
-        this.currentFilter = filters[0];
-        this.filters = filters;
-        this.items = items;
+        this.filtersSelector = filtersSelector || '.portfolio-filters-js';
+        this.itemsSelector = itemsSelector || '.portfolio-items-js';
         this.filterActiveClass = filterActiveCls || 'active';
         this.itemHideClass = itemHideCls || 'hide';
         this.itemShowClass = itemShowCls || 'show';
+
+        this.currFilterElem = document.querySelector(this.filtersSelector + ' button[data-filter-type].' + this.filterActiveClass);
+        this.items = [].slice.call(document.querySelectorAll(this.itemsSelector + ' div[data-type]'));
     }
 
-    createClass(portfolio, [{
+    createClass(Portfolio, [{
         key: 'filterBy',
-        value: function filterBy(filter) {
+        value: function filterBy(filterValue, filterElem) {
             var _this = this;
 
-            if (!this.filteringStatus && filter && filter !== this.currentFilter) {
-                var filterTypeValue = filter.getAttribute('data-filter-type');
+            if (!filterValue || !filterElem || this.currFilterElem === filterElem || !this.items) return;
 
-                this.currentFilter.classList.remove(this.filterActiveClass);
-                filter.classList.add(this.filterActiveClass);
-                this.currentFilter = filter;
-
-                this.items.forEach(function (item) {
-                    var typeValue = item.getAttribute('data-type');
-
-                    if (filterTypeValue === typeValue || filterTypeValue === "") {
-                        item.classList.remove(_this.itemHideClass);
-                        item.classList.add(_this.itemShowClass);
-                    } else {
-                        item.classList.remove(_this.itemShowClass);
-                        item.classList.add(_this.itemHideClass);
-                    }
-                });
+            if (this.currFilterElem) {
+                this.currFilterElem.classList.remove(this.filterActiveClass);
             }
+
+            filterElem.classList.add(this.filterActiveClass);
+            this.currFilterElem = filterElem;
+
+            var itemCounter = 0;
+
+            this.items.forEach(function (item, index) {
+                var typeValue = item.getAttribute('data-type');
+
+                if (filterValue === typeValue || filterValue === 'all') {
+                    item.classList.remove(_this.itemHideClass);
+                    item.classList.add(_this.itemShowClass);
+                    _this.addStyles(itemCounter, item);
+                    itemCounter++;
+                } else {
+                    item.classList.remove(_this.itemShowClass);
+                    item.classList.add(_this.itemHideClass);
+                }
+            });
+        }
+    }, {
+        key: 'addStyles',
+        value: function addStyles(elemIndex, elem) {
+            elem = $(elem);
+
+            var elemWidth = elem.outerWidth(),
+                elemHeight = elem.outerHeight(),
+                elemParent = elem.parent(),
+                itemsInRow = Math.floor(elemParent.outerWidth() / elemWidth),
+                itemInColumn = Math.floor(elemIndex / itemsInRow);
+
+            elemParent.css({
+                height: elemHeight + elemHeight * itemInColumn
+            });
+
+            elem.css({
+                position: 'absolute',
+                left: elemWidth * (elemIndex % itemsInRow),
+                top: elemHeight * itemInColumn
+            });
         }
     }, {
         key: 'init',
         value: function init() {
             var _this2 = this;
 
-            this.filters.forEach(function (filter) {
-                filter.addEventListener('click', function () {
-                    _this2.filterBy(filter);
-                });
+            var filters = document.querySelector(this.filtersSelector);
+
+            if (!filters || !this.items) return;
+
+            filters.addEventListener('click', function (e) {
+                var clickedElem = e.target,
+                    filterValue = clickedElem.getAttribute('data-filter-type') || clickedElem.parentNode.getAttribute('data-filter-type');
+
+                if (!filterValue) {
+                    e.stopPropagation();
+                    return;
+                }
+
+                _this2.filterBy(filterValue, !clickedElem.hasAttribute('data-filter-type') ? clickedElem.parentNode : clickedElem);
             });
         }
     }]);
-    return portfolio;
+    return Portfolio;
 }();
 
 console.info('JavaScript running...');
@@ -97,8 +135,9 @@ window.addEventListener('click', function () {
     status = false;
 });
 
-$(document).ready(function () {
-    var owlCaruselServices = $('.owl-carousel-services-js');
+$$1(document).ready(function () {
+    // SERVICES
+    var owlCaruselServices = $$1('.owl-carousel-services-js');
 
     owlCaruselServices.owlCarousel({
         loop: true,
@@ -112,9 +151,8 @@ $(document).ready(function () {
         owlCaruselServices.trigger('play.owl.autoplay');
     });
 
-    var filters = [].slice.call(document.querySelectorAll('.portfolio-filters-js button[data-filter-type]'));
-    var items = [].slice.call(document.querySelectorAll('.portfolio-items-js div[data-type]'));
-    var devPortfolio = new portfolio(filters, items);
+    // PORTFOLIO
+    var devPortfolio = new Portfolio();
     devPortfolio.init();
 });
 

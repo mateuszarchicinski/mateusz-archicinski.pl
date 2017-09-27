@@ -1,43 +1,79 @@
-class portfolio {
-    constructor(filters, items, filterActiveCls, itemHideCls, itemShowCls) {
-        this.currentFilter = filters[0];
-        this.filters = filters;
-        this.items = items;
+class Portfolio {
+    constructor(filtersSelector, itemsSelector, filterActiveCls, itemHideCls, itemShowCls) {
+        this.filtersSelector = filtersSelector || '.portfolio-filters-js';
+        this.itemsSelector = itemsSelector || '.portfolio-items-js';
         this.filterActiveClass = filterActiveCls || 'active';
         this.itemHideClass = itemHideCls || 'hide';
         this.itemShowClass = itemShowCls || 'show';
+
+        this.currFilterElem = document.querySelector(this.filtersSelector + ' button[data-filter-type].' + this.filterActiveClass);
+        this.items = [].slice.call(document.querySelectorAll(this.itemsSelector + ' div[data-type]'));
     }
-    filterBy(filter) {
-        if (!this.filteringStatus && filter && filter !== this.currentFilter) {
-            const filterTypeValue = filter.getAttribute('data-filter-type');
+    filterBy(filterValue, filterElem) {
+        if (!filterValue || !filterElem || this.currFilterElem === filterElem || !this.items) return;
 
-            this.currentFilter.classList.remove(this.filterActiveClass);
-            filter.classList.add(this.filterActiveClass);
-            this.currentFilter = filter;
-
-            this.items.forEach((item) => {
-                const typeValue = item.getAttribute('data-type');
-
-                if (filterTypeValue === typeValue || filterTypeValue === "") {
-                    item.classList.remove(this.itemHideClass);
-                    item.classList.add(this.itemShowClass);
-                } else {
-                    item.classList.remove(this.itemShowClass);
-                    item.classList.add(this.itemHideClass);
-                }
-            });
+        if (this.currFilterElem) {
+            this.currFilterElem.classList.remove(this.filterActiveClass);
         }
+
+        filterElem.classList.add(this.filterActiveClass);
+        this.currFilterElem = filterElem;
+
+        let itemCounter = 0;;
+
+        this.items.forEach((item, index) => {
+            const typeValue = item.getAttribute('data-type');
+
+            if (filterValue === typeValue || filterValue === 'all') {
+                item.classList.remove(this.itemHideClass);
+                item.classList.add(this.itemShowClass);
+                this.addStyles(itemCounter, item);
+                itemCounter++;
+            } else {
+                item.classList.remove(this.itemShowClass);
+                item.classList.add(this.itemHideClass);
+            }
+        });
+    }
+    addStyles(elemIndex, elem) {
+        elem = $(elem);
+
+        const elemWidth = elem.outerWidth(),
+            elemHeight = elem.outerHeight(),
+            elemParent = elem.parent(),
+            itemsInRow = Math.floor(elemParent.outerWidth() / elemWidth),
+            itemInColumn = Math.floor(elemIndex / itemsInRow);
+
+        elemParent.css({
+            height: elemHeight + (elemHeight * itemInColumn)
+        });
+
+        elem.css({
+            position: 'absolute',
+            left: elemWidth * (elemIndex % itemsInRow),
+            top: elemHeight * itemInColumn
+        });
     }
     init() {
-        this.filters.forEach((filter) => {
-            filter.addEventListener('click', () => {
-                this.filterBy(filter);
-            });
+        const filters = document.querySelector(this.filtersSelector);
+
+        if (!filters || !this.items) return;
+
+        filters.addEventListener('click', (e) => {
+            const clickedElem = e.target,
+                filterValue = clickedElem.getAttribute('data-filter-type') || clickedElem.parentNode.getAttribute('data-filter-type');
+
+            if (!filterValue) {
+                e.stopPropagation();
+                return;
+            }
+
+            this.filterBy(filterValue, !clickedElem.hasAttribute('data-filter-type') ? clickedElem.parentNode : clickedElem);
         });
     }
 };
 
 
 export {
-    portfolio
+    Portfolio
 };

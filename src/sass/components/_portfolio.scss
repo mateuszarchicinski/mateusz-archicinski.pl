@@ -8,10 +8,10 @@ $portfolio-filters__button__font-size: 0.95em !default;
 $portfolio-filters__button__font-weight: $font-weight__normal !default;
 $portfolio-filters__button__color: $secondary-text-color !default;
 // .portfolio-filters__button:hover
-$portfolio-filters__button__hover__color: $color__black-1 !default;
+$portfolio-filters__button__hover__color: $primary-color !default;
 // .portfolio-filters__button.active
-$portfolio-filters__button__active__color: $color__black-1 !default;
-$portfolio-filters__button__active__border-color: $color__black-1 !default;
+$portfolio-filters__button__active__color: $primary-color !default;
+$portfolio-filters__button__active__border-color: $primary-color !default;
 
 
 .portfolio {
@@ -21,7 +21,7 @@ $portfolio-filters__button__active__border-color: $color__black-1 !default;
     &-filters {
         &__list {
             list-style: none;
-            padding: 25px 0;
+            padding: 20px 0;
             margin: 0;
         }
         &__button {
@@ -29,7 +29,7 @@ $portfolio-filters__button__active__border-color: $color__black-1 !default;
             font-weight: $portfolio-filters__button__font-weight;
             letter-spacing: 2.5px;
             color: $portfolio-filters__button__color;
-            margin: 0 5px;
+            margin: 5px;
             transition: 0.15s color ease-in-out, 0.15s border-color ease-in-out;
             &::after {
                 display: none;
@@ -44,23 +44,66 @@ $portfolio-filters__button__active__border-color: $color__black-1 !default;
         }
     }
     &-items {
+        min-height: 200px;
         position: relative;
+        transition: 0.3s height ease-in-out;
     }
-    &-1-item {
+    &-item {
+        width: 33.33333%;
+        height: 250px;
+        background-color: $color__snow;
+        display: block;
         padding: 25px;
-        margin: 25px;
-        background-color: $accent-color;
-        transition: 0.4s transform ease-in-out;
-        &:nth-child(odd) {
-            background-color: $primary-color;
+        border: 1px solid $primary-text-color;
+        transition-delay: 0;
+        transition-duration: 0.4s;
+        transition-property: position, left, top, transform, opacity;
+        transition-timing-function: ease-in-out;
+        
+        
+        @media screen and (max-width: 1199px) {
+            width: 100%;
+        }
+        
+        
+        &-title {
+            margin-top: 15px;
+        }
+        &-description {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        &-buttons {
+            margin-top: 25px;
+            & > .btn {
+                width: 49%;
+                margin: 0 0.5%;
+            }
         }
         &.hide {
-            transform: scale3d(0, 0, 0);
+            visibility: hidden;
+            transform: scale(0);
             @include opacity(0);
         }
         &.show {
-            transform: scale3d(1, 1, 1);
+            z-index: 1;
+            visibility: visible;
             @include opacity(1);
+        }
+    }
+}
+
+
+@media screen and (max-width: 1199px) {
+    .main-header,
+    .main-footer {
+        display: none;
+    }
+    .section {
+        display: none;
+        &.portfolio-wrapper {
+            display: block;
         }
     }
 }

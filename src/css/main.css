@@ -2184,7 +2184,7 @@ a.link, a.no-link {
 
 .portfolio-filters__list {
   list-style: none;
-  padding: 25px 0;
+  padding: 20px 0;
   margin: 0; }
 
 .portfolio-filters__button {
@@ -2192,40 +2192,71 @@ a.link, a.no-link {
   font-weight: 400;
   letter-spacing: 2.5px;
   color: #757575;
-  margin: 0 5px;
+  margin: 5px;
   transition: 0.15s color ease-in-out, 0.15s border-color ease-in-out; }
   .portfolio-filters__button::after {
     display: none; }
   .portfolio-filters__button:hover {
-    color: #000; }
+    color: #f44336; }
   .portfolio-filters__button.active {
-    color: #000;
-    border-color: #000; }
+    color: #f44336;
+    border-color: #f44336; }
 
 .portfolio-items {
-  position: relative; }
+  min-height: 200px;
+  position: relative;
+  transition: 0.3s height ease-in-out; }
 
-.portfolio-1-item {
+.portfolio-item {
+  width: 33.33333%;
+  height: 250px;
+  background-color: #fafafa;
+  display: block;
   padding: 25px;
-  margin: 25px;
-  background-color: #1565c0;
-  transition: 0.4s -webkit-transform ease-in-out;
-  transition: 0.4s transform ease-in-out;
-  transition: 0.4s transform ease-in-out, 0.4s -webkit-transform ease-in-out; }
-  .portfolio-1-item:nth-child(odd) {
-    background-color: #f44336; }
-  .portfolio-1-item.hide {
-    -webkit-transform: scale3d(0, 0, 0);
-            transform: scale3d(0, 0, 0);
+  border: 1px solid #212121;
+  transition-delay: 0;
+  transition-duration: 0.4s;
+  transition-property: position, left, top, opacity, -webkit-transform;
+  transition-property: position, left, top, transform, opacity;
+  transition-property: position, left, top, transform, opacity, -webkit-transform;
+  transition-timing-function: ease-in-out; }
+  @media screen and (max-width: 1199px) {
+    .portfolio-item {
+      width: 100%; } }
+  .portfolio-item-title {
+    margin-top: 15px; }
+  .portfolio-item-description {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; }
+  .portfolio-item-buttons {
+    margin-top: 25px; }
+    .portfolio-item-buttons > .btn {
+      width: 49%;
+      margin: 0 0.5%; }
+  .portfolio-item.hide {
+    visibility: hidden;
+    -webkit-transform: scale(0);
+        -ms-transform: scale(0);
+            transform: scale(0);
     opacity: 0;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
     filter: alpha(opacity=0); }
-  .portfolio-1-item.show {
-    -webkit-transform: scale3d(1, 1, 1);
-            transform: scale3d(1, 1, 1);
+  .portfolio-item.show {
+    z-index: 1;
+    visibility: visible;
     opacity: 1;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
     filter: alpha(opacity=100); }
+
+@media screen and (max-width: 1199px) {
+  .main-header,
+  .main-footer {
+    display: none; }
+  .section {
+    display: none; }
+    .section.portfolio-wrapper {
+      display: block; } }
 
 .heading-separator {
   display: -webkit-flex;
