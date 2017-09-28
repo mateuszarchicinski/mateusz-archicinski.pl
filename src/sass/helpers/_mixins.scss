@@ -5,17 +5,19 @@
 
 // Colorful button
 @mixin colorfulButton($name, $color) {
-    $background-color: rgba($color, 0.1);
-    $border-color: $color;
-    $hover__after__background-color: $color;
+    $cButton__background-color: rgba($color, 0.1);
+    $cButton__color: $color;
+    $cButton__border-color: $color;
+    $cButton__hover__after__background-color: $color;
     
     &-#{$name} {
-        background-color: $background-color;
-        border-color: $border-color;
+        background-color: $cButton__background-color;
+        color: $cButton__color;
+        border-color: $cButton__border-color;
         &:hover {
             @extend %keep-white-color-on-hover;
             &::after {
-                background-color: $hover__after__background-color;
+                background-color: $cButton__hover__after__background-color;
             }
         }
     }

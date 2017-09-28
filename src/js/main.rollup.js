@@ -1,4 +1,3 @@
-import $ from 'jQuery';
 import {
     Portfolio
 } from './portfolio';

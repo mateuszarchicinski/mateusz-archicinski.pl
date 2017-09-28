@@ -13,11 +13,15 @@ $portfolio-filters__button__hover__color: $primary-color !default;
 $portfolio-filters__button__active__color: $primary-color !default;
 $portfolio-filters__button__active__border-color: $primary-color !default;
 
+// .portfolio-item__figure::after
+$portfolio-item__figure__after__background-color: rgba(0, 0, 0, 0.15) !default;
+// .portfolio-item__figure::hover::after
+$portfolio-item__figure__hover__after__background-color: rgba(0, 0, 0, 0.75) !default;
+// .portfolio-item-title & .portfolio-item-description
+$portfolio-item-title-description__color: $color__white !default;
+
 
 .portfolio {
-    &-wrapper {
-        
-    }
     &-filters {
         &__list {
             list-style: none;
@@ -25,9 +29,9 @@ $portfolio-filters__button__active__border-color: $primary-color !default;
             margin: 0;
         }
         &__button {
+            font-family: "Raleway";
             font-size: $portfolio-filters__button__font-size;
             font-weight: $portfolio-filters__button__font-weight;
-            letter-spacing: 2.5px;
             color: $portfolio-filters__button__color;
             margin: 5px;
             transition: 0.15s color ease-in-out, 0.15s border-color ease-in-out;
@@ -44,41 +48,82 @@ $portfolio-filters__button__active__border-color: $primary-color !default;
         }
     }
     &-items {
-        min-height: 200px;
+        min-height: 250px;
         position: relative;
         transition: 0.3s height ease-in-out;
     }
     &-item {
         width: 33.33333%;
         height: 250px;
-        background-color: $color__snow;
-        display: block;
-        padding: 25px;
-        border: 1px solid $primary-text-color;
+        position: relative;
+        padding: 10px;
         transition-delay: 0;
-        transition-duration: 0.4s;
-        transition-property: position, left, top, transform, opacity;
+        transition-duration: 0.3s;
+        transition-property: left, top, visibility, transform, opacity;
         transition-timing-function: ease-in-out;
-        
-        
-        @media screen and (max-width: 1199px) {
-            width: 100%;
+        &__figure {
+            position: relative;
+            overflow: hidden;
+            margin: 0;
+            &::after {
+                content: "";
+                background-color: $portfolio-item__figure__after__background-color;
+                display: block;
+                transition: 0.3s background-color ease-in-out;
+            }
+            &:hover::after {
+                background-color: $portfolio-item__figure__hover__after__background-color;
+            }
         }
-        
-        
+        &__img {
+            z-index: -1;
+            object-fit: cover;
+            transition: 0.3s transform ease-in-out;
+        }
+        &__figure:hover &__img {
+            transform: scale(1.25);
+        }
+        &__figcaption {
+            z-index: 1;
+            visibility: hidden;
+            padding: 25px;
+            @include opacity(0);
+            transition: 0.3s opacity ease-in-out, 0.3s visibility ease-in-out;
+        }
+        &__figure:hover &__figcaption {
+            visibility: visible;
+            @include opacity(1);
+        }
+        &__figure,
+        &__figure::after,
+        &__img,
+        &__figcaption {
+            width: 100%;
+            height: 100%;
+        }
+        &__figure::after,
+        &__figcaption {
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
         &-title {
-            margin-top: 15px;
+            margin-top: 0.5em;
         }
         &-description {
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: nowrap;
         }
+        &-title,
+        &-description {
+            color: $portfolio-item-title-description__color;
+        }
         &-buttons {
             margin-top: 25px;
             & > .btn {
-                width: 49%;
-                margin: 0 0.5%;
+                width: calc(50% - 10px);
+                margin: 0 5px;
             }
         }
         &.hide {
@@ -90,20 +135,6 @@ $portfolio-filters__button__active__border-color: $primary-color !default;
             z-index: 1;
             visibility: visible;
             @include opacity(1);
-        }
-    }
-}
-
-
-@media screen and (max-width: 1199px) {
-    .main-header,
-    .main-footer {
-        display: none;
-    }
-    .section {
-        display: none;
-        &.portfolio-wrapper {
-            display: block;
         }
     }
 }

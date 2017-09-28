@@ -213,6 +213,87 @@
             "header": {
                 "h2": "Portfolio",
                 "p": "Stworzone przeze mnie projekty, samodzielnie jak i w grupie."
+            },
+            "projects": {
+                "categories": {
+                    "all": "All",
+                    "websites": "Websites",
+                    "mailings": "Mailings",
+                    "spa": "SPA",
+                    "api": "API"
+                },
+                "websites": [
+                    {
+                        "imgSrc": "https://t4.ftcdn.net/jpg/01/01/91/63/240_F_101916353_CLAc4e3dzc1FPbfNwJctpwVCrbqBZclb.jpg",
+                        "imgAlt": "sadasdas",
+                        "title": "Strona WEBSITE",
+                        "description": "Lorem ipsum dolor sit amet, consectetur<br>adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+                        "buttons": [
+                            {
+                                "value": "Source code",
+                                "link": "#"
+                            },
+                            {
+                                "value": "Live preview",
+                                "link": "#"
+                            }
+                        ]
+                    }
+                ],
+                "mailings": [
+                    {
+                        "imgSrc": "https://t4.ftcdn.net/jpg/01/01/91/63/240_F_101916353_CLAc4e3dzc1FPbfNwJctpwVCrbqBZclb.jpg",
+                        "imgAlt": "sadasdas",
+                        "title": "Strona MAILINGS",
+                        "description": "Lorem ipsum dolor sit amet, consectetur<br>adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+                        "buttons": [
+                            {
+                                "value": "Source code",
+                                "link": "#"
+                            },
+                            {
+                                "value": "Live preview",
+                                "link": "#"
+                            }
+                        ]
+                    }
+                ],
+                "spa": [
+                    {
+                        "imgSrc": "https://t4.ftcdn.net/jpg/01/01/91/63/240_F_101916353_CLAc4e3dzc1FPbfNwJctpwVCrbqBZclb.jpg",
+                        "imgAlt": "sadasdas",
+                        "title": "Strona SPA",
+                        "description": "Lorem ipsum dolor sit amet, consectetur<br>adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+                        "buttons": [
+                            {
+                                "value": "Source code",
+                                "link": "#"
+                            },
+                            {
+                                "value": "Live preview",
+                                "link": "#"
+                            }
+                        ]
+                    }
+                ],
+                "api": [
+                    {
+                        "imgSrc": "https://t4.ftcdn.net/jpg/01/01/91/63/240_F_101916353_CLAc4e3dzc1FPbfNwJctpwVCrbqBZclb.jpg",
+                        "imgAlt": "sadasdas",
+                        "title": "Strona API",
+                        "description": "Lorem ipsum dolor sit amet, consectetur<br>adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+                        "buttons": [
+                            {
+                                "value": "Source code",
+                                "link": "#"
+                            },
+                            {
+                                "value": "Live preview",
+                                "link": "#"
+                            }
+                        ]
+                    }
+                ]
             }
         },
         "contactWrapper": {

@@ -16,67 +16,27 @@ section(id="portfolio" class="section portfolio-wrapper")
         .row
             .col-12
                 ul.row.align-content-center.justify-content-center.portfolio-filters__list.portfolio-filters-js
-                    li
-                        button(data-filter-type="all" class="btn portfolio-filters__button active")
-                            span All
-                    li
-                        button(data-filter-type="website" class="btn portfolio-filters__button")
-                            span Websites
-                    li
-                        button(data-filter-type="mailing" class="btn portfolio-filters__button")
-                            span Mailings
-                    li
-                        button(data-filter-type="spa" class="btn portfolio-filters__button")
-                            span Spa
-                    li
-                        button(data-filter-type="api" class="btn portfolio-filters__button")
-                            span Api
+                    each value, property in data.mainWrapper.portfolioWrapper.projects.categories
+                        if property === "all"
+                            li
+                                button(data-filter-type=property class="btn portfolio-filters__button active")
+                                    span= value
+                        else
+                            li
+                                button(data-filter-type=property class="btn portfolio-filters__button")
+                                    span= value
                 .row.portfolio-items.portfolio-items-js
-                    div(data-type="website" class="portfolio-item text-center")
-                        h3.heading.heading-5.portfolio-item-title Strona ABC
-                        .heading-separator
-                            .heading-separator__line
-                        p.paragraph.ending.portfolio-item-description Lorem ipsum dolor sit amet, consectetur
-                            br
-                            | adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit
-                        div.portfolio-item-buttons
-                            a(href="#" class="btn to-top btn-primary-text") Source code
-                            a(href="#" class="btn to-top btn-primary") Live demo
-                    div(data-type="mailing" class="portfolio-item text-center")
-                        h3.heading.heading-5.portfolio-item-title Mailing ABC
-                        .heading-separator
-                            .heading-separator__line
-                        p.paragraph.ending.portfolio-item-description Mailing ABC
-                        div.portfolio-item-buttons
-                            a(href="#" class="btn to-top btn-primary-text") Source code
-                    div(data-type="website" class="portfolio-item text-center")
-                        h3.heading.heading-5.portfolio-item-title Strona ABC
-                        .heading-separator
-                            .heading-separator__line
-                        p.paragraph.ending.portfolio-item-description Strona ABC
-                    div(data-type="mailing" class="portfolio-item text-center")
-                        h3.heading.heading-5.portfolio-item-title Mailing ABC
-                        .heading-separator
-                            .heading-separator__line
-                        p.paragraph.ending.portfolio-item-description Mailing ABC
-                    
-                    div(data-type="spa" class="portfolio-item text-center")
-                        h3.heading.heading-5.portfolio-item-title SPA ABC
-                        .heading-separator
-                            .heading-separator__line
-                        p.paragraph.ending.portfolio-item-description SPA ABC
-                    div(data-type="api" class="portfolio-item text-center")
-                        h3.heading.heading-5.portfolio-item-title API ABC
-                        .heading-separator
-                            .heading-separator__line
-                        p.paragraph.ending.portfolio-item-description API ABC
-                    div(data-type="spa" class="portfolio-item text-center")
-                        h3.heading.heading-5.portfolio-item-title SPA ABC
-                        .heading-separator
-                            .heading-separator__line
-                        p.paragraph.ending.portfolio-item-description SPA ABC
-                    div(data-type="api" class="portfolio-item text-center")
-                        h3.heading.heading-5.portfolio-item-title API ABC
-                        .heading-separator
-                            .heading-separator__line
-                        p.paragraph.ending.portfolio-item-description API ABC
+                    each obj, property in data.mainWrapper.portfolioWrapper.projects
+                        if property !== "categories"
+                            each item, category in obj
+                                div(data-type=property class="portfolio-item")
+                                    figure.portfolio-item__figure
+                                        img(src=item.imgSrc alt=item.imgAlt class="portfolio-item__img")
+                                        figcaption.portfolio-item__figcaption.text-center
+                                            h3.heading.heading-5.portfolio-item-title= item.title
+                                            .heading-separator
+                                                .heading-separator__line.heading-separator__line-reduced-2.heading-separator__line-bolded-3.primary
+                                            p.paragraph.ending.portfolio-item-description!= item.description
+                                            .portfolio-item-buttons
+                                                a(href=item.buttons[0].link class="btn to-top color-white")= item.buttons[0].value
+                                                a(href=item.buttons[1].link class="btn to-top btn-primary")= item.buttons[1].value

@@ -1,7 +1,5 @@
-(function ($$1) {
+(function () {
 'use strict';
-
-$$1 = $$1 && $$1.hasOwnProperty('default') ? $$1['default'] : $$1;
 
 var classCallCheck = function (instance, Constructor) {
   if (!(instance instanceof Constructor)) {
@@ -135,9 +133,9 @@ window.addEventListener('click', function () {
     status = false;
 });
 
-$$1(document).ready(function () {
+$(document).ready(function () {
     // SERVICES
-    var owlCaruselServices = $$1('.owl-carousel-services-js');
+    var owlCaruselServices = $('.owl-carousel-services-js');
 
     owlCaruselServices.owlCarousel({
         loop: true,
@@ -156,5 +154,5 @@ $$1(document).ready(function () {
     devPortfolio.init();
 });
 
-}($));
+}());
 //# sourceMappingURL=main.js.map
