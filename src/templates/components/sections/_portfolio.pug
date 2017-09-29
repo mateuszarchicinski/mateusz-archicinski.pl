@@ -28,15 +28,15 @@ section(id="portfolio" class="section portfolio-wrapper")
                 .row.portfolio-items.portfolio-items-js
                     each obj, property in data.mainWrapper.portfolioWrapper.projects
                         if property !== "categories"
-                            each item, category in obj
+                            each project in obj
                                 div(data-type=property class="portfolio-item")
                                     figure.portfolio-item__figure
-                                        img(src=item.imgSrc alt=item.imgAlt class="portfolio-item__img")
+                                        img(src=project.imgSrc alt=project.imgAlt class="portfolio-item__img")
                                         figcaption.portfolio-item__figcaption.text-center
-                                            h3.heading.heading-5.portfolio-item-title= item.title
+                                            h3.heading.heading-5.portfolio-item-title= project.title
                                             .heading-separator
                                                 .heading-separator__line.heading-separator__line-reduced-2.heading-separator__line-bolded-3.primary
-                                            p.paragraph.ending.portfolio-item-description!= item.description
+                                            p.paragraph.ending.portfolio-item-description!= project.description
                                             .portfolio-item-buttons
-                                                a(href=item.buttons[0].link class="btn to-top color-white")= item.buttons[0].value
-                                                a(href=item.buttons[1].link class="btn to-top btn-primary")= item.buttons[1].value
+                                                a(href=project.buttons[0].link class="btn to-top color-white")= project.buttons[0].value
+                                                a(href=project.buttons[1].link class="btn to-top btn-primary")= project.buttons[1].value

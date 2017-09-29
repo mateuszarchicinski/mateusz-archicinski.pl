@@ -3,6 +3,56 @@
 //~~~~~~~~~~~~~~~~~~~~~~~//
 
 
+// .contact-form-wrapper
+$contact-form-wrapper__background-color: $color__white !default;
+$contact-form-wrapper__box-shadow: 0 5px 8px 0 rgba($color__black-1, 0.1) !default;
+// .contact-info__list > li
+$contact-info__list__li__border-bottom: 1px solid $divider-color !default;
+
+
 .contact {
-    &-wrapper {}
+    &-wrapper {
+//                background-image: linear-gradient(to top, rgba($color__white, 0.5) 0, rgba($color__white, 0.5) 100%), url(http://dawid-zukowski.pl/img/backgrounds/about-me-bg.jpg);
+//        background-attachment: fixed;
+//                background-position: center;
+//                background-origin: border-box;
+//                background-repeat: no-repeat;
+//                background-size: cover;
+    }
+    &-form {
+        &-wrapper {
+            background-color: $contact-form-wrapper__background-color;
+            box-shadow: $contact-form-wrapper__box-shadow;
+            padding: 25px;
+            margin: 25px 0;
+        }
+        &__label {}
+        &__input {
+            width: 100%;
+            &-container {
+                padding: 15px 0;
+            }
+        }
+        &__textarea {
+            resize: vertical;
+        }
+        &__input,
+        &__textarea {
+            width: 100%;
+        }
+        &__button {
+            display: block;
+            margin: 15px auto 0;
+        }
+    }
+    &-info {
+        &__list {
+            list-style: none;
+            @extend %no-padding-margin;
+            & > li {
+                padding: 25px 0;
+                border-bottom: $contact-info__list__li__border-bottom;
+            }
+        }
+    }
 }

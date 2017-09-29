@@ -4,6 +4,7 @@
 
 
 // .portfolio-filters__button
+$portfolio-filters__button__font-family: "Raleway" !default;
 $portfolio-filters__button__font-size: 0.95em !default;
 $portfolio-filters__button__font-weight: $font-weight__normal !default;
 $portfolio-filters__button__color: $secondary-text-color !default;
@@ -13,23 +14,26 @@ $portfolio-filters__button__hover__color: $primary-color !default;
 $portfolio-filters__button__active__color: $primary-color !default;
 $portfolio-filters__button__active__border-color: $primary-color !default;
 
+
 // .portfolio-item__figure::after
-$portfolio-item__figure__after__background-color: rgba(0, 0, 0, 0.15) !default;
+$portfolio-item__figure__after__background-color: rgba($color__black-1, 0.15) !default;
 // .portfolio-item__figure::hover::after
-$portfolio-item__figure__hover__after__background-color: rgba(0, 0, 0, 0.75) !default;
+$portfolio-item__figure__hover__after__background-color: rgba($color__black-1, 0.75) !default;
 // .portfolio-item-title & .portfolio-item-description
 $portfolio-item-title-description__color: $color__white !default;
+// .portfolio-item-buttons > .btn
+$portfolio-item-buttons__btn__font-size: 0.9em !default;
 
 
 .portfolio {
     &-filters {
         &__list {
             list-style: none;
-            padding: 20px 0;
+            padding: 15px 0;
             margin: 0;
         }
         &__button {
-            font-family: "Raleway";
+            font-family: $portfolio-filters__button__font-family;
             font-size: $portfolio-filters__button__font-size;
             font-weight: $portfolio-filters__button__font-weight;
             color: $portfolio-filters__button__color;
@@ -123,6 +127,7 @@ $portfolio-item-title-description__color: $color__white !default;
             margin-top: 25px;
             & > .btn {
                 width: calc(50% - 10px);
+                font-size: $portfolio-item-buttons__btn__font-size;
                 margin: 0 5px;
             }
         }

@@ -225,7 +225,7 @@
                 "websites": [
                     {
                         "imgSrc": "https://t4.ftcdn.net/jpg/01/01/91/63/240_F_101916353_CLAc4e3dzc1FPbfNwJctpwVCrbqBZclb.jpg",
-                        "imgAlt": "sadasdas",
+                        "imgAlt": "An example img WEBSITE",
                         "title": "Strona WEBSITE",
                         "description": "Lorem ipsum dolor sit amet, consectetur<br>adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit",
                         "buttons": [
@@ -243,7 +243,7 @@
                 "mailings": [
                     {
                         "imgSrc": "https://t4.ftcdn.net/jpg/01/01/91/63/240_F_101916353_CLAc4e3dzc1FPbfNwJctpwVCrbqBZclb.jpg",
-                        "imgAlt": "sadasdas",
+                        "imgAlt": "An example img MAILINGS",
                         "title": "Strona MAILINGS",
                         "description": "Lorem ipsum dolor sit amet, consectetur<br>adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit",
                         "buttons": [
@@ -261,7 +261,7 @@
                 "spa": [
                     {
                         "imgSrc": "https://t4.ftcdn.net/jpg/01/01/91/63/240_F_101916353_CLAc4e3dzc1FPbfNwJctpwVCrbqBZclb.jpg",
-                        "imgAlt": "sadasdas",
+                        "imgAlt": "An example img SPA",
                         "title": "Strona SPA",
                         "description": "Lorem ipsum dolor sit amet, consectetur<br>adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit",
                         "buttons": [
@@ -279,7 +279,7 @@
                 "api": [
                     {
                         "imgSrc": "https://t4.ftcdn.net/jpg/01/01/91/63/240_F_101916353_CLAc4e3dzc1FPbfNwJctpwVCrbqBZclb.jpg",
-                        "imgAlt": "sadasdas",
+                        "imgAlt": "An example img API",
                         "title": "Strona API",
                         "description": "Lorem ipsum dolor sit amet, consectetur<br>adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit",
                         "buttons": [

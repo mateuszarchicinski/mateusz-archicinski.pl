@@ -13,3 +13,32 @@ section(id="contact" class="section contact-wrapper")
                     .heading-separator__square.primary
                     .heading-separator__line
                 p.section-header-description= data.mainWrapper.contactWrapper.header.p
+        .row
+            .col-6
+                .contact-form-wrapper
+                    h3.heading.heading-4.contact-form-title Napisz do mnie!
+                    form(action="#" autocomplete="off" name="contactForm" novalidate class="contact-form__form contact-form-js")
+                        .contact-form__input-container
+                            label(for="contactForm[name]" class="contact-form__label") Imię i nazwisko / Nazwa firmy
+                            input(id="contactForm[name]" name="name" type="text" class="contact-form__input" required)
+                        .contact-form__input-container
+                            label(for="contactForm[email]" class="contact-form__label")  E-mail
+                            input(id="contactForm[email]" name="email" type="email" class="contact-form__input")
+                        .contact-form__input-container
+                            label(for="contactForm[message]" class="contact-form__label") Treść wiadomości
+                            textarea(id="contactForm[message]" name="message" class="contact-form__textarea")
+                        button(type="submit" class="btn to-top btn-primary contact-form__button") Send message
+            .col-6
+                ul.contact-info__list
+                    li
+                        h4.heading.heading-4 ADDRESS
+                        p.paragraph.ending Victory Business Centre, Somers Road North, Portsmouth
+                    li
+                        h4.heading.heading-4 CONTACT INFO
+                        p.paragraph.ending Victory Business Centre, Somers Road North, Portsmouth
+                    li
+                        h4.heading.heading-4 WORKING HOURS
+                        p.paragraph.ending Victory Business Centre, Somers Road North, Portsmouth
+                    li
+                        h4.heading.heading-4 WORKING HOURS
+                        p.paragraph.ending Victory Business Centre, Somers Road North, Portsmouth

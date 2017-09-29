@@ -19,7 +19,7 @@ class Portfolio {
         filterElem.classList.add(this.filterActiveClass);
         this.currFilterElem = filterElem;
 
-        let itemCounter = 0;;
+        let itemCounter = 0;
 
         this.items.forEach((item, index) => {
             const typeValue = item.getAttribute('data-type');
@@ -41,17 +41,17 @@ class Portfolio {
         const elemWidth = elem.outerWidth(),
             elemHeight = elem.outerHeight(),
             elemParent = elem.parent(),
-            itemsInRow = Math.floor(elemParent.outerWidth() / elemWidth),
-            itemInColumn = Math.floor(elemIndex / itemsInRow);
+            maxRowNum = Math.floor(elemParent.outerWidth() / elemWidth),
+            rowNum = Math.floor(elemIndex / maxRowNum);
 
         elemParent.css({
-            height: elemHeight + (elemHeight * itemInColumn)
+            height: elemHeight + (elemHeight * rowNum)
         });
 
         elem.css({
             position: 'absolute',
-            left: elemWidth * (elemIndex % itemsInRow),
-            top: elemHeight * itemInColumn
+            left: elemWidth * (elemIndex % maxRowNum),
+            top: elemHeight * rowNum
         });
     }
     init() {

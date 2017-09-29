@@ -55,7 +55,7 @@ $btn-twitter__color: $color__twitter !default;
     &-round {
         width: 54px;
         height: 54px;
-        display: flex;
+        display: inline-flex;
         align-items: center;
         justify-content: center;
         padding: 0;

@@ -80,7 +80,7 @@
       <section class="section home-wrapper" id="home">
         <div class="container">
           <div class="row no-gutters flex-column align-items-center justify-content-center home-row">
-            <hgroup class="home-header">
+            <header class="home-header">
               <h2 class="heading heading-1 white text-center">Front-End Developer</h2>
               <div class="heading-separator">
                 <div class="heading-separator__line primary"></div>
@@ -89,7 +89,7 @@
               </div>
               <h3 class="heading heading-3 white text-center">Mateusz Archiciński</h3>
               <div class="home-header-buttons"><a class="btn to-top btn-accent color-white" href="#aboutMe">Poznaj mnie</a><a class="btn to-top btn-primary-dark color-white" href="#services">Usługi</a></div>
-            </hgroup><a class="btn btn-round to-top color-white" href="#about-me" aria-label="Przejdz do sekcji o mnie"><span class="icon icon-125 icon-down-open-1" aria-hidden="true"></span></a>
+            </header><a class="btn btn-round to-top color-white" href="#about-me" aria-label="Przejdz do sekcji o mnie"><span class="icon icon-125 icon-down-open-1" aria-hidden="true"></span></a>
           </div>
         </div>
       </section>
@@ -360,7 +360,7 @@
               </ul>
               <div class="row portfolio-items portfolio-items-js">
                 <div class="portfolio-item" data-type="websites">
-                  <figure class="portfolio-item__figure"><img class="portfolio-item__img" src="https://t4.ftcdn.net/jpg/01/01/91/63/240_F_101916353_CLAc4e3dzc1FPbfNwJctpwVCrbqBZclb.jpg" alt="sadasdas">
+                  <figure class="portfolio-item__figure"><img class="portfolio-item__img" src="https://t4.ftcdn.net/jpg/01/01/91/63/240_F_101916353_CLAc4e3dzc1FPbfNwJctpwVCrbqBZclb.jpg" alt="An example img WEBSITE">
                     <figcaption class="portfolio-item__figcaption text-center">
                       <h3 class="heading heading-5 portfolio-item-title">Strona WEBSITE</h3>
                       <div class="heading-separator">
@@ -372,7 +372,7 @@
                   </figure>
                 </div>
                 <div class="portfolio-item" data-type="mailings">
-                  <figure class="portfolio-item__figure"><img class="portfolio-item__img" src="https://t4.ftcdn.net/jpg/01/01/91/63/240_F_101916353_CLAc4e3dzc1FPbfNwJctpwVCrbqBZclb.jpg" alt="sadasdas">
+                  <figure class="portfolio-item__figure"><img class="portfolio-item__img" src="https://t4.ftcdn.net/jpg/01/01/91/63/240_F_101916353_CLAc4e3dzc1FPbfNwJctpwVCrbqBZclb.jpg" alt="An example img MAILINGS">
                     <figcaption class="portfolio-item__figcaption text-center">
                       <h3 class="heading heading-5 portfolio-item-title">Strona MAILINGS</h3>
                       <div class="heading-separator">
@@ -384,7 +384,7 @@
                   </figure>
                 </div>
                 <div class="portfolio-item" data-type="spa">
-                  <figure class="portfolio-item__figure"><img class="portfolio-item__img" src="https://t4.ftcdn.net/jpg/01/01/91/63/240_F_101916353_CLAc4e3dzc1FPbfNwJctpwVCrbqBZclb.jpg" alt="sadasdas">
+                  <figure class="portfolio-item__figure"><img class="portfolio-item__img" src="https://t4.ftcdn.net/jpg/01/01/91/63/240_F_101916353_CLAc4e3dzc1FPbfNwJctpwVCrbqBZclb.jpg" alt="An example img SPA">
                     <figcaption class="portfolio-item__figcaption text-center">
                       <h3 class="heading heading-5 portfolio-item-title">Strona SPA</h3>
                       <div class="heading-separator">
@@ -396,7 +396,7 @@
                   </figure>
                 </div>
                 <div class="portfolio-item" data-type="api">
-                  <figure class="portfolio-item__figure"><img class="portfolio-item__img" src="https://t4.ftcdn.net/jpg/01/01/91/63/240_F_101916353_CLAc4e3dzc1FPbfNwJctpwVCrbqBZclb.jpg" alt="sadasdas">
+                  <figure class="portfolio-item__figure"><img class="portfolio-item__img" src="https://t4.ftcdn.net/jpg/01/01/91/63/240_F_101916353_CLAc4e3dzc1FPbfNwJctpwVCrbqBZclb.jpg" alt="An example img API">
                     <figcaption class="portfolio-item__figcaption text-center">
                       <h3 class="heading heading-5 portfolio-item-title">Strona API</h3>
                       <div class="heading-separator">
@@ -425,6 +425,48 @@
               </div>
               <p class="section-header-description">Jeżeli masz jakieś pytania skontaktuj się zemną.</p>
             </header>
+          </div>
+          <div class="row">
+            <div class="col-6">
+              <div class="contact-form-wrapper">
+                <h3 class="heading heading-4 contact-form-title">Napisz do mnie!</h3>
+                <form class="contact-form__form contact-form-js" action="#" autocomplete="off" name="contactForm" novalidate>
+                  <div class="contact-form__input-container">
+                    <label class="contact-form__label" for="contactForm[name]">Imię i nazwisko / Nazwa firmy</label>
+                    <input class="contact-form__input" id="contactForm[name]" name="name" type="text" required>
+                  </div>
+                  <div class="contact-form__input-container">
+                    <label class="contact-form__label" for="contactForm[email]"> E-mail</label>
+                    <input class="contact-form__input" id="contactForm[email]" name="email" type="email">
+                  </div>
+                  <div class="contact-form__input-container">
+                    <label class="contact-form__label" for="contactForm[message]">Treść wiadomości</label>
+                    <textarea class="contact-form__textarea" id="contactForm[message]" name="message"></textarea>
+                  </div>
+                  <button class="btn to-top btn-primary contact-form__button" type="submit">Send message</button>
+                </form>
+              </div>
+            </div>
+            <div class="col-6">
+              <ul class="contact-info__list">
+                <li>
+                  <h4 class="heading heading-4">ADDRESS</h4>
+                  <p class="paragraph ending">Victory Business Centre, Somers Road North, Portsmouth</p>
+                </li>
+                <li>
+                  <h4 class="heading heading-4">CONTACT INFO</h4>
+                  <p class="paragraph ending">Victory Business Centre, Somers Road North, Portsmouth</p>
+                </li>
+                <li>
+                  <h4 class="heading heading-4">WORKING HOURS</h4>
+                  <p class="paragraph ending">Victory Business Centre, Somers Road North, Portsmouth</p>
+                </li>
+                <li>
+                  <h4 class="heading heading-4">WORKING HOURS</h4>
+                  <p class="paragraph ending">Victory Business Centre, Somers Road North, Portsmouth</p>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>

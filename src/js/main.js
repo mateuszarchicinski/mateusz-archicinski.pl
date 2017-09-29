@@ -77,17 +77,17 @@ var Portfolio = function () {
             var elemWidth = elem.outerWidth(),
                 elemHeight = elem.outerHeight(),
                 elemParent = elem.parent(),
-                itemsInRow = Math.floor(elemParent.outerWidth() / elemWidth),
-                itemInColumn = Math.floor(elemIndex / itemsInRow);
+                maxRowNum = Math.floor(elemParent.outerWidth() / elemWidth),
+                rowNum = Math.floor(elemIndex / maxRowNum);
 
             elemParent.css({
-                height: elemHeight + elemHeight * itemInColumn
+                height: elemHeight + elemHeight * rowNum
             });
 
             elem.css({
                 position: 'absolute',
-                left: elemWidth * (elemIndex % itemsInRow),
-                top: elemHeight * itemInColumn
+                left: elemWidth * (elemIndex % maxRowNum),
+                top: elemHeight * rowNum
             });
         }
     }, {

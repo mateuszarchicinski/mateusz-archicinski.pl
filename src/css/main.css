@@ -1623,9 +1623,9 @@ html {
   .btn-square, .btn-round {
     width: 54px;
     height: 54px;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
+    display: -webkit-inline-flex;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
     -webkit-align-items: center;
         -ms-flex-align: center;
             align-items: center;
@@ -2197,7 +2197,7 @@ a.link, a.no-link {
 
 .portfolio-filters__list {
   list-style: none;
-  padding: 20px 0;
+  padding: 15px 0;
   margin: 0; }
 
 .portfolio-filters__button {
@@ -2284,6 +2284,7 @@ a.link, a.no-link {
     margin-top: 25px; }
     .portfolio-item-buttons > .btn {
       width: calc(50% - 10px);
+      font-size: 0.9em;
       margin: 0 5px; }
   .portfolio-item.hide {
     visibility: hidden;
@@ -2299,6 +2300,33 @@ a.link, a.no-link {
     opacity: 1;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
     filter: alpha(opacity=100); }
+
+.contact-form-wrapper {
+  background-color: #fff;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.1);
+  padding: 25px;
+  margin: 25px 0; }
+
+.contact-form__input {
+  width: 100%; }
+  .contact-form__input-container {
+    padding: 15px 0; }
+
+.contact-form__textarea {
+  resize: vertical; }
+
+.contact-form__input, .contact-form__textarea {
+  width: 100%; }
+
+.contact-form__button {
+  display: block;
+  margin: 15px auto 0; }
+
+.contact-info__list {
+  list-style: none; }
+  .contact-info__list > li {
+    padding: 25px 0;
+    border-bottom: 1px solid #bdbdbd; }
 
 .heading-separator {
   display: -webkit-flex;
@@ -2583,7 +2611,7 @@ body {
 .clearfix::after {
   clear: both; }
 
-.site-nav__list, .language-settings, .about-me-list, .timeline__list, .skills__list {
+.site-nav__list, .language-settings, .about-me-list, .contact-info__list, .timeline__list, .skills__list {
   padding: 0;
   margin: 0; }
 
