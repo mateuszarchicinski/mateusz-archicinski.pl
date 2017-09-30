@@ -26,6 +26,9 @@ $portfolio-item-buttons__btn__font-size: 0.9em !default;
 
 
 .portfolio {
+    &-wrapper {
+        padding-bottom: 153px;
+    }
     &-filters {
         &__list {
             list-style: none;

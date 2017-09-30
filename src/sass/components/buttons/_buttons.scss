@@ -5,6 +5,7 @@
 
 // .btn
 $btn__background-color: rgba($color__white, 0.1) !default;
+$btn__font-family: $font__source-sans-pro !default;
 $btn__font-size: 1em !default;
 $btn__font-weight: $font-weight__bolder-7 !default;
 $btn__border: 1px solid $color__white !default;
@@ -38,6 +39,7 @@ $btn-twitter__color: $color__twitter !default;
     display: inline-block;
     z-index: 0;
     overflow: hidden;
+    font-family: $btn__font-family;
     font-size: $btn__font-size;
     font-weight: $btn__font-weight;
     text-align: center;

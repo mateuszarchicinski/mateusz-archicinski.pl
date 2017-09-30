@@ -123,30 +123,30 @@
                 </div>
               </div>
               <div class="about-me-section">
-                <header class="row no-gutters align-items-center about-me-section-header"><span class="icon icon-15 icon-phone about-me-section-icon"></span><span class="filling-line"></span>
+                <header class="row no-gutters align-items-center about-me-section-header"><span class="icon icon-15 icon-info about-me-section-icon"></span><span class="filling-line"></span>
                   <h3 class="heading heading-4 text-center">Information<br>and contact</h3><span class="filling-line ending"></span>
                 </header>
                 <div class="about-me-section-body">
                   <ul class="about-me-list">
                     <li class="info-block">
-                      <div class="info-title text-bolded">Address:</div>
-                      <div class="info-description">Warsaw<span class="icon icon-location color-accent-light info-icon" aria-hidden="true"></span></div>
+                      <div class="info-title i-block text-bolded">Address:</div>
+                      <div class="info-description i-block">Warsaw<span class="icon icon-location color-accent-light info-icon" aria-hidden="true"></span></div>
                     </li>
                     <li class="info-block">
-                      <div class="info-title text-bolded">Birth date:</div>
-                      <info-description>07.01.1993 yr.<span class="icon icon-birthday color-accent-light info-icon" aria-hidden="true"></span></info-description>
+                      <div class="info-title i-block text-bolded">Birth date:</div>
+                      <info-description class="i-block">07.01.1993 yr.<span class="icon icon-birthday color-accent-light info-icon" aria-hidden="true"></span></info-description>
                     </li>
                     <li class="info-block">
-                      <div class="info-title text-bolded">E-mail:</div>
-                      <div class="info-description"><a class="info-link" href="mailto:mateusz.archicinski@gmail.com">mateusz.archicinski@gmail.com<span class="icon icon-mail-alt color-accent-light info-icon" aria-hidden="true"></span></a></div>
+                      <div class="info-title i-block text-bolded">E-mail:</div>
+                      <div class="info-description i-block"><a class="info-link" href="mailto:mateusz.archicinski@gmail.com">mateusz.archicinski@gmail.com<span class="icon icon-mail-alt color-accent-light info-icon" aria-hidden="true"></span></a></div>
                     </li>
                     <li class="info-block">
-                      <div class="info-title text-bolded">Website:</div>
-                      <div class="info-description"><a class="info-link" href="https://www.mateusz-archicinski.pl">https://www.mateusz-archicinski.pl<span class="icon icon-globe color-accent-light info-icon" aria-hidden="true"></span></a></div>
+                      <div class="info-title i-block text-bolded">Website:</div>
+                      <div class="info-description i-block"><a class="info-link" href="https://www.mateusz-archicinski.pl">https://www.mateusz-archicinski.pl<span class="icon icon-globe color-accent-light info-icon" aria-hidden="true"></span></a></div>
                     </li>
                     <li class="info-block">
-                      <div class="info-title text-bolded">Phone:</div>
-                      <div class="info-description"><a class="info-link" href="tel:505-072-776">505-072-776<span class="icon icon-mobile color-accent-light info-icon" aria-hidden="true"></span></a></div>
+                      <div class="info-title i-block text-bolded">Phone:</div>
+                      <div class="info-description i-block"><a class="info-link" href="tel:505-072-776">505-072-776<span class="icon icon-mobile color-accent-light info-icon" aria-hidden="true"></span></a></div>
                     </li>
                   </ul>
                 </div>
@@ -427,45 +427,47 @@
             </header>
           </div>
           <div class="row">
-            <div class="col-6">
+            <div class="col-8">
               <div class="contact-form-wrapper">
-                <h3 class="heading heading-4 contact-form-title">Napisz do mnie!</h3>
+                <h3 class="heading heading-4 contact-form-title text-center">Formularz kontaktowy</h3>
                 <form class="contact-form__form contact-form-js" action="#" autocomplete="off" name="contactForm" novalidate>
                   <div class="contact-form__input-container">
                     <label class="contact-form__label" for="contactForm[name]">Imię i nazwisko / Nazwa firmy</label>
-                    <input class="contact-form__input" id="contactForm[name]" name="name" type="text" required>
+                    <input class="contact-form__input" id="contactForm[name]" name="name" type="text" required minlength="8" maxlength="100" pattern="" placeholder="Imię i nazwisko / Nazwa firmy...">
                   </div>
                   <div class="contact-form__input-container">
-                    <label class="contact-form__label" for="contactForm[email]"> E-mail</label>
-                    <input class="contact-form__input" id="contactForm[email]" name="email" type="email">
+                    <label class="contact-form__label" for="contactForm[email]">E-mail</label>
+                    <input class="contact-form__input" id="contactForm[email]" name="email" type="email" required minlength="8" maxlength="100" pattern="" placeholder="E-mail...">
+                  </div>
+                  <div class="contact-form__input-container">
+                    <label class="contact-form__label" for="contactForm[subject]">Temat</label>
+                    <input class="contact-form__input" id="contactForm[subject]" name="subject" type="text" required minlength="8" maxlength="100" pattern="" placeholder="Temat...">
                   </div>
                   <div class="contact-form__input-container">
                     <label class="contact-form__label" for="contactForm[message]">Treść wiadomości</label>
-                    <textarea class="contact-form__textarea" id="contactForm[message]" name="message"></textarea>
+                    <textarea class="contact-form__textarea" id="contactForm[message]" name="message" required minlength="8" maxlength="1500" pattern="" placeholder="Treść wiadomości..."></textarea>
                   </div>
-                  <button class="btn to-top btn-primary contact-form__button" type="submit">Send message</button>
+                  <button class="btn to-top btn-primary contact-form__button" type="submit"><span>Wyślij wiadomość</span></button>
                 </form>
               </div>
             </div>
-            <div class="col-6">
-              <ul class="contact-info__list">
-                <li>
-                  <h4 class="heading heading-4">ADDRESS</h4>
-                  <p class="paragraph ending">Victory Business Centre, Somers Road North, Portsmouth</p>
-                </li>
-                <li>
-                  <h4 class="heading heading-4">CONTACT INFO</h4>
-                  <p class="paragraph ending">Victory Business Centre, Somers Road North, Portsmouth</p>
-                </li>
-                <li>
-                  <h4 class="heading heading-4">WORKING HOURS</h4>
-                  <p class="paragraph ending">Victory Business Centre, Somers Road North, Portsmouth</p>
-                </li>
-                <li>
-                  <h4 class="heading heading-4">WORKING HOURS</h4>
-                  <p class="paragraph ending">Victory Business Centre, Somers Road North, Portsmouth</p>
-                </li>
-              </ul>
+            <div class="col-4">
+              <div class="contact-info-wrapper">
+                <ul class="contact-info__list">
+                  <li class="info-block">
+                    <h3 class="heading heading-4 info-title">Adres</h3>
+                    <p class="paragraph ending info-description">Warszawa<span class="icon icon-location color-primary info-icon" aria-hidden="true"></span></p>
+                  </li>
+                  <li class="info-block">
+                    <h3 class="heading heading-4 info-title">Informacje kontaktowe</h3>
+                    <p class="paragraph ending info-description"><a class="info-link" href="mailto:mateusz.archicinski@gmail.com">mateusz.archicinski@gmail.com<span class="icon icon-mail-alt color-primary info-icon" aria-hidden="true"></span></a><br><a class="info-link" href="tel:505072776">505-072-776<span class="icon icon-mobile color-primary info-icon" aria-hidden="true"></span></a></p>
+                  </li>
+                  <li class="info-block">
+                    <h3 class="heading heading-4 info-title">Godziny pracy</h3>
+                    <p class="paragraph ending info-description">Codziennie od 10:00 do 20:00<br>(w tym weekendy)<span class="icon icon-clock color-primary info-icon" aria-hidden="true"></span></p>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>

@@ -161,6 +161,18 @@
       "css": "birthday",
       "code": 61949,
       "src": "fontawesome"
+    },
+    {
+      "uid": "3d4ea8a78dc34efe891f3a0f3d961274",
+      "css": "info",
+      "code": 61737,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "598a5f2bcf3521d1615de8e1881ccd17",
+      "css": "clock",
+      "code": 59405,
+      "src": "fontawesome"
     }
   ]
 }

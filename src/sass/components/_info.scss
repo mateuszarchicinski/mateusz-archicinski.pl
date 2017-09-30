@@ -8,17 +8,30 @@
         display: block;
         white-space: nowrap;
     }
-    &-title {
-        width: 36.5%;
-    }
-    &-description {
-        width: 63.5%;
-    }
     &-title,
     &-description {
-        display: inline-block;
+        display: block;
         white-space: normal;
         overflow-wrap: break-word;
+    }
+    &-title.i-block,
+    &-description.i-block {
+        display: inline-block;
+    }
+    &-title {
+        &.i-block {
+            width: 37.85%;
+            vertical-align: top;
+        }
+    }
+    &-description {
+        &.i-block {
+            width: 62.15%;
+        }
+    }
+    &-block.i-block &-title,
+    &-block.i-block &-description {
+        display: inline-block;
     }
     &-link {
         text-decoration: none;

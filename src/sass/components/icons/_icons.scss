@@ -60,6 +60,9 @@ $icon-5__font-size: $icon__font-size * 5 !default;
     &-cancel::before {
         content: '\e800';
     }
+    &-clock::before {
+        content: '\e80d';
+    }
     &-code::before {
         content: '\f121';
     }
@@ -71,6 +74,9 @@ $icon-5__font-size: $icon__font-size * 5 !default;
     }
     &-down-open-1::before {
         content: '\e805';
+    }
+    &-info::before {
+        content: '\f129';
     }
     &-facebook::before {
         content: '\f09a';

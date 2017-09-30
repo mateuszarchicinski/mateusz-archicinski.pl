@@ -300,6 +300,36 @@
             "header": {
                 "h2": "Contact",
                 "p": "Jeżeli masz jakieś pytania skontaktuj się zemną."
+            },
+            "form": {
+                "h3": "Formularz kontaktowy",
+                "inputs": {
+                    
+                },
+                "submitButton": "Wyślij wiadomość"
+            },
+            "info": {
+                "address": {
+                    "h3": "Adres",
+                    "p": "Warszawa"
+                },
+                "contactInformation": {
+                    "h3": "Informacje kontaktowe",
+                    "links": [
+                        {
+                            "href": "mateusz.archicinski@gmail.com",
+                            "displayedText": "mateusz.archicinski@gmail.com"
+                        },
+                        {
+                            "href": "505072776",
+                            "displayedText": "505-072-776"
+                        }
+                    ]
+                },
+                "workingHours": {
+                    "h3": "Godziny pracy",
+                    "p": "Codziennie od 10:00 do 20:00<br>(w tym weekendy)"
+                }
             }
         }
 

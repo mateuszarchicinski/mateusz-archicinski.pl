@@ -14,31 +14,44 @@ section(id="contact" class="section contact-wrapper")
                     .heading-separator__line
                 p.section-header-description= data.mainWrapper.contactWrapper.header.p
         .row
-            .col-6
+            .col-8
                 .contact-form-wrapper
-                    h3.heading.heading-4.contact-form-title Napisz do mnie!
+                    h3.heading.heading-4.contact-form-title.text-center= data.mainWrapper.contactWrapper.form.h3
                     form(action="#" autocomplete="off" name="contactForm" novalidate class="contact-form__form contact-form-js")
                         .contact-form__input-container
                             label(for="contactForm[name]" class="contact-form__label") Imię i nazwisko / Nazwa firmy
-                            input(id="contactForm[name]" name="name" type="text" class="contact-form__input" required)
+                            input(id="contactForm[name]" name="name" type="text" required minlength="8" maxlength="100" pattern="" placeholder="Imię i nazwisko / Nazwa firmy..." class="contact-form__input")
                         .contact-form__input-container
-                            label(for="contactForm[email]" class="contact-form__label")  E-mail
-                            input(id="contactForm[email]" name="email" type="email" class="contact-form__input")
+                            label(for="contactForm[email]" class="contact-form__label") E-mail
+                            input(id="contactForm[email]" name="email" type="email" required minlength="8" maxlength="100" pattern="" placeholder="E-mail..." class="contact-form__input")
+                        .contact-form__input-container
+                            label(for="contactForm[subject]" class="contact-form__label") Temat
+                            input(id="contactForm[subject]" name="subject" type="text" required minlength="8" maxlength="100" pattern="" placeholder="Temat..." class="contact-form__input")
                         .contact-form__input-container
                             label(for="contactForm[message]" class="contact-form__label") Treść wiadomości
-                            textarea(id="contactForm[message]" name="message" class="contact-form__textarea")
-                        button(type="submit" class="btn to-top btn-primary contact-form__button") Send message
-            .col-6
-                ul.contact-info__list
-                    li
-                        h4.heading.heading-4 ADDRESS
-                        p.paragraph.ending Victory Business Centre, Somers Road North, Portsmouth
-                    li
-                        h4.heading.heading-4 CONTACT INFO
-                        p.paragraph.ending Victory Business Centre, Somers Road North, Portsmouth
-                    li
-                        h4.heading.heading-4 WORKING HOURS
-                        p.paragraph.ending Victory Business Centre, Somers Road North, Portsmouth
-                    li
-                        h4.heading.heading-4 WORKING HOURS
-                        p.paragraph.ending Victory Business Centre, Somers Road North, Portsmouth
+                            textarea(id="contactForm[message]" name="message" required minlength="8" maxlength="1500" pattern="" placeholder="Treść wiadomości..." class="contact-form__textarea")
+                        button(type="submit" class="btn to-top btn-primary contact-form__button")
+                            span= data.mainWrapper.contactWrapper.form.submitButton
+            .col-4
+                .contact-info-wrapper
+                    ul.contact-info__list
+                        li.info-block
+                            h3.heading.heading-4.info-title= data.mainWrapper.contactWrapper.info.address.h3
+                            p.paragraph.ending.info-description
+                                | !{data.mainWrapper.contactWrapper.info.address.p}
+                                span(aria-hidden="true" class="icon icon-location color-primary info-icon")
+                        li.info-block
+                            h3.heading.heading-4.info-title= data.mainWrapper.contactWrapper.info.contactInformation.h3
+                            p.paragraph.ending.info-description
+                                a(href="mailto:" + data.mainWrapper.contactWrapper.info.contactInformation.links[0].href class="info-link")
+                                    | #{data.mainWrapper.contactWrapper.info.contactInformation.links[0].displayedText}
+                                    span(aria-hidden="true" class="icon icon-mail-alt color-primary info-icon")
+                                br
+                                a(href="tel:" + data.mainWrapper.contactWrapper.info.contactInformation.links[1].href class="info-link")
+                                    | #{data.mainWrapper.contactWrapper.info.contactInformation.links[1].displayedText}
+                                    span(aria-hidden="true" class="icon icon-mobile color-primary info-icon")
+                        li.info-block
+                            h3.heading.heading-4.info-title= data.mainWrapper.contactWrapper.info.workingHours.h3
+                            p.paragraph.ending.info-description
+                                | !{data.mainWrapper.contactWrapper.info.workingHours.p}
+                                span(aria-hidden="true" class="icon icon-clock color-primary info-icon")
