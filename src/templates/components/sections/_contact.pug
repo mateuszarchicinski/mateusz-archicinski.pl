@@ -15,21 +15,38 @@ section(id="contact" class="section contact-wrapper")
                 p.section-header-description= data.mainWrapper.contactWrapper.header.p
         .row
             .col-8
-                .contact-form-wrapper
+                .white-frame.white-frame-0525001.contact-form-wrapper
                     h3.heading.heading-4.contact-form-title.text-center= data.mainWrapper.contactWrapper.form.h3
                     form(action="#" autocomplete="off" name="contactForm" novalidate class="contact-form__form contact-form-js")
                         .contact-form__input-container
                             label(for="contactForm[name]" class="contact-form__label") Imię i nazwisko / Nazwa firmy
-                            input(id="contactForm[name]" name="name" type="text" required minlength="8" maxlength="100" pattern="" placeholder="Imię i nazwisko / Nazwa firmy..." class="contact-form__input")
+                                span.color-primary  *
+                            input(id="contactForm[name]" name="name" type="text" required maxlength="150" class="contact-form__input")
+                            div(role="alert" class="contact-form__input-alerts")
+                                div(data-alert="required") This is required !
+                                div(data-alert="maxlength") That's too short !
                         .contact-form__input-container
                             label(for="contactForm[email]" class="contact-form__label") E-mail
-                            input(id="contactForm[email]" name="email" type="email" required minlength="8" maxlength="100" pattern="" placeholder="E-mail..." class="contact-form__input")
+                                span.color-primary  *
+                            input(id="contactForm[email]" name="email" type="email" required maxlength="100" pattern="" class="contact-form__input")
+                            div(role="alert" class="contact-form__input-alerts")
+                                div(data-alert="required") This is required !
+                                div(data-alert="maxlength") That's too short !
+                                div(data-alert="pattern") That's not an email !
                         .contact-form__input-container
                             label(for="contactForm[subject]" class="contact-form__label") Temat
-                            input(id="contactForm[subject]" name="subject" type="text" required minlength="8" maxlength="100" pattern="" placeholder="Temat..." class="contact-form__input")
+                                span.color-primary  *
+                            input(id="contactForm[subject]" name="subject" type="text" required maxlength="150" class="contact-form__input")
+                            div(role="alert" class="contact-form__input-alerts")
+                                div(data-alert="required") This is required !
+                                div(data-alert="maxlength") That's too short !
                         .contact-form__input-container
                             label(for="contactForm[message]" class="contact-form__label") Treść wiadomości
-                            textarea(id="contactForm[message]" name="message" required minlength="8" maxlength="1500" pattern="" placeholder="Treść wiadomości..." class="contact-form__textarea")
+                                span.color-primary  *
+                            textarea(id="contactForm[message]" name="message" required maxlength="1500" class="contact-form__textarea")
+                            div(role="alert" class="contact-form__input-alerts")
+                                div(data-alert="required") This is required !
+                                div(data-alert="maxlength") That's too short !
                         button(type="submit" class="btn to-top btn-primary contact-form__button")
                             span= data.mainWrapper.contactWrapper.form.submitButton
             .col-4

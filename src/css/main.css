@@ -2162,7 +2162,6 @@ a.link, a.no-link {
 .services-1-item {
   background-color: #fcfcfc;
   border: 1px solid rgba(0, 0, 0, 0.1);
-  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.1);
   padding: 25px;
   margin: 50px 32.5px;
   transition: 0.3s background-color ease-in-out, 0.3s padding ease-in-out, 0.3s margin ease-in-out; }
@@ -2319,44 +2318,52 @@ a.link, a.no-link {
   padding-bottom: 153px; }
 
 .contact-form-wrapper {
-  background-color: #fff;
-  box-shadow: 0 5px 25px 0 rgba(0, 0, 0, 0.1);
   padding: 35px 40px 45px;
   margin: 25px 0 10px; }
 
 .contact-form-title {
   font-size: 1.35em;
-  margin: 0.5em 0; }
+  margin: 0.5em 0 1em; }
 
 .contact-form__label {
   font-size: 1.05em;
   font-weight: 600;
-  display: inline-block;
   margin-bottom: 0.5em; }
 
 .contact-form__input {
-  width: 100%;
   height: 50px;
   line-height: 50px;
-  padding: 0 20px;
-  border: 1px solid #bdbdbd; }
+  padding: 0 15px; }
   .contact-form__input-container {
     padding: 5px 0;
     margin: 15px 0; }
+  .contact-form__input-alerts {
+    font-size: 0.95em;
+    font-weight: 600;
+    color: #e53935; }
+    .contact-form__input-alerts > * {
+      display: none; }
+    .contact-form__input-alerts > *[data-alert] {
+      margin-top: 0.5em; }
 
 .contact-form__textarea {
-  min-height: 100px;
+  min-height: 150px;
   resize: vertical;
-  padding: 20px; }
+  padding: 15px; }
 
 .contact-form__label, .contact-form__input, .contact-form__textarea {
   display: inline-block; }
 
 .contact-form__input, .contact-form__textarea {
-  width: 100%; }
+  width: 100%;
+  border: 1px solid #d7d7d7;
+  transition: 0.15s background-color linear; }
+  .contact-form__input:focus, .contact-form__textarea:focus {
+    background-color: #fdfdfd; }
 
 .contact-form__button {
   width: 270px;
+  background-color: transparent;
   display: block;
   border-width: 2px;
   margin: 25px auto 0; }
@@ -2568,6 +2575,13 @@ a.link, a.no-link {
     text-align: center; }
   .skills-1-skill-icon, .skills-1-skill-title {
     display: block; }
+
+.white-frame {
+  background-color: #fff; }
+  .white-frame-058001 {
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.1); }
+  .white-frame-0525001 {
+    box-shadow: 0 5px 25px 0 rgba(0, 0, 0, 0.1); }
 
 *,
 *::before,

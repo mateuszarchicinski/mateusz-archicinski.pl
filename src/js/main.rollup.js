@@ -1,6 +1,9 @@
 import {
     Portfolio
 } from './portfolio';
+import {
+    contactForm
+} from './contact-form';
 
 
 console.info('JavaScript running...');
@@ -42,6 +45,11 @@ $(document).ready(() => {
 
 
     // PORTFOLIO
-    const devPortfolio = new Portfolio();
-    devPortfolio.init();
+    const portfolioInstance = new Portfolio();
+    portfolioInstance.init();
+
+
+    // CONTACT
+    const contactFormInstance = new contactForm();
+    contactFormInstance.init();
 });

@@ -7,9 +7,21 @@
 // sass-lint:disable no-color-literals
 $contact-wrapper__background-color: linear-gradient(to left, rgba($color__snow, 1) 0, rgba($color__snow, 1) 66.66666%, rgba($color__white, 1) 66.66666%, rgba($color__white, 1) 100%) !default;
 // sass-lint:enable no-color-literals
-// .contact-form-wrapper
-$contact-form-wrapper__background-color: $color__white !default;
-$contact-form-wrapper__box-shadow: 0 5px 25px 0 rgba($color__black-1, 0.1) !default;
+
+// .contact-form-title
+$contact-form-title__font-size: 1.35em !default;
+// .contact-form__label
+$contact-form__label__font-size: 1.05em !default;
+$contact-form__label__font-weight: $font-weight__bolder !default;
+// .contact-form__input-alerts
+$contact-form__input-alerts__font-size: 0.95em !default;
+$contact-form__input-alerts__font-weight: $font-weight__bolder !default;
+$contact-form__input-alerts__color: $color__cinnabar !default;
+// .contact-form__input & .contact-form__textarea
+$contact-form__input-textarea__border: 1px solid lighten($divider-color, 10%) !default;
+// .contact-form__input:focus & .contact-form__textarea:focus
+$contact-form__input-textarea__focus__background-color: lighten($color__snow, 1%) !default;
+
 // .contact-info__list > li
 $contact-info__list__li__border-bottom: 1px solid $divider-color !default;
 
@@ -21,36 +33,42 @@ $contact-info__list__li__border-bottom: 1px solid $divider-color !default;
     }
     &-form {
         &-wrapper {
-            background-color: $contact-form-wrapper__background-color;
-            box-shadow: $contact-form-wrapper__box-shadow;
             padding: 35px 40px 45px;
             margin: 25px 0 10px;
         }
         &-title {
-            font-size: 1.35em;
-            margin: 0.5em 0;
+            font-size: $contact-form-title__font-size;
+            margin: 0.5em 0 1em;
         }
         &__label {
-            font-size: 1.05em;
-            font-weight: 600;
-            display: inline-block;
+            font-size: $contact-form__label__font-size;
+            font-weight: $contact-form__label__font-weight;
             margin-bottom: 0.5em;
         }
         &__input {
-            width: 100%;
             height: 50px;
             line-height: 50px;
-            padding: 0 20px;
-            border: 1px solid $divider-color;
+            padding: 0 15px;
             &-container {
                 padding: 5px 0;
                 margin: 15px 0;
             }
+            &-alerts {
+                font-size: $contact-form__input-alerts__font-size;
+                font-weight: $contact-form__input-alerts__font-weight;
+                color: $contact-form__input-alerts__color;
+                & > * {
+                    display: none;
+                }
+                & > *[data-alert] {
+                    margin-top: 0.5em;
+                }
+            }
         }
         &__textarea {
-            min-height: 100px;
+            min-height: 150px;
             resize: vertical;
-            padding: 20px;
+            padding: 15px;
         }
         &__label,
         &__input,
@@ -60,9 +78,15 @@ $contact-info__list__li__border-bottom: 1px solid $divider-color !default;
         &__input,
         &__textarea {
             width: 100%;
+            border: $contact-form__input-textarea__border;
+            transition: 0.15s background-color linear;
+            &:focus {
+                background-color: $contact-form__input-textarea__focus__background-color;
+            }
         }
         &__button {
             width: 270px;
+            background-color: transparent;
             display: block;
             border-width: 2px;
             margin: 25px auto 0;

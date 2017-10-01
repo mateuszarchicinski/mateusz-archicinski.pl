@@ -115,6 +115,27 @@ var Portfolio = function () {
     return Portfolio;
 }();
 
+var contactForm = function () {
+    function contactForm(formSelector) {
+        classCallCheck(this, contactForm);
+
+        this.formSelector = formSelector || '.contact-form-js';
+    }
+
+    createClass(contactForm, [{
+        key: 'init',
+        value: function init() {
+            this.formElem = document.querySelector(this.formSelector);
+
+            this.formElem.addEventListener('submit', function (e) {
+                console.log(e);
+                e.preventDefault();
+            });
+        }
+    }]);
+    return contactForm;
+}();
+
 console.info('JavaScript running...');
 
 var mainHeader = document.querySelector('.main-header');
@@ -150,8 +171,12 @@ $(document).ready(function () {
     });
 
     // PORTFOLIO
-    var devPortfolio = new Portfolio();
-    devPortfolio.init();
+    var portfolioInstance = new Portfolio();
+    portfolioInstance.init();
+
+    // CONTACT
+    var contactFormInstance = new contactForm();
+    contactFormInstance.init();
 });
 
 }());

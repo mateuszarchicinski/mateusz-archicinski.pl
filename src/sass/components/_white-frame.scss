@@ -1,0 +1,24 @@
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+//~~~~~~* WHITE FRAME *~~~~~~//+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+
+
+// .white-frame
+$white-frame__background-color: $color__white !default;
+
+// .white-frame-058001
+$white-frame-058001__box-shadow: 0 5px 8px 0 rgba($color__black-1, 0.1) !default;
+
+// .white-frame-0525001
+$white-frame-0525001__box-shadow: 0 5px 25px 0 rgba($color__black-1, 0.1) !default;
+
+
+.white-frame {
+    background-color: $white-frame__background-color;
+    &-058001 {
+        box-shadow: $white-frame-058001__box-shadow;
+    }
+    &-0525001 {
+        box-shadow: $white-frame-0525001__box-shadow;
+    }
+}

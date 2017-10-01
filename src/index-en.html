@@ -280,7 +280,7 @@
           <div class="row">
             <div class="col-12">
               <div class="owl-carousel owl-theme owl-carousel-services owl-carousel-services-js">
-                <div class="services-1-item text-center"><span class="icon-img icon-5 icon-services-website services-1-item-icon" aria-hidden="true"></span>
+                <div class="white-frame-058001 services-1-item text-center"><span class="icon-img icon-5 icon-services-website services-1-item-icon" aria-hidden="true"></span>
                   <h3 class="heading heading-4 services-1-item-title">Kodowanie PSD do HTML/CSS/JS</h3>
                   <div class="heading-separator">
                     <div class="heading-separator__line heading-separator__line-bolded-3 services-1-item-heading-separator__line"></div>
@@ -288,7 +288,7 @@
                   <p class="paragraph">Pocięcie i zakodowanie do HTML5, CSS3 i JavaScript dostarczonego projektu graficznego strony internetowej, mailingu, szablonu WordPress i innych.</p>
                   <button class="btn to-top btn-primary-text services-1-item-button" type="button"><span>Więcej</span></button>
                 </div>
-                <div class="services-1-item text-center"><span class="icon-img icon-5 icon-services-devices services-1-item-icon" aria-hidden="true"></span>
+                <div class="white-frame-058001 services-1-item text-center"><span class="icon-img icon-5 icon-services-devices services-1-item-icon" aria-hidden="true"></span>
                   <h3 class="heading heading-4 services-1-item-title">Dostosowanie do różnych przeglądarek i urządzeń</h3>
                   <div class="heading-separator">
                     <div class="heading-separator__line heading-separator__line-bolded-3 services-1-item-heading-separator__line"></div>
@@ -296,7 +296,7 @@
                   <p class="paragraph">Dostosowanie strony internetowej do wybranych przeglądarek i urządzeń mobilnych z uwzględnieniem różnych rozdzielczości (tzw. Responsive Web Design).</p>
                   <button class="btn to-top btn-primary-text services-1-item-button" type="button"><span>Więcej</span></button>
                 </div>
-                <div class="services-1-item text-center"><span class="icon-img icon-5 icon-services-admin services-1-item-icon" aria-hidden="true"></span>
+                <div class="white-frame-058001 services-1-item text-center"><span class="icon-img icon-5 icon-services-admin services-1-item-icon" aria-hidden="true"></span>
                   <h3 class="heading heading-4 services-1-item-title">Administracja stron internetowych</h3>
                   <div class="heading-separator">
                     <div class="heading-separator__line heading-separator__line-bolded-3 services-1-item-heading-separator__line"></div>
@@ -304,15 +304,15 @@
                   <p class="paragraph">Wdrożenie i utrzymanie strony/aplikacji internetowej w tym okresowe raporty z testów automatycznych i manualnych wybranych funkcjonalności.</p>
                   <button class="btn to-top btn-primary-text services-1-item-button" type="button"><span>Więcej</span></button>
                 </div>
-                <div class="services-1-item text-center"><span class="icon-img icon-5 icon-services-spa services-1-item-icon" aria-hidden="true"></span>
+                <div class="white-frame-058001 services-1-item text-center"><span class="icon-img icon-5 icon-services-spa services-1-item-icon" aria-hidden="true"></span>
                   <h3 class="heading heading-4 services-1-item-title">SPA / Aplikacje internetowe</h3>
                   <div class="heading-separator">
                     <div class="heading-separator__line heading-separator__line-bolded-3 services-1-item-heading-separator__line"></div>
                   </div>
-                  <p class="paragraph">Tworzenie całej warstwy klienta aplikacji internetowej lub wybranych komponentów w oparciu <br>o framework AngularJS, HTML5, CSS3, ES6/TypeScript.</p>
+                  <p class="paragraph">Tworzenie całej warstwy klienta aplikacji internetowej lub wybranych komponentów w oparciu o framework AngularJS, HTML5, CSS3, ES6/TypeScript.</p>
                   <button class="btn to-top btn-primary-text services-1-item-button" type="button"><span>Więcej</span></button>
                 </div>
-                <div class="services-1-item text-center"><span class="icon-img icon-5 icon-services-api services-1-item-icon" aria-hidden="true"></span>
+                <div class="white-frame-058001 services-1-item text-center"><span class="icon-img icon-5 icon-services-api services-1-item-icon" aria-hidden="true"></span>
                   <h3 class="heading heading-4 services-1-item-title">API / Interfejsy programowania aplikacji</h3>
                   <div class="heading-separator">
                     <div class="heading-separator__line heading-separator__line-bolded-3 services-1-item-heading-separator__line"></div>
@@ -428,24 +428,41 @@
           </div>
           <div class="row">
             <div class="col-8">
-              <div class="contact-form-wrapper">
+              <div class="white-frame white-frame-0525001 contact-form-wrapper">
                 <h3 class="heading heading-4 contact-form-title text-center">Formularz kontaktowy</h3>
                 <form class="contact-form__form contact-form-js" action="#" autocomplete="off" name="contactForm" novalidate>
                   <div class="contact-form__input-container">
-                    <label class="contact-form__label" for="contactForm[name]">Imię i nazwisko / Nazwa firmy</label>
-                    <input class="contact-form__input" id="contactForm[name]" name="name" type="text" required minlength="8" maxlength="100" pattern="" placeholder="Imię i nazwisko / Nazwa firmy...">
+                    <label class="contact-form__label" for="contactForm[name]">Imię i nazwisko / Nazwa firmy<span class="color-primary"> *</span></label>
+                    <input class="contact-form__input" id="contactForm[name]" name="name" type="text" required maxlength="150">
+                    <div class="contact-form__input-alerts" role="alert">
+                      <div data-alert="required">This is required !</div>
+                      <div data-alert="maxlength">That's too short !</div>
+                    </div>
                   </div>
                   <div class="contact-form__input-container">
-                    <label class="contact-form__label" for="contactForm[email]">E-mail</label>
-                    <input class="contact-form__input" id="contactForm[email]" name="email" type="email" required minlength="8" maxlength="100" pattern="" placeholder="E-mail...">
+                    <label class="contact-form__label" for="contactForm[email]">E-mail<span class="color-primary"> *</span></label>
+                    <input class="contact-form__input" id="contactForm[email]" name="email" type="email" required maxlength="100" pattern="">
+                    <div class="contact-form__input-alerts" role="alert">
+                      <div data-alert="required">This is required !</div>
+                      <div data-alert="maxlength">That's too short !</div>
+                      <div data-alert="pattern">That's not an email !</div>
+                    </div>
                   </div>
                   <div class="contact-form__input-container">
-                    <label class="contact-form__label" for="contactForm[subject]">Temat</label>
-                    <input class="contact-form__input" id="contactForm[subject]" name="subject" type="text" required minlength="8" maxlength="100" pattern="" placeholder="Temat...">
+                    <label class="contact-form__label" for="contactForm[subject]">Temat<span class="color-primary"> *</span></label>
+                    <input class="contact-form__input" id="contactForm[subject]" name="subject" type="text" required maxlength="150">
+                    <div class="contact-form__input-alerts" role="alert">
+                      <div data-alert="required">This is required !</div>
+                      <div data-alert="maxlength">That's too short !</div>
+                    </div>
                   </div>
                   <div class="contact-form__input-container">
-                    <label class="contact-form__label" for="contactForm[message]">Treść wiadomości</label>
-                    <textarea class="contact-form__textarea" id="contactForm[message]" name="message" required minlength="8" maxlength="1500" pattern="" placeholder="Treść wiadomości..."></textarea>
+                    <label class="contact-form__label" for="contactForm[message]">Treść wiadomości<span class="color-primary"> *</span></label>
+                    <textarea class="contact-form__textarea" id="contactForm[message]" name="message" required maxlength="1500"></textarea>
+                    <div class="contact-form__input-alerts" role="alert">
+                      <div data-alert="required">This is required !</div>
+                      <div data-alert="maxlength">That's too short !</div>
+                    </div>
                   </div>
                   <button class="btn to-top btn-primary contact-form__button" type="submit"><span>Wyślij wiadomość</span></button>
                 </form>

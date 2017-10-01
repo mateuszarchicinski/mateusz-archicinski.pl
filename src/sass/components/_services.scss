@@ -6,7 +6,6 @@
 // .services-1-item
 $services-1-item__background-color-0: darken($color__white, 1.05%) !default;
 $services-1-item__border: 1px solid rgba($color__black-1, 0.1) !default;
-$services-1-item__box-shadow: 0 5px 8px 0 rgba($color__black-1, 0.1) !default;
 // .owl-carousel-services .center .services-1-item
 $services-1-item__background-color-1: $color__white !default;
 
@@ -34,7 +33,6 @@ $services-1-item-button__hover__after__border-color-1: $primary-color !default;
     &-1-item {
         background-color: $services-1-item__background-color-0;
         border: $services-1-item__border;
-        box-shadow: $services-1-item__box-shadow;
         padding: 25px;
         margin: 50px 32.5px;
         transition: 0.3s background-color ease-in-out, 0.3s padding ease-in-out, 0.3s margin ease-in-out;
