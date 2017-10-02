@@ -115,22 +115,86 @@ var Portfolio = function () {
     return Portfolio;
 }();
 
+var Modal = function () {
+    function Modal(modalSelector) {
+        classCallCheck(this, Modal);
+
+        this.modalSelector = modalSelector || '.modal-js';
+        this.initStatus = false;
+    }
+
+    createClass(Modal, [{
+        key: 'open',
+        value: function open(time) {
+            var _this = this;
+
+            this.modalElem.classList.add('open');
+            setTimeout(function () {
+                _this.close();
+            }, time || 5000);
+        }
+    }, {
+        key: 'close',
+        value: function close() {
+            this.modalElem.classList.remove('open');
+        }
+    }, {
+        key: 'init',
+        value: function init() {
+            if (this.initStatus) return;
+
+            var modalElem = this.modalElem = document.querySelector(this.modalSelector);
+
+            if (!modalElem) return;
+
+            this.initStatus = true;
+        }
+    }]);
+    return Modal;
+}();
+
+var modalInstance = new Modal();
+modalInstance.init();
+
 var contactForm = function () {
     function contactForm(formSelector) {
         classCallCheck(this, contactForm);
 
         this.formSelector = formSelector || '.contact-form-js';
+        this.initStatus = false;
     }
 
     createClass(contactForm, [{
         key: 'init',
         value: function init() {
-            this.formElem = document.querySelector(this.formSelector);
+            if (this.initStatus) return;
 
-            this.formElem.addEventListener('submit', function (e) {
-                console.log(e);
-                e.preventDefault();
-            });
+            var formElem = this.formElem = document.querySelector(this.formSelector),
+                inputElems = [].slice.call(document.querySelectorAll(this.formSelector + ' input, ' + this.formSelector + ' textarea'));
+
+            if (formElem) {
+                formElem.addEventListener('submit', function (e) {
+                    e.preventDefault();
+
+                    if (formElem.checkValidity()) {
+                        formElem.classList.add('contact-form-loading');
+
+                        setTimeout(function () {
+                            formElem.classList.remove('contact-form-loading');
+
+                            modalInstance.open();
+                        }, 2500);
+
+                        if (inputElems.length > 0) {
+                            inputElems.forEach(function (item) {
+                                item.value = '';
+                            });
+                        }
+                    }
+                });
+            }
+
+            this.initStatus = true;
         }
     }]);
     return contactForm;

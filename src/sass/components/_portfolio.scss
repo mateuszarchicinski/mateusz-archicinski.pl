@@ -78,6 +78,7 @@ $portfolio-item-buttons__btn__font-size: 0.9em !default;
                 display: block;
                 transition: 0.3s background-color ease-in-out;
             }
+            &:focus::after,
             &:hover::after {
                 background-color: $portfolio-item__figure__hover__after__background-color;
             }
@@ -87,6 +88,7 @@ $portfolio-item-buttons__btn__font-size: 0.9em !default;
             object-fit: cover;
             transition: 0.3s transform ease-in-out;
         }
+        &__figure:focus &__img,
         &__figure:hover &__img {
             transform: scale(1.25);
         }
@@ -97,6 +99,7 @@ $portfolio-item-buttons__btn__font-size: 0.9em !default;
             @include opacity(0);
             transition: 0.3s opacity ease-in-out, 0.3s visibility ease-in-out;
         }
+        &__figure:focus &__figcaption,
         &__figure:hover &__figcaption {
             visibility: visible;
             @include opacity(1);

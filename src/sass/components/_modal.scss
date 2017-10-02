@@ -1,0 +1,43 @@
+//~~~~~~~~~~~~~~~~~~~~~//
+//~~~~~~* MODAL *~~~~~~//+
+//~~~~~~~~~~~~~~~~~~~~~//
+
+
+// .modal-wrapper
+$modal-wrapper__background-color: rgba($color__black-1, 0.5) !default;
+
+// .modal-content
+$modal-content__background-color: $color__white !default;
+
+
+.modal {
+    &-wrapper,
+    &-content {
+        left: 0;
+        right: 0;
+        margin: auto;
+    }
+    &-wrapper {
+        background-color: $modal-wrapper__background-color;
+        position: fixed;
+        display: none;
+        z-index: 999;
+        top: 0;
+        bottom: 0;
+        &.open {
+            display: block;
+        }
+    }
+    &-content {
+        width: 420px;
+        background-color: $modal-content__background-color;
+        position: absolute;
+        z-index: 1000;
+        top: 50%;
+        transform: translateY(-50%);
+        padding: 25px 30px;
+        @media screen and (max-width: 420px) {
+            width: 100%;
+        }
+    }
+}

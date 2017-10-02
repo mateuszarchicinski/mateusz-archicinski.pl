@@ -30,7 +30,7 @@ section(id="portfolio" class="section portfolio-wrapper")
                         if property !== "categories"
                             each project in obj
                                 div(data-type=property class="portfolio-item")
-                                    figure.portfolio-item__figure
+                                    figure(tabindex="0" class="portfolio-item__figure")
                                         img(src=project.imgSrc alt=project.imgAlt class="portfolio-item__img")
                                         figcaption.portfolio-item__figcaption.text-center
                                             h3.heading.heading-5.portfolio-item-title= project.title
