@@ -304,7 +304,18 @@
             "form": {
                 "h3": "Formularz kontaktowy",
                 "inputs": {
-                    
+                    "name": {
+                        "label": "Imię i nazwisko / Nazwa firmy"
+                    },
+                    "email": {
+                        "label": "E-mail"
+                    },
+                    "subject": {
+                        "label": "Temat"
+                    },
+                    "message": {
+                        "label": "Treść wiadomości"
+                    }
                 },
                 "submitButton": "Wyślij wiadomość"
             },
@@ -332,7 +343,6 @@
                 }
             }
         }
-
     },
     "mainFooter": {
         "recommendedProjects": {
@@ -353,5 +363,11 @@
             }
         },
         "copyright": "2015 - 2017 Mateusz Archiciński - All rights reserved"
+    },
+    "modalWrappers": {
+        "contactFormSuccess": [
+            "Success!",
+            "Your message was sent!"
+        ]
     }
 }

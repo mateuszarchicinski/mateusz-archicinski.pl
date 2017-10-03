@@ -5,14 +5,14 @@ section(id="home" class="section home-wrapper")
     .container
         .row.no-gutters.flex-column.align-items-center.justify-content-center.home-row
             header.home-header
-                h2.heading.heading-1.white.text-center= data.mainWrapper.homeWrapper.h2
+                h2.heading.heading-1.text-center.color-white.home-header-title= data.mainWrapper.homeWrapper.h2
                 .heading-separator
                     .heading-separator__line.primary
                     .heading-separator__square.heading-separator__square-incresed-2
                     .heading-separator__line.accent
-                h3.heading.heading-3.white.text-center= data.mainWrapper.homeWrapper.h3
+                h3.heading.heading-3.text-center.color-white.home-header-subtitle= data.mainWrapper.homeWrapper.h3
                 .home-header-buttons
-                    a(href="#aboutMe" class="btn to-top btn-accent color-white")= data.mainWrapper.homeWrapper.buttons.aboutMe
+                    a(href="#about-me" class="btn to-top btn-accent color-white")= data.mainWrapper.homeWrapper.buttons.aboutMe
                     a(href="#services" class="btn to-top btn-primary-dark color-white")= data.mainWrapper.homeWrapper.buttons.services
             a(href="#about-me" aria-label=data.mainWrapper.homeWrapper.buttons.arrowBtnAriaLabel class="btn btn-round to-top color-white")
                 span(aria-hidden="true" class="icon icon-125 icon-down-open-1")

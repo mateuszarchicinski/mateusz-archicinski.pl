@@ -36,3 +36,14 @@ body {
 .clearfix {
     @extend %clearfix;
 }
+
+
+@include media-breakpoint-down(lg) {
+    .main-wrapper .section,
+    .main-footer {
+        display: none;
+    }
+    .main-wrapper .section.home-wrapper {
+        display: block;
+    }
+}

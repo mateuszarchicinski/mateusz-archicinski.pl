@@ -27,6 +27,7 @@ $loading__after__border: 5px solid $primary-color !default;
 
 %loading {
     position: relative;
+    user-select: none;
     &::before,
     &::after {
         content: '';

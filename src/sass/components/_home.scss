@@ -43,6 +43,14 @@ $home-wrapper__after__background-image: linear-gradient(to top, $color__black-2 
     &-header {
         padding: 175px 0 59px;
         margin-bottom: 25px;
+        &-title {
+            @include media-breakpoint-down(md) {
+                font-size: 4.2em;
+            }
+        }
+        &-subtitle {
+            
+        }
         &-buttons {
             text-align: center;
             margin-top: 38px;

@@ -21,12 +21,15 @@ $side-nav__link-active-after__background-color: $primary-color-dark !default;
 
 
 .site-nav {
-    &__wrapper {
+    &-wrapper {
         height: $side-nav__wrapper__height;
     }
     &__list {
         list-style: none;
         @extend %no-padding-margin;
+        @include media-breakpoint-down(md) {
+            display: none;
+        }
     }
     &__link {
         height: $side-nav__link__height;
@@ -62,6 +65,20 @@ $side-nav__link-active-after__background-color: $primary-color-dark !default;
             &::after {
                 height: 3px;
                 background-color: $side-nav__link-active-after__background-color;
+            }
+        }
+    }
+    &__button {
+        &-toggle {
+            width: 50px;
+            height: 50px;
+            background-color: transparent;
+            display: none;
+            border: 0;
+            outline: 0;
+            margin-top: 7.5px;            
+            @include media-breakpoint-down(md) {
+                display: block;
             }
         }
     }

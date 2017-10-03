@@ -19,19 +19,19 @@ section(id="contact" class="section contact-wrapper")
                     form(action="#" autocomplete="off" method="post" name="contactForm" class="contact-form__form contact-form-js")
                         h3.heading.heading-4.contact-form-title.text-center= data.mainWrapper.contactWrapper.form.h3
                         .contact-form__input-container
-                            label(for="contactForm[name]" class="contact-form__label") Imię i nazwisko / Nazwa firmy
+                            label(for="contactForm[name]" class="contact-form__label")= data.mainWrapper.contactWrapper.form.inputs.name.label
                                 span.color-primary  *
                             input(id="contactForm[name]" name="name" type="text" required maxlength="150" class="contact-form__input")
                         .contact-form__input-container
-                            label(for="contactForm[email]" class="contact-form__label") E-mail
+                            label(for="contactForm[email]" class="contact-form__label")= data.mainWrapper.contactWrapper.form.inputs.email.label
                                 span.color-primary  *
                             input(id="contactForm[email]" name="email" type="email" required maxlength="150" class="contact-form__input")
                         .contact-form__input-container
-                            label(for="contactForm[subject]" class="contact-form__label") Temat
+                            label(for="contactForm[subject]" class="contact-form__label")= data.mainWrapper.contactWrapper.form.inputs.subject.label
                                 span.color-primary  *
                             input(id="contactForm[subject]" name="subject" type="text" required maxlength="150" class="contact-form__input")
                         .contact-form__input-container
-                            label(for="contactForm[message]" class="contact-form__label") Treść wiadomości
+                            label(for="contactForm[message]" class="contact-form__label")= data.mainWrapper.contactWrapper.form.inputs.message.label
                                 span.color-primary  *
                             textarea(id="contactForm[message]" name="message" required maxlength="1500" class="contact-form__textarea")
                         button(type="submit" class="btn to-top btn-primary contact-form__button")

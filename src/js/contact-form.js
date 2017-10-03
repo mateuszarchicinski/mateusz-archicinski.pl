@@ -3,7 +3,7 @@ import {
 } from './modal';
 
 
-const modalInstance = new Modal();
+const modalInstance = new Modal('.contact-form-success-js');
 modalInstance.init();
 
 

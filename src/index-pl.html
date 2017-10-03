@@ -55,11 +55,11 @@
   </head>
   <body>
     <!--[if lt IE 8]><p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/" target="_blank">upgrade your browser</a> to improve your experience.</p><![endif]-->
-    <header class="main-header">
+    <header class="main-header main-header-js">
       <div class="container">
         <div class="row no-gutters align-items-center justify-content-between"><a class="site-logo__wrapper" href="/"><img class="site-logo__img" src="images/logo/logo.png" alt="#MA - Logo strony internetowej" width="94" height="28"></a>
           <h1 class="text-hidden">#Mateusz Archiciński</h1>
-          <nav class="site-nav__wrapper">
+          <nav class="site-nav-wrapper">
             <ul class="row site-nav__list">
               <li><a class="site-nav__link site-nav__link-active" href="#home">Strona główna</a></li>
               <li><a class="site-nav__link" href="#about-me">O mnie</a></li>
@@ -67,11 +67,12 @@
               <li><a class="site-nav__link" href="#portfolio">Portfolio</a></li>
               <li><a class="site-nav__link" href="#contact">Kontakt</a></li>
               <li>
-                <ul class="row language-settings">
+                <ul class="row language-settings__list">
                   <li><a class="site-nav__link language-settings__link" href="/en">en</a></li>
                 </ul>
               </li>
             </ul>
+            <button class="site-nav__button-toggle" aria-label="Site navigation toggle button"></button>
           </nav>
         </div>
       </div>
@@ -81,14 +82,14 @@
         <div class="container">
           <div class="row no-gutters flex-column align-items-center justify-content-center home-row">
             <header class="home-header">
-              <h2 class="heading heading-1 white text-center">Front-End Developer</h2>
+              <h2 class="heading heading-1 text-center color-white home-header-title">Front-End Developer</h2>
               <div class="heading-separator">
                 <div class="heading-separator__line primary"></div>
                 <div class="heading-separator__square heading-separator__square-incresed-2"></div>
                 <div class="heading-separator__line accent"></div>
               </div>
-              <h3 class="heading heading-3 white text-center">Mateusz Archiciński</h3>
-              <div class="home-header-buttons"><a class="btn to-top btn-accent color-white" href="#aboutMe">Poznaj mnie</a><a class="btn to-top btn-primary-dark color-white" href="#services">Usługi</a></div>
+              <h3 class="heading heading-3 text-center color-white home-header-subtitle">Mateusz Archiciński</h3>
+              <div class="home-header-buttons"><a class="btn to-top btn-accent color-white" href="#about-me">Poznaj mnie</a><a class="btn to-top btn-primary-dark color-white" href="#services">Usługi</a></div>
             </header><a class="btn btn-round to-top color-white" href="#about-me" aria-label="Przejdz do sekcji o mnie"><span class="icon icon-125 icon-down-open-1" aria-hidden="true"></span></a>
           </div>
         </div>
@@ -515,9 +516,9 @@
         </div>
       </div>
     </footer>
-    <div class="modal-wrapper modal-js" role="dialog" tabindex="-1">
-      <div class="modal-content">
-        <p class="paragraph text-medium text-center"><strong>Dziękuje za wiadomość!</strong><br>Jesteśmy w kontakcie. Odpowiem na wiadomość w przeciągu najbliższych 24h :)</p>
+    <div class="modal-wrapper contact-form-success-js" role="dialog">
+      <div class="modal-content modal-content-420">
+        <p class="paragraph text-center"><strong>Powodzenie!</strong> Twoja wiadomość została wysłana!</p>
       </div>
     </div>
     <!--JavaScript Sources-->

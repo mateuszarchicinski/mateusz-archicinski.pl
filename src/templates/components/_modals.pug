@@ -1,9 +1,8 @@
 //-
     Modals
 
-div(role="dialog" tabindex="-1" class="modal-wrapper modal-js")
-    .modal-content
-        p.paragraph.text-medium.text-center
-            strong Dziękuje za wiadomość!
-            br
-            | Jesteśmy w kontakcie. Odpowiem na wiadomość w przeciągu najbliższych 24h :)
+div(role="dialog" class="modal-wrapper contact-form-success-js")
+    .modal-content.modal-content-420
+        p.paragraph.text-center
+            strong= data.modalWrappers.contactFormSuccess[0]
+            |  #{data.modalWrappers.contactFormSuccess[1]}

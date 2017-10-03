@@ -1,6 +1,36 @@
 (function () {
 'use strict';
 
+// Throttle Fn
+var throttle = function throttle(fn, time) {
+    var wait = false;
+
+    return function () {
+        if (!wait) {
+            fn.call();
+
+            wait = true;
+
+            setTimeout(function () {
+                wait = false;
+            }, time || 250);
+        }
+    };
+};
+
+// Debounce Fn
+var debounce = function debounce(fn, time) {
+    var timeout = void 0;
+
+    return function () {
+        clearTimeout(timeout);
+
+        timeout = setTimeout(function () {
+            fn();
+        }, time || 250);
+    };
+};
+
 var classCallCheck = function (instance, Constructor) {
   if (!(instance instanceof Constructor)) {
     throw new TypeError("Cannot call a class as a function");
@@ -23,6 +53,69 @@ var createClass = function () {
     if (staticProps) defineProperties(Constructor, staticProps);
     return Constructor;
   };
+}();
+
+var mainHeader = function () {
+    function mainHeader(headerSelector) {
+        classCallCheck(this, mainHeader);
+
+        this.headerSelector = headerSelector || '.main-header-js';
+    }
+
+    createClass(mainHeader, [{
+        key: 'headerHandling',
+        value: function headerHandling() {
+            if (!this.headerElem) return;
+
+            var minHeight = window.innerHeight + 55;
+
+            if (window.pageYOffset >= minHeight / 2.5) {
+                this.headerElem.classList.add('main-header-fixed');
+            } else {
+                this.headerElem.classList.remove('main-header-fixed');
+                this.headerElem.classList.remove('show');
+                this.headerElem.classList.remove('hide');
+            }
+
+            if (window.pageYOffset >= minHeight) {
+                this.show();
+            } else if (window.pageYOffset < minHeight && window.pageYOffset >= minHeight / 2.5) {
+                this.hide();
+            }
+        }
+    }, {
+        key: 'show',
+        value: function show() {
+            this.headerElem.classList.remove('hide');
+            this.headerElem.classList.add('show');
+        }
+    }, {
+        key: 'hide',
+        value: function hide() {
+            this.headerElem.classList.remove('show');
+            this.headerElem.classList.add('hide');
+        }
+    }, {
+        key: 'init',
+        value: function init() {
+            var _this = this;
+
+            if (this.headerElem) return;
+
+            var headerElem = this.headerElem = document.querySelector(this.headerSelector);
+
+            if (!headerElem) return;
+
+            window.addEventListener('scroll', throttle(function () {
+                _this.headerHandling();
+            }, 400));
+
+            window.addEventListener('scroll', debounce(function () {
+                _this.headerHandling();
+            }, 400));
+        }
+    }]);
+    return mainHeader;
 }();
 
 var Portfolio = function () {
@@ -153,7 +246,7 @@ var Modal = function () {
     return Modal;
 }();
 
-var modalInstance = new Modal();
+var modalInstance = new Modal('.contact-form-success-js');
 modalInstance.init();
 
 var contactForm = function () {
@@ -202,23 +295,11 @@ var contactForm = function () {
 
 console.info('JavaScript running...');
 
-var mainHeader = document.querySelector('.main-header');
-
-window.addEventListener('click', function () {
-    if (mainHeader.classList.contains('hide')) {
-        mainHeader.classList.remove('hide');
-        mainHeader.classList.add('show');
-        status = true;
-
-        return;
-    }
-
-    mainHeader.classList.remove('show');
-    mainHeader.classList.add('hide');
-    status = false;
-});
-
 $(document).ready(function () {
+    // MAIN HEADER
+    var mainHeaderInstance = new mainHeader();
+    mainHeaderInstance.init();
+
     // SERVICES
     var owlCaruselServices = $('.owl-carousel-services-js');
 
