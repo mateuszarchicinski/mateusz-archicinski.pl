@@ -1,34 +1,113 @@
 (function () {
 'use strict';
 
-// Throttle Fn
-var throttle = function throttle(fn, time) {
-    var wait = false;
+/* eslint-disable no-undefined,no-param-reassign,no-shadow */
 
-    return function () {
-        if (!wait) {
-            fn.call();
+/**
+ * Throttle execution of a function. Especially useful for rate limiting
+ * execution of handlers on events like resize and scroll.
+ *
+ * @param  {Number}    delay          A zero-or-greater delay in milliseconds. For event callbacks, values around 100 or 250 (or even higher) are most useful.
+ * @param  {Boolean}   noTrailing     Optional, defaults to false. If noTrailing is true, callback will only execute every `delay` milliseconds while the
+ *                                    throttled-function is being called. If noTrailing is false or unspecified, callback will be executed one final time
+ *                                    after the last throttled-function call. (After the throttled-function has not been called for `delay` milliseconds,
+ *                                    the internal counter is reset)
+ * @param  {Function}  callback       A function to be executed after delay milliseconds. The `this` context and all arguments are passed through, as-is,
+ *                                    to `callback` when the throttled-function is executed.
+ * @param  {Boolean}   debounceMode   If `debounceMode` is true (at begin), schedule `clear` to execute after `delay` ms. If `debounceMode` is false (at end),
+ *                                    schedule `callback` to execute after `delay` ms.
+ *
+ * @return {Function}  A new, throttled, function.
+ */
+var throttle = function throttle(delay, noTrailing, callback, debounceMode) {
 
-            wait = true;
+	// After wrapper has stopped being called, this timeout ensures that
+	// `callback` is executed at the proper times in `throttle` and `end`
+	// debounce modes.
+	var timeoutID;
 
-            setTimeout(function () {
-                wait = false;
-            }, time || 250);
-        }
-    };
+	// Keep track of the last time `callback` was executed.
+	var lastExec = 0;
+
+	// `noTrailing` defaults to falsy.
+	if (typeof noTrailing !== 'boolean') {
+		debounceMode = callback;
+		callback = noTrailing;
+		noTrailing = undefined;
+	}
+
+	// The `wrapper` function encapsulates all of the throttling / debouncing
+	// functionality and when executed will limit the rate at which `callback`
+	// is executed.
+	function wrapper() {
+
+		var self = this;
+		var elapsed = Number(new Date()) - lastExec;
+		var args = arguments;
+
+		// Execute `callback` and update the `lastExec` timestamp.
+		function exec() {
+			lastExec = Number(new Date());
+			callback.apply(self, args);
+		}
+
+		// If `debounceMode` is true (at begin) this is used to clear the flag
+		// to allow future `callback` executions.
+		function clear() {
+			timeoutID = undefined;
+		}
+
+		if (debounceMode && !timeoutID) {
+			// Since `wrapper` is being called for the first time and
+			// `debounceMode` is true (at begin), execute `callback`.
+			exec();
+		}
+
+		// Clear any existing timeout.
+		if (timeoutID) {
+			clearTimeout(timeoutID);
+		}
+
+		if (debounceMode === undefined && elapsed > delay) {
+			// In throttle mode, if `delay` time has been exceeded, execute
+			// `callback`.
+			exec();
+		} else if (noTrailing !== true) {
+			// In trailing throttle mode, since `delay` time has not been
+			// exceeded, schedule `callback` to execute `delay` ms after most
+			// recent execution.
+			//
+			// If `debounceMode` is true (at begin), schedule `clear` to execute
+			// after `delay` ms.
+			//
+			// If `debounceMode` is false (at end), schedule `callback` to
+			// execute after `delay` ms.
+			timeoutID = setTimeout(debounceMode ? clear : exec, debounceMode === undefined ? delay - elapsed : delay);
+		}
+	}
+
+	// Return the wrapper function.
+	return wrapper;
 };
 
-// Debounce Fn
-var debounce = function debounce(fn, time) {
-    var timeout = void 0;
+/* eslint-disable no-undefined */
 
-    return function () {
-        clearTimeout(timeout);
-
-        timeout = setTimeout(function () {
-            fn();
-        }, time || 250);
-    };
+/**
+ * Debounce execution of a function. Debouncing, unlike throttling,
+ * guarantees that a function is only executed a single time, either at the
+ * very beginning of a series of calls, or at the very end.
+ *
+ * @param  {Number}   delay         A zero-or-greater delay in milliseconds. For event callbacks, values around 100 or 250 (or even higher) are most useful.
+ * @param  {Boolean}  atBegin       Optional, defaults to false. If atBegin is false or unspecified, callback will only be executed `delay` milliseconds
+ *                                  after the last debounced-function call. If atBegin is true, callback will be executed only at the first debounced-function call.
+ *                                  (After the throttled-function has not been called for `delay` milliseconds, the internal counter is reset).
+ * @param  {Function} callback      A function to be executed after delay milliseconds. The `this` context and all arguments are passed through, as-is,
+ *                                  to `callback` when the debounced-function is executed.
+ *
+ * @return {Function} A new, debounced function.
+ */
+var debounce$1 = function debounce(delay, atBegin, callback) {
+  return callback === undefined ? throttle(delay, atBegin, false) : throttle(delay, callback, atBegin !== false);
 };
 
 var classCallCheck = function (instance, Constructor) {
@@ -106,16 +185,85 @@ var mainHeader = function () {
 
             if (!headerElem) return;
 
-            window.addEventListener('scroll', throttle(function () {
+            window.addEventListener('scroll', throttle(250, function () {
                 _this.headerHandling();
-            }, 400));
+            }));
 
-            window.addEventListener('scroll', debounce(function () {
+            window.addEventListener('scroll', debounce$1(250, function () {
                 _this.headerHandling();
-            }, 400));
+            }));
         }
     }]);
     return mainHeader;
+}();
+
+var $window = $(window);
+var $document = $(document);
+
+var siteNav = function () {
+    function siteNav(navSelector, navToggleSelector) {
+        classCallCheck(this, siteNav);
+
+        this.navSelector = navSelector || '.site-nav-js';
+        this.navToggleSelector = navToggleSelector || '.site-nav-toggle-js';
+        this.isOpen = false;
+    }
+
+    createClass(siteNav, [{
+        key: 'open',
+        value: function open() {
+            this.navElem.classList.add('open');
+            this.navToggleElem.classList.add('active');
+
+            this.isOpen = true;
+        }
+    }, {
+        key: 'close',
+        value: function close() {
+            this.navElem.classList.remove('open');
+            this.navToggleElem.classList.remove('active');
+
+            this.isOpen = false;
+        }
+    }, {
+        key: 'setNavHeight',
+        value: function setNavHeight() {
+            var windowWidth = $window.width(),
+                documentHeight = $document.height();
+
+            if (windowWidth < 992) {
+                this.navElem.style.height = documentHeight + 'px';
+            } else {
+                this.navElem.style.height = null;
+            }
+        }
+    }, {
+        key: 'init',
+        value: function init() {
+            var _this = this;
+
+            if (this.navElem) return;
+
+            var navElem = this.navElem = document.querySelector(this.navSelector),
+                navToggleElem = this.navToggleElem = document.querySelector(this.navToggleSelector);
+
+            navToggleElem.addEventListener('click', function () {
+                if (!_this.isOpen) {
+                    _this.open();
+                    return;
+                }
+
+                _this.close();
+            });
+
+            this.setNavHeight();
+
+            window.addEventListener('resize', throttle(250, function () {
+                _this.setNavHeight();
+            }));
+        }
+    }]);
+    return siteNav;
 }();
 
 var Portfolio = function () {
@@ -299,6 +447,10 @@ $(document).ready(function () {
     // MAIN HEADER
     var mainHeaderInstance = new mainHeader();
     mainHeaderInstance.init();
+
+    // SITE NAV
+    var siteNavInstance = new siteNav();
+    siteNavInstance.init();
 
     // SERVICES
     var owlCaruselServices = $('.owl-carousel-services-js');

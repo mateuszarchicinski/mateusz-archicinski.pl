@@ -18,6 +18,6 @@ exports.input = {
 exports.output = {
     file: `${gulpConfig.directories.work}/js/main.js`,
     format: 'iife',
-    name: 'mainBundle',
+    //name: 'mainBundle',
     sourcemap: true
 };

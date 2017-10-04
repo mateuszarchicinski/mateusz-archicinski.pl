@@ -1,7 +1,5 @@
-import {
-    throttle,
-    debounce
-} from './functions';
+import throttle from '../../node_modules/throttle-debounce/throttle';
+import debounce from '../../node_modules/throttle-debounce/debounce';
 
 
 class mainHeader {
@@ -42,13 +40,13 @@ class mainHeader {
 
         if (!headerElem) return;
 
-        window.addEventListener('scroll', throttle(() => {
+        window.addEventListener('scroll', throttle(250, () => {
             this.headerHandling();
-        }, 400));
+        }));
 
-        window.addEventListener('scroll', debounce(() => {
+        window.addEventListener('scroll', debounce(250, () => {
             this.headerHandling();
-        }, 400));
+        }));
     }
 };
 

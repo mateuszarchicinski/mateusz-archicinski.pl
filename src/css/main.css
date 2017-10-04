@@ -1975,12 +1975,40 @@ a.link, a.no-link {
 
 .site-nav-wrapper {
   height: 65px; }
+  @media (max-width: 991px) {
+    .site-nav-wrapper {
+      width: 320px;
+      height: calc(100% - 65px);
+      background: #212121;
+      position: fixed;
+      visibility: hidden;
+      left: 100%;
+      top: 0;
+      padding: 130px 0;
+      opacity: 0;
+      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+      filter: alpha(opacity=0);
+      transition-delay: 0s;
+      transition-duration: 0.3s;
+      transition-property: visibility, opacity, -webkit-transform, -webkit-filter;
+      transition-property: visibility, transform, opacity, filter;
+      transition-property: visibility, transform, opacity, filter, -webkit-transform, -webkit-filter;
+      transition-timing-function: ease-in-out; } }
+  .site-nav-wrapper.open {
+    visibility: visible;
+    -webkit-transform: translate3d(-100%, 0, 0);
+            transform: translate3d(-100%, 0, 0);
+    opacity: 1;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    filter: alpha(opacity=100); }
 
 .site-nav__list {
   list-style: none; }
   @media (max-width: 991px) {
     .site-nav__list {
-      display: none; } }
+      -webkit-flex-direction: column;
+          -ms-flex-direction: column;
+              flex-direction: column; } }
 
 .site-nav__link {
   height: 65px;
@@ -1991,8 +2019,12 @@ a.link, a.no-link {
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   font-size: 0.85em;
   font-weight: 700;
+  text-align: center;
   text-decoration: none;
   text-transform: uppercase;
   color: #bdbdbd;
@@ -2003,7 +2035,7 @@ a.link, a.no-link {
     .site-nav__link:hover::after {
       height: 3px; }
   .site-nav__link::after {
-    content: "";
+    content: '';
     width: 60%;
     height: 0;
     background-color: #f44336;
@@ -2020,20 +2052,64 @@ a.link, a.no-link {
 
 .site-nav__button-toggle {
   width: 50px;
-  height: 50px;
+  height: 65px;
   background-color: transparent;
+  position: static;
   display: none;
+  z-index: 1;
   border: 0;
   outline: 0;
-  margin-top: 7.5px; }
+  transition: 0.3s -webkit-transform ease-in-out;
+  transition: 0.3s transform ease-in-out;
+  transition: 0.3s transform ease-in-out, 0.3s -webkit-transform ease-in-out; }
   @media (max-width: 991px) {
     .site-nav__button-toggle {
       display: block; } }
+  .site-nav__button-toggle > span {
+    position: relative;
+    display: block; }
+    .site-nav__button-toggle > span, .site-nav__button-toggle > span::before, .site-nav__button-toggle > span::after {
+      width: 100%;
+      height: 5.5px;
+      background-color: #d9d9d9;
+      -webkit-backface-visibility: hidden;
+              backface-visibility: hidden;
+      border-radius: 2px;
+      transition-delay: 0s;
+      transition-duration: 0.25s;
+      transition-property: background-color, -webkit-transform;
+      transition-property: background-color, transform;
+      transition-property: background-color, transform, -webkit-transform;
+      transition-timing-function: ease-in-out; }
+    .site-nav__button-toggle > span::before, .site-nav__button-toggle > span::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: -9px; }
+    .site-nav__button-toggle > span::after {
+      top: 9px; }
+  .site-nav__button-toggle:hover > span,
+  .site-nav__button-toggle:hover > span::before,
+  .site-nav__button-toggle:hover > span::after {
+    background-color: #fff; }
+  .site-nav__button-toggle.active {
+    -webkit-transform: translate3d(-113px, 0, 0);
+            transform: translate3d(-113px, 0, 0); }
+    .site-nav__button-toggle.active > span {
+      background-color: transparent; }
+      .site-nav__button-toggle.active > span::before, .site-nav__button-toggle.active > span::after {
+        background-color: #f44336; }
+      .site-nav__button-toggle.active > span::before {
+        -webkit-transform: rotate(45deg) translate3d(7px, 5.5px, 0);
+                transform: rotate(45deg) translate3d(7px, 5.5px, 0); }
+      .site-nav__button-toggle.active > span::after {
+        -webkit-transform: rotate(-45deg) translate3d(7px, -5.5px, 0);
+                transform: rotate(-45deg) translate3d(7px, -5.5px, 0); }
 
 .language-settings__list {
   list-style: none; }
   .language-settings__list::before {
-    content: "";
+    content: '';
     width: 1px;
     height: 20px;
     display: block;
@@ -2656,7 +2732,8 @@ body {
   .main-wrapper .section,
   .main-footer {
     display: none; }
-  .main-wrapper .section.home-wrapper {
+  .main-wrapper .section.home-wrapper,
+  .main-wrapper .section.about-me-wrapper {
     display: block; } }
 
 .main-header {

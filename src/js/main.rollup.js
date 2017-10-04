@@ -1,6 +1,10 @@
 import {
     mainHeader
-} from './main-header.js';
+} from './main-header';
+
+import {
+    siteNav
+} from './site-nav';
 
 import {
     Portfolio
@@ -18,6 +22,11 @@ $(document).ready(() => {
     // MAIN HEADER
     const mainHeaderInstance = new mainHeader();
     mainHeaderInstance.init();
+
+
+    // SITE NAV
+    const siteNavInstance = new siteNav();
+    siteNavInstance.init();
 
 
     // SERVICES

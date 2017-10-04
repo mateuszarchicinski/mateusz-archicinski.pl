@@ -13,7 +13,7 @@ $language-settings__before__margin-top: ($site-nav__main-header__height - 20px) 
         list-style: none;
         @extend %no-padding-margin;
         &::before {
-            content: "";
+            content: '';
             width: 1px;
             height: 20px;
             display: block;

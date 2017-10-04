@@ -43,7 +43,8 @@ body {
     .main-footer {
         display: none;
     }
-    .main-wrapper .section.home-wrapper {
+    .main-wrapper .section.home-wrapper,
+    .main-wrapper .section.about-me-wrapper {
         display: block;
     }
 }
