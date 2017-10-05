@@ -74,6 +74,4 @@ class Portfolio {
 };
 
 
-export {
-    Portfolio
-};
+export default Portfolio;

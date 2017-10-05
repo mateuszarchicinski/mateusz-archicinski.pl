@@ -6,13 +6,6 @@
 // .site-nav-wrapper
 $site-nav-wrapper__height: $site-nav__main-header__height !default;
 
-// .site-nav-wrapper / RWD: MD
-$site-nav-wrapper__MD__height: calc(100% - 65px) !default;
-$site-nav-wrapper__MD__background-color: rgba($color__nero, 1) !default;
-$site-nav-wrapper__MD__padding: ($site-nav__main-header__height) * 2 0!default;
-// .site-nav-wrapper.open
-
-
 // .site-nav__link
 $site-nav__link__height: $site-nav-wrapper__height !default;
 $site-nav__link__font-size: 0.85em !default;
@@ -22,52 +15,23 @@ $site-nav__link__color: $tertiary-text-color !default;
 $site-nav__link-hover__color: $color__white !default;
 // .site-nav__link:after
 $site-nav__link-after__background-color: $primary-color !default;
-// .site-nav__link-active
+
+// .site-nav__link.active
 $site-nav__link-active__color: $color__white !default;
-// .site-nav__link-active:after
- 
+// .site-nav__link.active:after
 $site-nav__link-active-after__background-color: $primary-color-dark !default;
-// .site-nav__button-toggle
-$site-nav__button-toggle__height: $site-nav__main-header__height !default;
-// .site-nav__button-toggle > span & ::before & ::after
-$site-nav__button-toggle__span-before-after__background-color: darken($color__white, 15%) !default;
-// .site-nav__button-toggle:hover > span & ::before & ::after
-$site-nav__button-toggle__span-before-after__hover__background-color: $color__white !default;
-// .site-nav__button-toggle.active > span & ::before & ::after
-$site-nav__button-toggle__span-before-after__active__background-color: $primary-color !default;
 
 
 .site-nav {
     &-wrapper {
         height: $site-nav-wrapper__height;
         @include media-breakpoint-down(md) {
-            width: 320px;
-            height: $site-nav-wrapper__MD__height;
-            background: $site-nav-wrapper__MD__background-color;
-            position: fixed;
-            visibility: hidden;
-            //z-index: 100; // ?
-            left: 100%;
-            top: 0;
-            padding: $site-nav-wrapper__MD__padding;
-            @include opacity(0);
-            transition-delay: 0s;
-            transition-duration: 0.3s;
-            transition-property: visibility, transform, opacity, filter;
-            transition-timing-function: ease-in-out;
-        }
-        &.open {
-            visibility: visible;
-            transform: translate3d(-100%, 0, 0);
-            @include opacity(1);
+            display: none;
         }
     }
     &__list {
         list-style: none;
         @extend %no-padding-margin;
-        @include media-breakpoint-down(md) {
-            flex-direction: column;
-        }
     }
     &__link {
         height: $site-nav__link__height;
@@ -91,16 +55,17 @@ $site-nav__button-toggle__span-before-after__active__background-color: $primary-
         }
         &::after {
             content: '';
-            width: 60%;
+            width: 35px;
             height: 0;
             background-color: $site-nav__link-after__background-color;
             position: absolute;
             display: block;
-            left: 20%;
+            left: 50%;
             bottom: 14px;
+            transform: translateX(-50%);
             transition: 0.2s height ease-in-out;
         }
-        &-active {
+        &.active {
             color: $site-nav__link-active__color;
             &::after {
                 height: 3px;
@@ -110,65 +75,9 @@ $site-nav__button-toggle__span-before-after__active__background-color: $primary-
     }
     &__button {
         &-toggle {
-            width: 50px;
-            height: $site-nav__button-toggle__height;
-            background-color: transparent;
-            position: static;
             display: none;
-            z-index: 1;
-            border: 0;
-            outline: 0;
-            transition: 0.3s transform ease-in-out;
             @include media-breakpoint-down(md) {
                 display: block;
-            }
-            & > span {
-                position: relative;
-                display: block;
-                &,
-                &::before,
-                &::after {
-                    width: 100%;
-                    height: 5.5px;
-                    background-color: $site-nav__button-toggle__span-before-after__background-color;
-                    backface-visibility: hidden;
-                    border-radius: 2px;
-                    transition-delay: 0s;
-                    transition-duration: 0.25s;
-                    transition-property: background-color, transform;
-                    transition-timing-function: ease-in-out;
-                }
-                &::before,
-                &::after {
-                    content: '';
-                    position: absolute;
-                    left: 0;
-                    top: -9px;
-                }
-                &::after {
-                    top: 9px;
-                }
-            }
-            &:hover > span,
-            &:hover > span::before,
-            &:hover > span::after {
-                background-color: $site-nav__button-toggle__span-before-after__hover__background-color;
-            }
-            &.active {
-                transform: translate3d(-113px, 0, 0);
-                & > span {
-                    background-color: transparent;
-                    &::before,
-                    &::after {
-                        background-color: $site-nav__button-toggle__span-before-after__active__background-color;
-                    }
-                    &::before {
-                        transform: rotate(45deg) translate3d(7px, 5.5px, 0);
-                    }
-                    &::after {
-                        transform: rotate(-45deg) translate3d(7px, -5.5px, 0);
-                    }
-                }
             }
         }
     }

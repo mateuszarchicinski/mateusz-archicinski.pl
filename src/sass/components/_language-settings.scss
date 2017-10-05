@@ -3,23 +3,47 @@
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
 
 
-// .language-settings::before
-$language-settings__before__border: 1px solid $accent-color !default;
-$language-settings__before__margin-top: ($site-nav__main-header__height - 20px) / 2 !default;
+// .language-settings-separator-left::before & .language-settings-separator-top::before
+$language-settings-separator-left-top__background-color: $accent-color !default;
+// .language-settings-separator-left::before
+$language-settings-separator-left-top__margin: (($site-nav__main-header__height - 20px) / 2) 15px 0 1px !default;
 
 
 .language-settings {
     &__list {
         list-style: none;
-        @extend %no-padding-margin;
-        &::before {
-            content: '';
-            width: 1px;
-            height: 20px;
-            display: block;
-            padding-right: 15px;
-            border-left: $language-settings__before__border;
-            margin-top: $language-settings__before__margin-top;
+        padding: 0;
+        margin: 0;
+    }
+    &-separator {
+        &-left,
+        &-top {
+            &::before {
+                content: '';
+                background-color: $language-settings-separator-left-top__background-color;
+                display: block;
+            }            
+        }
+        &-left {
+            &::before {
+                width: 1px;
+                height: 20px;
+                margin: $language-settings-separator-left-top__margin;
+            }            
+        }
+        &-top {
+            margin-top: 15px;
+            position: relative;
+            padding-top: 1px;
+            &::before {
+                width: 20px;
+                height: 1px;
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                margin: auto;
+            }            
         }
     }
     &__link {

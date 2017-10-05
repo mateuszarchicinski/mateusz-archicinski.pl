@@ -59,16 +59,16 @@
       <div class="container">
         <div class="row no-gutters align-items-center justify-content-between"><a class="site-logo__wrapper" href="/"><img class="site-logo__img" src="images/logo/logo.png" alt="#MA - Logo strony internetowej" width="94" height="28"></a>
           <h1 class="text-hidden">#Mateusz Archiciński</h1>
-          <button class="site-nav__button-toggle site-nav-toggle-js" aria-label="Site navigation toggle button"><span></span></button>
-          <nav class="site-nav-wrapper site-nav-js">
-            <ul class="row align-items-center site-nav__list">
-              <li><a class="site-nav__link site-nav__link-active" href="#home">Strona główna</a></li>
+          <button class="side-nav__button-toggle site-nav__button-toggle side-nav-toggle-js" aria-label="Side navigation toggle button"><span class="icon icon-2 icon-menu color-white"></span></button>
+          <nav class="site-nav-wrapper">
+            <ul class="row site-nav__list">
+              <li><a class="site-nav__link active" href="#home">Strona główna</a></li>
               <li><a class="site-nav__link" href="#about-me">O mnie</a></li>
               <li><a class="site-nav__link" href="#services">Usługi</a></li>
               <li><a class="site-nav__link" href="#portfolio">Portfolio</a></li>
               <li><a class="site-nav__link" href="#contact">Kontakt</a></li>
               <li>
-                <ul class="row language-settings__list">
+                <ul class="row language-settings__list language-settings-separator-left">
                   <li><a class="site-nav__link language-settings__link" href="/en">en</a></li>
                 </ul>
               </li>
@@ -77,6 +77,23 @@
         </div>
       </div>
     </header>
+    <nav class="side-nav-wrapper side-nav-js">
+      <button class="side-nav__button-toggle side-nav-toggle-js" aria-label="Side navigation toggle button"><span class="icon icon-2 icon-cancel color-primary-dark"></span></button>
+      <div class="side-nav-overlay">
+        <ul class="row flex-column flex-nowrap align-content-center align-items-center justify-content-center side-nav__list site-nav__list">
+          <li><a class="site-nav__link active" href="#home">Strona główna</a></li>
+          <li><a class="site-nav__link" href="#about-me">O mnie</a></li>
+          <li><a class="site-nav__link" href="#services">Usługi</a></li>
+          <li><a class="site-nav__link" href="#portfolio">Portfolio</a></li>
+          <li><a class="site-nav__link" href="#contact">Kontakt</a></li>
+          <li>
+            <ul class="row language-settings__list language-settings-separator-top">
+              <li><a class="site-nav__link language-settings__link" href="/en">en</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
     <main class="main-wrapper">
       <section class="section home-wrapper" id="home">
         <div class="container">

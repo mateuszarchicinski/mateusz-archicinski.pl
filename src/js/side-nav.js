@@ -5,21 +5,19 @@ import {
 import debounce from '../../node_modules/throttle-debounce/throttle';
 
 
-class siteNav {
+class sideNav {
     constructor(navSelector, navToggleSelector) {
-        this.navSelector = navSelector || '.site-nav-js';
-        this.navToggleSelector = navToggleSelector || '.site-nav-toggle-js';
+        this.navSelector = navSelector || '.side-nav-js';
+        this.navToggleSelector = navToggleSelector || '*[class$="nav-toggle-js"]';
         this.isOpen = false;
     }
     open() {
         this.navElem.classList.add('open');
-        this.navToggleElem.classList.add('active');
 
         this.isOpen = true;
     }
     close() {
         this.navElem.classList.remove('open');
-        this.navToggleElem.classList.remove('active');
 
         this.isOpen = false;
     }
@@ -37,26 +35,34 @@ class siteNav {
         if (this.navElem) return;
 
         const navElem = this.navElem = document.querySelector(this.navSelector),
-            navToggleElem = this.navToggleElem = document.querySelector(this.navToggleSelector);
+            navToggleElems = this.navToggleElem = [].slice.call(document.querySelectorAll(this.navToggleSelector));
 
-        navToggleElem.addEventListener('click', () => {
-            if (!this.isOpen) {
-                this.open();
-                return;
+        navToggleElems.forEach((elem) => {
+            elem.addEventListener('click', (e) => {
+                e.stopPropagation();
+
+                if (!this.isOpen) {
+                    this.open();
+                    return;
+                }
+
+                this.close();
+            });
+        });
+
+        $window.on('click', (e) => {
+            if (!$(e.target).parents(this.navSelector).length && this.isOpen) {
+                this.close();
             }
-
-            this.close();
         });
 
         this.setNavHeight();
 
-        window.addEventListener('resize', debounce(250, () => {
+        window.addEventListener('resize', debounce(500, () => {
             this.setNavHeight();
         }));
     }
 };
 
 
-export {
-    siteNav
-};
+export default sideNav;

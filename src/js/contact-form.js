@@ -45,6 +45,4 @@ class contactForm {
 };
 
 
-export {
-    contactForm
-};
+export default contactForm;

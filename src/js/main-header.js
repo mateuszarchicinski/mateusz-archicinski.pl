@@ -51,6 +51,4 @@ class mainHeader {
 };
 
 
-export {
-    mainHeader
-};
+export default mainHeader;

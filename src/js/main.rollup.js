@@ -1,21 +1,8 @@
-import {
-    mainHeader
-} from './main-header';
-
-import {
-    siteNav
-} from './site-nav';
-
-import {
-    Portfolio
-} from './portfolio';
-
-import {
-    contactForm
-} from './contact-form';
-
-
-console.info('JavaScript running...');
+import mainHeader from './main-header';
+import sideNav from './side-nav';
+import smoothScrolling from './smooth-scrolling';
+import Portfolio from './portfolio';
+import contactForm from './contact-form';
 
 
 $(document).ready(() => {
@@ -24,9 +11,14 @@ $(document).ready(() => {
     mainHeaderInstance.init();
 
 
-    // SITE NAV
-    const siteNavInstance = new siteNav();
-    siteNavInstance.init();
+    // SIDE NAV
+    const sideNavInstance = new sideNav();
+    sideNavInstance.init();
+    
+    
+    // SMOOTH SCROLLING
+    const smoothScrollingInstance = new smoothScrolling();
+    smoothScrollingInstance.init();
 
 
     // SERVICES

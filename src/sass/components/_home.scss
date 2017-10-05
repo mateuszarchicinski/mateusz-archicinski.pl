@@ -38,11 +38,15 @@ $home-wrapper__after__background-image: linear-gradient(to top, $color__black-2 
     }
     &-wrapper,
     &-row {
+        //min-height: 640px;
         height: calc(100vh + 64px);
     }
     &-header {
         padding: 175px 0 59px;
         margin-bottom: 25px;
+        @include media-breakpoint-down(sm) {
+            font-size: 0.6em;
+        }
         &-title {
             @include media-breakpoint-down(md) {
                 font-size: 4.2em;

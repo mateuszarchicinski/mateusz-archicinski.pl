@@ -200,20 +200,19 @@ var mainHeader = function () {
 var $window = $(window);
 var $document = $(document);
 
-var siteNav = function () {
-    function siteNav(navSelector, navToggleSelector) {
-        classCallCheck(this, siteNav);
+var sideNav = function () {
+    function sideNav(navSelector, navToggleSelector) {
+        classCallCheck(this, sideNav);
 
-        this.navSelector = navSelector || '.site-nav-js';
-        this.navToggleSelector = navToggleSelector || '.site-nav-toggle-js';
+        this.navSelector = navSelector || '.side-nav-js';
+        this.navToggleSelector = navToggleSelector || '*[class$="nav-toggle-js"]';
         this.isOpen = false;
     }
 
-    createClass(siteNav, [{
+    createClass(sideNav, [{
         key: 'open',
         value: function open() {
             this.navElem.classList.add('open');
-            this.navToggleElem.classList.add('active');
 
             this.isOpen = true;
         }
@@ -221,7 +220,6 @@ var siteNav = function () {
         key: 'close',
         value: function close() {
             this.navElem.classList.remove('open');
-            this.navToggleElem.classList.remove('active');
 
             this.isOpen = false;
         }
@@ -245,25 +243,65 @@ var siteNav = function () {
             if (this.navElem) return;
 
             var navElem = this.navElem = document.querySelector(this.navSelector),
-                navToggleElem = this.navToggleElem = document.querySelector(this.navToggleSelector);
+                navToggleElems = this.navToggleElem = [].slice.call(document.querySelectorAll(this.navToggleSelector));
 
-            navToggleElem.addEventListener('click', function () {
-                if (!_this.isOpen) {
-                    _this.open();
-                    return;
+            navToggleElems.forEach(function (elem) {
+                elem.addEventListener('click', function (e) {
+                    e.stopPropagation();
+
+                    if (!_this.isOpen) {
+                        _this.open();
+                        return;
+                    }
+
+                    _this.close();
+                });
+            });
+
+            $window.on('click', function (e) {
+                if (!$(e.target).parents(_this.navSelector).length && _this.isOpen) {
+                    _this.close();
                 }
-
-                _this.close();
             });
 
             this.setNavHeight();
 
-            window.addEventListener('resize', throttle(250, function () {
+            window.addEventListener('resize', throttle(500, function () {
                 _this.setNavHeight();
             }));
         }
     }]);
-    return siteNav;
+    return sideNav;
+}();
+
+var smoothScrolling = function () {
+    function smoothScrolling(scrollSelector) {
+        classCallCheck(this, smoothScrolling);
+
+        this.scrollSelector = scrollSelector || 'a[href*="#"]';
+    }
+
+    createClass(smoothScrolling, [{
+        key: 'init',
+        value: function init() {
+            if (this.scrollElems) return;
+
+            var scrollElems = this.scrollElems = $(this.scrollSelector).not('[href="#"]');
+
+            scrollElems.click(function (e) {
+                var scrollTarget = $(e.currentTarget.hash);
+
+                if (scrollTarget.length) {
+                    e.preventDefault();
+
+                    $('html, body').animate({
+                        scrollTop: scrollTarget.offset().top
+                    }, 800);
+                }
+            });
+        }
+    }]);
+    return smoothScrolling;
 }();
 
 var Portfolio = function () {
@@ -441,16 +479,18 @@ var contactForm = function () {
     return contactForm;
 }();
 
-console.info('JavaScript running...');
-
 $(document).ready(function () {
     // MAIN HEADER
     var mainHeaderInstance = new mainHeader();
     mainHeaderInstance.init();
 
-    // SITE NAV
-    var siteNavInstance = new siteNav();
-    siteNavInstance.init();
+    // SIDE NAV
+    var sideNavInstance = new sideNav();
+    sideNavInstance.init();
+
+    // SMOOTH SCROLLING
+    var smoothScrollingInstance = new smoothScrolling();
+    smoothScrollingInstance.init();
 
     // SERVICES
     var owlCaruselServices = $('.owl-carousel-services-js');

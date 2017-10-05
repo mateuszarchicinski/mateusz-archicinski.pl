@@ -1,36 +1,18 @@
 //-
     Main Header
 
-//-nav.site-nav-wrapper.site-nav-js
-    ul.row.align-items-center.site-nav__list
-        li
-            a(href="#home" class="site-nav__link site-nav__link-active")= data.mainHeader.siteNav.home
-        li
-            a(href="#about-me" class="site-nav__link")= data.mainHeader.siteNav.aboutMe
-        li
-            a(href="#services" class="site-nav__link")= data.mainHeader.siteNav.services
-        li
-            a(href="#portfolio" class="site-nav__link")= data.mainHeader.siteNav.portfolio
-        li
-            a(href="#contact" class="site-nav__link")= data.mainHeader.siteNav.contact
-        li
-            ul.row.language-settings__list
-                each value in langs
-                    if lang !== value
-                        li
-                            a(href="/" + value class="site-nav__link language-settings__link")= value
 header.main-header.main-header-js
     .container
         .row.no-gutters.align-items-center.justify-content-between
             a(href="/" class="site-logo__wrapper")
                 img(src="images/logo/logo.png" alt=data.mainHeader.siteLogo.alt width="94" height="28" class="site-logo__img")
             h1.text-hidden= data.mainHeader.h1
-            button(aria-label="Site navigation toggle button" class="site-nav__button-toggle site-nav-toggle-js")
-                    span
-            nav.site-nav-wrapper.site-nav-js
-                ul.row.align-items-center.site-nav__list
+            button(aria-label="Side navigation toggle button" class="side-nav__button-toggle site-nav__button-toggle side-nav-toggle-js")
+                    span.icon.icon-2.icon-menu.color-white
+            nav.site-nav-wrapper
+                ul.row.site-nav__list
                     li
-                        a(href="#home" class="site-nav__link site-nav__link-active")= data.mainHeader.siteNav.home
+                        a(href="#home" class="site-nav__link active")= data.mainHeader.siteNav.home
                     li
                         a(href="#about-me" class="site-nav__link")= data.mainHeader.siteNav.aboutMe
                     li
@@ -40,8 +22,29 @@ header.main-header.main-header-js
                     li
                         a(href="#contact" class="site-nav__link")= data.mainHeader.siteNav.contact
                     li
-                        ul.row.language-settings__list
+                        ul.row.language-settings__list.language-settings-separator-left
                             each value in langs
                                 if lang !== value
                                     li
                                         a(href="/" + value class="site-nav__link language-settings__link")= value
+nav.side-nav-wrapper.side-nav-js
+    button(aria-label="Side navigation toggle button" class="side-nav__button-toggle side-nav-toggle-js")
+        span.icon.icon-2.icon-cancel.color-primary-dark
+    .side-nav-overlay
+        ul.row.flex-column.flex-nowrap.align-content-center.align-items-center.justify-content-center.side-nav__list.site-nav__list
+            li
+                a(href="#home" class="site-nav__link active")= data.mainHeader.siteNav.home
+            li
+                a(href="#about-me" class="site-nav__link")= data.mainHeader.siteNav.aboutMe
+            li
+                a(href="#services" class="site-nav__link")= data.mainHeader.siteNav.services
+            li
+                a(href="#portfolio" class="site-nav__link")= data.mainHeader.siteNav.portfolio
+            li
+                a(href="#contact" class="site-nav__link")= data.mainHeader.siteNav.contact
+            li
+                ul.row.language-settings__list.language-settings-separator-top
+                    each value in langs
+                        if lang !== value
+                            li
+                                a(href="/" + value class="site-nav__link language-settings__link")= value
