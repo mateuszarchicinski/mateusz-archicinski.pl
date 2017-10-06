@@ -2,7 +2,7 @@ import {
     $window,
     $document
 } from './globals';
-import debounce from '../../node_modules/throttle-debounce/throttle';
+import debounce from '../../node_modules/throttle-debounce/debounce';
 
 
 class sideNav {

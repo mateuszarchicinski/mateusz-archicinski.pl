@@ -48,5 +48,10 @@ $section-header-description__font-size: 1.05em !default;
             text-align: center;
             margin: 0;
         }
+        & > .heading-2 {
+            @include media-breakpoint-down(xs) {
+                font-size: 2.5em;
+            }
+        }
     }
 }

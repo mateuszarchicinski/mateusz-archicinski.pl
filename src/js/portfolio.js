@@ -1,3 +1,6 @@
+import debounce from '../../node_modules/throttle-debounce/debounce';
+
+
 class Portfolio {
     constructor(filtersSelector, itemsSelector, filterActiveCls, itemHideCls, itemShowCls) {
         this.filtersSelector = filtersSelector || '.portfolio-filters-js';
@@ -70,6 +73,10 @@ class Portfolio {
 
             this.filterBy(filterValue, !clickedElem.hasAttribute('data-filter-type') ? clickedElem.parentNode : clickedElem);
         });
+        
+        window.addEventListener('resize', debounce(500, () => {
+            this.filterBy(this.currFilterElem.getAttribute('data-filter-type'), this.currFilterElem);
+        }));
     }
 };
 

@@ -106,7 +106,7 @@ var throttle = function throttle(delay, noTrailing, callback, debounceMode) {
  *
  * @return {Function} A new, debounced function.
  */
-var debounce$1 = function debounce(delay, atBegin, callback) {
+var debounce = function debounce(delay, atBegin, callback) {
   return callback === undefined ? throttle(delay, atBegin, false) : throttle(delay, callback, atBegin !== false);
 };
 
@@ -146,7 +146,7 @@ var mainHeader = function () {
         value: function headerHandling() {
             if (!this.headerElem) return;
 
-            var minHeight = window.innerHeight + 55;
+            var minHeight = $('.header-wrapper-js').outerHeight() - 10;
 
             if (window.pageYOffset >= minHeight / 2.5) {
                 this.headerElem.classList.add('main-header-fixed');
@@ -189,7 +189,7 @@ var mainHeader = function () {
                 _this.headerHandling();
             }));
 
-            window.addEventListener('scroll', debounce$1(250, function () {
+            window.addEventListener('scroll', debounce(250, function () {
                 _this.headerHandling();
             }));
         }
@@ -266,7 +266,7 @@ var sideNav = function () {
 
             this.setNavHeight();
 
-            window.addEventListener('resize', throttle(500, function () {
+            window.addEventListener('resize', debounce(500, function () {
                 _this.setNavHeight();
             }));
         }
@@ -302,6 +302,44 @@ var smoothScrolling = function () {
         }
     }]);
     return smoothScrolling;
+}();
+
+var Services = function () {
+    function Services(owlCaruselSelector) {
+        classCallCheck(this, Services);
+
+        this.owlCaruselSelector = owlCaruselSelector || '.owl-carousel-services-js';
+    }
+
+    createClass(Services, [{
+        key: 'init',
+        value: function init() {
+            if (this.owlCaruselElem) return;
+
+            var owlCaruselElem = this.owlCaruselElem = $('.owl-carousel-services-js');
+
+            owlCaruselElem.owlCarousel({
+                loop: true,
+                center: true,
+                autoplay: true,
+                autoplayHoverPause: true,
+                responsive: {
+                    1200: {
+                        items: 3
+                    },
+                    0: {
+                        items: 1
+                    }
+                }
+            });
+
+            owlCaruselElem.on('mouseleave', function () {
+                owlCaruselElem.trigger('stop.owl.autoplay');
+                owlCaruselElem.trigger('play.owl.autoplay');
+            });
+        }
+    }]);
+    return Services;
 }();
 
 var Portfolio = function () {
@@ -389,6 +427,10 @@ var Portfolio = function () {
 
                 _this2.filterBy(filterValue, !clickedElem.hasAttribute('data-filter-type') ? clickedElem.parentNode : clickedElem);
             });
+
+            window.addEventListener('resize', debounce(500, function () {
+                _this2.filterBy(_this2.currFilterElem.getAttribute('data-filter-type'), _this2.currFilterElem);
+            }));
         }
     }]);
     return Portfolio;
@@ -493,19 +535,8 @@ $(document).ready(function () {
     smoothScrollingInstance.init();
 
     // SERVICES
-    var owlCaruselServices = $('.owl-carousel-services-js');
-
-    owlCaruselServices.owlCarousel({
-        loop: true,
-        center: true,
-        autoplay: true,
-        autoplayHoverPause: true
-    });
-
-    owlCaruselServices.on('mouseleave', function () {
-        owlCaruselServices.trigger('stop.owl.autoplay');
-        owlCaruselServices.trigger('play.owl.autoplay');
-    });
+    var servicesInstance = new Services();
+    servicesInstance.init();
 
     // PORTFOLIO
     var portfolioInstance = new Portfolio();

@@ -44,7 +44,11 @@ body {
         display: none;
     }
     .main-wrapper .section.home-wrapper,
-    .main-wrapper .section.about-me-wrapper {
+    .main-wrapper .section.about-me-wrapper,
+    .main-wrapper .section.services-wrapper,
+    .main-wrapper .section.portfolio-wrapper,
+    .main-wrapper .section.contact-wrapper,
+    .main-wrapper + .main-footer {
         display: block;
     }
 }

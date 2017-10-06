@@ -95,9 +95,9 @@
       </div>
     </nav>
     <main class="main-wrapper">
-      <section class="section home-wrapper" id="home">
+      <section class="section home-wrapper header-wrapper-js" id="home">
         <div class="container">
-          <div class="row no-gutters flex-column align-items-center justify-content-center home-row">
+          <div class="row no-gutters align-items-center justify-content-center home-row">
             <header class="home-header">
               <h2 class="heading heading-1 text-center color-white home-header-title">Front-End Developer</h2>
               <div class="heading-separator">
@@ -106,8 +106,10 @@
                 <div class="heading-separator__line accent"></div>
               </div>
               <h3 class="heading heading-3 text-center color-white home-header-subtitle">Mateusz Archiciński</h3>
-              <div class="home-header-buttons"><a class="btn to-top btn-accent color-white" href="#about-me">Poznaj mnie</a><a class="btn to-top btn-primary-dark color-white" href="#services">Usługi</a></div>
-            </header><a class="btn btn-round to-top color-white" href="#about-me" aria-label="Przejdz do sekcji o mnie"><span class="icon icon-125 icon-down-open-1" aria-hidden="true"></span></a>
+              <div class="home-header-buttons"><a class="btn to-top btn-accent color-white" href="#about-me">Poznaj mnie</a><a class="btn to-top btn-primary-dark color-white" href="#services">Usługi</a>
+                <div class="home-header-buttons-bottom"><a class="btn btn-round to-top color-white" href="#about-me" aria-label="Przejdz do sekcji o mnie"><span class="icon icon-125 icon-down-open-1" aria-hidden="true"></span></a></div>
+              </div>
+            </header>
           </div>
         </div>
       </section>
@@ -131,7 +133,7 @@
                 <figcaption class="dev-face__img-caption"><span class="dev-face__name">Mateusz Archiciński</span><span class="dev-face__profession">Front-End Developer</span></figcaption>
               </figure>
               <div class="about-me-section">
-                <header class="row no-gutters align-items-center about-me-section-header"><span class="icon icon-15 icon-user about-me-section-icon"></span><span class="filling-line"></span>
+                <header class="row no-gutters align-items-center about-me-section-header"><span class="icon icon-15 icon-user about-me-section-icon"></span><span class="filling-line beginning-xs"></span>
                   <h3 class="heading heading-4 text-center">Profil</h3><span class="filling-line ending"></span>
                 </header>
                 <div class="about-me-section-body">
@@ -141,7 +143,7 @@
                 </div>
               </div>
               <div class="about-me-section">
-                <header class="row no-gutters align-items-center about-me-section-header"><span class="icon icon-15 icon-info about-me-section-icon"></span><span class="filling-line"></span>
+                <header class="row no-gutters align-items-center about-me-section-header"><span class="icon icon-15 icon-info about-me-section-icon"></span><span class="filling-line beginning-xs"></span>
                   <h3 class="heading heading-4 text-center">Informacje<br>i kontakt</h3><span class="filling-line ending"></span>
                 </header>
                 <div class="about-me-section-body">
@@ -170,7 +172,7 @@
                 </div>
               </div>
               <div class="about-me-section">
-                <header class="row no-gutters align-items-center about-me-section-header"><span class="icon icon-15 icon-lightbulb about-me-section-icon"></span><span class="filling-line"></span>
+                <header class="row no-gutters align-items-center about-me-section-header"><span class="icon icon-15 icon-lightbulb about-me-section-icon"></span><span class="filling-line beginning-xs"></span>
                   <h3 class="heading heading-4 text-center">Atrybuty<br>i cechy</h3><span class="filling-line ending"></span>
                 </header>
                 <div class="row no-gutters about-me-section-body text-center">
@@ -193,7 +195,7 @@
             </div>
             <div class="col-xl-6 col-lg-6 col-md-12">
               <div class="about-me-section">
-                <header class="row no-gutters align-items-center about-me-section-header"><span class="icon icon-15 icon-star about-me-section-icon"></span><span class="filling-line"></span>
+                <header class="row no-gutters align-items-center about-me-section-header"><span class="icon icon-15 icon-star about-me-section-icon"></span><span class="filling-line beginning-xs"></span>
                   <h3 class="heading heading-4 text-center">Edukacja</h3><span class="filling-line ending"></span>
                 </header>
                 <div class="about-me-section-body">
@@ -214,7 +216,7 @@
                 </div>
               </div>
               <div class="about-me-section">
-                <header class="row no-gutters align-items-center about-me-section-header"><span class="icon icon-15 icon-briefcase about-me-section-icon"></span><span class="filling-line"></span>
+                <header class="row no-gutters align-items-center about-me-section-header"><span class="icon icon-15 icon-briefcase about-me-section-icon"></span><span class="filling-line beginning-xs"></span>
                   <h3 class="heading heading-4 text-center">Doświadczenie<br>i kursy</h3><span class="filling-line ending"></span>
                 </header>
                 <div class="about-me-section-body">
@@ -249,7 +251,7 @@
             </div>
             <div class="col-xl-8 col-lg-8 col-md-12">
               <div class="about-me-section">
-                <header class="row no-gutters align-items-center about-me-section-header"><span class="icon icon-15 icon-desktop about-me-section-icon"></span><span class="filling-line"></span>
+                <header class="row no-gutters align-items-center about-me-section-header"><span class="icon icon-15 icon-desktop about-me-section-icon"></span><span class="filling-line beginning-xs"></span>
                   <h3 class="heading heading-4 text-center">Umiejętności<br>i technologie</h3><span class="filling-line ending"></span>
                 </header>
                 <div class="about-me-section-body">
@@ -377,7 +379,7 @@
                 </li>
               </ul>
               <div class="row portfolio-items portfolio-items-js">
-                <div class="portfolio-item" data-type="websites">
+                <div class="portfolio-item col-xl-4 col-lg-4 col-md-6 col-sm-6" data-type="websites">
                   <figure class="portfolio-item__figure" tabindex="0"><img class="portfolio-item__img" src="https://t4.ftcdn.net/jpg/01/01/91/63/240_F_101916353_CLAc4e3dzc1FPbfNwJctpwVCrbqBZclb.jpg" alt="An example img WEBSITE">
                     <figcaption class="portfolio-item__figcaption text-center">
                       <h3 class="heading heading-5 portfolio-item-title">Strona WEBSITE</h3>
@@ -389,7 +391,7 @@
                     </figcaption>
                   </figure>
                 </div>
-                <div class="portfolio-item" data-type="mailings">
+                <div class="portfolio-item col-xl-4 col-lg-4 col-md-6 col-sm-6" data-type="mailings">
                   <figure class="portfolio-item__figure" tabindex="0"><img class="portfolio-item__img" src="https://t4.ftcdn.net/jpg/01/01/91/63/240_F_101916353_CLAc4e3dzc1FPbfNwJctpwVCrbqBZclb.jpg" alt="An example img MAILINGS">
                     <figcaption class="portfolio-item__figcaption text-center">
                       <h3 class="heading heading-5 portfolio-item-title">Strona MAILINGS</h3>
@@ -401,7 +403,7 @@
                     </figcaption>
                   </figure>
                 </div>
-                <div class="portfolio-item" data-type="spa">
+                <div class="portfolio-item col-xl-4 col-lg-4 col-md-6 col-sm-6" data-type="spa">
                   <figure class="portfolio-item__figure" tabindex="0"><img class="portfolio-item__img" src="https://t4.ftcdn.net/jpg/01/01/91/63/240_F_101916353_CLAc4e3dzc1FPbfNwJctpwVCrbqBZclb.jpg" alt="An example img SPA">
                     <figcaption class="portfolio-item__figcaption text-center">
                       <h3 class="heading heading-5 portfolio-item-title">Strona SPA</h3>
@@ -413,7 +415,7 @@
                     </figcaption>
                   </figure>
                 </div>
-                <div class="portfolio-item" data-type="api">
+                <div class="portfolio-item col-xl-4 col-lg-4 col-md-6 col-sm-6" data-type="api">
                   <figure class="portfolio-item__figure" tabindex="0"><img class="portfolio-item__img" src="https://t4.ftcdn.net/jpg/01/01/91/63/240_F_101916353_CLAc4e3dzc1FPbfNwJctpwVCrbqBZclb.jpg" alt="An example img API">
                     <figcaption class="portfolio-item__figcaption text-center">
                       <h3 class="heading heading-5 portfolio-item-title">Strona API</h3>
@@ -445,7 +447,7 @@
             </header>
           </div>
           <div class="row">
-            <div class="col-8">
+            <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8">
               <div class="white-frame white-frame-0525001 contact-form-wrapper">
                 <form class="contact-form__form contact-form-js" action="#" autocomplete="off" method="post" name="contactForm">
                   <h3 class="heading heading-4 contact-form-title text-center">Formularz kontaktowy</h3>
@@ -469,7 +471,7 @@
                 </form>
               </div>
             </div>
-            <div class="col-4">
+            <div class="col-12 col-sm-4">
               <div class="contact-info-wrapper">
                 <ul class="contact-info__list">
                   <li class="info-block">
@@ -494,7 +496,7 @@
     <footer class="main-footer">
       <div class="container">
         <div class="row">
-          <div class="col-4">
+          <div class="col-12 col-md-4">
             <h3 class="heading heading-5 white text-center">Polecane projekty</h3>
             <div class="heading-separator">
               <div class="heading-separator__line heading-separator__line-reduced-2 heading-separator__line-bolded-3 accent"></div>
@@ -507,7 +509,7 @@
               <li><a class="main-footer__link" href="#">Lorem ipsum ...</a></li>
             </ul>
           </div>
-          <div class="col-4">
+          <div class="col-12 col-md-4">
             <h3 class="heading heading-5 white text-center">Ostatnie zmiany</h3>
             <div class="heading-separator">
               <div class="heading-separator__line heading-separator__line-reduced-2 heading-separator__line-bolded-3 accent"></div>
@@ -520,7 +522,7 @@
               <li><a class="main-footer__link" href="#">Lorem ipsum ...</a></li>
             </ul>
           </div>
-          <div class="col-4 row flex-column">
+          <div class="col-12 col-md-4 row no-gutters flex-column">
             <h3 class="heading heading-5 white text-center">Znajdź mnie</h3>
             <div class="heading-separator">
               <div class="heading-separator__line heading-separator__line-reduced-2 heading-separator__line-bolded-3 accent"></div>

@@ -36,6 +36,9 @@ $services-1-item-button__hover__after__border-color-1: $primary-color !default;
         padding: 25px;
         margin: 50px 32.5px;
         transition: 0.3s background-color ease-in-out, 0.3s padding ease-in-out, 0.3s margin ease-in-out;
+        @include media-breakpoint-down(lg) {
+            
+        }
         .owl-carousel-services .center > & {
             background-color: $services-1-item__background-color-1;
             padding: 40px;

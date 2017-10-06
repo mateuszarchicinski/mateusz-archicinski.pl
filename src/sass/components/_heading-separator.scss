@@ -56,6 +56,12 @@ $heading-separator__square-primary__background-color: $primary-color !default;
         &-incresed-2 {
             width: 20px;
             height: 20px;
+            .home-header & {
+                @include media-breakpoint-down(xs) {
+                    width: 10px;
+                    height: 10px;
+                }
+            }
         }
         &.primary {
             background-color: $heading-separator__square-primary__background-color;

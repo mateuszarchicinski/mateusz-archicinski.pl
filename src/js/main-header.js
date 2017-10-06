@@ -8,8 +8,8 @@ class mainHeader {
     }
     headerHandling() {
         if (!this.headerElem) return;
-
-        const minHeight = window.innerHeight + 55;
+        
+        const minHeight = $('.header-wrapper-js').outerHeight() - 10;
 
         if (window.pageYOffset >= (minHeight / 2.5)) {
             this.headerElem.classList.add('main-header-fixed');

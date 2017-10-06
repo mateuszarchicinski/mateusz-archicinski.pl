@@ -1,9 +1,9 @@
 //-
     Home Wrapper
 
-section(id="home" class="section home-wrapper")
+section(id="home" class="section home-wrapper header-wrapper-js")
     .container
-        .row.no-gutters.flex-column.align-items-center.justify-content-center.home-row
+        .row.no-gutters.align-items-center.justify-content-center.home-row
             header.home-header
                 h2.heading.heading-1.text-center.color-white.home-header-title= data.mainWrapper.homeWrapper.h2
                 .heading-separator
@@ -14,5 +14,6 @@ section(id="home" class="section home-wrapper")
                 .home-header-buttons
                     a(href="#about-me" class="btn to-top btn-accent color-white")= data.mainWrapper.homeWrapper.buttons.aboutMe
                     a(href="#services" class="btn to-top btn-primary-dark color-white")= data.mainWrapper.homeWrapper.buttons.services
-            a(href="#about-me" aria-label=data.mainWrapper.homeWrapper.buttons.arrowBtnAriaLabel class="btn btn-round to-top color-white")
-                span(aria-hidden="true" class="icon icon-125 icon-down-open-1")
+                    .home-header-buttons-bottom
+                        a(href="#about-me" aria-label=data.mainWrapper.homeWrapper.buttons.arrowBtnAriaLabel class="btn btn-round to-top color-white")
+                            span(aria-hidden="true" class="icon icon-125 icon-down-open-1")
