@@ -44,9 +44,9 @@ class mainHeader {
             this.headerHandling();
         }));
 
-        window.addEventListener('scroll', debounce(250, () => {
-            this.headerHandling();
-        }));
+//        window.addEventListener('scroll', debounce(250, () => {
+//            this.headerHandling();
+//        }));
     }
 };
 

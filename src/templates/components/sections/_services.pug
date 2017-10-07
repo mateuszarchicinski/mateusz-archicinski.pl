@@ -17,16 +17,11 @@ section(id="services" class="section services-wrapper")
             .col-12
                 .owl-carousel.owl-theme.owl-carousel-services.owl-carousel-services-js
                     each obj in data.mainWrapper.servicesWrapper.services
-                        .white-frame-058001.services-1-item.text-center
-                            span(aria-hidden="true" class="icon-img icon-5 icon-services-" + obj.iconName + " services-1-item-icon")
-                            h3.heading.heading-4.services-1-item-title= obj.title
+                        .white-frame-058001.services-item.text-center
+                            span(aria-hidden="true" class="icon-img icon-5 icon-services-" + obj.iconName + " services-item-icon")
+                            h3.heading.heading-4.services-item-title= obj.title
                             .heading-separator
-                                .heading-separator__line.heading-separator__line-bolded-3.services-1-item-heading-separator__line
-                            if obj.description.length >= 165
-                                - var description = obj.description.substring(0, 165)
-                                - var dots = description[description.length - 1] === "." ? ".." : "..."
-                                p.paragraph.text-justify!= description + dots
-                            else
-                                p.paragraph!= obj.description
-                            button(type="button" class="btn to-top btn-primary-text services-1-item-button")
+                                .heading-separator__line.heading-separator__line-bolded-3.primary
+                            p.paragraph.services-item-description!= obj.description
+                            button(type="button" class="btn to-top btn-primary services-item-button")
                                 span= obj.button

@@ -1,6 +1,12 @@
 class smoothScrolling {
-    constructor(scrollSelector) {
+    constructor(scrollSelector, callback) {
         this.scrollSelector = scrollSelector || 'a[href*="#"]';
+        this.callback = callback || null;
+    }
+    setCallback(callback) {
+        if (typeof callback !== 'function') return;
+
+        this.callback = callback;
     }
     init() {
         if (this.scrollElems) return;
@@ -15,7 +21,7 @@ class smoothScrolling {
 
                 $('html, body').animate({
                     scrollTop: scrollTarget.offset().top
-                }, 800);
+                }, 800).promise().then(this.callback);
             }
         });
     }

@@ -8,13 +8,14 @@ class Services {
         const owlCaruselElem = this.owlCaruselElem = $('.owl-carousel-services-js');
 
         owlCaruselElem.owlCarousel({
-            loop: true,
-            center: true,
             autoplay: true,
             autoplayHoverPause: true,
             responsive: {
-                1200: {
+                992: {
                     items: 3
+                },
+                768: {
+                    items: 2
                 },
                 0: {
                     items: 1

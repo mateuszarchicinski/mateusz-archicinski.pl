@@ -45,20 +45,12 @@
 // ---------------------
 
 
-    // *--------- BREAK LINES ---------*
-    @import 'components/break-lines/break-lines';
-
-
     // *--------- SPRITES ---------*
     @import 'components/sprites/sprite';
 
 
     // *--------- BUTTONS ---------*
     @import 'components/buttons/buttons';
-
-
-    // *--------- COLORS ---------*
-    @import 'components/colors/colors';
 
 
     // *--------- ICONS ---------*
@@ -68,6 +60,11 @@
 
     // *--------- LINKS ---------*
     @import 'components/links/links';
+
+
+    // *--------- UTILITIES ---------*
+    @import 'components/utilities/color';
+    @import 'components/utilities/display';
 
 
     // *--------- SITE LOGO ---------*

@@ -1,6 +1,7 @@
 import mainHeader from './main-header';
 import sideNav from './side-nav';
 import smoothScrolling from './smooth-scrolling';
+import spyScrolling from './spy-scrolling';
 import Services from './services';
 import Portfolio from './portfolio';
 import contactForm from './contact-form';
@@ -20,6 +21,14 @@ $(document).ready(() => {
     // SMOOTH SCROLLING
     const smoothScrollingInstance = new smoothScrolling();
     smoothScrollingInstance.init();
+    smoothScrollingInstance.setCallback(() => {
+        sideNavInstance.close();
+    });
+
+
+    // SPY SCROLLING
+    const spyScrollingInstance = new spyScrolling();
+    spyScrollingInstance.init();
 
 
     // SERVICES

@@ -12,15 +12,15 @@ header.main-header.main-header-js
             nav.site-nav-wrapper
                 ul.row.site-nav__list
                     li
-                        a(href="#home" class="site-nav__link active")= data.mainHeader.siteNav.home
+                        a(href="#home" data-spy class="site-nav__link active")= data.mainHeader.siteNav.home
                     li
-                        a(href="#about-me" class="site-nav__link")= data.mainHeader.siteNav.aboutMe
+                        a(href="#about-me" data-spy class="site-nav__link")= data.mainHeader.siteNav.aboutMe
                     li
-                        a(href="#services" class="site-nav__link")= data.mainHeader.siteNav.services
+                        a(href="#services" data-spy class="site-nav__link")= data.mainHeader.siteNav.services
                     li
-                        a(href="#portfolio" class="site-nav__link")= data.mainHeader.siteNav.portfolio
+                        a(href="#portfolio" data-spy class="site-nav__link")= data.mainHeader.siteNav.portfolio
                     li
-                        a(href="#contact" class="site-nav__link")= data.mainHeader.siteNav.contact
+                        a(href="#contact" data-spy class="site-nav__link")= data.mainHeader.siteNav.contact
                     li
                         ul.row.language-settings__list.language-settings-separator-left
                             each value in langs
@@ -33,15 +33,15 @@ nav.side-nav-wrapper.side-nav-js
     .side-nav-overlay
         ul.row.flex-column.flex-nowrap.align-content-center.align-items-center.justify-content-center.side-nav__list.site-nav__list
             li
-                a(href="#home" class="site-nav__link active")= data.mainHeader.siteNav.home
+                a(href="#home" data-spy class="site-nav__link active")= data.mainHeader.siteNav.home
             li
-                a(href="#about-me" class="site-nav__link")= data.mainHeader.siteNav.aboutMe
+                a(href="#about-me" data-spy class="site-nav__link")= data.mainHeader.siteNav.aboutMe
             li
-                a(href="#services" class="site-nav__link")= data.mainHeader.siteNav.services
+                a(href="#services" data-spy class="site-nav__link")= data.mainHeader.siteNav.services
             li
-                a(href="#portfolio" class="site-nav__link")= data.mainHeader.siteNav.portfolio
+                a(href="#portfolio" data-spy class="site-nav__link")= data.mainHeader.siteNav.portfolio
             li
-                a(href="#contact" class="site-nav__link")= data.mainHeader.siteNav.contact
+                a(href="#contact" data-spy class="site-nav__link")= data.mainHeader.siteNav.contact
             li
                 ul.row.language-settings__list.language-settings-separator-top
                     each value in langs

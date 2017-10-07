@@ -1,0 +1,17 @@
+//~~~~~~~~~~~~~~~~~~~~~~~//
+//~~~~~~* DISPLAY *~~~~~~//+
+//~~~~~~~~~~~~~~~~~~~~~~~//
+
+
+.d {
+    &-none {
+        display: none;
+    }
+    &-xl{
+        &-block {
+            @include media-breakpoint-up(xl) {
+                display: block;
+            }
+        }
+    }
+}

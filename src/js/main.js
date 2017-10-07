@@ -189,9 +189,9 @@ var mainHeader = function () {
                 _this.headerHandling();
             }));
 
-            window.addEventListener('scroll', debounce(250, function () {
-                _this.headerHandling();
-            }));
+            //        window.addEventListener('scroll', debounce(250, () => {
+            //            this.headerHandling();
+            //        }));
         }
     }]);
     return mainHeader;
@@ -275,15 +275,25 @@ var sideNav = function () {
 }();
 
 var smoothScrolling = function () {
-    function smoothScrolling(scrollSelector) {
+    function smoothScrolling(scrollSelector, callback) {
         classCallCheck(this, smoothScrolling);
 
         this.scrollSelector = scrollSelector || 'a[href*="#"]';
+        this.callback = callback || null;
     }
 
     createClass(smoothScrolling, [{
+        key: 'setCallback',
+        value: function setCallback(callback) {
+            if (typeof callback !== 'function') return;
+
+            this.callback = callback;
+        }
+    }, {
         key: 'init',
         value: function init() {
+            var _this = this;
+
             if (this.scrollElems) return;
 
             var scrollElems = this.scrollElems = $(this.scrollSelector).not('[href="#"]');
@@ -296,12 +306,77 @@ var smoothScrolling = function () {
 
                     $('html, body').animate({
                         scrollTop: scrollTarget.offset().top
-                    }, 800);
+                    }, 800).promise().then(_this.callback);
                 }
             });
         }
     }]);
     return smoothScrolling;
+}();
+
+var spyScrolling = function () {
+    function spyScrolling(scrollSelector, scrollActiveCls) {
+        classCallCheck(this, spyScrolling);
+
+        this.scrollSelector = scrollSelector || 'a[data-spy][href*="#"]';
+        this.scrollActiveClass = scrollActiveCls || 'active';
+        this.scrollTargets = [];
+    }
+
+    createClass(spyScrolling, [{
+        key: 'refresh',
+        value: function refresh() {
+            var scrollTop = document.documentElement.scrollTop;
+
+            for (var i = 0; i < this.scrollTargets.length; i++) {
+                var item = this.scrollTargets[i],
+                    offsetTop = item.offsetTop - 65,
+                    offsetBottom = item.offsetHeight + item.offsetTop - 10;
+
+                if (scrollTop >= offsetTop && scrollTop < offsetBottom) {
+                    this.setActive(i);
+                    return;
+                }
+            }
+        }
+    }, {
+        key: 'setActive',
+        value: function setActive(index) {
+            if ($window.width() < 992) {
+                index += this.scrollElems.length / 2;
+            }
+
+            this.currScrollElem.classList.remove(this.scrollActiveClass);
+            this.currScrollElem = this.scrollElems[index];
+            this.currScrollElem.classList.add(this.scrollActiveClass);
+        }
+    }, {
+        key: 'init',
+        value: function init() {
+            var _this = this;
+
+            if (this.scrollElems) return;
+
+            var scrollElems = this.scrollElems = [].slice.call(document.querySelectorAll(this.scrollSelector));
+
+            if (!scrollElems) return;
+
+            if ($window.width() < 992) {
+                this.currScrollElem = scrollElems[scrollElems.length / 2];
+            } else {
+                this.currScrollElem = scrollElems[0];
+            }
+
+            for (var i = 0; i < scrollElems.length / 2; i++) {
+                this.scrollTargets.push(document.querySelector(scrollElems[i].hash));
+            }
+
+            window.addEventListener('scroll', throttle(100, function () {
+                _this.refresh();
+            }));
+        }
+    }]);
+    return spyScrolling;
 }();
 
 var Services = function () {
@@ -319,13 +394,14 @@ var Services = function () {
             var owlCaruselElem = this.owlCaruselElem = $('.owl-carousel-services-js');
 
             owlCaruselElem.owlCarousel({
-                loop: true,
-                center: true,
                 autoplay: true,
                 autoplayHoverPause: true,
                 responsive: {
-                    1200: {
+                    992: {
                         items: 3
+                    },
+                    768: {
+                        items: 2
                     },
                     0: {
                         items: 1
@@ -533,6 +609,13 @@ $(document).ready(function () {
     // SMOOTH SCROLLING
     var smoothScrollingInstance = new smoothScrolling();
     smoothScrollingInstance.init();
+    smoothScrollingInstance.setCallback(function () {
+        sideNavInstance.close();
+    });
+
+    // SPY SCROLLING
+    var spyScrollingInstance = new spyScrolling();
+    spyScrollingInstance.init();
 
     // SERVICES
     var servicesInstance = new Services();

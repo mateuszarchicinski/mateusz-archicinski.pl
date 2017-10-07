@@ -8,25 +8,13 @@ $home-wrapper__box-shadow: 0 1px 8px 0 rgba($color__black-1, 0.8) !default;
 // .home-wrapper::after
 // sass-lint:disable no-color-literals
 $home-wrapper__after__background-image: linear-gradient(to top, $color__black-2 0%, rgba($color__seal-brown, 0.25) 50%, rgba($color__seal-brown, 0.25) 50%, $color__black-2 100%), url(../images/noise.png) !default;
-//$home-wrapper__after__background-image: linear-gradient(to top, rgba(19, 19, 19, 0.95) 0%, rgba(19, 19, 19, 0.95) 100%), url(../images/noise.png);
-//$home-wrapper__after__background-image: url(../images/noise.png);
 // sass-lint:enable no-color-literals
 
 
 .home {
     &-wrapper {
-        //background-image: url(https://t4.ftcdn.net/jpg/01/01/49/89/240_F_101498911_eR4DpsDTpdcwuD4UNOjdr9RDiFFAwn3Q.jpg); // img?
-        background-image: url(../images/blured-img.jpg); // img?
-        //background-image: url(../images/pexels-photo-270360-2.jpg); // img?
+        background-image: url(../images/home-bg.jpg); // img?
         background-attachment: fixed;
-//        background-image: url(https://t4.ftcdn.net/jpg/01/42/80/13/240_F_142801379_XPaDnI8OPvBVKOp1F4mbHyMlyKcH0PJN.jpg);
-//        background-image: url(https://t3.ftcdn.net/jpg/01/05/30/18/240_F_105301865_xYlbWJAYcYGcbDdo6cqTRz6oOTPvxCLk.jpg);
-//        background-image: url(https://t3.ftcdn.net/jpg/01/14/19/50/240_F_114195006_FMgxqLFO7f8lsiYgQV4OvXnnOzrSl1Lr.jpg);
-//       background-image: url(https://t3.ftcdn.net/jpg/01/08/92/22/240_F_108922275_ky7S5fOqRFsARiTrAX619womkn0Y5xqg.jpg);
-//        background-image: url(https://t3.ftcdn.net/jpg/01/05/30/34/240_F_105303410_ugabGpjIprgaTB3QUaBonMwWJKNl1VNm.jpg);
-        //background-image: url(https://t4.ftcdn.net/jpg/01/14/19/49/240_F_114194989_JEU9GikJQgl5ZkMoRpjzgPDXGr5DVIve.jpg);
-        //background-image: url(https://t4.ftcdn.net/jpg/01/05/30/11/240_F_105301185_NdDrfntrA5yWIhOUw3KtZVNPN6hAL0hY.jpg);
-        //background-image: url(https://t3.ftcdn.net/jpg/01/14/19/50/240_F_114195006_FMgxqLFO7f8lsiYgQV4OvXnnOzrSl1Lr.jpg);
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
