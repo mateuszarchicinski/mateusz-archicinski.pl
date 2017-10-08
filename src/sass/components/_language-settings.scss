@@ -11,9 +11,9 @@ $language-settings-separator-left-top__margin: (($site-nav__main-header__height 
 
 .language-settings {
     &__list {
-        list-style: none;
-        padding: 0;
-        margin: 0;
+        @extend %flex;
+        @extend .justify-content-center;
+        @extend %no-list;
     }
     &-separator {
         &-left,

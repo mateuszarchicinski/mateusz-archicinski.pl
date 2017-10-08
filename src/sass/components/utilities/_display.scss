@@ -3,7 +3,10 @@
 //~~~~~~~~~~~~~~~~~~~~~~~//
 
 
-.d {
+.display {
+    &-block {
+        
+    }
     &-none {
         display: none;
     }
@@ -11,6 +14,23 @@
         &-block {
             @include media-breakpoint-up(xl) {
                 display: block;
+            }
+        }
+        &-none {
+            @include media-breakpoint-up(xl) {
+                display: none;
+            }
+        }
+    }
+    &-sm {
+        &-block {
+            @include media-breakpoint-up(sm) {
+                display: block;
+            }
+        }
+        &-none {
+            @include media-breakpoint-up(sm) {
+                display: none;
             }
         }
     }

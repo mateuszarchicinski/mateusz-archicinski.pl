@@ -21,16 +21,6 @@ class sideNav {
 
         this.isOpen = false;
     }
-    setNavHeight() {
-        const windowWidth = $window.width(),
-            documentHeight = $document.height();
-
-        if (windowWidth < 992) {
-            this.navElem.style.height = documentHeight + 'px';
-        } else {
-            this.navElem.style.height = null;
-        }
-    }
     init() {
         if (this.navElem) return;
 
@@ -55,12 +45,6 @@ class sideNav {
                 this.close();
             }
         });
-
-        this.setNavHeight();
-
-        window.addEventListener('resize', debounce(500, () => {
-            this.setNavHeight();
-        }));
     }
 };
 

@@ -13,15 +13,14 @@ section(id="services" class="section services-wrapper")
                     .heading-separator__square.primary
                     .heading-separator__line
                 p.section-header-description= data.mainWrapper.servicesWrapper.header.p
-        .row
-            .col-12
-                .owl-carousel.owl-theme.owl-carousel-services.owl-carousel-services-js
-                    each obj in data.mainWrapper.servicesWrapper.services
-                        .white-frame-058001.services-item.text-center
-                            span(aria-hidden="true" class="icon-img icon-5 icon-services-" + obj.iconName + " services-item-icon")
-                            h3.heading.heading-4.services-item-title= obj.title
-                            .heading-separator
-                                .heading-separator__line.heading-separator__line-bolded-3.primary
-                            p.paragraph.services-item-description!= obj.description
-                            button(type="button" class="btn to-top btn-primary services-item-button")
-                                span= obj.button
+    .services-container
+        .owl-carousel.owl-theme.owl-carousel-services.owl-carousel-services-js
+            each obj in data.mainWrapper.servicesWrapper.services
+                .white-frame-058001.services-item.text-center
+                    span(aria-hidden="true" class="icon-img icon-5 icon-services-" + obj.iconName + " services-item-icon")
+                    h3.heading.heading-4.services-item-title= obj.title
+                    .heading-separator
+                        .heading-separator__line.heading-separator__line-bolded-3.primary
+                    p.paragraph.services-item-description!= obj.description
+                    button(type="button" class="btn to-top btn-primary services-item-button")
+                        span= obj.button

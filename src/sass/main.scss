@@ -7,6 +7,15 @@
 
 
 // ---------------------
+//     FRAMEWORKS
+// ---------------------
+
+
+    // *--------- BOOTSTRAP GRID ---------*
+    @import '../../bower_components/bootstrap/scss/bootstrap-grid';
+
+
+// ---------------------
 //     HELPERS
 // ---------------------
 
@@ -27,17 +36,38 @@
     @import 'helpers/mixins';
 
 
+// ---------------------
+//     BASE
+// ---------------------
+
+
+    // *--------- EXTENDS ---------*
+    @import 'base/extends';
+
+
     // *--------- TYPOGRAPHY ---------*
     @import 'base/typography';
 
 
 // ---------------------
-//     FRAMEWORKS
+//     LAYOUT
 // ---------------------
 
 
-    // *--------- BOOTSTRAP ---------*
-    @import '../../bower_components/bootstrap/scss/bootstrap-grid';
+    // *--------- GENERAL ---------*
+    @import 'layout/general';
+
+
+    // *--------- MAIN HEADER ---------*
+    @import 'layout/header';
+
+
+    // *--------- MAIN WRAPPER ---------*
+    @import 'layout/wrapper';
+
+
+    // *--------- MAIN FOOTER ---------*
+    @import 'layout/footer';
 
 
 // ---------------------
@@ -137,44 +167,4 @@
 
     // *--------- MODAL ---------*
     @import 'components/modal';
-
-
-// ---------------------
-//     MODULES
-// ---------------------
-
-
-// ---------------------
-//     VIEWS
-// ---------------------
-
-
-// ---------------------
-//     LAYOUT
-// ---------------------
-
-
-    // *--------- GENERAL ---------*
-    @import 'layout/general';
-
-
-    // *--------- MAIN HEADER ---------*
-    @import 'layout/header';
-
-
-    // *--------- MAIN WRAPPER ---------*
-    @import 'layout/wrapper';
-
-
-    // *--------- MAIN FOOTER ---------*
-    @import 'layout/footer';
-
-
-// ---------------------
-//     BASE
-// ---------------------
-
-
-    // *--------- EXTENDS ---------*
-    @import 'base/extends';
 

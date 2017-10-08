@@ -1,5 +1,6 @@
 import {
-    $window
+    $window,
+    $document
 } from './globals';
 import throttle from '../../node_modules/throttle-debounce/throttle';
 
@@ -11,7 +12,7 @@ class spyScrolling {
         this.scrollTargets = [];
     }
     refresh() {
-        const scrollTop = document.documentElement.scrollTop;
+        const scrollTop = $document.scrollTop();
 
         for (let i = 0; i < this.scrollTargets.length; i++) {
             const item = this.scrollTargets[i],

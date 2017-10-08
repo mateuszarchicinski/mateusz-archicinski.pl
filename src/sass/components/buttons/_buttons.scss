@@ -53,6 +53,7 @@ $btn-twitter__color: $color__twitter !default;
     border: $btn__border;
     outline: 0;
     transition: 0.15s color ease-in-out;
+    
     &-square,
     &-round {
         width: 54px;
@@ -65,6 +66,7 @@ $btn-twitter__color: $color__twitter !default;
     &-round {
         border-radius: 50%;
     }
+    
     &,
     &.to-left {
         &::after {
@@ -128,8 +130,18 @@ $btn-twitter__color: $color__twitter !default;
             background-color: $btn__hover__after__background-color;
         }
     }
+    
+    // To prevent button click animation on IE browser
     & > span {
         position: relative;
+    }
+    
+    &-hover {
+        &-white {
+            &:hover {
+                color: $color__white;
+            }
+        }
     }
     
     // Primary

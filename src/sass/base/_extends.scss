@@ -3,21 +3,38 @@
 //~~~~~~~~~~~~~~~~~~~~~~~//
 
 
-%clearfix {
-    @include clearfix;
+//.clearfix,
+//%clearfix {
+//    @include clearfix;
+//}
+
+
+.flex,
+%flex {
+    display: flex;
+    flex-wrap: wrap;
 }
 
 
+.no-button,
+%no-button {
+    background-color: transparent;
+    border: 0;
+    outline: 0;
+}
+
+
+.no-padding-margin,
 %no-padding-margin {
     padding: 0;
     margin: 0;
 }
 
 
-%keep-white-color-on-hover {
-    &:hover {
-        color: $color__white;
-    }
+.no-list,
+%no-list {
+    list-style: none;
+    @extend %no-padding-margin;
 }
 
 
@@ -25,6 +42,7 @@
 $loading__after__border: 5px solid $primary-color !default;
 
 
+.loading,
 %loading {
     position: relative;
     user-select: none;
@@ -65,11 +83,4 @@ $loading__after__border: 5px solid $primary-color !default;
     100% {
         transform: rotate(360deg);
     }
-}
-
-
-%no-button {
-    background-color: transparent;
-    border: 0;
-    outline: 0;
 }

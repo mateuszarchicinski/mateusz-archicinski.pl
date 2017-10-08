@@ -12,8 +12,12 @@ section(id="home" class="section home-wrapper header-wrapper-js")
                     .heading-separator__line.accent
                 h3.heading.heading-3.text-center.color-white.home-header-subtitle= data.mainWrapper.homeWrapper.h3
                 .home-header-buttons
-                    a(href="#about-me" class="btn to-top btn-accent color-white")= data.mainWrapper.homeWrapper.buttons.aboutMe
-                    a(href="#services" class="btn to-top btn-primary-dark color-white")= data.mainWrapper.homeWrapper.buttons.services
+                    a(href="#about-me" class="btn to-top btn-accent color-white")
+                        span.display-none.display-sm-block= data.mainWrapper.homeWrapper.buttons.aboutMe
+                        span.display-block.display-sm-none.icon.icon-125.icon-user
+                    a(href="#services" class="btn to-top btn-primary-dark color-white")
+                        span.display-none.display-sm-block= data.mainWrapper.homeWrapper.buttons.services
+                        span.display-block.display-sm-none.icon.icon-125.icon-wrench
                     .home-header-buttons-bottom
                         a(href="#about-me" aria-label=data.mainWrapper.homeWrapper.buttons.arrowBtnAriaLabel class="btn btn-round to-top color-white")
                             span(aria-hidden="true" class="icon icon-125 icon-down-open-1")

@@ -1,3 +1,6 @@
+import {
+    $document
+} from './globals';
 import mainHeader from './main-header';
 import sideNav from './side-nav';
 import smoothScrolling from './smooth-scrolling';
@@ -7,7 +10,7 @@ import Portfolio from './portfolio';
 import contactForm from './contact-form';
 
 
-$(document).ready(() => {
+$document.ready(() => {
     // MAIN HEADER
     const mainHeaderInstance = new mainHeader();
     mainHeaderInstance.init();
@@ -45,3 +48,8 @@ $(document).ready(() => {
     const contactFormInstance = new contactForm();
     contactFormInstance.init();
 });
+
+
+window.addEventListener('orientationchange', () => {
+    console.log(screen.orientation);
+}, false);

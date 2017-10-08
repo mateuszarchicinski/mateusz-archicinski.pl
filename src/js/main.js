@@ -1,6 +1,9 @@
 (function () {
 'use strict';
 
+var $window = $(window);
+var $document = $(document);
+
 /* eslint-disable no-undefined,no-param-reassign,no-shadow */
 
 /**
@@ -197,9 +200,6 @@ var mainHeader = function () {
     return mainHeader;
 }();
 
-var $window = $(window);
-var $document = $(document);
-
 var sideNav = function () {
     function sideNav(navSelector, navToggleSelector) {
         classCallCheck(this, sideNav);
@@ -222,18 +222,6 @@ var sideNav = function () {
             this.navElem.classList.remove('open');
 
             this.isOpen = false;
-        }
-    }, {
-        key: 'setNavHeight',
-        value: function setNavHeight() {
-            var windowWidth = $window.width(),
-                documentHeight = $document.height();
-
-            if (windowWidth < 992) {
-                this.navElem.style.height = documentHeight + 'px';
-            } else {
-                this.navElem.style.height = null;
-            }
         }
     }, {
         key: 'init',
@@ -263,12 +251,6 @@ var sideNav = function () {
                     _this.close();
                 }
             });
-
-            this.setNavHeight();
-
-            window.addEventListener('resize', debounce(500, function () {
-                _this.setNavHeight();
-            }));
         }
     }]);
     return sideNav;
@@ -326,7 +308,7 @@ var spyScrolling = function () {
     createClass(spyScrolling, [{
         key: 'refresh',
         value: function refresh() {
-            var scrollTop = document.documentElement.scrollTop;
+            var scrollTop = $document.scrollTop();
 
             for (var i = 0; i < this.scrollTargets.length; i++) {
                 var item = this.scrollTargets[i],
@@ -394,6 +376,8 @@ var Services = function () {
             var owlCaruselElem = this.owlCaruselElem = $('.owl-carousel-services-js');
 
             owlCaruselElem.owlCarousel({
+                loop: true,
+                center: true,
                 autoplay: true,
                 autoplayHoverPause: true,
                 responsive: {
@@ -434,10 +418,12 @@ var Portfolio = function () {
 
     createClass(Portfolio, [{
         key: 'filterBy',
-        value: function filterBy(filterValue, filterElem) {
+        value: function filterBy(filterValue, filterElem, force) {
             var _this = this;
 
-            if (!filterValue || !filterElem || this.currFilterElem === filterElem || !this.items) return;
+            if (!force) {
+                if (!filterValue || !filterElem || this.currFilterElem === filterElem || !this.items) return;
+            }
 
             if (this.currFilterElem) {
                 this.currFilterElem.classList.remove(this.filterActiveClass);
@@ -505,7 +491,7 @@ var Portfolio = function () {
             });
 
             window.addEventListener('resize', debounce(500, function () {
-                _this2.filterBy(_this2.currFilterElem.getAttribute('data-filter-type'), _this2.currFilterElem);
+                _this2.filterBy(_this2.currFilterElem.getAttribute('data-filter-type'), _this2.currFilterElem, true);
             }));
         }
     }]);
@@ -597,7 +583,7 @@ var contactForm = function () {
     return contactForm;
 }();
 
-$(document).ready(function () {
+$document.ready(function () {
     // MAIN HEADER
     var mainHeaderInstance = new mainHeader();
     mainHeaderInstance.init();
@@ -629,6 +615,10 @@ $(document).ready(function () {
     var contactFormInstance = new contactForm();
     contactFormInstance.init();
 });
+
+window.addEventListener('orientationchange', function () {
+    console.log(screen.orientation);
+}, false);
 
 }());
 //# sourceMappingURL=main.js.map

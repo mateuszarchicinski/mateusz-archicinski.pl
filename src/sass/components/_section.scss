@@ -42,6 +42,7 @@ $section-header-description__font-size: 1.05em !default;
         }
     }
     &-header {
+        max-width: 100%;
         padding: 115px 0 65px;
         &-description {
             font-size: $section-header-description__font-size;

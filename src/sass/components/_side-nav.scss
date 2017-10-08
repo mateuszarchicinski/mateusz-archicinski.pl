@@ -20,10 +20,12 @@ $side-nav__button-toggle__height: $site-nav__main-header__height !default;
         height: 100vh;
         background: $side-nav-wrapper__background-color;
         position: fixed;
+        display: flex;
         visibility: hidden;
         z-index: 333;
         left: 100%;
         top: 0;
+        overflow: auto;
         backface-visibility: hidden;
         box-shadow: $side-nav-wrapper__box-shadow;
         @include opacity(0);
@@ -31,6 +33,9 @@ $side-nav__button-toggle__height: $site-nav__main-header__height !default;
         transition-duration: 0.3s;
         transition-property: visibility, transform, opacity, filter;
         transition-timing-function: ease-in-out;
+        @include media-breakpoint-up(lg) {
+            display: none;
+        }
         @media screen and (max-width: 320px) {
             width: 100%;
         }
@@ -40,25 +45,36 @@ $side-nav__button-toggle__height: $site-nav__main-header__height !default;
             @include opacity(1);
         }
     }
-    &-overlay {
-        height: 100vh;
-        overflow: auto;
-    }
-    &__list {
-        min-height: 100%; // IE problem with min-height property should be changed to height
-    }
     &__button {
         &-toggle {
             width: $side-nav__button-toggle__width;
             height: $side-nav__button-toggle__height;
             @extend %no-button;
             transition: 0.3s color ease-in-out;
+            @include media-breakpoint-up(lg) {
+                display: none;
+            }
         }
     }
     &-wrapper > &__button-toggle {
         position: absolute;
+        display: block;
         right: 0;
         top: 0;
-        margin-right: 17px;
+        //margin-right: 17px;
+    }
+    &-overlay {
+        display: flex;
+        @extend .align-items-center;
+        @extend .justify-content-center;
+        flex: 1;
+        padding: 0 15px;
+    }
+    &__list {
+        max-height: 100%;
+        @extend %no-list;
+    }
+    &__link {
+        @extend .site-nav__link
     }
 }

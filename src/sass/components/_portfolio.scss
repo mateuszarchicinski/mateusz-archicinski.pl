@@ -63,6 +63,7 @@ $portfolio-item-buttons__btn__font-size: 0.9em !default;
         //width: 33.33333%;
         height: 250px;
         position: relative;
+        backface-visibility: hidden;
         padding: 10px;
         transition-delay: 0;
         transition-duration: 0.3s;

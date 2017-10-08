@@ -13,7 +13,7 @@ $home-wrapper__after__background-image: linear-gradient(to top, $color__black-2 
 
 .home {
     &-wrapper {
-        background-image: url(../images/home-bg.jpg); // img?
+        background-image: url(../images/home-bg.jpg);
         background-attachment: fixed;
         background-position: center;
         background-repeat: no-repeat;
@@ -39,7 +39,7 @@ $home-wrapper__after__background-image: linear-gradient(to top, $color__black-2 
     &-wrapper,
     &-row {
         height: calc(100vh + 64px);
-        @media screen and (max-height: 559px) {
+        @media screen and (orientation: landscape) and (max-height: 559px) {
             height: 623px;
         }
     }
@@ -48,7 +48,7 @@ $home-wrapper__after__background-image: linear-gradient(to top, $color__black-2 
         @include media-breakpoint-down(xs) {
             padding-top: 0;
         }
-        @media screen and (max-height: 559px) {
+        @media screen and (orientation: landscape) and (max-height: 559px) {
             padding-top: 0;
         }
         &-title,
@@ -67,24 +67,34 @@ $home-wrapper__after__background-image: linear-gradient(to top, $color__black-2 
             }
         }
         &-subtitle {
+            letter-spacing: 10px;
             @include media-breakpoint-down(sm) {
                 font-size: 1.1em;
             }
             @include media-breakpoint-down(xs) {
                 font-size: 1em; //
-                letter-spacing: 5px;
+                letter-spacing: 4.25px;
             }
         }
         &-buttons {
             text-align: center;
             margin-top: 38px;
+            @include media-breakpoint-down(xs) {
+               margin-top: 25px; 
+            }
             & .btn:not(.btn-round) {
                 width: 180px;
                 @include media-breakpoint-down(sm) {
                     width: 153px;
                 }
                 @include media-breakpoint-down(xs) {
-                    display: none;
+                    width: 54px;
+                    height: 54px;
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 50%;
+                    padding: 0;
                 }
             }
             & .btn:nth-child(n+2) {
@@ -93,7 +103,7 @@ $home-wrapper__after__background-image: linear-gradient(to top, $color__black-2 
             &-bottom {
                 margin-top: 84px;
                 @include media-breakpoint-down(xs) {
-                    margin-top: 0;
+                    margin-top: 15px;
                 }
             }
         }

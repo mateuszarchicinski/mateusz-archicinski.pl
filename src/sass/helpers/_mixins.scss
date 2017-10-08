@@ -15,7 +15,7 @@
         color: $cButton__color;
         border-color: $cButton__border-color;
         &:hover {
-            @extend %keep-white-color-on-hover;
+            @extend .btn-hover-white;
             &::after {
                 background-color: $cButton__hover__after__background-color;
             }

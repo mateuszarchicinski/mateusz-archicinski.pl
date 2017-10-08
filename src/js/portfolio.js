@@ -12,8 +12,10 @@ class Portfolio {
         this.currFilterElem = document.querySelector(this.filtersSelector + ' button[data-filter-type].' + this.filterActiveClass);
         this.items = [].slice.call(document.querySelectorAll(this.itemsSelector + ' div[data-type]'));
     }
-    filterBy(filterValue, filterElem) {
-        if (!filterValue || !filterElem || this.currFilterElem === filterElem || !this.items) return;
+    filterBy(filterValue, filterElem, force) {
+        if (!force) {
+            if (!filterValue || !filterElem || this.currFilterElem === filterElem || !this.items) return;
+        }
 
         if (this.currFilterElem) {
             this.currFilterElem.classList.remove(this.filterActiveClass);
@@ -75,7 +77,7 @@ class Portfolio {
         });
         
         window.addEventListener('resize', debounce(500, () => {
-            this.filterBy(this.currFilterElem.getAttribute('data-filter-type'), this.currFilterElem);
+            this.filterBy(this.currFilterElem.getAttribute('data-filter-type'), this.currFilterElem, true);
         }));
     }
 };
