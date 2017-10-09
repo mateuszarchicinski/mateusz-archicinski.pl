@@ -122,9 +122,10 @@ $portfolio-item-buttons__btn__font-size: 0.9em !default;
             margin-top: 0.5em;
         }
         &-description {
+            max-height: 38px;
             overflow: hidden;
-            text-overflow: ellipsis;
             white-space: nowrap;
+            text-overflow: ellipsis;
         }
         &-title,
         &-description {

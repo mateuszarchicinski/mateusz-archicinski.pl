@@ -25,7 +25,7 @@ $side-nav__button-toggle__height: $site-nav__main-header__height !default;
         z-index: 333;
         left: 100%;
         top: 0;
-        overflow: auto;
+        overflow: hidden;
         backface-visibility: hidden;
         box-shadow: $side-nav-wrapper__box-shadow;
         @include opacity(0);
@@ -61,13 +61,15 @@ $side-nav__button-toggle__height: $site-nav__main-header__height !default;
         display: block;
         right: 0;
         top: 0;
-        //margin-right: 17px;
+        margin-right: 20px;
     }
     &-overlay {
+        height: 100%;
         display: flex;
         @extend .align-items-center;
         @extend .justify-content-center;
         flex: 1;
+        overflow: auto;
         padding: 0 15px;
     }
     &__list {

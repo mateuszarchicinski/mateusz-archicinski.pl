@@ -14,7 +14,7 @@ section(id="contact" class="section contact-wrapper")
                     .heading-separator__line
                 p.section-header-description= data.mainWrapper.contactWrapper.header.p
         .row
-            .col-xl-8.col-lg-8.col-md-8.col-sm-8
+            .col-md-8.col-12
                 .white-frame.white-frame-0525001.contact-form-wrapper
                     form(action="#" autocomplete="off" method="post" name="contactForm" class="contact-form__form contact-form-js")
                         h3.heading.heading-4.contact-form-title.text-center= data.mainWrapper.contactWrapper.form.h3
@@ -36,7 +36,7 @@ section(id="contact" class="section contact-wrapper")
                             textarea(id="contactForm[message]" name="message" required maxlength="1500" class="contact-form__textarea")
                         button(type="submit" class="btn to-top btn-primary contact-form__button")
                             span= data.mainWrapper.contactWrapper.form.submitButton
-            .col-12.col-sm-4
+            .col-md-4.col-12
                 .contact-info-wrapper
                     ul.contact-info__list
                         li.info-block

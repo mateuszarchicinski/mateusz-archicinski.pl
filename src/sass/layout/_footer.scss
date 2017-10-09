@@ -18,13 +18,20 @@ $main-footer__list-copyright__color: $color__white !default;
 
 .main-footer {
     background-color: $main-footer__background-color;
-    padding: 35px 0 30px;
+    padding: 25px 0 30px;
     box-shadow: $main-footer__box-shadow;
+    &-col {
+        &-title {
+            @extend .color-white;
+            margin-top: 10px;
+        }
+    }
     &__list {
         list-style: none;
-        padding: 0 0 25px 65px;
-        &>li {
-            overflow-wrap: break-word;
+        padding: 0 20px 25px;
+        
+        & > li {
+            @extend %ellipsis;
         }
     }
     &__link {
@@ -35,24 +42,24 @@ $main-footer__list-copyright__color: $color__white !default;
             color: $main-footer__link__hover__color;
         }
     }
-    &__findme {
+    &-findme {
         &-body {
             min-height: 120px;
             flex: 1;
             padding-bottom: 25px;
-            &>.btn {
+            & > .btn {
                 width: 48px;
                 height: 48px;
                 margin: 5px;
             }
         }
     }
-    &__copyright {
+    &-copyright {
         position: relative;
         text-align: center;
         padding-top: 28px;
         &::after {
-            content: "";
+            content: '';
             width: 40%;
             height: 3px;
             background-image: $main-footer__copyright__after__background-image;
@@ -63,7 +70,7 @@ $main-footer__list-copyright__color: $color__white !default;
         }
     }
     &__list,
-    &__copyright {
+    &-copyright {
         color: $main-footer__list-copyright__color;
         margin: 0;
     }

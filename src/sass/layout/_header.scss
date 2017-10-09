@@ -21,8 +21,9 @@ $main-header__fixed__box-shadow: 0 0 8px 0 rgba($color__black-1, 0.8) !default;
         background-color: $main-header__fixed__background-color;
         position: fixed;
         box-shadow: $main-header__fixed__box-shadow;
-        @media screen and (max-height: 279px) {
-            display: none;
+        @media screen and (max-height: ($main-header__height * 6)) {
+            @include transform(translate3d(0, -100%, 0));
+            @include opacity(0);
         }
         &,
         &.hide {
@@ -36,6 +37,10 @@ $main-header__fixed__box-shadow: 0 0 8px 0 rgba($color__black-1, 0.8) !default;
         &.show {
             @include transform(translate3d(0, 0, 0));
             @include opacity(1);
+            @media screen and (max-height: ($main-header__height * 6)) {
+                @include transform(translate3d(0, -100%, 0));
+                @include opacity(0);
+            }
         }
     }
 }

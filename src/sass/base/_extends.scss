@@ -38,6 +38,14 @@
 }
 
 
+.ellipsis,
+%ellipsis {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+
 // %loading
 $loading__after__border: 5px solid $primary-color !default;
 

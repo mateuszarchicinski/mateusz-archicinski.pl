@@ -93,26 +93,6 @@ var throttle = function throttle(delay, noTrailing, callback, debounceMode) {
 	return wrapper;
 };
 
-/* eslint-disable no-undefined */
-
-/**
- * Debounce execution of a function. Debouncing, unlike throttling,
- * guarantees that a function is only executed a single time, either at the
- * very beginning of a series of calls, or at the very end.
- *
- * @param  {Number}   delay         A zero-or-greater delay in milliseconds. For event callbacks, values around 100 or 250 (or even higher) are most useful.
- * @param  {Boolean}  atBegin       Optional, defaults to false. If atBegin is false or unspecified, callback will only be executed `delay` milliseconds
- *                                  after the last debounced-function call. If atBegin is true, callback will be executed only at the first debounced-function call.
- *                                  (After the throttled-function has not been called for `delay` milliseconds, the internal counter is reset).
- * @param  {Function} callback      A function to be executed after delay milliseconds. The `this` context and all arguments are passed through, as-is,
- *                                  to `callback` when the debounced-function is executed.
- *
- * @return {Function} A new, debounced function.
- */
-var debounce = function debounce(delay, atBegin, callback) {
-  return callback === undefined ? throttle(delay, atBegin, false) : throttle(delay, callback, atBegin !== false);
-};
-
 var classCallCheck = function (instance, Constructor) {
   if (!(instance instanceof Constructor)) {
     throw new TypeError("Cannot call a class as a function");
@@ -191,14 +171,30 @@ var mainHeader = function () {
             window.addEventListener('scroll', throttle(250, function () {
                 _this.headerHandling();
             }));
-
-            //        window.addEventListener('scroll', debounce(250, () => {
-            //            this.headerHandling();
-            //        }));
         }
     }]);
     return mainHeader;
 }();
+
+/* eslint-disable no-undefined */
+
+/**
+ * Debounce execution of a function. Debouncing, unlike throttling,
+ * guarantees that a function is only executed a single time, either at the
+ * very beginning of a series of calls, or at the very end.
+ *
+ * @param  {Number}   delay         A zero-or-greater delay in milliseconds. For event callbacks, values around 100 or 250 (or even higher) are most useful.
+ * @param  {Boolean}  atBegin       Optional, defaults to false. If atBegin is false or unspecified, callback will only be executed `delay` milliseconds
+ *                                  after the last debounced-function call. If atBegin is true, callback will be executed only at the first debounced-function call.
+ *                                  (After the throttled-function has not been called for `delay` milliseconds, the internal counter is reset).
+ * @param  {Function} callback      A function to be executed after delay milliseconds. The `this` context and all arguments are passed through, as-is,
+ *                                  to `callback` when the debounced-function is executed.
+ *
+ * @return {Function} A new, debounced function.
+ */
+var debounce = function debounce(delay, atBegin, callback) {
+  return callback === undefined ? throttle(delay, atBegin, false) : throttle(delay, callback, atBegin !== false);
+};
 
 var sideNav = function () {
     function sideNav(navSelector, navToggleSelector) {
@@ -396,7 +392,7 @@ var Services = function () {
             owlCaruselElem.on('mouseleave', function () {
                 owlCaruselElem.trigger('stop.owl.autoplay');
                 owlCaruselElem.trigger('play.owl.autoplay');
-            });
+            }, false);
         }
     }]);
     return Services;
@@ -615,10 +611,6 @@ $document.ready(function () {
     var contactFormInstance = new contactForm();
     contactFormInstance.init();
 });
-
-window.addEventListener('orientationchange', function () {
-    console.log(screen.orientation);
-}, false);
 
 }());
 //# sourceMappingURL=main.js.map

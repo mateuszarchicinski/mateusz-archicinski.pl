@@ -28,7 +28,7 @@ class Services {
         owlCaruselElem.on('mouseleave', () => {
             owlCaruselElem.trigger('stop.owl.autoplay');
             owlCaruselElem.trigger('play.owl.autoplay');
-        });
+        }, false);
     }
 };
 

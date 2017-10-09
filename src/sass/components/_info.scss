@@ -36,6 +36,7 @@
     }
     &-link {
         overflow-wrap: break-word; // ?
+        word-wrap: break-word;
         text-decoration: none;
         color: inherit;
         &:hover {

@@ -5,7 +5,8 @@
 
 // .contact-wrapper
 // sass-lint:disable no-color-literals
-$contact-wrapper__background-color: linear-gradient(to left, rgba($color__snow, 1) 0, rgba($color__snow, 1) 66.66666%, rgba($color__white, 1) 66.66666%, rgba($color__white, 1) 100%) !default;
+$contact-wrapper__background-color-lg: linear-gradient(to left, rgba($color__snow, 1) 0, rgba($color__snow, 1) 66.66666%, rgba($color__white, 1) 66.66666%, rgba($color__white, 1) 100%) !default;
+$contact-wrapper__background-color-md: linear-gradient(to left, rgba($color__snow, 1) 0, rgba($color__snow, 1) 76.66666%, rgba($color__white, 1) 76.66666%, rgba($color__white, 1) 100%) !default;
 // sass-lint:enable no-color-literals
 
 // .contact-form-title
@@ -25,8 +26,13 @@ $contact-info__list__li__border-bottom: 1px solid $divider-color !default;
 
 .contact {
     &-wrapper {
-        background-image: $contact-wrapper__background-color;
         padding-bottom: 153px;
+        @include media-breakpoint-up(md) {
+            background-image: $contact-wrapper__background-color-md;
+        }
+        @include media-breakpoint-up(lg) {
+            background-image: $contact-wrapper__background-color-lg;
+        }
     }
     &-form {
         &-wrapper {

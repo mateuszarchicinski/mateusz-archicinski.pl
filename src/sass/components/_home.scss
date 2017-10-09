@@ -21,6 +21,9 @@ $home-wrapper__after__background-image: linear-gradient(to top, $color__black-2 
         position: relative;
         padding: 0;
         box-shadow: $home-wrapper__box-shadow;
+        @include media-breakpoint-down(sm) {
+            background-attachment: scroll;
+        }
         &::after {
             content: "";
             width: 100%;
@@ -39,16 +42,18 @@ $home-wrapper__after__background-image: linear-gradient(to top, $color__black-2 
     &-wrapper,
     &-row {
         height: calc(100vh + 64px);
-        @media screen and (orientation: landscape) and (max-height: 559px) {
+        @media screen and (max-height: 559px) {
             height: 623px;
         }
     }
     &-header {
+        max-width: 100%;
+        overflow: hidden;
         padding-top: 138px;
-        @include media-breakpoint-down(xs) {
+        @media screen and (max-height: 559px) {
             padding-top: 0;
         }
-        @media screen and (orientation: landscape) and (max-height: 559px) {
+        @include media-breakpoint-down(xs) {
             padding-top: 0;
         }
         &-title,
@@ -72,7 +77,7 @@ $home-wrapper__after__background-image: linear-gradient(to top, $color__black-2 
                 font-size: 1.1em;
             }
             @include media-breakpoint-down(xs) {
-                font-size: 1em; //
+                font-size: 1em;
                 letter-spacing: 4.25px;
             }
         }
@@ -93,8 +98,8 @@ $home-wrapper__after__background-image: linear-gradient(to top, $color__black-2 
                     display: inline-flex;
                     align-items: center;
                     justify-content: center;
-                    border-radius: 50%;
                     padding: 0;
+                    border-radius: 50%;
                 }
             }
             & .btn:nth-child(n+2) {

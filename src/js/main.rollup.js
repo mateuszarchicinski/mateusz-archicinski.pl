@@ -1,4 +1,5 @@
 import {
+    $window,
     $document
 } from './globals';
 import mainHeader from './main-header';
@@ -48,8 +49,3 @@ $document.ready(() => {
     const contactFormInstance = new contactForm();
     contactFormInstance.init();
 });
-
-
-window.addEventListener('orientationchange', () => {
-    console.log(screen.orientation);
-}, false);

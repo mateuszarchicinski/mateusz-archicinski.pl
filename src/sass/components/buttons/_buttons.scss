@@ -34,19 +34,16 @@ $btn-twitter__color: $color__twitter !default;
 
 
 .btn {
+    height: 54px;
     background-color: $btn__background-color;
-    position: relative;
     display: inline-block;
     z-index: 0;
-    overflow: hidden;
     font-family: $btn__font-family;
     font-size: $btn__font-size;
     font-weight: $btn__font-weight;
     text-align: center;
     text-decoration: none;
-    text-overflow: ellipsis;
     text-transform: uppercase;
-    white-space: nowrap;
     color: inherit;
     cursor: pointer;
     padding: 16.5px 20px;
@@ -57,7 +54,6 @@ $btn-twitter__color: $color__twitter !default;
     &-square,
     &-round {
         width: 54px;
-        height: 54px;
         display: inline-flex;
         align-items: center;
         justify-content: center;
@@ -132,8 +128,12 @@ $btn-twitter__color: $color__twitter !default;
     }
     
     // To prevent button click animation on IE browser
+    &,
     & > span {
         position: relative;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
     }
     
     &-hover {

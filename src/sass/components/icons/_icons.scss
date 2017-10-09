@@ -76,6 +76,9 @@ $icon-5__font-size: $icon__font-size * 5 !default;
     &-down-open-1::before {
         content: '\e805';
     }
+    &-eye:before {
+        content: '\e80e';
+    }
     &-info::before {
         content: '\f129';
     }
