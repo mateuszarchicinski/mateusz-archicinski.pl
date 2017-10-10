@@ -53,7 +53,7 @@ $owl-carousel-services__owl-carousel__owl-dot-active__span__background-color: $p
 
 
 .owl-carousel-services {
-    touch-action: none; // To prevent warning console log message more ---> https://www.chromestatus.com/features/5093566007214080
+    //touch-action: none; // To prevent warning console log message more ---> https://www.chromestatus.com/features/5093566007214080
     &.owl-carousel {
         .owl-dot {
             span {

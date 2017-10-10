@@ -2,13 +2,13 @@ import throttle from '../../node_modules/throttle-debounce/throttle';
 
 
 class mainHeader {
-    constructor(headerSelector) {
+    constructor(headerSelector, sectionSelector, offsetHeight) {
         this.headerSelector = headerSelector || '.main-header-js';
+        this.sectionSelector = sectionSelector || '.main-wrapper > .section';
+        this.offsetHeight = offsetHeight || -10;
     }
     headerHandling() {
-        if (!this.headerElem) return;
-        
-        const minHeight = $('.header-wrapper-js').outerHeight() - 10;
+        const minHeight = this.minHeight + this.offsetHeight;
 
         if (window.pageYOffset >= (minHeight / 2.5)) {
             this.headerElem.classList.add('main-header-fixed');
@@ -35,9 +35,12 @@ class mainHeader {
     init() {
         if (this.headerElem) return;
 
-        const headerElem = this.headerElem = document.querySelector(this.headerSelector);
+        const headerElem = this.headerElem = document.querySelector(this.headerSelector),
+            sectionElem = this.sectionElem = document.querySelector(this.sectionSelector);
 
-        if (!headerElem) return;
+        if (!headerElem || !sectionElem) return;
+
+        this.minHeight = sectionElem.offsetHeight;
 
         window.addEventListener('scroll', throttle(250, () => {
             this.headerHandling();

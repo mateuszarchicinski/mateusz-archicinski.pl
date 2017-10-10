@@ -33,9 +33,6 @@ $side-nav__button-toggle__height: $site-nav__main-header__height !default;
         transition-duration: 0.3s;
         transition-property: visibility, transform, opacity, filter;
         transition-timing-function: ease-in-out;
-        @include media-breakpoint-up(lg) {
-            display: none;
-        }
         @media screen and (max-width: 320px) {
             width: 100%;
         }
@@ -50,10 +47,12 @@ $side-nav__button-toggle__height: $site-nav__main-header__height !default;
             width: $side-nav__button-toggle__width;
             height: $side-nav__button-toggle__height;
             @extend %no-button;
-            transition: 0.3s color ease-in-out;
-            @include media-breakpoint-up(lg) {
-                display: none;
-            }
+        }
+    }
+    &-wrapper,
+    &__button-toggle {
+        @include media-breakpoint-up(lg) {
+            display: none;
         }
     }
     &-wrapper > &__button-toggle {
@@ -77,6 +76,6 @@ $side-nav__button-toggle__height: $site-nav__main-header__height !default;
         @extend %no-list;
     }
     &__link {
-        @extend .site-nav__link
+        @extend .site-nav__link;
     }
 }

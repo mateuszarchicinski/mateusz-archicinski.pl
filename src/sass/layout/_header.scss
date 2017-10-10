@@ -5,9 +5,15 @@
 
 // .main-header
 $main-header__height: $site-nav__main-header__height !default;
-// .main-header__fixed
+// .main-header & .main-header__fixed
 $main-header__fixed__background-color: $color__nero !default;
 $main-header__fixed__box-shadow: 0 0 8px 0 rgba($color__black-1, 0.8) !default;
+
+
+@mixin hide () {
+    @include transform(translate3d(0, -100%, 0));
+    @include opacity(0);
+}
 
 
 .main-header {
@@ -18,29 +24,34 @@ $main-header__fixed__box-shadow: 0 0 8px 0 rgba($color__black-1, 0.8) !default;
     left: 0;
     top: 0;
     &-fixed {
-        background-color: $main-header__fixed__background-color;
         position: fixed;
-        box-shadow: $main-header__fixed__box-shadow;
-        @media screen and (max-height: ($main-header__height * 6)) {
-            @include transform(translate3d(0, -100%, 0));
-            @include opacity(0);
-        }
         &,
         &.hide {
-            @include transform(translate3d(0, -100%, 0));
-            @include opacity(0);
+            @include hide();
         }
         &.hide,
         &.show {
-            transition: 0.3s transform ease-in-out, 0.3s opacity ease-in-out;
+            backface-visibility: hidden;
+            transition-delay: 0s;
+            transition-duration: 0.3s;
+            transition-property: transform, opacity, filter;
+            transition-timing-function: ease-in-out;
         }
         &.show {
             @include transform(translate3d(0, 0, 0));
             @include opacity(1);
             @media screen and (max-height: ($main-header__height * 6)) {
-                @include transform(translate3d(0, -100%, 0));
-                @include opacity(0);
+                @include hide();
             }
         }
+    }
+    &,
+    &-fixed {
+        background-color: $main-header__fixed__background-color;
+        box-shadow: $main-header__fixed__box-shadow;
+    }
+    &-embedded:not(&-fixed) {
+        background-color: transparent;
+        box-shadow: none;
     }
 }

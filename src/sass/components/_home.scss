@@ -42,20 +42,28 @@ $home-wrapper__after__background-image: linear-gradient(to top, $color__black-2 
     &-wrapper,
     &-row {
         height: calc(100vh + 64px);
-        @media screen and (max-height: 559px) {
+        
+        // Sets height permanently in specific cases
+        @media screen and (max-width: breakpoint-max(xs)) and (max-height: 559px) {
             height: 623px;
+        }
+        @media screen and (min-width: breakpoint-min(sm)) and (max-height: 697px) {
+            height: 761px;
         }
     }
     &-header {
         max-width: 100%;
         overflow: hidden;
         padding-top: 138px;
+        
+        // Sets height permanently in specific cases
+        @media screen and (max-width: breakpoint-max(xs)) {
+            padding-top: 0;
+        }
         @media screen and (max-height: 559px) {
             padding-top: 0;
         }
-        @include media-breakpoint-down(xs) {
-            padding-top: 0;
-        }
+        
         &-title,
         &-subtitle {
             white-space: nowrap;
@@ -87,23 +95,23 @@ $home-wrapper__after__background-image: linear-gradient(to top, $color__black-2 
             @include media-breakpoint-down(xs) {
                margin-top: 25px; 
             }
-            & .btn:not(.btn-round) {
-                width: 180px;
-                @include media-breakpoint-down(sm) {
-                    width: 153px;
+            & .btn {
+                margin: 0;
+                &:not(.btn-round) {
+                    width: 180px;
+                    @include media-breakpoint-down(sm) {
+                        width: 153px;
+                    }
+                    @include media-breakpoint-down(xs) {
+                        min-width: 54px;
+                        width: 54px;
+                        padding: 0;
+                        border-radius: 50%;
+                    }
                 }
-                @include media-breakpoint-down(xs) {
-                    width: 54px;
-                    height: 54px;
-                    display: inline-flex;
-                    align-items: center;
-                    justify-content: center;
-                    padding: 0;
-                    border-radius: 50%;
+                &:nth-child(n+2) {
+                    margin-left: 25px;
                 }
-            }
-            & .btn:nth-child(n+2) {
-                margin-left: 25px;
             }
             &-bottom {
                 margin-top: 84px;

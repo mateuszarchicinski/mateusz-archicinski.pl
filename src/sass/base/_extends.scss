@@ -16,14 +16,6 @@
 }
 
 
-.no-button,
-%no-button {
-    background-color: transparent;
-    border: 0;
-    outline: 0;
-}
-
-
 .no-padding-margin,
 %no-padding-margin {
     padding: 0;
@@ -35,6 +27,17 @@
 %no-list {
     list-style: none;
     @extend %no-padding-margin;
+}
+
+
+.no-button,
+%no-button {
+    background-color: transparent;
+    border: 0;
+    outline: 0;
+    & > span {
+        position: relative;
+    }
 }
 
 

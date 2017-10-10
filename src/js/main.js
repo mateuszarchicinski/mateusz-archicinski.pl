@@ -118,18 +118,18 @@ var createClass = function () {
 }();
 
 var mainHeader = function () {
-    function mainHeader(headerSelector) {
+    function mainHeader(headerSelector, sectionSelector, offsetHeight) {
         classCallCheck(this, mainHeader);
 
         this.headerSelector = headerSelector || '.main-header-js';
+        this.sectionSelector = sectionSelector || '.main-wrapper > .section';
+        this.offsetHeight = offsetHeight || -10;
     }
 
     createClass(mainHeader, [{
         key: 'headerHandling',
         value: function headerHandling() {
-            if (!this.headerElem) return;
-
-            var minHeight = $('.header-wrapper-js').outerHeight() - 10;
+            var minHeight = this.minHeight + this.offsetHeight;
 
             if (window.pageYOffset >= minHeight / 2.5) {
                 this.headerElem.classList.add('main-header-fixed');
@@ -164,9 +164,12 @@ var mainHeader = function () {
 
             if (this.headerElem) return;
 
-            var headerElem = this.headerElem = document.querySelector(this.headerSelector);
+            var headerElem = this.headerElem = document.querySelector(this.headerSelector),
+                sectionElem = this.sectionElem = document.querySelector(this.sectionSelector);
 
-            if (!headerElem) return;
+            if (!headerElem || !sectionElem) return;
+
+            this.minHeight = sectionElem.offsetHeight;
 
             window.addEventListener('scroll', throttle(250, function () {
                 _this.headerHandling();

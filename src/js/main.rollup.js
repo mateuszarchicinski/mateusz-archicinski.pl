@@ -1,5 +1,4 @@
 import {
-    $window,
     $document
 } from './globals';
 import mainHeader from './main-header';
