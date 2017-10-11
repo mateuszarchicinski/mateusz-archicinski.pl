@@ -10,18 +10,6 @@
     &-none {
         display: none;
     }
-    &-xl{
-        &-block {
-            @include media-breakpoint-up(xl) {
-                display: block;
-            }
-        }
-        &-none {
-            @include media-breakpoint-up(xl) {
-                display: none;
-            }
-        }
-    }
     &-sm {
         &-block {
             @include media-breakpoint-up(sm) {
@@ -30,6 +18,18 @@
         }
         &-none {
             @include media-breakpoint-up(sm) {
+                display: none;
+            }
+        }
+    }
+    &-xl{
+        &-block {
+            @include media-breakpoint-up(xl) {
+                display: block;
+            }
+        }
+        &-none {
+            @include media-breakpoint-up(xl) {
                 display: none;
             }
         }

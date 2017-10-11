@@ -58,8 +58,8 @@
     <header class="main-header main-header-embedded main-header-js">
       <div class="container">
         <div class="row no-gutters align-items-center justify-content-between"><a class="site-logo-wrapper" href="/"><img class="site-logo__img" src="images/logo/logo.png" alt="#MA - Logo strony internetowej" width="94" height="28"></a>
-          <h1 class="text-hidden">#Mateusz Archiciński</h1>
-          <button class="side-nav__button-toggle side-nav-toggle-js" aria-label="Side navigation toggle button"><span class="icon icon-2 icon-menu color-white"></span></button>
+          <h1 class="text-hidden" aria-hidden="true">#Mateusz Archiciński</h1>
+          <button class="side-nav__button-toggle side-nav-toggle-js" aria-label="Side navigation toggle button"><span class="icon icon-2 icon-menu color-white" aria-hidden="true"></span></button>
           <nav class="site-nav-wrapper">
             <ul class="site-nav__list">
               <li><a class="site-nav__link active" href="#home" data-spy>Strona główna</a></li>
@@ -78,7 +78,7 @@
       </div>
     </header>
     <nav class="side-nav-wrapper side-nav-js">
-      <button class="side-nav__button-toggle side-nav-toggle-js" aria-label="Side navigation toggle button"><span class="icon icon-2 icon-cancel color-primary-dark"></span></button>
+      <button class="side-nav__button-toggle side-nav-toggle-js" aria-label="Side navigation toggle button"><span class="icon icon-2 icon-cancel color-primary-dark" aria-hidden="true"></span></button>
       <div class="side-nav-overlay">
         <ul class="side-nav__list">
           <li><a class="side-nav__link active" href="#home" data-spy>Strona główna</a></li>
@@ -106,7 +106,7 @@
                 <div class="heading-separator__line accent"></div>
               </div>
               <h3 class="heading heading-3 text-center color-white home-header-subtitle">Mateusz Archiciński</h3>
-              <div class="home-header-buttons"><a class="btn to-top btn-accent color-white" href="#about-me"><span class="display-none display-sm-block">Poznaj mnie</span><span class="display-block display-sm-none icon icon-125 icon-user"></span></a><a class="btn to-top btn-primary-dark color-white" href="#services"><span class="display-none display-sm-block">Usługi</span><span class="display-block display-sm-none icon icon-125 icon-wrench"></span></a>
+              <div class="home-header-buttons"><a class="btn to-top btn-accent color-white" href="#about-me"><span class="display-none display-sm-block" aria-hidden="false">Poznaj mnie</span><span class="display-block display-sm-none icon icon-125 icon-user" aria-hidden="true"></span></a><a class="btn to-top btn-primary-dark color-white" href="#services"><span class="display-none display-sm-block" aria-hidden="false">Usługi</span><span class="display-block display-sm-none icon icon-125 icon-wrench" aria-hidden="true"></span></a>
                 <div class="home-header-buttons-bottom"><a class="btn btn-round to-top color-white" href="#about-me" aria-label="Przejdz do sekcji o mnie"><span class="icon icon-125 icon-down-open-1" aria-hidden="true"></span></a></div>
               </div>
             </header>
@@ -116,9 +116,9 @@
       <section class="section about-me-wrapper" id="about-me">
         <div class="container">
           <div class="row no-gutters flex-column align-items-center">
-            <div class="section-decoration"><span class="icon icon-2 icon-user section-decoration-icon"></span></div>
+            <div class="section-decoration"><span class="icon icon-2 icon-user section-decoration-icon" aria-hidden="true"></span></div>
             <header class="section-header">
-              <h2 class="heading heading-2 heading-unique-1 text-center">O mnie</h2>
+              <h2 class="heading heading-2 heading-unique-1 section-header-title text-center">O mnie</h2>
               <div class="heading-separator">
                 <div class="heading-separator__line"></div>
                 <div class="heading-separator__square primary"></div>
@@ -128,22 +128,22 @@
             </header>
           </div>
           <div class="row justify-content-center">
-            <div class="col-xl-6 col-lg-6 col-md-12">
-              <figure class="dev-face__wrapper"><img class="dev-face__img dev-face__img-rotate-28" src="images/Mateusz-Archiciński_Front-End-Developer.jpg" alt="Zdjęcie twarzy Mateusza Archicińskiego" width="190" height="190">
-                <figcaption class="dev-face__img-caption"><span class="dev-face__name">Mateusz Archiciński</span><span class="dev-face__profession">Front-End Developer</span></figcaption>
+            <div class="col-12 col-lg-6">
+              <figure class="dev-face-wrapper"><img class="dev-face__img dev-face__img-rotate-28" src="images/Mateusz-Archiciński_Front-End-Developer.jpg" alt="Zdjęcie twarzy Mateusza Archicińskiego" width="190" height="190">
+                <figcaption class="dev-face__img-caption"><span class="dev-face-name">Mateusz Archiciński</span><span class="dev-face-profession">Front-End Developer</span></figcaption>
               </figure>
               <div class="about-me-section">
-                <header class="row no-gutters align-items-center about-me-section-header"><span class="icon icon-15 icon-user about-me-section-icon"></span><span class="filling-line beginning-xs"></span>
+                <header class="about-me-section-header"><span class="icon icon-15 icon-user about-me-section-icon" aria-hidden="true"></span><span class="filling-line"></span>
                   <h3 class="heading heading-4 text-center">Profil</h3><span class="filling-line ending"></span>
                 </header>
-                <div class="about-me-section-body">
-                  <p class="text-bolded text-justify paragraph beginning">Cześć! Mam na imię Mateusz. Zajmuję się tworzeniem nowoczesnych stron internetowych w oparciu o technologie HTML, CSS i JavaScript.</p>
-                  <p class="text-justify paragraph">Swoją karierę zawodową powiązaną z zawodem Front-End Developera rozpocząłem na stanowisku Web Content Editora w jednej z Warszawskich korporacji interaktywnych. Wspomniane stanowisko umożliwiło mi wzięcie udziału w wielu ciekawych projektach/kampaniach prowadzonych dla różnych klientów z rynku polskiego i zagranicznego. Miałem przyjemność poznać ciekawych ludzi i wiele się nauczyć.</p>
-                  <p class="text-justify paragraph ending">Obecnie ponownie szukam zatrudnienia na stałe lub zdalnie w zależności od potrzeb klienta. Jeżeli jesteś zainteresowany/a współpraca skontaktuj się ze mną!</p>
+                <div class="about-me-section-body text-justify">
+                  <p class="text-bolded paragraph beginning">Cześć! Mam na imię Mateusz. Zajmuję się tworzeniem nowoczesnych stron internetowych w oparciu o technologie HTML, CSS i JavaScript.</p>
+                  <p class="paragraph">Swoją karierę zawodową powiązaną z zawodem Front-End Developera rozpocząłem na stanowisku Web Content Editora w jednej z Warszawskich korporacji interaktywnych. Wspomniane stanowisko umożliwiło mi wzięcie udziału w wielu ciekawych projektach/kampaniach prowadzonych dla różnych klientów z rynku polskiego i zagranicznego. Miałem przyjemność poznać ciekawych ludzi i wiele się nauczyć.</p>
+                  <p class="paragraph ending">Obecnie ponownie szukam zatrudnienia na stałe lub zdalnie w zależności od potrzeb klienta. Jeżeli jesteś zainteresowany/a współpracą skontaktuj się ze mną!</p>
                 </div>
               </div>
               <div class="about-me-section">
-                <header class="row no-gutters align-items-center about-me-section-header"><span class="icon icon-15 icon-info about-me-section-icon"></span><span class="filling-line beginning-xs"></span>
+                <header class="about-me-section-header"><span class="icon icon-15 icon-info about-me-section-icon" aria-hidden="true"></span><span class="filling-line"></span>
                   <h3 class="heading heading-4 text-center">Informacje<br>i kontakt</h3><span class="filling-line ending"></span>
                 </header>
                 <div class="about-me-section-body">
@@ -172,18 +172,18 @@
                 </div>
               </div>
               <div class="about-me-section">
-                <header class="row no-gutters align-items-center about-me-section-header"><span class="icon icon-15 icon-lightbulb about-me-section-icon"></span><span class="filling-line beginning-xs"></span>
+                <header class="about-me-section-header"><span class="icon icon-15 icon-lightbulb about-me-section-icon" aria-hidden="true"></span><span class="filling-line"></span>
                   <h3 class="heading heading-4 text-center">Atrybuty<br>i cechy</h3><span class="filling-line ending"></span>
                 </header>
                 <div class="row no-gutters about-me-section-body text-center">
-                  <ul class="col-6 about-me-list about-me-list-titled" data-title="Jaki jestem ?">
+                  <ul class="col-6 about-me-list about-me-list-titled" data-title="Jaki jestem ?" aria-label="Jaki jestem">
                     <li>Dokładny</li>
                     <li>Odpowiedzialny</li>
                     <li>Rzetelny</li>
                     <li>Samodzielny</li>
                     <li>Terminowy</li>
                   </ul>
-                  <ul class="col-6 about-me-list about-me-list-titled" data-title="W czym jestem dobry ?">
+                  <ul class="col-6 about-me-list about-me-list-titled" data-title="W czym jestem dobry ?" aria-label="W czym jestem dobry">
                     <li>Dzielę się wiedzą</li>
                     <li>Potrafię szukać</li>
                     <li>Przyjmuję krytykę</li>
@@ -193,9 +193,9 @@
                 </div>
               </div>
             </div>
-            <div class="col-xl-6 col-lg-6 col-md-12">
+            <div class="col-12 col-lg-6">
               <div class="about-me-section">
-                <header class="row no-gutters align-items-center about-me-section-header"><span class="icon icon-15 icon-star about-me-section-icon"></span><span class="filling-line beginning-xs"></span>
+                <header class="about-me-section-header"><span class="icon icon-15 icon-star about-me-section-icon" aria-hidden="true"></span><span class="filling-line"></span>
                   <h3 class="heading heading-4 text-center">Edukacja</h3><span class="filling-line ending"></span>
                 </header>
                 <div class="about-me-section-body">
@@ -216,7 +216,7 @@
                 </div>
               </div>
               <div class="about-me-section">
-                <header class="row no-gutters align-items-center about-me-section-header"><span class="icon icon-15 icon-briefcase about-me-section-icon"></span><span class="filling-line beginning-xs"></span>
+                <header class="about-me-section-header"><span class="icon icon-15 icon-briefcase about-me-section-icon" aria-hidden="true"></span><span class="filling-line"></span>
                   <h3 class="heading heading-4 text-center">Doświadczenie<br>i kursy</h3><span class="filling-line ending"></span>
                 </header>
                 <div class="about-me-section-body">
@@ -249,33 +249,33 @@
                 </div>
               </div>
             </div>
-            <div class="col-xl-8 col-lg-8 col-md-12">
+            <div class="col-12 col-lg-8">
               <div class="about-me-section">
-                <header class="row no-gutters align-items-center about-me-section-header"><span class="icon icon-15 icon-desktop about-me-section-icon"></span><span class="filling-line beginning-xs"></span>
+                <header class="about-me-section-header"><span class="icon icon-15 icon-desktop about-me-section-icon" aria-hidden="true"></span><span class="filling-line"></span>
                   <h3 class="heading heading-4 text-center">Umiejętności<br>i technologie</h3><span class="filling-line ending"></span>
                 </header>
                 <div class="about-me-section-body">
                   <p class="paragraph beginning text-center">Wybrane umiejętności i technologie, które wykorzystuje w swoich projektach na co dzień.</p>
                   <ul class="row align-content-center align-items-center justify-content-center skills__list">
-                    <li class="skills-1-skill"><span class="icon-img icon-html5 skills-1-skill-icon" aria-hidden="true"></span><span class="skills-1-skill-title">HTML5</span></li>
-                    <li class="skills-1-skill"><span class="icon-img icon-pug skills-1-skill-icon" aria-hidden="true"></span><span class="skills-1-skill-title">Pug</span></li>
-                    <li class="skills-1-skill"><span class="icon-img icon-json skills-1-skill-icon" aria-hidden="true"></span><span class="skills-1-skill-title">JSON</span></li>
-                    <li class="skills-1-skill"><span class="icon-img icon-css3 skills-1-skill-icon" aria-hidden="true"></span><span class="skills-1-skill-title">CSS3</span></li>
-                    <li class="skills-1-skill"><span class="icon-img icon-sass skills-1-skill-icon" aria-hidden="true"></span><span class="skills-1-skill-title">Sass</span></li>
-                    <li class="skills-1-skill"><span class="icon-img icon-bootstrap skills-1-skill-icon" aria-hidden="true"></span><span class="skills-1-skill-title">Bootstrap</span></li>
-                    <li class="skills-1-skill"><span class="icon-img icon-rwd skills-1-skill-icon" aria-hidden="true"></span><span class="skills-1-skill-title">RWD</span></li>
-                    <li class="skills-1-skill"><span class="icon-img icon-javascript skills-1-skill-icon" aria-hidden="true"></span><span class="skills-1-skill-title">JavaScript</span></li>
-                    <li class="skills-1-skill"><span class="icon-img icon-es6 skills-1-skill-icon" aria-hidden="true"></span><span class="skills-1-skill-title">ES6</span></li>
-                    <li class="skills-1-skill"><span class="icon-img icon-jquery skills-1-skill-icon" aria-hidden="true"></span><span class="skills-1-skill-title">jQuery</span></li>
-                    <li class="skills-1-skill"><span class="icon-img icon-angularjs skills-1-skill-icon" aria-hidden="true"></span><span class="skills-1-skill-title">AngularJS</span></li>
-                    <li class="skills-1-skill"><span class="icon-img icon-ajax skills-1-skill-icon" aria-hidden="true"></span><span class="skills-1-skill-title">AJAX</span></li>
-                    <li class="skills-1-skill"><span class="icon-img icon-nodejs skills-1-skill-icon" aria-hidden="true"></span><span class="skills-1-skill-title">NodeJS</span></li>
-                    <li class="skills-1-skill"><span class="icon-img icon-npm skills-1-skill-icon" aria-hidden="true"></span><span class="skills-1-skill-title">NPM</span></li>
-                    <li class="skills-1-skill"><span class="icon-img icon-bower skills-1-skill-icon" aria-hidden="true"></span><span class="skills-1-skill-title">Bower</span></li>
-                    <li class="skills-1-skill"><span class="icon-img icon-gulp skills-1-skill-icon" aria-hidden="true"></span><span class="skills-1-skill-title">Gulp</span></li>
-                    <li class="skills-1-skill"><span class="icon-img icon-wordpress skills-1-skill-icon" aria-hidden="true"></span><span class="skills-1-skill-title">WordPress</span></li>
-                    <li class="skills-1-skill"><span class="icon-img icon-git skills-1-skill-icon" aria-hidden="true"></span><span class="skills-1-skill-title">Git</span></li>
-                    <li class="skills-1-skill"><span class="icon-img icon-photoshop skills-1-skill-icon" aria-hidden="true"></span><span class="skills-1-skill-title">Photoshop</span></li>
+                    <li class="skills-item"><span class="icon-img icon-html5 skills-item-icon" aria-hidden="true"></span><span class="skills-item-title">HTML5</span></li>
+                    <li class="skills-item"><span class="icon-img icon-pug skills-item-icon" aria-hidden="true"></span><span class="skills-item-title">Pug</span></li>
+                    <li class="skills-item"><span class="icon-img icon-json skills-item-icon" aria-hidden="true"></span><span class="skills-item-title">JSON</span></li>
+                    <li class="skills-item"><span class="icon-img icon-css3 skills-item-icon" aria-hidden="true"></span><span class="skills-item-title">CSS3</span></li>
+                    <li class="skills-item"><span class="icon-img icon-sass skills-item-icon" aria-hidden="true"></span><span class="skills-item-title">Sass</span></li>
+                    <li class="skills-item"><span class="icon-img icon-bootstrap skills-item-icon" aria-hidden="true"></span><span class="skills-item-title">Bootstrap</span></li>
+                    <li class="skills-item"><span class="icon-img icon-rwd skills-item-icon" aria-hidden="true"></span><span class="skills-item-title">RWD</span></li>
+                    <li class="skills-item"><span class="icon-img icon-javascript skills-item-icon" aria-hidden="true"></span><span class="skills-item-title">JavaScript</span></li>
+                    <li class="skills-item"><span class="icon-img icon-es6 skills-item-icon" aria-hidden="true"></span><span class="skills-item-title">ES6</span></li>
+                    <li class="skills-item"><span class="icon-img icon-jquery skills-item-icon" aria-hidden="true"></span><span class="skills-item-title">jQuery</span></li>
+                    <li class="skills-item"><span class="icon-img icon-angularjs skills-item-icon" aria-hidden="true"></span><span class="skills-item-title">AngularJS</span></li>
+                    <li class="skills-item"><span class="icon-img icon-ajax skills-item-icon" aria-hidden="true"></span><span class="skills-item-title">AJAX</span></li>
+                    <li class="skills-item"><span class="icon-img icon-nodejs skills-item-icon" aria-hidden="true"></span><span class="skills-item-title">NodeJS</span></li>
+                    <li class="skills-item"><span class="icon-img icon-npm skills-item-icon" aria-hidden="true"></span><span class="skills-item-title">NPM</span></li>
+                    <li class="skills-item"><span class="icon-img icon-bower skills-item-icon" aria-hidden="true"></span><span class="skills-item-title">Bower</span></li>
+                    <li class="skills-item"><span class="icon-img icon-gulp skills-item-icon" aria-hidden="true"></span><span class="skills-item-title">Gulp</span></li>
+                    <li class="skills-item"><span class="icon-img icon-wordpress skills-item-icon" aria-hidden="true"></span><span class="skills-item-title">WordPress</span></li>
+                    <li class="skills-item"><span class="icon-img icon-git skills-item-icon" aria-hidden="true"></span><span class="skills-item-title">Git</span></li>
+                    <li class="skills-item"><span class="icon-img icon-photoshop skills-item-icon" aria-hidden="true"></span><span class="skills-item-title">Photoshop</span></li>
                   </ul>
                 </div>
               </div>
@@ -286,9 +286,9 @@
       <section class="section services-wrapper" id="services">
         <div class="container">
           <div class="row no-gutters flex-column align-items-center">
-            <div class="section-decoration"><span class="icon icon-2 icon-wrench section-decoration-icon"></span></div>
+            <div class="section-decoration"><span class="icon icon-2 icon-wrench section-decoration-icon" aria-hidden="true"></span></div>
             <header class="section-header">
-              <h2 class="heading heading-2 heading-unique-1 text-center">Usługi</h2>
+              <h2 class="heading heading-2 heading-unique-1 section-header-title text-center">Usługi</h2>
               <div class="heading-separator">
                 <div class="heading-separator__line"></div>
                 <div class="heading-separator__square primary"></div>
@@ -306,7 +306,7 @@
                 <div class="heading-separator__line heading-separator__line-bolded-3 primary"></div>
               </div>
               <p class="paragraph services-item-description">Pocięcie i zakodowanie do HTML5, CSS3 i JavaScript dostarczonego projektu graficznego strony internetowej, mailingu, szablonu WordPress i innych.</p>
-              <button class="btn to-top btn-primary services-item-button" type="button"><span>Więcej</span></button>
+              <button class="btn to-top btn-primary services-item-button services-item-button-js" type="button" data-src=""><span>Więcej</span></button>
             </div>
             <div class="white-frame-058001 services-item text-center"><span class="icon-img icon-5 icon-services-devices services-item-icon" aria-hidden="true"></span>
               <h3 class="heading heading-4 services-item-title">Dostosowanie do różnych przeglądarek i urządzeń</h3>
@@ -314,7 +314,7 @@
                 <div class="heading-separator__line heading-separator__line-bolded-3 primary"></div>
               </div>
               <p class="paragraph services-item-description">Dostosowanie strony internetowej do wybranych przeglądarek i urządzeń mobilnych z uwzględnieniem różnych rozdzielczości (tzw. Responsive Web Design).</p>
-              <button class="btn to-top btn-primary services-item-button" type="button"><span>Więcej</span></button>
+              <button class="btn to-top btn-primary services-item-button services-item-button-js" type="button" data-src=""><span>Więcej</span></button>
             </div>
             <div class="white-frame-058001 services-item text-center"><span class="icon-img icon-5 icon-services-admin services-item-icon" aria-hidden="true"></span>
               <h3 class="heading heading-4 services-item-title">Administracja stron internetowych</h3>
@@ -322,7 +322,7 @@
                 <div class="heading-separator__line heading-separator__line-bolded-3 primary"></div>
               </div>
               <p class="paragraph services-item-description">Wdrożenie i utrzymanie strony/aplikacji internetowej w tym okresowe raporty z testów automatycznych i manualnych wybranych funkcjonalności.</p>
-              <button class="btn to-top btn-primary services-item-button" type="button"><span>Więcej</span></button>
+              <button class="btn to-top btn-primary services-item-button services-item-button-js" type="button" data-src=""><span>Więcej</span></button>
             </div>
             <div class="white-frame-058001 services-item text-center"><span class="icon-img icon-5 icon-services-spa services-item-icon" aria-hidden="true"></span>
               <h3 class="heading heading-4 services-item-title">SPA / Aplikacje internetowe</h3>
@@ -330,7 +330,7 @@
                 <div class="heading-separator__line heading-separator__line-bolded-3 primary"></div>
               </div>
               <p class="paragraph services-item-description">Tworzenie całej warstwy klienta aplikacji internetowej lub wybranych komponentów w oparciu <br>o framework AngularJS, HTML5, CSS3, ES6/TypeScript.</p>
-              <button class="btn to-top btn-primary services-item-button" type="button"><span>Więcej</span></button>
+              <button class="btn to-top btn-primary services-item-button services-item-button-js" type="button" data-src=""><span>Więcej</span></button>
             </div>
             <div class="white-frame-058001 services-item text-center"><span class="icon-img icon-5 icon-services-api services-item-icon" aria-hidden="true"></span>
               <h3 class="heading heading-4 services-item-title">API / Interfejsy programowania aplikacji</h3>
@@ -338,7 +338,7 @@
                 <div class="heading-separator__line heading-separator__line-bolded-3 primary"></div>
               </div>
               <p class="paragraph services-item-description">Tworzenie całej warstwy serwera lub wybranych usług zapewniających dostęp do zasobów serwera za pośrednictwem protokołu HTTP <br>w oparciu o framework Express.</p>
-              <button class="btn to-top btn-primary services-item-button" type="button"><span>Więcej</span></button>
+              <button class="btn to-top btn-primary services-item-button services-item-button-js" type="button" data-src=""><span>Więcej</span></button>
             </div>
           </div>
         </div>
@@ -346,9 +346,9 @@
       <section class="section portfolio-wrapper" id="portfolio">
         <div class="container">
           <div class="row no-gutters flex-column align-items-center">
-            <div class="section-decoration"><span class="icon icon-2 icon-code section-decoration-icon"></span></div>
+            <div class="section-decoration"><span class="icon icon-2 icon-code section-decoration-icon" aria-hidden="true"></span></div>
             <header class="section-header">
-              <h2 class="heading heading-2 heading-unique-1 text-center">Portfolio</h2>
+              <h2 class="heading heading-2 heading-unique-1 section-header-title text-center">Portfolio</h2>
               <div class="heading-separator">
                 <div class="heading-separator__line"></div>
                 <div class="heading-separator__square primary"></div>
@@ -433,9 +433,9 @@
       <section class="section contact-wrapper" id="contact">
         <div class="container">
           <div class="row no-gutters flex-column align-items-center">
-            <div class="section-decoration"><span class="icon icon-2 icon-phone section-decoration-icon"></span></div>
+            <div class="section-decoration"><span class="icon icon-2 icon-phone section-decoration-icon" aria-hidden="true"></span></div>
             <header class="section-header">
-              <h2 class="heading heading-2 heading-unique-1 text-center">Kontakt</h2>
+              <h2 class="heading heading-2 heading-unique-1 section-header-title text-center">Kontakt</h2>
               <div class="heading-separator">
                 <div class="heading-separator__line"></div>
                 <div class="heading-separator__square primary"></div>
@@ -539,7 +539,7 @@
       </div>
     </div>
     <!--JavaScript Sources-->
-    <!--build:js js/main.min.js-->
+    <!--build:js js/main.min.js async-->
     <!--Bower Components-->
     <!--bower:js-->
     <script src="../bower_components/jquery/dist/jquery.js"></script>

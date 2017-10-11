@@ -4,7 +4,7 @@
 
 
 // .portfolio-filters__button
-$portfolio-filters__button__font-family: "Raleway" !default;
+$portfolio-filters__button__font-family: 'Raleway' !default;
 $portfolio-filters__button__font-size: 0.95em !default;
 $portfolio-filters__button__font-weight: $font-weight__normal !default;
 $portfolio-filters__button__color: $secondary-text-color !default;
@@ -74,7 +74,7 @@ $portfolio-item-buttons__btn__font-size: 0.9em !default;
             overflow: hidden;
             margin: 0;
             &::after {
-                content: "";
+                content: '';
                 background-color: $portfolio-item__figure__after__background-color;
                 display: block;
                 transition: 0.3s background-color ease-in-out;

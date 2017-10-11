@@ -1,18 +1,18 @@
 //-
     About Me ~ Profile
 
-figure.dev-face__wrapper
+figure.dev-face-wrapper
     img(src="images/Mateusz-Archiciński_Front-End-Developer.jpg" alt=data.mainWrapper.aboutMeWrapper.devFace.imgAlt width="190" height="190" class="dev-face__img dev-face__img-rotate-28")
     figcaption.dev-face__img-caption
-        span.dev-face__name= data.mainWrapper.aboutMeWrapper.devFace.name
-        span.dev-face__profession= data.mainWrapper.aboutMeWrapper.devFace.profession
+        span.dev-face-name= data.mainWrapper.aboutMeWrapper.devFace.name
+        span.dev-face-profession= data.mainWrapper.aboutMeWrapper.devFace.profession
 .about-me-section
-    header.row.no-gutters.align-items-center.about-me-section-header
-        span.icon.icon-15.icon-user.about-me-section-icon
-        span.filling-line.beginning-xs
+    header.about-me-section-header
+        span(aria-hidden="true" class="icon icon-15 icon-user about-me-section-icon")
+        span.filling-line
         h3.heading.heading-4.text-center= data.mainWrapper.aboutMeWrapper.profile.h3
         span.filling-line.ending
-    .about-me-section-body
-        p.text-bolded.text-justify.paragraph.beginning= data.mainWrapper.aboutMeWrapper.profile.p[0]
-        p.text-justify.paragraph= data.mainWrapper.aboutMeWrapper.profile.p[1]
-        p.text-justify.paragraph.ending= data.mainWrapper.aboutMeWrapper.profile.p[2]
+    .about-me-section-body.text-justify
+        p.text-bolded.paragraph.beginning= data.mainWrapper.aboutMeWrapper.profile.p[0]
+        p.paragraph= data.mainWrapper.aboutMeWrapper.profile.p[1]
+        p.paragraph.ending= data.mainWrapper.aboutMeWrapper.profile.p[2]

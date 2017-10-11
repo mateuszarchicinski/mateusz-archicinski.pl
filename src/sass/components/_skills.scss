@@ -3,23 +3,22 @@
 //~~~~~~~~~~~~~~~~~~~~~~//
 
 
-// .skills-1-skill-title
-$skills-1-skill-title__font-weight: $font-weight__bolder !default;
+// .skills-item-title
+$skills-item-title__font-weight: $font-weight__bolder !default;
 
 
 .skills {
     &__list {
-        list-style: none;
-        @extend %no-padding-margin;
+        @extend %no-list;
     }
-    &-1-skill {
+    &-item {
         padding: 15px;
-        filter: unquote("grayscale(90%)");
+        filter: unquote('grayscale(90%)');
         @include opacity(0.75);
         transition: 0.3s filter ease-in-out,
                     0.3s opacity ease-in-out;
         &:hover {
-            filter: unquote("grayscale(0)");
+            filter: unquote('grayscale(0)');
             @include opacity(1);
         }
         &-icon {
@@ -27,7 +26,7 @@ $skills-1-skill-title__font-weight: $font-weight__bolder !default;
         }
         &-title {
             margin-top: 15px;
-            font-weight: $skills-1-skill-title__font-weight;
+            font-weight: $skills-item-title__font-weight;
             text-align: center;
         }
         &-icon,

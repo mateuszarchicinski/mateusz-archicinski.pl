@@ -9,23 +9,28 @@ $home-wrapper__box-shadow: 0 1px 8px 0 rgba($color__black-1, 0.8) !default;
 // sass-lint:disable no-color-literals
 $home-wrapper__after__background-image: linear-gradient(to top, $color__black-2 0%, rgba($color__seal-brown, 0.25) 50%, rgba($color__seal-brown, 0.25) 50%, $color__black-2 100%), url(../images/noise.png) !default;
 // sass-lint:enable no-color-literals
+// .home-header-title
+$home-header-title-md: 4.2em !default;
+$home-header-title-sm: 3.1em !default;
+$home-header-title-xs: 1.89999em !default;
+// .home-header-subtitle
+$home-header-subtitle-sm: 1.1em !default;
+$home-header-subtitle-xs: 1em !default;
 
 
 .home {
     &-wrapper {
         background-image: url(../images/home-bg.jpg);
-        background-attachment: fixed;
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
-        position: relative;
         padding: 0;
         box-shadow: $home-wrapper__box-shadow;
-        @include media-breakpoint-down(sm) {
-            background-attachment: scroll;
+        @include media-breakpoint-up(md) {
+            background-attachment: fixed;
         }
         &::after {
-            content: "";
+            content: '';
             width: 100%;
             height: 100%;
             background-image: $home-wrapper__after__background-image;
@@ -36,11 +41,11 @@ $home-wrapper__after__background-image: linear-gradient(to top, $color__black-2 
         }
     }
     &-row {
-        position: relative;
         z-index: 1;
     }
     &-wrapper,
     &-row {
+        position: relative;
         height: calc(100vh + 64px);
         
         // Sets height permanently in specific cases
@@ -50,6 +55,7 @@ $home-wrapper__after__background-image: linear-gradient(to top, $color__black-2 
         @media screen and (min-width: breakpoint-min(sm)) and (max-height: 697px) {
             height: 761px;
         }
+        
     }
     &-header {
         max-width: 100%;
@@ -57,10 +63,7 @@ $home-wrapper__after__background-image: linear-gradient(to top, $color__black-2 
         padding-top: 138px;
         
         // Sets height permanently in specific cases
-        @media screen and (max-width: breakpoint-max(xs)) {
-            padding-top: 0;
-        }
-        @media screen and (max-height: 559px) {
+        @media screen and (max-width: breakpoint-max(xs)), screen and (max-height: 559px) {
             padding-top: 0;
         }
         
@@ -70,22 +73,22 @@ $home-wrapper__after__background-image: linear-gradient(to top, $color__black-2 
         }
         &-title {
             @include media-breakpoint-down(md) {
-                font-size: 4.2em;
+                font-size: $home-header-title-md; // 4.2em;
             }
             @include media-breakpoint-down(sm) {
-                font-size: 3.1em;
+                font-size: $home-header-title-sm; // 3.1em;
             }
             @include media-breakpoint-down(xs) {
-                font-size: 1.89999em;
+                font-size: $home-header-title-xs; // 1.89999em;
             }
         }
         &-subtitle {
             letter-spacing: 10px;
             @include media-breakpoint-down(sm) {
-                font-size: 1.1em;
+                font-size: $home-header-subtitle-sm; // 1.1em;
             }
             @include media-breakpoint-down(xs) {
-                font-size: 1em;
+                font-size: $home-header-subtitle-xs; // 1em;
                 letter-spacing: 4.25px;
             }
         }

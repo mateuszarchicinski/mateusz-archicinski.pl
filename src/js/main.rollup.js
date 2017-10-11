@@ -1,13 +1,13 @@
 import {
     $document
-} from './globals';
-import mainHeader from './main-header';
-import sideNav from './side-nav';
-import smoothScrolling from './smooth-scrolling';
-import spyScrolling from './spy-scrolling';
-import Services from './services';
-import Portfolio from './portfolio';
-import contactForm from './contact-form';
+} from './globals/jquery';
+import mainHeader from './features/main-header';
+import sideNav from './features/side-nav';
+import smoothScrolling from './features/smooth-scrolling';
+import spyScrolling from './features/spy-scrolling';
+import Services from './features/services';
+import Portfolio from './features/portfolio';
+import contactForm from './features/contact-form';
 
 
 $document.ready(() => {

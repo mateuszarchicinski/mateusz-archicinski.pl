@@ -14,7 +14,8 @@
         background-color: $cButton__background-color;
         color: $cButton__color;
         border-color: $cButton__border-color;
-        &:hover {
+        &:hover,
+        &:focus {
             @extend .btn-hover-white;
             &::after {
                 background-color: $cButton__hover__after__background-color;
@@ -37,19 +38,19 @@
     $src: null;
     
     $extmods: (
-        eot: "?",
-        svg: "#" + str-replace($name, " ", "_")
+        eot: '?',
+        svg: '#' + str-replace($name, ' ', '_')
     );
     
     $formats: (
-        otf: "opentype",
-        ttf: "truetype"
+        otf: 'opentype',
+        ttf: 'truetype'
     );
     
     @each $ext in $exts {
         $extmod: if(map-has-key($extmods, $ext), $ext + map-get($extmods, $ext), $ext);
         $format: if(map-has-key($formats, $ext), map-get($formats, $ext), $ext);
-        $src: append($src, url(quote($path + "." + $extmod)) format(quote($format)), comma);
+        $src: append($src, url(quote($path + '.' + $extmod)) format(quote($format)), comma);
     }
     
     @font-face {
@@ -106,7 +107,7 @@
 @mixin clearfix {
     &::before,
     &::after {
-        content: "";
+        content: '';
         display: table;
     }
     
@@ -142,7 +143,7 @@
 @mixin opacity($value) {
     $IEValue: $value * 100;
     opacity: $value;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=" + $IEValue + ")";
+    -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=' + $IEValue + ')';
     filter: alpha(opacity=$IEValue);
 }
 

@@ -8,11 +8,16 @@ $about-me-section-icon__background-color: $primary-color !default;
 $about-me-section-icon__color: $color__white !default;
 $about-me-section-icon__box-shadow: 0 0 0 5px $color__white,
                                     0 0 8px 5px rgba($color__black-1, 0.15) !default;
-// .about-me-list-titled
-$about-me-list-titled__color: $accent-color-light !default;
+
+// .about-me-section-body
+$about-me-section-body__padding-left: 89px !default;
+$about-me-section-body__padding-left-xs: 0 !default;
+
+
 // .about-me-list-titled::before
 $about-me-list-titled__before__font-size: 18px !default;
 $about-me-list-titled__before__font-weight: $font-weight__bolder-8 !default;
+$about-me-list-titled__before__color: $accent-color-light !default;
 // .about-me-list-titled::after
 $about-me-list-titled__after__border: 40px solid $accent-color-light !default;
 
@@ -24,13 +29,16 @@ $about-me-list-titled__after__border: 40px solid $accent-color-light !default;
     &-section {
         padding: 25px 0 10px;
         &-header {
+            @extend .row;
+            @extend .no-gutters;
+            @extend .align-items-center;
             padding-bottom: 15px;
         }
         &-icon {
             @include media-breakpoint-down(xs) {
                 width: 100%;
                 text-align: center;
-                margin: 25px 0 20px; // ?
+                margin: 25px 0 20px;
             }
             &::before {
                 width: 54px;
@@ -45,18 +53,16 @@ $about-me-list-titled__after__border: 40px solid $accent-color-light !default;
             }
         }
         &-body {
-            padding-left: 89px;
+            padding-left: $about-me-section-body__padding-left;
             @include media-breakpoint-down(xs) {
-                padding-left: 0;
+                padding-left: $about-me-section-body__padding-left-xs;
             }
         }
     }
     &-list {
-        list-style: none;
-        @extend %no-padding-margin;
+        @extend %no-list;
         & > li {
-            overflow-wrap: break-word;
-            word-wrap: break-word;
+            @extend %break-word;
             padding: 1.5em 0;
             &:first-child {
                 padding-top: 0.75em;
@@ -87,11 +93,11 @@ $about-me-list-titled__after__border: 40px solid $accent-color-light !default;
                 text-align: center;
                 text-orientation: sideways-right;
                 writing-mode: vertical-rl;
-                color: $about-me-list-titled__color;
+                color: $about-me-list-titled__before__color;
                 padding: 55px 0;
             }
             &::after {
-                content: "";
+                content: '';
                 width: 1px;
                 z-index: -1;
                 left: 0.5px;

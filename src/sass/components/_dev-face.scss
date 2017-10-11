@@ -3,24 +3,30 @@
 //~~~~~~~~~~~~~~~~~~~~~~~~//
 
 
+// .dev-face-wrapper
+$dev-face__padding: 25px 0 10px ($about-me-section-body__padding-left) !default;
+$dev-face__padding-left-xs: $about-me-section-body__padding-left-xs !default;
+
 // .dev-face__img
 $dev-face__img__box-shadow: 0 0 8px 0 rgba($color__black-1, 0.8) !default;
-// .dev-face__img-caption
+// .dev-face__img-caption::after
 $dev-face__img-caption__after__background-color: $primary-color !default;
-// .dev-face__name
-$dev-face__name__font-size: 1.25em !default;
-$dev-face__name__font-weight: $font-weight__bolder-8 !default;
-// .dev-face__profession
-$dev-face__profession__font-size: 0.875em !default;
-$dev-face__profession__font-weight: $font-weight__bolder !default;
+
+// .dev-face-name
+$dev-face-name__font-size: 1.25em !default;
+$dev-face-name__font-weight: $font-weight__bolder-8 !default;
+
+// .dev-face-profession
+$dev-face-profession__font-size: 0.875em !default;
+$dev-face-profession__font-weight: $font-weight__bolder !default;
 
 
 .dev-face {
-    &__wrapper {
-        padding: 25px 0 10px 89px;
+    &-wrapper {
+        padding: $dev-face__padding;
         margin: 0;
         @include media-breakpoint-down(xs) {
-            padding-left: 0;
+            padding-left: $dev-face__padding-left-xs;
         }
     }
     &__img {
@@ -33,7 +39,7 @@ $dev-face__profession__font-weight: $font-weight__bolder !default;
         &-caption {
             margin-top: 15px;
             &::after {
-                content: "";
+                content: '';
                 width: 20%;
                 height: 4px;
                 background-color: $dev-face__img-caption__after__background-color;
@@ -41,23 +47,23 @@ $dev-face__profession__font-weight: $font-weight__bolder !default;
             }
         }
     }
-    &__name {
-        font-size: $dev-face__name__font-size;
-        font-weight: $dev-face__name__font-weight;
+    &-name {
+        font-size: $dev-face-name__font-size;
+        font-weight: $dev-face-name__font-weight;
     }
-    &__profession {
-        font-size: $dev-face__profession__font-size;
-        font-weight: $dev-face__profession__font-weight;
+    &-profession {
+        font-size: $dev-face-profession__font-size;
+        font-weight: $dev-face-profession__font-weight;
     }
-    &__name,
-    &__profession {
-        font-family: "Raleway";
+    &-name,
+    &-profession {
+        font-family: 'Raleway';
         text-align: center;
     }
     &__img,
     &__img-caption::after,
-    &__name,
-    &__profession {
+    &-name,
+    &-profession {
         display: block;
     }
 }

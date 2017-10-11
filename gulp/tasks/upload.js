@@ -4,6 +4,7 @@ const ftp = require('vinyl-ftp');
 
 // USEFUL FUNCTIONS
 const alertHandler = require('./useful-functions/alert-handler');
+const getOption = require('./useful-functions/get-option');
 
 
 // Uploads a files from the production directory to the FTP server, more info about module VINYL FTP ---> https://github.com/morris/vinyl-ftp#vinyl-ftp

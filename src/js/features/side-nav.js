@@ -1,8 +1,6 @@
 import {
-    $window,
-    $document
-} from './globals';
-import debounce from '../../node_modules/throttle-debounce/debounce';
+    $window
+} from '../globals/jquery';
 
 
 class sideNav {
@@ -21,22 +19,27 @@ class sideNav {
 
         this.isOpen = false;
     }
+    toggle() {
+        if (!this.isOpen) {
+            this.open();
+            return;
+        }
+
+        this.close();
+    }
     init() {
         if (this.navElem) return;
 
         const navElem = this.navElem = document.querySelector(this.navSelector),
             navToggleElems = this.navToggleElem = [].slice.call(document.querySelectorAll(this.navToggleSelector));
 
+        if (!navElem || !navToggleElems) return;
+
         navToggleElems.forEach((elem) => {
             elem.addEventListener('click', (e) => {
                 e.stopPropagation();
 
-                if (!this.isOpen) {
-                    this.open();
-                    return;
-                }
-
-                this.close();
+                this.toggle();
             });
         });
 

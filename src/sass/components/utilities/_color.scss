@@ -15,6 +15,9 @@ $color-primary__color: $primary-color !default;
 // .color-primary-dark
 $color-primary-dark__color: $primary-color-dark !default;
 
+// .color-primary-light
+$color-primary-light__color: $primary-color-light !default;
+
 // .color-primary-text
 $color-primary-text__color: $primary-text-color !default;
 
@@ -39,6 +42,9 @@ $color-github__color: $color__github !default;
         color: $color-primary__color;
         &-dark {
             color: $color-primary-dark__color;
+        }
+        &-light {
+            color: $color-primary-light__color;
         }
         &-text {
             color: $color-primary-text__color;

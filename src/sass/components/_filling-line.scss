@@ -15,13 +15,13 @@ $filling-line__background-color: $divider-color !default;
     margin-right: 35px;
     &.beginning {
         margin-left: 0;
-        &-xs {
-            @include media-breakpoint-down(xs) {
-                margin-left: 0;
-            }
-        }
     }
     &.ending {
         margin-right: 0;
+    }
+    .about-me-section-header > &:nth-child(2) {
+        @include media-breakpoint-down(xs) {
+            margin-left: 0;
+        }
     }
 }

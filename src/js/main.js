@@ -22,7 +22,7 @@ var $document = $(document);
  *
  * @return {Function}  A new, throttled, function.
  */
-var throttle = function throttle(delay, noTrailing, callback, debounceMode) {
+var throttle$1 = function throttle(delay, noTrailing, callback, debounceMode) {
 
 	// After wrapper has stopped being called, this timeout ensures that
 	// `callback` is executed at the proper times in `throttle` and `end`
@@ -129,20 +129,20 @@ var mainHeader = function () {
     createClass(mainHeader, [{
         key: 'headerHandling',
         value: function headerHandling() {
-            var minHeight = this.minHeight + this.offsetHeight;
+            var minHeight = this.sectionElem.offsetHeight + this.offsetHeight;
 
             if (window.pageYOffset >= minHeight / 2.5) {
                 this.headerElem.classList.add('main-header-fixed');
+
+                if (window.pageYOffset >= minHeight) {
+                    this.show();
+                } else if (window.pageYOffset < minHeight) {
+                    this.hide();
+                }
             } else {
                 this.headerElem.classList.remove('main-header-fixed');
                 this.headerElem.classList.remove('show');
                 this.headerElem.classList.remove('hide');
-            }
-
-            if (window.pageYOffset >= minHeight) {
-                this.show();
-            } else if (window.pageYOffset < minHeight && window.pageYOffset >= minHeight / 2.5) {
-                this.hide();
             }
         }
     }, {
@@ -169,35 +169,13 @@ var mainHeader = function () {
 
             if (!headerElem || !sectionElem) return;
 
-            this.minHeight = sectionElem.offsetHeight;
-
-            window.addEventListener('scroll', throttle(250, function () {
+            window.addEventListener('scroll', throttle$1(250, function () {
                 _this.headerHandling();
             }));
         }
     }]);
     return mainHeader;
 }();
-
-/* eslint-disable no-undefined */
-
-/**
- * Debounce execution of a function. Debouncing, unlike throttling,
- * guarantees that a function is only executed a single time, either at the
- * very beginning of a series of calls, or at the very end.
- *
- * @param  {Number}   delay         A zero-or-greater delay in milliseconds. For event callbacks, values around 100 or 250 (or even higher) are most useful.
- * @param  {Boolean}  atBegin       Optional, defaults to false. If atBegin is false or unspecified, callback will only be executed `delay` milliseconds
- *                                  after the last debounced-function call. If atBegin is true, callback will be executed only at the first debounced-function call.
- *                                  (After the throttled-function has not been called for `delay` milliseconds, the internal counter is reset).
- * @param  {Function} callback      A function to be executed after delay milliseconds. The `this` context and all arguments are passed through, as-is,
- *                                  to `callback` when the debounced-function is executed.
- *
- * @return {Function} A new, debounced function.
- */
-var debounce = function debounce(delay, atBegin, callback) {
-  return callback === undefined ? throttle(delay, atBegin, false) : throttle(delay, callback, atBegin !== false);
-};
 
 var sideNav = function () {
     function sideNav(navSelector, navToggleSelector) {
@@ -223,6 +201,16 @@ var sideNav = function () {
             this.isOpen = false;
         }
     }, {
+        key: 'toggle',
+        value: function toggle() {
+            if (!this.isOpen) {
+                this.open();
+                return;
+            }
+
+            this.close();
+        }
+    }, {
         key: 'init',
         value: function init() {
             var _this = this;
@@ -232,16 +220,13 @@ var sideNav = function () {
             var navElem = this.navElem = document.querySelector(this.navSelector),
                 navToggleElems = this.navToggleElem = [].slice.call(document.querySelectorAll(this.navToggleSelector));
 
+            if (!navElem || !navToggleElems) return;
+
             navToggleElems.forEach(function (elem) {
                 elem.addEventListener('click', function (e) {
                     e.stopPropagation();
 
-                    if (!_this.isOpen) {
-                        _this.open();
-                        return;
-                    }
-
-                    _this.close();
+                    _this.toggle();
                 });
             });
 
@@ -296,12 +281,14 @@ var smoothScrolling = function () {
 }();
 
 var spyScrolling = function () {
-    function spyScrolling(scrollSelector, scrollActiveCls) {
+    function spyScrolling(scrollSelector, scrollActiveCls, offsetHeight) {
         classCallCheck(this, spyScrolling);
 
         this.scrollSelector = scrollSelector || 'a[data-spy][href*="#"]';
         this.scrollActiveClass = scrollActiveCls || 'active';
-        this.scrollTargets = [];
+        this.offsetHeight = offsetHeight || -65;
+        this.scrollRanges = [];
+        this.currRangeIndex = 0;
     }
 
     createClass(spyScrolling, [{
@@ -309,32 +296,39 @@ var spyScrolling = function () {
         value: function refresh() {
             var scrollTop = $document.scrollTop();
 
-            for (var i = 0; i < this.scrollTargets.length; i++) {
-                var item = this.scrollTargets[i],
-                    offsetTop = item.offsetTop - 65,
+            for (var i = 0; i < this.scrollRanges.length; i++) {
+                var item = this.scrollRanges[i].rangeElem;
+
+                if (!item) return;
+
+                var offsetTop = item.offsetTop + this.offsetHeight,
                     offsetBottom = item.offsetHeight + item.offsetTop - 10;
 
                 if (scrollTop >= offsetTop && scrollTop < offsetBottom) {
-                    this.setActive(i);
+                    this.setCurrRange(i);
                     return;
                 }
             }
         }
     }, {
-        key: 'setActive',
-        value: function setActive(index) {
-            if ($window.width() < 992) {
-                index += this.scrollElems.length / 2;
-            }
+        key: 'setCurrRange',
+        value: function setCurrRange(index) {
+            var _this = this;
 
-            this.currScrollElem.classList.remove(this.scrollActiveClass);
-            this.currScrollElem = this.scrollElems[index];
-            this.currScrollElem.classList.add(this.scrollActiveClass);
+            this.scrollRanges[this.currRangeIndex].elems.forEach(function (item) {
+                item.classList.remove(_this.scrollActiveClass);
+            });
+
+            this.currRangeIndex = index;
+
+            this.scrollRanges[this.currRangeIndex].elems.forEach(function (item) {
+                item.classList.add(_this.scrollActiveClass);
+            });
         }
     }, {
         key: 'init',
         value: function init() {
-            var _this = this;
+            var _this2 = this;
 
             if (this.scrollElems) return;
 
@@ -342,18 +336,32 @@ var spyScrolling = function () {
 
             if (!scrollElems) return;
 
-            if ($window.width() < 992) {
-                this.currScrollElem = scrollElems[scrollElems.length / 2];
-            } else {
-                this.currScrollElem = scrollElems[0];
-            }
+            var ids = [];
 
-            for (var i = 0; i < scrollElems.length / 2; i++) {
-                this.scrollTargets.push(document.querySelector(scrollElems[i].hash));
-            }
+            scrollElems.forEach(function (item) {
+                var id = item.hash,
+                    indexOf = ids.indexOf(id);
 
-            window.addEventListener('scroll', throttle(100, function () {
-                _this.refresh();
+                if (indexOf === -1) {
+                    ids.push(id);
+
+                    _this2.scrollRanges.push({
+                        elems: [item],
+                        rangeElem: document.querySelector(id)
+                    });
+                } else {
+                    _this2.scrollRanges[indexOf].elems.push(item);
+                }
+            });
+
+            this.refresh();
+
+            window.addEventListener('scroll', throttle$1(250, function () {
+                _this2.refresh();
+            }));
+
+            window.addEventListener('resize', throttle$1(500, function () {
+                _this2.refresh();
             }));
         }
     }]);
@@ -489,7 +497,7 @@ var Portfolio = function () {
                 _this2.filterBy(filterValue, !clickedElem.hasAttribute('data-filter-type') ? clickedElem.parentNode : clickedElem);
             });
 
-            window.addEventListener('resize', debounce(500, function () {
+            window.addEventListener('resize', throttle$1(500, function () {
                 _this2.filterBy(_this2.currFilterElem.getAttribute('data-filter-type'), _this2.currFilterElem, true);
             }));
         }

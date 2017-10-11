@@ -5,21 +5,21 @@ section(id="about-me" class="section about-me-wrapper")
     .container
         .row.no-gutters.flex-column.align-items-center
             .section-decoration
-                span.icon.icon-2.icon-user.section-decoration-icon
+                span(aria-hidden="true" class="icon icon-2 icon-user section-decoration-icon")
             header.section-header
-                h2.heading.heading-2.heading-unique-1.text-center= data.mainWrapper.aboutMeWrapper.header.h2
+                h2.heading.heading-2.heading-unique-1.section-header-title.text-center= data.mainWrapper.aboutMeWrapper.header.h2
                 .heading-separator
                     .heading-separator__line
                     .heading-separator__square.primary
                     .heading-separator__line
                 p.section-header-description= data.mainWrapper.aboutMeWrapper.header.p
         .row.justify-content-center
-            .col-xl-6.col-lg-6.col-md-12
+            .col-12.col-lg-6
                 include _about-me-profile
                 include _about-me-information-contact
                 include _about-me-attributes-qualities
-            .col-xl-6.col-lg-6.col-md-12
+            .col-12.col-lg-6
                 include _about-me-education
                 include _about-me-experiences-courses
-            .col-xl-8.col-lg-8.col-md-12
+            .col-12.col-lg-8
                 include _about-me-skills-technologies

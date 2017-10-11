@@ -5,43 +5,44 @@
 
 .info {
     &-block {
-        display: block;
         white-space: nowrap;
-    }
-    &-title,
-    &-description {
-        display: block;
-        white-space: normal;
-        overflow-wrap: break-word;
-        word-wrap: break-word;
-    }
-    &-title.i-block,
-    &-description.i-block {
-        display: inline-block;
-    }
+    }    
     &-title {
         &.i-block {
             width: 37.85%;
             vertical-align: top;
         }
     }
+    
     &-description {
         &.i-block {
             width: 62.15%;
         }
     }
-    &-block.i-block &-title,
-    &-block.i-block &-description {
-        display: inline-block;
+    &-block,
+    &-title,
+    &-description {
+        display: block;
     }
+    &-title,
+    &-description {
+        white-space: normal;
+    }
+    &-title.i-block,
+    &-description.i-block {
+        display: inline-block;
+    }    
     &-link {
-        overflow-wrap: break-word; // ?
-        word-wrap: break-word;
         text-decoration: none;
         color: inherit;
         &:hover {
             text-decoration: underline;
         }
+    }
+    &-title,
+    &-description,
+    &-link {
+        @extend %break-word;
     }
     &-icon {
         margin-left: 10px;

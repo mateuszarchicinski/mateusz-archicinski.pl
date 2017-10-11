@@ -1,4 +1,4 @@
-import throttle from '../../node_modules/throttle-debounce/throttle';
+import throttle from '../functions/throttle';
 
 
 class mainHeader {
@@ -8,20 +8,20 @@ class mainHeader {
         this.offsetHeight = offsetHeight || -10;
     }
     headerHandling() {
-        const minHeight = this.minHeight + this.offsetHeight;
+        const minHeight = this.sectionElem.offsetHeight + this.offsetHeight;
 
         if (window.pageYOffset >= (minHeight / 2.5)) {
             this.headerElem.classList.add('main-header-fixed');
+
+            if (window.pageYOffset >= minHeight) {
+                this.show();
+            } else if (window.pageYOffset < minHeight) {
+                this.hide();
+            }
         } else {
             this.headerElem.classList.remove('main-header-fixed');
             this.headerElem.classList.remove('show');
             this.headerElem.classList.remove('hide');
-        }
-
-        if (window.pageYOffset >= minHeight) {
-            this.show();
-        } else if (window.pageYOffset < minHeight && window.pageYOffset >= (minHeight / 2.5)) {
-            this.hide();
         }
     }
     show() {
@@ -39,8 +39,6 @@ class mainHeader {
             sectionElem = this.sectionElem = document.querySelector(this.sectionSelector);
 
         if (!headerElem || !sectionElem) return;
-
-        this.minHeight = sectionElem.offsetHeight;
 
         window.addEventListener('scroll', throttle(250, () => {
             this.headerHandling();

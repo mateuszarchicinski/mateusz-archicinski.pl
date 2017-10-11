@@ -2,9 +2,9 @@
     About Me ~ Skills & Technologies
 
 .about-me-section
-    header.row.no-gutters.align-items-center.about-me-section-header
-        span.icon.icon-15.icon-desktop.about-me-section-icon
-        span.filling-line.beginning-xs
+    header.about-me-section-header
+        span(aria-hidden="true" class="icon icon-15 icon-desktop about-me-section-icon")
+        span.filling-line
         h3.heading.heading-4.text-center
             | #{data.mainWrapper.aboutMeWrapper.skillsTechnologies.h3[0]}
             br
@@ -13,60 +13,60 @@
     .about-me-section-body
         p.paragraph.beginning.text-center= data.mainWrapper.aboutMeWrapper.skillsTechnologies.p
         ul.row.align-content-center.align-items-center.justify-content-center.skills__list
-            li.skills-1-skill
-                span(aria-hidden="true" class="icon-img icon-html5 skills-1-skill-icon")
-                span.skills-1-skill-title HTML5
-            li.skills-1-skill
-                span(aria-hidden="true" class="icon-img icon-pug skills-1-skill-icon")
-                span.skills-1-skill-title Pug
-            li.skills-1-skill
-                span(aria-hidden="true" class="icon-img icon-json skills-1-skill-icon")
-                span.skills-1-skill-title JSON
-            li.skills-1-skill
-                span(aria-hidden="true" class="icon-img icon-css3 skills-1-skill-icon")
-                span.skills-1-skill-title CSS3
-            li.skills-1-skill
-                span(aria-hidden="true" class="icon-img icon-sass skills-1-skill-icon")
-                span.skills-1-skill-title Sass
-            li.skills-1-skill
-                span(aria-hidden="true" class="icon-img icon-bootstrap skills-1-skill-icon")
-                span.skills-1-skill-title Bootstrap
-            li.skills-1-skill
-                span(aria-hidden="true" class="icon-img icon-rwd skills-1-skill-icon")
-                span.skills-1-skill-title RWD
-            li.skills-1-skill
-                span(aria-hidden="true" class="icon-img icon-javascript skills-1-skill-icon")
-                span.skills-1-skill-title JavaScript
-            li.skills-1-skill
-                span(aria-hidden="true" class="icon-img icon-es6 skills-1-skill-icon")
-                span.skills-1-skill-title ES6
-            li.skills-1-skill
-                span(aria-hidden="true" class="icon-img icon-jquery skills-1-skill-icon")
-                span.skills-1-skill-title jQuery
-            li.skills-1-skill
-                span(aria-hidden="true" class="icon-img icon-angularjs skills-1-skill-icon")
-                span.skills-1-skill-title AngularJS
-            li.skills-1-skill
-                span(aria-hidden="true" class="icon-img icon-ajax skills-1-skill-icon")
-                span.skills-1-skill-title AJAX
-            li.skills-1-skill
-                span(aria-hidden="true" class="icon-img icon-nodejs skills-1-skill-icon")
-                span.skills-1-skill-title NodeJS
-            li.skills-1-skill
-                span(aria-hidden="true" class="icon-img icon-npm skills-1-skill-icon")
-                span.skills-1-skill-title NPM
-            li.skills-1-skill
-                span(aria-hidden="true" class="icon-img icon-bower skills-1-skill-icon")
-                span.skills-1-skill-title Bower
-            li.skills-1-skill
-                span(aria-hidden="true" class="icon-img icon-gulp skills-1-skill-icon")
-                span.skills-1-skill-title Gulp
-            li.skills-1-skill
-                span(aria-hidden="true" class="icon-img icon-wordpress skills-1-skill-icon")
-                span.skills-1-skill-title WordPress
-            li.skills-1-skill
-                span(aria-hidden="true" class="icon-img icon-git skills-1-skill-icon")
-                span.skills-1-skill-title Git
-            li.skills-1-skill
-                span(aria-hidden="true" class="icon-img icon-photoshop skills-1-skill-icon")
-                span.skills-1-skill-title Photoshop
+            li.skills-item
+                span(aria-hidden="true" class="icon-img icon-html5 skills-item-icon")
+                span.skills-item-title HTML5
+            li.skills-item
+                span(aria-hidden="true" class="icon-img icon-pug skills-item-icon")
+                span.skills-item-title Pug
+            li.skills-item
+                span(aria-hidden="true" class="icon-img icon-json skills-item-icon")
+                span.skills-item-title JSON
+            li.skills-item
+                span(aria-hidden="true" class="icon-img icon-css3 skills-item-icon")
+                span.skills-item-title CSS3
+            li.skills-item
+                span(aria-hidden="true" class="icon-img icon-sass skills-item-icon")
+                span.skills-item-title Sass
+            li.skills-item
+                span(aria-hidden="true" class="icon-img icon-bootstrap skills-item-icon")
+                span.skills-item-title Bootstrap
+            li.skills-item
+                span(aria-hidden="true" class="icon-img icon-rwd skills-item-icon")
+                span.skills-item-title RWD
+            li.skills-item
+                span(aria-hidden="true" class="icon-img icon-javascript skills-item-icon")
+                span.skills-item-title JavaScript
+            li.skills-item
+                span(aria-hidden="true" class="icon-img icon-es6 skills-item-icon")
+                span.skills-item-title ES6
+            li.skills-item
+                span(aria-hidden="true" class="icon-img icon-jquery skills-item-icon")
+                span.skills-item-title jQuery
+            li.skills-item
+                span(aria-hidden="true" class="icon-img icon-angularjs skills-item-icon")
+                span.skills-item-title AngularJS
+            li.skills-item
+                span(aria-hidden="true" class="icon-img icon-ajax skills-item-icon")
+                span.skills-item-title AJAX
+            li.skills-item
+                span(aria-hidden="true" class="icon-img icon-nodejs skills-item-icon")
+                span.skills-item-title NodeJS
+            li.skills-item
+                span(aria-hidden="true" class="icon-img icon-npm skills-item-icon")
+                span.skills-item-title NPM
+            li.skills-item
+                span(aria-hidden="true" class="icon-img icon-bower skills-item-icon")
+                span.skills-item-title Bower
+            li.skills-item
+                span(aria-hidden="true" class="icon-img icon-gulp skills-item-icon")
+                span.skills-item-title Gulp
+            li.skills-item
+                span(aria-hidden="true" class="icon-img icon-wordpress skills-item-icon")
+                span.skills-item-title WordPress
+            li.skills-item
+                span(aria-hidden="true" class="icon-img icon-git skills-item-icon")
+                span.skills-item-title Git
+            li.skills-item
+                span(aria-hidden="true" class="icon-img icon-photoshop skills-item-icon")
+                span.skills-item-title Photoshop

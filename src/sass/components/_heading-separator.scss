@@ -13,6 +13,7 @@ $heading-separator__line-white__background-color: $color__white !default;
 $heading-separator__line-primary__background-color: $primary-color !default;
 // .heading-separator__line.accent
 $heading-separator__line-accent__background-color: $accent-color !default;
+
 // .heading-separator__square
 $heading-separator__square__border: 1px solid $color__white !default;
 // .heading-separator__square.primary
@@ -20,10 +21,14 @@ $heading-separator__square-primary__background-color: $primary-color !default;
 
 
 .heading-separator {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    line-height: 0;
+    text-align: center;
     margin: 14px 0 18px;
+    &__line,
+    &__square {
+        display: inline-block;
+        vertical-align: middle;
+    }
     &__line {
         width: 30.80872%;
         height: 1px;

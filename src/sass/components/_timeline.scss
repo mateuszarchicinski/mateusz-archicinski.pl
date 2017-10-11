@@ -7,12 +7,15 @@
 $timeline-point__before__border: 2.5px solid $accent-color-light !default;
 // .timeline-point::after
 $timeline-point__after__background-color: $accent-color-light !default;
+
 // .timeline-point-period
 $timeline-point-period__font-size: 1.05em !default;
+
 // .timeline-point-title
-$timeline-point-title__font-family: "Raleway" !default;
+$timeline-point-title__font-family: 'Raleway' !default;
 $timeline-point-title__font-size: 1.1em !default;
 $timeline-point-title__font-weight: $font-weight__bolder !default;
+
 // .timeline-point-period & .timeline-point-description & .timeline-point-link
 $timeline-point-period-description-link__color: $secondary-text-color !default;
 // .timeline-point-period & .timeline-point-link
@@ -21,8 +24,7 @@ $timeline-point-period-link__font-weight: $font-weight__lighter !default;
 
 .timeline {
     &__list {
-        list-style: none;
-        @extend %no-padding-margin;
+        @extend %no-list;
     }
     &-point {
         position: relative;
@@ -45,7 +47,7 @@ $timeline-point-period-link__font-weight: $font-weight__lighter !default;
         }
         &::before,
         &::after {
-            content: "";
+            content: '';
             position: absolute;
             display: block;
         }
@@ -63,8 +65,8 @@ $timeline-point-period-link__font-weight: $font-weight__lighter !default;
             font-size: $timeline-point-title__font-size;
             font-weight: $timeline-point-title__font-weight;
         }
-        &-description,
         &-period,
+        &-description,
         &-link {
             color: $timeline-point-period-description-link__color;
         }

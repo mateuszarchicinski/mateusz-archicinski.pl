@@ -1,4 +1,6 @@
-import debounce from '../../node_modules/throttle-debounce/debounce';
+import {
+    throttle
+} from '../globals/globals';
 
 
 class Portfolio {
@@ -75,8 +77,8 @@ class Portfolio {
 
             this.filterBy(filterValue, !clickedElem.hasAttribute('data-filter-type') ? clickedElem.parentNode : clickedElem);
         });
-        
-        window.addEventListener('resize', debounce(500, () => {
+
+        window.addEventListener('resize', throttle(500, () => {
             this.filterBy(this.currFilterElem.getAttribute('data-filter-type'), this.currFilterElem, true);
         }));
     }
