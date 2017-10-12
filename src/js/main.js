@@ -410,54 +410,59 @@ var Services = function () {
 }();
 
 var Portfolio = function () {
-    function Portfolio(filtersSelector, itemsSelector, filterActiveCls, itemHideCls, itemShowCls) {
+    function Portfolio(filtersSelector, itemsSelector, filterActiveCls, itemShowCls, itemHideCls) {
         classCallCheck(this, Portfolio);
 
         this.filtersSelector = filtersSelector || '.portfolio-filters-js';
         this.itemsSelector = itemsSelector || '.portfolio-items-js';
         this.filterActiveClass = filterActiveCls || 'active';
-        this.itemHideClass = itemHideCls || 'hide';
         this.itemShowClass = itemShowCls || 'show';
+        this.itemHideClass = itemHideCls || 'hide';
 
-        this.currFilterElem = document.querySelector(this.filtersSelector + ' button[data-filter-type].' + this.filterActiveClass);
+        this.filters = document.querySelector(this.filtersSelector);
+        this.currFilter = document.querySelector(this.filtersSelector + ' button[data-filter-type].' + this.filterActiveClass);
         this.items = [].slice.call(document.querySelectorAll(this.itemsSelector + ' div[data-type]'));
     }
 
     createClass(Portfolio, [{
+        key: 'setCurrFilter',
+        value: function setCurrFilter(filter) {
+            if (!filter || this.currFilter === filter) return;
+
+            this.currFilter.classList.remove(this.filterActiveClass);
+            this.currFilter = filter;
+            this.currFilter.classList.add(this.filterActiveClass);
+        }
+    }, {
         key: 'filterBy',
-        value: function filterBy(filterValue, filterElem, force) {
+        value: function filterBy(filterValue) {
             var _this = this;
 
-            if (!force) {
-                if (!filterValue || !filterElem || this.currFilterElem === filterElem || !this.items) return;
-            }
-
-            if (this.currFilterElem) {
-                this.currFilterElem.classList.remove(this.filterActiveClass);
-            }
-
-            filterElem.classList.add(this.filterActiveClass);
-            this.currFilterElem = filterElem;
+            if (!filterValue && filterValue !== '' || filterValue === this.currFilterValue) return;
 
             var itemCounter = 0;
 
-            this.items.forEach(function (item, index) {
-                var typeValue = item.getAttribute('data-type');
+            this.currItems = this.items.filter(function (item) {
+                var condition = filterValue === item.getAttribute('data-type') || filterValue === '';
 
-                if (filterValue === typeValue || filterValue === 'all') {
+                if (condition) {
                     item.classList.remove(_this.itemHideClass);
                     item.classList.add(_this.itemShowClass);
-                    _this.addStyles(itemCounter, item);
+                    _this.addStyles(item, itemCounter);
                     itemCounter++;
                 } else {
                     item.classList.remove(_this.itemShowClass);
                     item.classList.add(_this.itemHideClass);
                 }
+
+                return condition;
             });
+
+            this.currFilterValue = filterValue;
         }
     }, {
         key: 'addStyles',
-        value: function addStyles(elemIndex, elem) {
+        value: function addStyles(elem, elemIndex) {
             elem = $(elem);
 
             var elemWidth = elem.outerWidth(),
@@ -471,7 +476,6 @@ var Portfolio = function () {
             });
 
             elem.css({
-                position: 'absolute',
                 left: elemWidth * (elemIndex % maxRowNum),
                 top: elemHeight * rowNum
             });
@@ -481,24 +485,38 @@ var Portfolio = function () {
         value: function init() {
             var _this2 = this;
 
-            var filters = document.querySelector(this.filtersSelector);
+            var filters = this.filters,
+                items = this.items,
+                currFilter = this.currFilter;
 
-            if (!filters || !this.items) return;
+            if (!filters || !items) return;
+
+            var currFilterValue = currFilter ? currFilter.getAttribute('data-filter-type') : '';
+
+            this.filterBy(currFilterValue);
 
             filters.addEventListener('click', function (e) {
-                var clickedElem = e.target,
-                    filterValue = clickedElem.getAttribute('data-filter-type') || clickedElem.parentNode.getAttribute('data-filter-type');
+                var clickedElem = e.target;
+                var filter = null;
 
-                if (!filterValue) {
-                    e.stopPropagation();
-                    return;
+                if (clickedElem.hasAttribute('data-filter-type')) {
+                    filter = clickedElem;
                 }
 
-                _this2.filterBy(filterValue, !clickedElem.hasAttribute('data-filter-type') ? clickedElem.parentNode : clickedElem);
+                if (clickedElem.parentNode.hasAttribute('data-filter-type')) {
+                    filter = clickedElem.parentNode;
+                }
+
+                if (!filter) return;
+
+                _this2.setCurrFilter(filter);
+                _this2.filterBy(filter.getAttribute('data-filter-type'));
             });
 
             window.addEventListener('resize', throttle$1(500, function () {
-                _this2.filterBy(_this2.currFilterElem.getAttribute('data-filter-type'), _this2.currFilterElem, true);
+                _this2.currItems.forEach(function (item, index) {
+                    _this2.addStyles(item, index);
+                });
             }));
         }
     }]);
@@ -551,40 +569,37 @@ var contactForm = function () {
         classCallCheck(this, contactForm);
 
         this.formSelector = formSelector || '.contact-form-js';
-        this.initStatus = false;
     }
 
     createClass(contactForm, [{
         key: 'init',
         value: function init() {
-            if (this.initStatus) return;
+            if (this.formElem) return;
 
             var formElem = this.formElem = document.querySelector(this.formSelector),
-                inputElems = [].slice.call(document.querySelectorAll(this.formSelector + ' input, ' + this.formSelector + ' textarea'));
+                inputElems = this.inputElems = [].slice.call(document.querySelectorAll(this.formSelector + ' input, ' + this.formSelector + ' textarea'));
 
-            if (formElem) {
-                formElem.addEventListener('submit', function (e) {
-                    e.preventDefault();
+            if (!formElem || !inputElems) return;
 
-                    if (formElem.checkValidity()) {
-                        formElem.classList.add('contact-form-loading');
+            formElem.addEventListener('submit', function (e) {
+                e.preventDefault();
 
-                        setTimeout(function () {
-                            formElem.classList.remove('contact-form-loading');
+                if (formElem.checkValidity()) {
+                    formElem.classList.add('contact-form-loading');
 
-                            modalInstance.open();
-                        }, 2500);
+                    setTimeout(function () {
+                        formElem.classList.remove('contact-form-loading');
 
-                        if (inputElems.length > 0) {
-                            inputElems.forEach(function (item) {
-                                item.value = '';
-                            });
-                        }
+                        modalInstance.open();
+                    }, 2500);
+
+                    if (inputElems.length > 0) {
+                        inputElems.forEach(function (item) {
+                            item.value = '';
+                        });
                     }
-                });
-            }
-
-            this.initStatus = true;
+                }
+            });
         }
     }]);
     return contactForm;

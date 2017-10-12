@@ -19,7 +19,7 @@ section(id="portfolio" class="section portfolio-wrapper")
                     each value, property in data.mainWrapper.portfolioWrapper.projects.categories
                         if property === "all"
                             li
-                                button(data-filter-type=property class="btn portfolio-filters__button active")
+                                button(data-filter-type class="btn portfolio-filters__button active")
                                     span= value
                         else
                             li
@@ -30,13 +30,13 @@ section(id="portfolio" class="section portfolio-wrapper")
                         if property !== "categories"
                             each project in obj
                                 div(data-type=property class="col-lg-4 col-md-6 col-12 portfolio-item")
-                                    figure(tabindex="0" class="portfolio-item__figure")
-                                        img(src=project.imgSrc alt=project.imgAlt class="portfolio-item__img")
-                                        figcaption.portfolio-item__figcaption.text-center
-                                            h3.heading.heading-5.portfolio-item-title= project.title
+                                    div(tabindex="0" class="single-project-wrapper")
+                                        img(src=project.imgSrc alt=project.imgAlt class="single-project__img")
+                                        .single-project-content.text-center(aria-hidden="false")
+                                            h3.heading.heading-5.single-project-title= project.title
                                             .heading-separator
                                                 .heading-separator__line.heading-separator__line-reduced-2.heading-separator__line-bolded-3.primary
-                                            p.paragraph.ending.portfolio-item-description!= project.description
-                                            .portfolio-item-buttons
+                                            p.paragraph.ending.single-project-description!= project.description
+                                            .single-project-buttons
                                                 a(href=project.buttons[0].link class="btn to-top color-white")= project.buttons[0].value
                                                 a(href=project.buttons[1].link class="btn to-top btn-primary")= project.buttons[1].value

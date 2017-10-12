@@ -8,21 +8,13 @@ $portfolio-filters__button__font-family: 'Raleway' !default;
 $portfolio-filters__button__font-size: 0.95em !default;
 $portfolio-filters__button__font-weight: $font-weight__normal !default;
 $portfolio-filters__button__color: $secondary-text-color !default;
+
 // .portfolio-filters__button:hover
 $portfolio-filters__button__hover__color: $primary-color !default;
+
 // .portfolio-filters__button.active
 $portfolio-filters__button__active__color: $primary-color !default;
 $portfolio-filters__button__active__border-color: $primary-color !default;
-
-
-// .portfolio-item__figure::after
-$portfolio-item__figure__after__background-color: rgba($color__black-1, 0.15) !default;
-// .portfolio-item__figure::hover::after
-$portfolio-item__figure__hover__after__background-color: rgba($color__black-1, 0.75) !default;
-// .portfolio-item-title & .portfolio-item-description
-$portfolio-item-title-description__color: $color__white !default;
-// .portfolio-item-buttons > .btn
-$portfolio-item-buttons__btn__font-size: 0.9em !default;
 
 
 .portfolio {
@@ -31,9 +23,8 @@ $portfolio-item-buttons__btn__font-size: 0.9em !default;
     }
     &-filters {
         &__list {
-            list-style: none;
+            @extend %no-list;
             padding: 15px 0;
-            margin: 0;
         }
         &__button {
             font-family: $portfolio-filters__button__font-family;
@@ -55,97 +46,32 @@ $portfolio-item-buttons__btn__font-size: 0.9em !default;
         }
     }
     &-items {
-        min-height: 250px;
+        height: 0;
         position: relative;
+        transform: perspective(1px) translateZ(0);
+        overflow: hidden;
         transition: 0.3s height ease-in-out;
     }
     &-item {
-        //width: 33.33333%;
-        height: 250px;
-        position: relative;
+        height: 252.5px;
+        position: absolute;
+        left: 0;
+        top: 0;
         backface-visibility: hidden;
         padding: 10px;
-        transition-delay: 0;
+        transition-delay: 0s;
         transition-duration: 0.3s;
-        transition-property: left, top, visibility, transform, opacity;
+        transition-property: left, top, z-index, transform, visibility, opacity, filter;
         transition-timing-function: ease-in-out;
-        &__figure {
-            position: relative;
-            overflow: hidden;
-            margin: 0;
-            &::after {
-                content: '';
-                background-color: $portfolio-item__figure__after__background-color;
-                display: block;
-                transition: 0.3s background-color ease-in-out;
-            }
-            &:focus::after,
-            &:hover::after {
-                background-color: $portfolio-item__figure__hover__after__background-color;
-            }
-        }
-        &__img {
-            z-index: -1;
-            object-fit: cover;
-            transition: 0.3s transform ease-in-out;
-        }
-        &__figure:focus &__img,
-        &__figure:hover &__img {
-            transform: scale(1.25);
-        }
-        &__figcaption {
-            z-index: 1;
-            visibility: hidden;
-            padding: 25px;
-            @include opacity(0);
-            transition: 0.3s opacity ease-in-out, 0.3s visibility ease-in-out;
-        }
-        &__figure:focus &__figcaption,
-        &__figure:hover &__figcaption {
-            visibility: visible;
-            @include opacity(1);
-        }
-        &__figure,
-        &__figure::after,
-        &__img,
-        &__figcaption {
-            width: 100%;
-            height: 100%;
-        }
-        &__figure::after,
-        &__figcaption {
-            position: absolute;
-            left: 0;
-            top: 0;
-        }
-        &-title {
-            margin-top: 0.5em;
-        }
-        &-description {
-            max-height: 38px;
-            overflow: hidden;
-            white-space: nowrap;
-            text-overflow: ellipsis;
-        }
-        &-title,
-        &-description {
-            color: $portfolio-item-title-description__color;
-        }
-        &-buttons {
-            margin-top: 25px;
-            & > .btn {
-                width: calc(50% - 10px);
-                font-size: $portfolio-item-buttons__btn__font-size;
-                margin: 0 5px;
-            }
-        }
         &.hide {
+            z-index: -1;
+            @include transform(scale(0));
             visibility: hidden;
-            transform: scale(0);
             @include opacity(0);
         }
         &.show {
             z-index: 1;
+            @include transform(scale(1));
             visibility: visible;
             @include opacity(1);
         }

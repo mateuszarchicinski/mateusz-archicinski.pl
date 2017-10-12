@@ -3,8 +3,100 @@
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
 
 
+// .single-project-wrapper::after
+$single-project-wrapper__after__background-color: rgba($color__black-1, 0.15) !default;
+// .single-project-wrapper::hover::after
+$single-project-wrapper__hover__after__background-color: rgba($color__black-1, 0.75) !default;
+
+// .single-project-title & .single-project-description
+$single-project-title-description__color: $color__white !default;
+
+// .single-project-buttons > .btn
+$single-project-buttons__btn__font-size: 0.89999em !default;
+$single-project-buttons__btn__font-size-lg: 0.72864em !default;
+
+
 .single-project {
+    &-wrapper {
+        position: relative;
+        overflow: hidden;
+        @extend %no-padding-margin;
+        &::after {
+            content: '';
+            background-color: $single-project-wrapper__after__background-color;
+            display: block;
+            transition: 0.3s background-color ease-in-out 0s;
+        }
+        &:focus::after,
+        &:hover::after {
+            background-color: $single-project-wrapper__hover__after__background-color;
+        }
+    }
+    
     &__img {
-        
+        z-index: -1;
+        object-fit: cover;
+        transition: 0.3s transform ease-in-out 0s;
+    }
+    &-wrapper:focus &__img,
+    &-wrapper:hover &__img {
+        transform: scale(1.25);
+    }
+    
+    &-content {
+        z-index: 1;
+        visibility: hidden;
+        padding: 25px;
+        @include opacity(0);
+        transition-delay: 0s;
+        transition-duration: 0.3s;
+        transition-property: visibility, opacity, filter;
+        transition-timing-function: ease-in-out;
+    }
+    &-wrapper:focus &-content,
+    &-wrapper:hover &-content {
+        visibility: visible;
+        @include opacity(1);
+    }
+    
+    &-wrapper,
+    &-wrapper::after,
+    &__img,
+    &-content {
+        width: 100%;
+        height: 100%;
+    }
+
+    &-wrapper::after,
+    &-content {
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+    
+    &-title {
+        margin-top: 0.5em;
+    }
+    
+    &-description {
+        max-height: 38px;
+        @extend %ellipsis;
+    }
+    
+    &-title,
+    &-description {
+        color: $single-project-title-description__color;
+    }
+    
+    &-buttons {
+        margin-top: 25px;
+        & > .btn {
+            width: calc(50% - 10px);
+            font-size: $single-project-buttons__btn__font-size;
+            margin: 0 5px;
+            @include media-breakpoint-down(lg) {
+                font-size: $single-project-buttons__btn__font-size-lg; // 0.72864em;
+            }
+        }
     }
 }

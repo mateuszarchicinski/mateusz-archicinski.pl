@@ -1,48 +1,49 @@
-import {
-    throttle
-} from '../globals/globals';
+import throttle from '../functions/throttle';
 
 
 class Portfolio {
-    constructor(filtersSelector, itemsSelector, filterActiveCls, itemHideCls, itemShowCls) {
+    constructor(filtersSelector, itemsSelector, filterActiveCls, itemShowCls, itemHideCls) {
         this.filtersSelector = filtersSelector || '.portfolio-filters-js';
         this.itemsSelector = itemsSelector || '.portfolio-items-js';
         this.filterActiveClass = filterActiveCls || 'active';
-        this.itemHideClass = itemHideCls || 'hide';
         this.itemShowClass = itemShowCls || 'show';
+        this.itemHideClass = itemHideCls || 'hide';
 
-        this.currFilterElem = document.querySelector(this.filtersSelector + ' button[data-filter-type].' + this.filterActiveClass);
+        this.filters = document.querySelector(this.filtersSelector);
+        this.currFilter = document.querySelector(this.filtersSelector + ' button[data-filter-type].' + this.filterActiveClass);
         this.items = [].slice.call(document.querySelectorAll(this.itemsSelector + ' div[data-type]'));
     }
-    filterBy(filterValue, filterElem, force) {
-        if (!force) {
-            if (!filterValue || !filterElem || this.currFilterElem === filterElem || !this.items) return;
-        }
+    setCurrFilter(filter) {
+        if (!filter || this.currFilter === filter) return;
 
-        if (this.currFilterElem) {
-            this.currFilterElem.classList.remove(this.filterActiveClass);
-        }
-
-        filterElem.classList.add(this.filterActiveClass);
-        this.currFilterElem = filterElem;
+        this.currFilter.classList.remove(this.filterActiveClass);
+        this.currFilter = filter;
+        this.currFilter.classList.add(this.filterActiveClass);
+    }
+    filterBy(filterValue) {
+        if ((!filterValue && filterValue !== '') || filterValue === this.currFilterValue) return;
 
         let itemCounter = 0;
 
-        this.items.forEach((item, index) => {
-            const typeValue = item.getAttribute('data-type');
+        this.currItems = this.items.filter((item) => {
+            const condition = filterValue === item.getAttribute('data-type') || filterValue === '';
 
-            if (filterValue === typeValue || filterValue === 'all') {
+            if (condition) {
                 item.classList.remove(this.itemHideClass);
                 item.classList.add(this.itemShowClass);
-                this.addStyles(itemCounter, item);
+                this.addStyles(item, itemCounter);
                 itemCounter++;
             } else {
                 item.classList.remove(this.itemShowClass);
                 item.classList.add(this.itemHideClass);
             }
+
+            return condition;
         });
+
+        this.currFilterValue = filterValue;
     }
-    addStyles(elemIndex, elem) {
+    addStyles(elem, elemIndex) {
         elem = $(elem);
 
         const elemWidth = elem.outerWidth(),
@@ -56,30 +57,43 @@ class Portfolio {
         });
 
         elem.css({
-            position: 'absolute',
             left: elemWidth * (elemIndex % maxRowNum),
             top: elemHeight * rowNum
         });
     }
     init() {
-        const filters = document.querySelector(this.filtersSelector);
+        const filters = this.filters,
+            items = this.items,
+            currFilter = this.currFilter;
 
-        if (!filters || !this.items) return;
+        if (!filters || !items) return;
+
+        const currFilterValue = currFilter ? currFilter.getAttribute('data-filter-type') : '';
+
+        this.filterBy(currFilterValue);
 
         filters.addEventListener('click', (e) => {
-            const clickedElem = e.target,
-                filterValue = clickedElem.getAttribute('data-filter-type') || clickedElem.parentNode.getAttribute('data-filter-type');
+            const clickedElem = e.target;
+            let filter = null;
 
-            if (!filterValue) {
-                e.stopPropagation();
-                return;
+            if (clickedElem.hasAttribute('data-filter-type')) {
+                filter = clickedElem;
             }
 
-            this.filterBy(filterValue, !clickedElem.hasAttribute('data-filter-type') ? clickedElem.parentNode : clickedElem);
+            if (clickedElem.parentNode.hasAttribute('data-filter-type')) {
+                filter = clickedElem.parentNode;
+            }
+
+            if (!filter) return;
+
+            this.setCurrFilter(filter);
+            this.filterBy(filter.getAttribute('data-filter-type'));
         });
 
         window.addEventListener('resize', throttle(500, () => {
-            this.filterBy(this.currFilterElem.getAttribute('data-filter-type'), this.currFilterElem, true);
+            this.currItems.forEach((item, index) => {
+                this.addStyles(item, index);
+            });
         }));
     }
 };

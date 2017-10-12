@@ -1359,9 +1359,11 @@ html {
 .side-nav__list,
 .language-settings__list,
 .about-me-list,
+.portfolio-filters__list,
 .timeline__list,
 .skills__list,
-.contact-info__list {
+.contact-info__list,
+.single-project-wrapper {
   padding: 0;
   margin: 0; }
 
@@ -1370,6 +1372,7 @@ html {
 .side-nav__list,
 .language-settings__list,
 .about-me-list,
+.portfolio-filters__list,
 .timeline__list,
 .skills__list {
   list-style: none; }
@@ -1393,7 +1396,8 @@ html {
 .ellipsis,
 .main-footer__list > li,
 .btn,
-.btn > span {
+.btn > span,
+.single-project-description {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis; }
@@ -2568,9 +2572,7 @@ body {
   padding-bottom: 153px; }
 
 .portfolio-filters__list {
-  list-style: none;
-  padding: 15px 0;
-  margin: 0; }
+  padding: 15px 0; }
 
 .portfolio-filters__button {
   font-family: "Raleway";
@@ -2588,90 +2590,43 @@ body {
     border-color: #f44336; }
 
 .portfolio-items {
-  min-height: 250px;
+  height: 0;
   position: relative;
+  -webkit-transform: perspective(1px) translateZ(0);
+          transform: perspective(1px) translateZ(0);
+  overflow: hidden;
   transition: 0.3s height ease-in-out; }
 
 .portfolio-item {
-  height: 250px;
-  position: relative;
+  height: 252.5px;
+  position: absolute;
+  left: 0;
+  top: 0;
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
   padding: 10px;
-  transition-delay: 0;
+  transition-delay: 0s;
   transition-duration: 0.3s;
-  transition-property: left, top, visibility, opacity, -webkit-transform;
-  transition-property: left, top, visibility, transform, opacity;
-  transition-property: left, top, visibility, transform, opacity, -webkit-transform;
+  transition-property: left, top, z-index, visibility, opacity, -webkit-transform, -webkit-filter;
+  transition-property: left, top, z-index, transform, visibility, opacity, filter;
+  transition-property: left, top, z-index, transform, visibility, opacity, filter, -webkit-transform, -webkit-filter;
   transition-timing-function: ease-in-out; }
-  .portfolio-item__figure {
-    position: relative;
-    overflow: hidden;
-    margin: 0; }
-    .portfolio-item__figure::after {
-      content: '';
-      background-color: rgba(0, 0, 0, 0.15);
-      display: block;
-      transition: 0.3s background-color ease-in-out; }
-    .portfolio-item__figure:focus::after, .portfolio-item__figure:hover::after {
-      background-color: rgba(0, 0, 0, 0.75); }
-  .portfolio-item__img {
-    z-index: -1;
-    object-fit: cover;
-    transition: 0.3s -webkit-transform ease-in-out;
-    transition: 0.3s transform ease-in-out;
-    transition: 0.3s transform ease-in-out, 0.3s -webkit-transform ease-in-out; }
-  .portfolio-item__figure:focus .portfolio-item__img,
-  .portfolio-item__figure:hover .portfolio-item__img {
-    -webkit-transform: scale(1.25);
-        -ms-transform: scale(1.25);
-            transform: scale(1.25); }
-  .portfolio-item__figcaption {
-    z-index: 1;
-    visibility: hidden;
-    padding: 25px;
-    opacity: 0;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-    filter: alpha(opacity=0);
-    transition: 0.3s opacity ease-in-out, 0.3s visibility ease-in-out; }
-  .portfolio-item__figure:focus .portfolio-item__figcaption,
-  .portfolio-item__figure:hover .portfolio-item__figcaption {
-    visibility: visible;
-    opacity: 1;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
-    filter: alpha(opacity=100); }
-  .portfolio-item__figure, .portfolio-item__figure::after, .portfolio-item__img, .portfolio-item__figcaption {
-    width: 100%;
-    height: 100%; }
-  .portfolio-item__figure::after, .portfolio-item__figcaption {
-    position: absolute;
-    left: 0;
-    top: 0; }
-  .portfolio-item-title {
-    margin-top: 0.5em; }
-  .portfolio-item-description {
-    max-height: 38px;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis; }
-  .portfolio-item-title, .portfolio-item-description {
-    color: #fff; }
-  .portfolio-item-buttons {
-    margin-top: 25px; }
-    .portfolio-item-buttons > .btn {
-      width: calc(50% - 10px);
-      font-size: 0.9em;
-      margin: 0 5px; }
   .portfolio-item.hide {
-    visibility: hidden;
+    z-index: -1;
     -webkit-transform: scale(0);
         -ms-transform: scale(0);
             transform: scale(0);
+    will-change: transform;
+    visibility: hidden;
     opacity: 0;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
     filter: alpha(opacity=0); }
   .portfolio-item.show {
     z-index: 1;
+    -webkit-transform: scale(1);
+        -ms-transform: scale(1);
+            transform: scale(1);
+    will-change: transform;
     visibility: visible;
     opacity: 1;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
@@ -2939,6 +2894,79 @@ body {
     text-align: center; }
   .skills-item-icon, .skills-item-title {
     display: block; }
+
+.single-project-wrapper {
+  position: relative;
+  overflow: hidden; }
+  .single-project-wrapper::after {
+    content: '';
+    background-color: rgba(0, 0, 0, 0.15);
+    display: block;
+    transition: 0.3s background-color ease-in-out 0s; }
+  .single-project-wrapper:focus::after, .single-project-wrapper:hover::after {
+    background-color: rgba(0, 0, 0, 0.75); }
+
+.single-project__img {
+  z-index: -1;
+  object-fit: cover;
+  transition: 0.3s -webkit-transform ease-in-out 0s;
+  transition: 0.3s transform ease-in-out 0s;
+  transition: 0.3s transform ease-in-out 0s, 0.3s -webkit-transform ease-in-out 0s; }
+
+.single-project-wrapper:focus .single-project__img,
+.single-project-wrapper:hover .single-project__img {
+  -webkit-transform: scale(1.25);
+      -ms-transform: scale(1.25);
+          transform: scale(1.25); }
+
+.single-project-content {
+  z-index: 1;
+  visibility: hidden;
+  padding: 25px;
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+  transition-delay: 0s;
+  transition-duration: 0.3s;
+  transition-property: visibility, opacity, -webkit-filter;
+  transition-property: visibility, opacity, filter;
+  transition-property: visibility, opacity, filter, -webkit-filter;
+  transition-timing-function: ease-in-out; }
+
+.single-project-wrapper:focus .single-project-content,
+.single-project-wrapper:hover .single-project-content {
+  visibility: visible;
+  opacity: 1;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  filter: alpha(opacity=100); }
+
+.single-project-wrapper, .single-project-wrapper::after, .single-project__img, .single-project-content {
+  width: 100%;
+  height: 100%; }
+
+.single-project-wrapper::after, .single-project-content {
+  position: absolute;
+  left: 0;
+  top: 0; }
+
+.single-project-title {
+  margin-top: 0.5em; }
+
+.single-project-description {
+  max-height: 38px; }
+
+.single-project-title, .single-project-description {
+  color: #fff; }
+
+.single-project-buttons {
+  margin-top: 25px; }
+  .single-project-buttons > .btn {
+    width: calc(50% - 10px);
+    font-size: 0.89999em;
+    margin: 0 5px; }
+    @media (max-width: 1199px) {
+      .single-project-buttons > .btn {
+        font-size: 0.72864em; } }
 
 .white-frame {
   background-color: #fff; }

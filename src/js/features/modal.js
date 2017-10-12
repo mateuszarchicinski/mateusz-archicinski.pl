@@ -23,6 +23,4 @@ class Modal {
     }
 };
 
-export {
-    Modal
-};
+export default Modal;
