@@ -450,19 +450,19 @@
                 <form class="contact-form__form contact-form-js" action="#" autocomplete="off" method="post" name="contactForm">
                   <h3 class="heading heading-4 contact-form-title text-center">Formularz kontaktowy</h3>
                   <div class="contact-form__input-container">
-                    <label class="contact-form__label" for="contactForm[name]">Imię i nazwisko / Nazwa firmy<span class="color-primary"> *</span></label>
+                    <label class="contact-form__label" for="contactForm[name]">Imię i nazwisko / Nazwa firmy<span class="contact-form__input-required" aria-label="To pole jest wymagane"></span></label>
                     <input class="contact-form__input" id="contactForm[name]" name="name" type="text" required maxlength="150">
                   </div>
                   <div class="contact-form__input-container">
-                    <label class="contact-form__label" for="contactForm[email]">E-mail<span class="color-primary"> *</span></label>
+                    <label class="contact-form__label" for="contactForm[email]">E-mail<span class="contact-form__input-required" aria-label="To pole jest wymagane"></span></label>
                     <input class="contact-form__input" id="contactForm[email]" name="email" type="email" required maxlength="150">
                   </div>
                   <div class="contact-form__input-container">
-                    <label class="contact-form__label" for="contactForm[subject]">Temat<span class="color-primary"> *</span></label>
+                    <label class="contact-form__label" for="contactForm[subject]">Temat<span class="contact-form__input-required" aria-label="To pole jest wymagane"></span></label>
                     <input class="contact-form__input" id="contactForm[subject]" name="subject" type="text" required maxlength="150">
                   </div>
                   <div class="contact-form__input-container">
-                    <label class="contact-form__label" for="contactForm[message]">Treść wiadomości<span class="color-primary"> *</span></label>
+                    <label class="contact-form__label" for="contactForm[message]">Treść wiadomości<span class="contact-form__input-required" aria-label="To pole jest wymagane"></span></label>
                     <textarea class="contact-form__textarea" id="contactForm[message]" name="message" required maxlength="1500"></textarea>
                   </div>
                   <button class="btn to-top btn-primary contact-form__button" type="submit"><span>Wyślij wiadomość</span></button>
@@ -525,7 +525,7 @@
             <div class="heading-separator">
               <div class="heading-separator__line heading-separator__line-reduced-2 heading-separator__line-bolded-3 accent"></div>
             </div>
-            <div class="row align-content-center align-items-center justify-content-center main-footer-findme-body"><a class="btn btn-square btn-square-48 to-top btn-codepen color-white" href="http://codepen.io/mateuszarchicinski" target="_blank" aria-label="Przejdź do Codepen Mateusz Archiciński"><span class="icon icon-codepen" aria-hidden="true"></span></a><a class="btn btn-square btn-square-48 to-top btn-facebook color-white" href="https://www.facebook.com/mateusz.archicinski" target="_blank" aria-label="Przejdź do Facebook Mateusz Archiciński"><span class="icon icon-facebook" aria-hidden="true"></span></a><a class="btn btn-square btn-square-48 to-top btn-github color-white" href="https://github.com/mateuszarchicinski" target="_blank" aria-label="Przejdź do Github Mateusz Archiciński"><span class="icon icon-github" aria-hidden="true"></span></a><a class="btn btn-square btn-square-48 to-top btn-gplus color-white" href="https://plus.google.com/111077912668591105452" target="_blank" aria-label="Przejdź do Google+ Mateusz Archiciński"><span class="icon icon-gplus" aria-hidden="true"></span></a><a class="btn btn-square btn-square-48 to-top btn-linkedin color-white" href="https://pl.linkedin.com/in/mateuszarchicinski" target="_blank" aria-label="Przejdź do Linkedin Mateusz Archiciński"><span class="icon icon-linkedin" aria-hidden="true"></span></a><a class="btn btn-square btn-square-48 to-top btn-twitter color-white" href="https://twitter.com/marchicinski" target="_blank" aria-label="Przejdź do Twitter Mateusz Archiciński"><span class="icon icon-twitter" aria-hidden="true"></span></a></div>
+            <div class="main-footer-findme-body"><a class="btn btn-square btn-square-48 to-top btn-codepen color-white" href="http://codepen.io/mateuszarchicinski" target="_blank" aria-label="Przejdź do Codepen Mateusza Archicińskiego"><span class="icon icon-codepen" aria-hidden="true"></span></a><a class="btn btn-square btn-square-48 to-top btn-facebook color-white" href="https://www.facebook.com/mateusz.archicinski" target="_blank" aria-label="Przejdź do Facebook Mateusza Archicińskiego"><span class="icon icon-facebook" aria-hidden="true"></span></a><a class="btn btn-square btn-square-48 to-top btn-github color-white" href="https://github.com/mateuszarchicinski" target="_blank" aria-label="Przejdź do Github Mateusza Archicińskiego"><span class="icon icon-github" aria-hidden="true"></span></a><a class="btn btn-square btn-square-48 to-top btn-gplus color-white" href="https://plus.google.com/111077912668591105452" target="_blank" aria-label="Przejdź do Google+ Mateusza Archicińskiego"><span class="icon icon-gplus" aria-hidden="true"></span></a><a class="btn btn-square btn-square-48 to-top btn-linkedin color-white" href="https://pl.linkedin.com/in/mateuszarchicinski" target="_blank" aria-label="Przejdź do Linkedin Mateusza Archicińskiego"><span class="icon icon-linkedin" aria-hidden="true"></span></a><a class="btn btn-square btn-square-48 to-top btn-twitter color-white" href="https://twitter.com/marchicinski" target="_blank" aria-label="Przejdź do Twitter Mateusza Archicińskiego"><span class="icon icon-twitter" aria-hidden="true"></span></a></div>
           </div>
           <div class="col-12">
             <p class="main-footer-copyright"><small>&#169; 2015 - 2017 Mateusz Archiciński - Wszelkie prawa zastrzeżone</small></p>
@@ -533,9 +533,19 @@
         </div>
       </div>
     </footer>
-    <div class="modal-wrapper contact-form-success-js" role="dialog">
+    <div class="modal-wrapper services-info-js" role="dialog" tabindex="-1">
       <div class="modal-content modal-content-420">
-        <p class="paragraph text-center"><strong>Powodzenie!</strong> Twoja wiadomość została wysłana!</p>
+        <p class="paragraph text-center"><strong>Informacja:</strong> Obecnie pracuję nad opisem pakietów usług. Jeśli jeszcze nie skończyłem śmiało napisz do mnie lub zadzwoń aby dowiedzieć się więcej.</p>
+      </div>
+    </div>
+    <div class="modal-wrapper contact-form-success-js" role="dialog" tabindex="-1">
+      <div class="modal-content modal-content-420">
+        <p class="paragraph text-center"><strong>Powodzenie:</strong> Twoja wiadomość została wysłana!</p>
+      </div>
+    </div>
+    <div class="modal-wrapper contact-form-error-js" role="dialog" tabindex="-1">
+      <div class="modal-content modal-content-420">
+        <p class="paragraph text-center"><strong>Błąd:</strong> Nie udało się wysłać twojej wiadomości. Spróbuj ponownie później.</p>
       </div>
     </div>
     <!--JavaScript Sources-->

@@ -169,7 +169,7 @@ var mainHeader = function () {
 
             if (!headerElem || !sectionElem) return;
 
-            window.addEventListener('scroll', throttle$1(250, function () {
+            window.addEventListener('scroll', throttle$1(150, function () {
                 _this.headerHandling();
             }));
         }
@@ -356,16 +356,54 @@ var spyScrolling = function () {
 
             this.refresh();
 
-            window.addEventListener('scroll', throttle$1(250, function () {
+            window.addEventListener('scroll', throttle$1(150, function () {
                 _this2.refresh();
             }));
 
-            window.addEventListener('resize', throttle$1(500, function () {
+            window.addEventListener('resize', throttle$1(750, function () {
                 _this2.refresh();
             }));
         }
     }]);
     return spyScrolling;
+}();
+
+var Modal = function () {
+    function Modal(modalSelector) {
+        classCallCheck(this, Modal);
+
+        this.modalSelector = modalSelector || '.modal-js';
+    }
+
+    createClass(Modal, [{
+        key: 'open',
+        value: function open(time) {
+            var _this = this;
+
+            this.modalElem.classList.add('open');
+            setTimeout(function () {
+                _this.modalElem.focus();
+            }, 50);
+            setTimeout(function () {
+                _this.close();
+            }, time || 5000);
+        }
+    }, {
+        key: 'close',
+        value: function close() {
+            this.modalElem.classList.remove('open');
+        }
+    }, {
+        key: 'init',
+        value: function init() {
+            if (this.modalElem) return;
+
+            var modalElem = this.modalElem = document.querySelector(this.modalSelector);
+
+            if (!modalElem) return;
+        }
+    }]);
+    return Modal;
 }();
 
 var Services = function () {
@@ -404,6 +442,13 @@ var Services = function () {
                 owlCaruselElem.trigger('stop.owl.autoplay');
                 owlCaruselElem.trigger('play.owl.autoplay');
             }, false);
+
+            var servicesInfo = new Modal('.services-info-js');
+            servicesInfo.init();
+
+            owlCaruselElem.on('click', 'button.services-item-button-js', function () {
+                servicesInfo.open();
+            });
         }
     }]);
     return Services;
@@ -422,25 +467,39 @@ var Portfolio = function () {
         this.filters = document.querySelector(this.filtersSelector);
         this.currFilter = document.querySelector(this.filtersSelector + ' button[data-filter-type].' + this.filterActiveClass);
         this.items = [].slice.call(document.querySelectorAll(this.itemsSelector + ' div[data-type]'));
+        this.currItems = [];
     }
 
     createClass(Portfolio, [{
+        key: 'getEventFilter',
+        value: function getEventFilter(elem) {
+            if (elem.hasAttribute('data-filter-type')) return elem;
+            if (elem.parentNode.hasAttribute('data-filter-type')) return elem.parentNode;
+
+            return null;
+        }
+    }, {
         key: 'setCurrFilter',
         value: function setCurrFilter(filter) {
-            if (!filter || this.currFilter === filter) return;
-
-            this.currFilter.classList.remove(this.filterActiveClass);
+            if (this.currFilter !== null) this.currFilter.classList.remove(this.filterActiveClass);
             this.currFilter = filter;
             this.currFilter.classList.add(this.filterActiveClass);
         }
     }, {
         key: 'filterBy',
-        value: function filterBy(filterValue) {
+        value: function filterBy(filter, force) {
             var _this = this;
 
-            if (!filterValue && filterValue !== '' || filterValue === this.currFilterValue) return;
+            if ((filter === null || filter === this.currFilter) && !force) return;
 
-            var itemCounter = 0;
+            // Default filter values
+            var filterValue = '',
+                itemCounter = 0;
+
+            if (filter !== undefined) {
+                this.setCurrFilter(filter);
+                filterValue = filter.getAttribute('data-filter-type');
+            }
 
             this.currItems = this.items.filter(function (item) {
                 var condition = filterValue === item.getAttribute('data-type') || filterValue === '';
@@ -457,8 +516,6 @@ var Portfolio = function () {
 
                 return condition;
             });
-
-            this.currFilterValue = filterValue;
         }
     }, {
         key: 'addStyles',
@@ -491,26 +548,14 @@ var Portfolio = function () {
 
             if (!filters || !items) return;
 
-            var currFilterValue = currFilter ? currFilter.getAttribute('data-filter-type') : '';
-
-            this.filterBy(currFilterValue);
+            this.filterBy(currFilter || undefined, true);
 
             filters.addEventListener('click', function (e) {
-                var clickedElem = e.target;
-                var filter = null;
-
-                if (clickedElem.hasAttribute('data-filter-type')) {
-                    filter = clickedElem;
-                }
-
-                if (clickedElem.parentNode.hasAttribute('data-filter-type')) {
-                    filter = clickedElem.parentNode;
-                }
+                var filter = _this2.getEventFilter(e.target);
 
                 if (!filter) return;
 
-                _this2.setCurrFilter(filter);
-                _this2.filterBy(filter.getAttribute('data-filter-type'));
+                _this2.filterBy(filter);
             });
 
             window.addEventListener('resize', throttle$1(500, function () {
@@ -523,63 +568,82 @@ var Portfolio = function () {
     return Portfolio;
 }();
 
-var Modal = function () {
-    function Modal(modalSelector) {
-        classCallCheck(this, Modal);
-
-        this.modalSelector = modalSelector || '.modal-js';
-        this.initStatus = false;
-    }
-
-    createClass(Modal, [{
-        key: 'open',
-        value: function open(time) {
-            var _this = this;
-
-            this.modalElem.classList.add('open');
-            setTimeout(function () {
-                _this.close();
-            }, time || 5000);
-        }
-    }, {
-        key: 'close',
-        value: function close() {
-            this.modalElem.classList.remove('open');
-        }
-    }, {
-        key: 'init',
-        value: function init() {
-            if (this.initStatus) return;
-
-            var modalElem = this.modalElem = document.querySelector(this.modalSelector);
-
-            if (!modalElem) return;
-
-            this.initStatus = true;
-        }
-    }]);
-    return Modal;
-}();
-
-var modalInstance = new Modal('.contact-form-success-js');
-modalInstance.init();
-
 var contactForm = function () {
-    function contactForm(formSelector) {
+    function contactForm(formSelector, defaultUrl, defaultMethod, reqTimeout, formSuccessSelector, formErrorSelector) {
         classCallCheck(this, contactForm);
 
         this.formSelector = formSelector || '.contact-form-js';
+        this.defaultUrl = defaultUrl || '/endpoints/contact-form';
+        this.defaultMethod = defaultMethod || 'POST';
+        this.reqTimeout = reqTimeout || 2500;
+        this.formSuccessSelector = formSuccessSelector || '.contact-form-success-js';
+        this.formErrorSelector = formErrorSelector || '.contact-form-error-js';
     }
 
     createClass(contactForm, [{
+        key: 'createModal',
+        value: function createModal(selector) {
+            var newModal = new Modal(selector);
+            newModal.init();
+
+            return newModal;
+        }
+    }, {
+        key: 'getFormUrl',
+        value: function getFormUrl() {
+            var url = this.formElem.getAttribute('action');
+
+            if (url === '#' || !url) {
+                return this.defaultUrl;
+            }
+
+            return url;
+        }
+    }, {
+        key: 'getFormMethod',
+        value: function getFormMethod() {
+            var method = this.formElem.getAttribute('method');
+
+            if (!method) {
+                return this.defaultMethod;
+            }
+
+            return method.toUpperCase();
+        }
+    }, {
+        key: 'getFormData',
+        value: function getFormData() {
+            var data = {};
+
+            this.inputElems.forEach(function (item) {
+                var property = item.getAttribute('name');
+
+                data[property] = item.value;
+            });
+
+            return data;
+        }
+    }, {
+        key: 'cleanForm',
+        value: function cleanForm() {
+            this.inputElems.forEach(function (item) {
+                item.value = '';
+            });
+        }
+    }, {
         key: 'init',
         value: function init() {
+            var _this = this;
+
             if (this.formElem) return;
 
             var formElem = this.formElem = document.querySelector(this.formSelector),
                 inputElems = this.inputElems = [].slice.call(document.querySelectorAll(this.formSelector + ' input, ' + this.formSelector + ' textarea'));
 
             if (!formElem || !inputElems) return;
+
+            var formSuccess = this.formSuccess = this.createModal(this.formSuccessSelector),
+                formError = this.formError = this.createModal(this.formErrorSelector);
 
             formElem.addEventListener('submit', function (e) {
                 e.preventDefault();
@@ -588,16 +652,19 @@ var contactForm = function () {
                     formElem.classList.add('contact-form-loading');
 
                     setTimeout(function () {
-                        formElem.classList.remove('contact-form-loading');
-
-                        modalInstance.open();
-                    }, 2500);
-
-                    if (inputElems.length > 0) {
-                        inputElems.forEach(function (item) {
-                            item.value = '';
+                        $.ajax({
+                            url: _this.getFormUrl(),
+                            method: _this.getFormMethod(),
+                            data: _this.getFormData()
+                        }).then(function () {
+                            formElem.classList.remove('contact-form-loading');
+                            formSuccess.open();
+                            _this.cleanForm();
+                        }, function () {
+                            formElem.classList.remove('contact-form-loading');
+                            formError.open();
                         });
-                    }
+                    }, _this.reqTimeout);
                 }
             });
         }

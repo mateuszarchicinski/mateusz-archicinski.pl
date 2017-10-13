@@ -1,8 +1,18 @@
 //-
     Modals
 
-div(role="dialog" class="modal-wrapper contact-form-success-js")
+div(role="dialog" tabindex="-1" class="modal-wrapper services-info-js")
+    .modal-content.modal-content-420
+        p.paragraph.text-center
+            strong= data.modalWrappers.servicesInfo[0]
+            |  #{data.modalWrappers.servicesInfo[1]}
+div(role="dialog" tabindex="-1" class="modal-wrapper contact-form-success-js")
     .modal-content.modal-content-420
         p.paragraph.text-center
             strong= data.modalWrappers.contactFormSuccess[0]
             |  #{data.modalWrappers.contactFormSuccess[1]}
+div(role="dialog" tabindex="-1" class="modal-wrapper contact-form-error-js")
+    .modal-content.modal-content-420
+        p.paragraph.text-center
+            strong= data.modalWrappers.contactFormError[0]
+            |  #{data.modalWrappers.contactFormError[1]}

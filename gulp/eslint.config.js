@@ -54,6 +54,7 @@ const eslintConfig = {
         'no-var': 2,
         'prefer-arrow-callback': 2,
         'prefer-const': 2,
+        'no-console': 2
     }
 };
 

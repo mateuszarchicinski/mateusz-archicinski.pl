@@ -6,12 +6,15 @@
 // .main-footer
 $main-footer__background-color: $color__nero !default;
 $main-footer__box-shadow: 0 0 8px 0 rgba($color__black-1, 0.8) !default;
+
 // .main-footer__link:hover
 $main-footer__link__hover__color: $tertiary-text-color !default;
+
 // .main-footer__copyright::after
 // sass-lint:disable no-color-literals
 $main-footer__copyright__after__background-image: radial-gradient(ellipse at center, rgba($color__white, 0.1) 0, rgba($color__black-1, 0) 100%) !default;
 // sass-lint:enable no-color-literals
+
 // .main-footer__list .main-footer__copyright
 $main-footer__list-copyright__color: $color__white !default;
 
@@ -29,7 +32,6 @@ $main-footer__list-copyright__color: $color__white !default;
     &__list {
         list-style: none;
         padding: 0 20px 25px;
-        
         & > li {
             @extend %ellipsis;
         }
@@ -45,6 +47,10 @@ $main-footer__list-copyright__color: $color__white !default;
     &-findme {
         &-body {
             min-height: 120px;
+            @extend .row;
+            @extend .align-content-center;
+            @extend .align-items-center;
+            @extend .justify-content-center;
             flex: 1;
             padding-bottom: 25px;
             & > .btn {

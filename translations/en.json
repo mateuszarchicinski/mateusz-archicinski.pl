@@ -315,7 +315,8 @@
                     },
                     "message": {
                         "label": "Treść wiadomości"
-                    }
+                    },
+                    "requiredAriaLabel": "This field is required"
                 },
                 "submitButton": "Wyślij wiadomość"
             },
@@ -365,9 +366,17 @@
         "copyright": "2015 - 2017 Mateusz Archiciński - All rights reserved"
     },
     "modalWrappers": {
+        "servicesInfo": [
+            "Information:",
+            "Currently, I am working on describing each service package. Even if I have not finished yet, feel free to message me anytime and ask me about anything."
+        ],
         "contactFormSuccess": [
-            "Success!",
+            "Success:",
             "Your message was sent!"
+        ],
+        "contactFormError": [
+            "Error:",
+            "Your message could not be sent. Please try again later."
         ]
     }
 }

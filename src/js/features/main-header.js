@@ -40,7 +40,7 @@ class mainHeader {
 
         if (!headerElem || !sectionElem) return;
 
-        window.addEventListener('scroll', throttle(250, () => {
+        window.addEventListener('scroll', throttle(150, () => {
             this.headerHandling();
         }));
     }

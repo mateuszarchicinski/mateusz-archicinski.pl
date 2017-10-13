@@ -69,11 +69,11 @@ class spyScrolling {
 
         this.refresh();
 
-        window.addEventListener('scroll', throttle(250, () => {
+        window.addEventListener('scroll', throttle(150, () => {
             this.refresh();
         }));
 
-        window.addEventListener('resize', throttle(500, () => {
+        window.addEventListener('resize', throttle(750, () => {
             this.refresh();
         }));
     }

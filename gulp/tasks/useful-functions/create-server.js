@@ -45,6 +45,22 @@ function createServer(baseDir) {
         });
     });
 
+    // Endpoints
+    app.post('/endpoints/contact-form', (req, res, next) => {
+        let statusCode = 200,
+            message = 'Message was sent!';
+
+        if (Math.floor(Math.random() * 10) % 2) {
+            statusCode = 400;
+            message = 'Bad request!';
+        }
+
+        res.status(statusCode).json({
+            statusCode: statusCode,
+            message: message
+        });
+    });
+
     // Handles HTTP errors
     app.use((err, req, res, next) => {
         const statusCode = err.statusCode || 500;

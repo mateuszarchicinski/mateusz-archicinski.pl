@@ -1,3 +1,6 @@
+import Modal from './modal.js';
+
+
 class Services {
     constructor(owlCaruselSelector) {
         this.owlCaruselSelector = owlCaruselSelector || '.owl-carousel-services-js';
@@ -29,6 +32,13 @@ class Services {
             owlCaruselElem.trigger('stop.owl.autoplay');
             owlCaruselElem.trigger('play.owl.autoplay');
         }, false);
+
+        const servicesInfo = new Modal('.services-info-js');
+        servicesInfo.init();
+
+        owlCaruselElem.on('click', 'button.services-item-button-js', () => {
+            servicesInfo.open();
+        });
     }
 };
 

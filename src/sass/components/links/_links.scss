@@ -3,14 +3,14 @@
 //~~~~~~~~~~~~~~~~~~~~~//
 
 
-//// a :link - :visited
-//$a__link-visited__color: darken($color__navy-blue, 4%) !default;
-//// a :hover
-//$a__hover__color: $primary-color !default;
-//// a :active
-//$a__active__color: $primary-color-dark !default;
-//
-//
+// a :link - :visited
+$a__link-visited__color: darken($color__navy-blue, 4%) !default;
+// a :hover
+$a__hover__color: $primary-color !default;
+// a :active
+$a__active__color: $primary-color-dark !default;
+
+
 //a {
 //    &.link {
 //        transition: 0.25s color ease-in-out;

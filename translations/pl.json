@@ -316,7 +316,8 @@
                     },
                     "message": {
                         "label": "Treść wiadomości"
-                    }
+                    },
+                    "requiredAriaLabel": "To pole jest wymagane"
                 },
                 "submitButton": "Wyślij wiadomość"
             },
@@ -355,20 +356,28 @@
         "findMe": {
             "h3": "Znajdź mnie",
             "body": {
-                "codepenAriaLabel": "Przejdź do Codepen Mateusz Archiciński",
-                "facebookAriaLabel": "Przejdź do Facebook Mateusz Archiciński",
-                "githubAriaLabel": "Przejdź do Github Mateusz Archiciński",
-                "gplusAriaLabel": "Przejdź do Google+ Mateusz Archiciński",
-                "linkedinAriaLabel": "Przejdź do Linkedin Mateusz Archiciński",
-                "twitterAriaLabel": "Przejdź do Twitter Mateusz Archiciński"
+                "codepenAriaLabel": "Przejdź do Codepen Mateusza Archicińskiego",
+                "facebookAriaLabel": "Przejdź do Facebook Mateusza Archicińskiego",
+                "githubAriaLabel": "Przejdź do Github Mateusza Archicińskiego",
+                "gplusAriaLabel": "Przejdź do Google+ Mateusza Archicińskiego",
+                "linkedinAriaLabel": "Przejdź do Linkedin Mateusza Archicińskiego",
+                "twitterAriaLabel": "Przejdź do Twitter Mateusza Archicińskiego"
             }
         },
         "copyright": "2015 - 2017 Mateusz Archiciński - Wszelkie prawa zastrzeżone"
     },
     "modalWrappers": {
+        "servicesInfo": [
+            "Informacja:",
+            "Obecnie pracuję nad opisem pakietów usług. Jeśli jeszcze nie skończyłem śmiało napisz do mnie lub zadzwoń aby dowiedzieć się więcej."
+        ],
         "contactFormSuccess": [
-            "Powodzenie!",
+            "Powodzenie:",
             "Twoja wiadomość została wysłana!"
+        ],
+        "contactFormError": [
+            "Błąd:",
+            "Nie udało się wysłać twojej wiadomości. Spróbuj ponownie później."
         ]
     }
 }

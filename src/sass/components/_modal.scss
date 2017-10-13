@@ -20,14 +20,14 @@ $modal-content__background-color: $color__white !default;
     &-wrapper {
         background-color: $modal-wrapper__background-color;
         position: fixed;
-        visibility: hidden;
         z-index: -999;
         top: 0;
         bottom: 0;
+        visibility: hidden;
         @include opacity(0);
-        transition-delay: 0;
-        transition-duration: 0.3s;
-        transition-property: visibility, z-index, opacity;
+        transition-delay: 0s;
+        transition-duration: 0.15s;
+        transition-property: visibility, z-index, opacity, filter;
         transition-timing-function: ease-in-out;
         &.open {
             visibility: visible;
@@ -45,7 +45,7 @@ $modal-content__background-color: $color__white !default;
         background-color: $modal-content__background-color;
         position: absolute;
         top: 50%;
-        transform: translateY(-75%);
+        transform: translateY(-65%);
         padding: 25px 30px;
     }
 }

@@ -11,9 +11,15 @@ $contact-wrapper__background-color-md: linear-gradient(to left, rgba($color__sno
 
 // .contact-form-title
 $contact-form-title__font-size: 1.35em !default;
+
 // .contact-form__label
 $contact-form__label__font-size: 1.05em !default;
 $contact-form__label__font-weight: $font-weight__bolder !default;
+
+// .contact-form__label-required
+$contact-form__input-required__font-size: 0.55em !default;
+$contact-form__input-required__color: $color__cinnabar !default;
+
 // .contact-form__input & .contact-form__textarea
 $contact-form__input-textarea__border: 1px solid lighten($divider-color, 10%) !default;
 // .contact-form__input:focus & .contact-form__textarea:focus
@@ -56,6 +62,13 @@ $contact-info__list__li__border-bottom: 1px solid $divider-color !default;
                 padding: 5px 0;
                 margin: 15px 0;
             }
+            &-required {
+                @extend .black-star;
+                vertical-align: top;
+                font-size: $contact-form__input-required__font-size;
+                color: $contact-form__input-required__color;
+                margin-left: 2.5px;
+            }
         }
         &__textarea {
             min-height: 150px;
@@ -64,6 +77,7 @@ $contact-info__list__li__border-bottom: 1px solid $divider-color !default;
         }
         &__label,
         &__input,
+        &__input-required,
         &__textarea {
             display: inline-block;
         }
@@ -100,8 +114,7 @@ $contact-info__list__li__border-bottom: 1px solid $divider-color !default;
             padding: 25px 0 10px;
         }
         &__list {
-            list-style: none;
-            @extend %no-padding-margin;
+            @extend %no-list;
             & > li {
                 padding: 35px 0;
                 border-bottom: $contact-info__list__li__border-bottom;
