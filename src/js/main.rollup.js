@@ -1,6 +1,9 @@
 import {
-    $document
-} from './globals/jquery';
+    $document,
+    throttle,
+    debounce,
+    isBreakpoint
+} from './globals/globals';
 import mainHeader from './features/main-header';
 import sideNav from './features/side-nav';
 import smoothScrolling from './features/smooth-scrolling';
@@ -24,9 +27,13 @@ $document.ready(() => {
     // SMOOTH SCROLLING
     const smoothScrollingInstance = new smoothScrolling();
     smoothScrollingInstance.init();
-    smoothScrollingInstance.setCallback(() => {
-        sideNavInstance.close();
-    });
+
+    // Callback should be added only on devices with min-width >= 992
+    if (!isBreakpoint('lg')) {
+        smoothScrollingInstance.setCallback(() => {
+            sideNavInstance.close();
+        });
+    }
 
 
     // SPY SCROLLING
@@ -47,4 +54,23 @@ $document.ready(() => {
     // CONTACT
     const contactFormInstance = new contactForm();
     contactFormInstance.init();
+
+
+    // GLOBAL EVENTS ~
+
+    // SCROLL
+    window.addEventListener('scroll', throttle(150, () => {
+        // These functions should be called also on scroll event with time interval set to 150ms
+        mainHeaderInstance.headerHandling();
+        spyScrollingInstance.refresh();
+    }));
+
+    // RESIZE
+    window.addEventListener('resize', debounce(600, () => {
+        // These functions should be called also on ends resize event with timeout set to 600ms
+        spyScrollingInstance.refresh();
+        portfolioInstance.currItems.forEach((item, index) => {
+            portfolioInstance.addStyles(item, index);
+        });
+    }));
 });

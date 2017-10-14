@@ -87,12 +87,6 @@ class Portfolio {
 
             this.filterBy(filter);
         });
-
-        window.addEventListener('resize', throttle(500, () => {
-            this.currItems.forEach((item, index) => {
-                this.addStyles(item, index);
-            });
-        }));
     }
 };
 

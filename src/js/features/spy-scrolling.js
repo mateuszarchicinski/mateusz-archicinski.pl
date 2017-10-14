@@ -68,14 +68,6 @@ class spyScrolling {
         });
 
         this.refresh();
-
-        window.addEventListener('scroll', throttle(150, () => {
-            this.refresh();
-        }));
-
-        window.addEventListener('resize', throttle(750, () => {
-            this.refresh();
-        }));
     }
 };
 

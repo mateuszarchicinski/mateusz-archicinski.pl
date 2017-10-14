@@ -14,35 +14,22 @@ const getOption = require('./useful-functions/get-option');
 exports.task = () => {
     $.util.log($.util.colors.magenta('IMAGES TASK RUNNING...'));
 
-    const condition = getOption('--option').value === 'advanced';
-    let imgExtname = '{jpg,png}',
-        optimizationModule = require('gulp-tinify'), // https://github.com/joshbroton/gulp-tinify#gulp-tinify
-        args = gulpConfig.apiKeys.tinify;
+    const condition = getOption('--option').value === 'advanced' && !!gulpConfig.apiKeys.tinify;
 
     if (!condition) {
-        imgExtname = '{jpg,png,svg,gif}';
-        optimizationModule = require('gulp-imagemin'); // https://github.com/sindresorhus/gulp-imagemin#api
-        args = [imageminGifsicle(), imageminJpegtran(), imageminOptipng(), imageminSvgo()];
-
         alertHandler({
             type: 'info',
-            message: `Default options passed to images task.
-To change that, add command arguments to this task ---> gulp [TASK NAME = images / build / build:server] --option [advanced].`
+            message: `Default options passed to images task. To change that:
+1. Set up your TINIFY API KEY in ${gulpConfig.configFile} file.
+2. Add command arguments to this task ---> gulp [TASK NAME = images / build / build:server] --option [advanced].`
         });
     }
 
-    if (condition && !args) {
-        return alertHandler({
-            type: 'error',
-            message: `Task can not be complited.
-Remember to set up your TINIFY API KEY in ${gulpConfig.configFile} file.`
-        });
-    }
-
-    return gulp.src(`${gulpConfig.directories.dist}/images/**/*.${imgExtname}`, { /* eslint-disable */
+    return gulp.src(`${gulpConfig.directories.dist}/images/**/*.{jpg,png,svg,gif}`, { /* eslint-disable */
             base: gulpConfig.directories.dist
         }) /* eslint-enable */
         .pipe($.plumber())
-        .pipe(optimizationModule(args))
+        .pipe($.tinify(gulpConfig.apiKeys.tinify)) // https://github.com/joshbroton/gulp-tinify#gulp-tinify
+        .pipe($.imagemin([imageminGifsicle(), imageminJpegtran(), imageminOptipng(), imageminSvgo()])) // https://github.com/sindresorhus/gulp-imagemin#api
         .pipe(gulp.dest(`${gulpConfig.directories.dist}/`));
 };

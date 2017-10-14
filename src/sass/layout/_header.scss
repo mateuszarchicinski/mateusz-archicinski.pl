@@ -11,7 +11,8 @@ $main-header__fixed__box-shadow: 0 0 8px 0 rgba($color__black-1, 0.8) !default;
 
 
 @mixin main-header-hide() {
-    @include transform(translate3d(0, -100%, 0));
+    visibility: hidden;
+    @include transform(translate3d(0, -100%, 1px));
     @include opacity(0);
 }
 
@@ -25,20 +26,21 @@ $main-header__fixed__box-shadow: 0 0 8px 0 rgba($color__black-1, 0.8) !default;
     top: 0;
     &-fixed {
         position: fixed;
+        backface-visibility: hidden;
         &,
         &.hide {
             @include main-header-hide();
         }
         &.hide,
         &.show {
-            backface-visibility: hidden;
             transition-delay: 0s;
             transition-duration: 0.3s;
-            transition-property: transform, opacity, filter;
+            transition-property: visibility, transform, opacity, filter;
             transition-timing-function: ease-in-out;
         }
         &.show {
-            @include transform(translate3d(0, 0, 0));
+            visibility: visible;
+            @include transform(translate3d(0, 0, 1px));
             @include opacity(1);
             @media screen and (max-height: ($main-header__height * 6)) {
                 @include main-header-hide();

@@ -1,8 +1,39 @@
 (function () {
 'use strict';
 
+var breakpoints = {
+    xl: {
+        max: null,
+        min: 1200
+    },
+    lg: {
+        max: 1199,
+        min: 992
+    },
+    md: {
+        max: 991,
+        min: 768
+    },
+    sm: {
+        max: 767,
+        min: 576
+    },
+    xs: {
+        max: 575,
+        min: null
+    }
+};
+
 var $window = $(window);
 var $document = $(document);
+
+var getBreakpoint = function getBreakpoint(name) {
+    return breakpoints[name];
+};
+
+var isBreakpoint = function isBreakpoint(name) {
+    return $window.width() >= getBreakpoint(name).min;
+};
 
 /* eslint-disable no-undefined,no-param-reassign,no-shadow */
 
@@ -93,6 +124,26 @@ var throttle$1 = function throttle(delay, noTrailing, callback, debounceMode) {
 	return wrapper;
 };
 
+/* eslint-disable no-undefined */
+
+/**
+ * Debounce execution of a function. Debouncing, unlike throttling,
+ * guarantees that a function is only executed a single time, either at the
+ * very beginning of a series of calls, or at the very end.
+ *
+ * @param  {Number}   delay         A zero-or-greater delay in milliseconds. For event callbacks, values around 100 or 250 (or even higher) are most useful.
+ * @param  {Boolean}  atBegin       Optional, defaults to false. If atBegin is false or unspecified, callback will only be executed `delay` milliseconds
+ *                                  after the last debounced-function call. If atBegin is true, callback will be executed only at the first debounced-function call.
+ *                                  (After the throttled-function has not been called for `delay` milliseconds, the internal counter is reset).
+ * @param  {Function} callback      A function to be executed after delay milliseconds. The `this` context and all arguments are passed through, as-is,
+ *                                  to `callback` when the debounced-function is executed.
+ *
+ * @return {Function} A new, debounced function.
+ */
+var debounce$1 = function debounce(delay, atBegin, callback) {
+  return callback === undefined ? throttle$1(delay, atBegin, false) : throttle$1(delay, callback, atBegin !== false);
+};
+
 var classCallCheck = function (instance, Constructor) {
   if (!(instance instanceof Constructor)) {
     throw new TypeError("Cannot call a class as a function");
@@ -160,18 +211,12 @@ var mainHeader = function () {
     }, {
         key: 'init',
         value: function init() {
-            var _this = this;
-
             if (this.headerElem) return;
 
             var headerElem = this.headerElem = document.querySelector(this.headerSelector),
                 sectionElem = this.sectionElem = document.querySelector(this.sectionSelector);
 
             if (!headerElem || !sectionElem) return;
-
-            window.addEventListener('scroll', throttle$1(150, function () {
-                _this.headerHandling();
-            }));
         }
     }]);
     return mainHeader;
@@ -355,14 +400,6 @@ var spyScrolling = function () {
             });
 
             this.refresh();
-
-            window.addEventListener('scroll', throttle$1(150, function () {
-                _this2.refresh();
-            }));
-
-            window.addEventListener('resize', throttle$1(750, function () {
-                _this2.refresh();
-            }));
         }
     }]);
     return spyScrolling;
@@ -557,12 +594,6 @@ var Portfolio = function () {
 
                 _this2.filterBy(filter);
             });
-
-            window.addEventListener('resize', throttle$1(500, function () {
-                _this2.currItems.forEach(function (item, index) {
-                    _this2.addStyles(item, index);
-                });
-            }));
         }
     }]);
     return Portfolio;
@@ -684,9 +715,13 @@ $document.ready(function () {
     // SMOOTH SCROLLING
     var smoothScrollingInstance = new smoothScrolling();
     smoothScrollingInstance.init();
-    smoothScrollingInstance.setCallback(function () {
-        sideNavInstance.close();
-    });
+
+    // Callback should be added only on devices with min-width >= 992
+    if (!isBreakpoint('lg')) {
+        smoothScrollingInstance.setCallback(function () {
+            sideNavInstance.close();
+        });
+    }
 
     // SPY SCROLLING
     var spyScrollingInstance = new spyScrolling();
@@ -703,6 +738,24 @@ $document.ready(function () {
     // CONTACT
     var contactFormInstance = new contactForm();
     contactFormInstance.init();
+
+    // GLOBAL EVENTS ~
+
+    // SCROLL
+    window.addEventListener('scroll', throttle$1(150, function () {
+        // These functions should be called also on scroll event with time interval set to 150ms
+        mainHeaderInstance.headerHandling();
+        spyScrollingInstance.refresh();
+    }));
+
+    // RESIZE
+    window.addEventListener('resize', debounce$1(600, function () {
+        // These functions should be called also on ends resize event with timeout set to 600ms
+        spyScrollingInstance.refresh();
+        portfolioInstance.currItems.forEach(function (item, index) {
+            portfolioInstance.addStyles(item, index);
+        });
+    }));
 });
 
 }());

@@ -1734,34 +1734,37 @@ body {
   left: 0;
   top: 0; }
   .main-header-fixed {
-    position: fixed; }
+    position: fixed;
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden; }
     .main-header-fixed, .main-header-fixed.hide {
-      -webkit-transform: translate3d(0, -100%, 0);
-              transform: translate3d(0, -100%, 0);
+      visibility: hidden;
+      -webkit-transform: translate3d(0, -100%, 1px);
+              transform: translate3d(0, -100%, 1px);
       will-change: transform;
       opacity: 0;
       -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
       filter: alpha(opacity=0); }
     .main-header-fixed.hide, .main-header-fixed.show {
-      -webkit-backface-visibility: hidden;
-              backface-visibility: hidden;
       transition-delay: 0s;
       transition-duration: 0.3s;
-      transition-property: opacity, -webkit-transform, -webkit-filter;
-      transition-property: transform, opacity, filter;
-      transition-property: transform, opacity, filter, -webkit-transform, -webkit-filter;
+      transition-property: visibility, opacity, -webkit-transform, -webkit-filter;
+      transition-property: visibility, transform, opacity, filter;
+      transition-property: visibility, transform, opacity, filter, -webkit-transform, -webkit-filter;
       transition-timing-function: ease-in-out; }
     .main-header-fixed.show {
-      -webkit-transform: translate3d(0, 0, 0);
-              transform: translate3d(0, 0, 0);
+      visibility: visible;
+      -webkit-transform: translate3d(0, 0, 1px);
+              transform: translate3d(0, 0, 1px);
       will-change: transform;
       opacity: 1;
       -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
       filter: alpha(opacity=100); }
       @media screen and (max-height: 390px) {
         .main-header-fixed.show {
-          -webkit-transform: translate3d(0, -100%, 0);
-                  transform: translate3d(0, -100%, 0);
+          visibility: hidden;
+          -webkit-transform: translate3d(0, -100%, 1px);
+                  transform: translate3d(0, -100%, 1px);
           will-change: transform;
           opacity: 0;
           -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";

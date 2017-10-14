@@ -39,10 +39,6 @@ class mainHeader {
             sectionElem = this.sectionElem = document.querySelector(this.sectionSelector);
 
         if (!headerElem || !sectionElem) return;
-
-        window.addEventListener('scroll', throttle(150, () => {
-            this.headerHandling();
-        }));
     }
 };
 
