@@ -688,12 +688,12 @@ var contactForm = function () {
                             method: _this.getFormMethod(),
                             data: _this.getFormData()
                         }).then(function () {
-                            formElem.classList.remove('contact-form-loading');
                             formSuccess.open();
                             _this.cleanForm();
                         }, function () {
-                            formElem.classList.remove('contact-form-loading');
                             formError.open();
+                        }).done(function () {
+                            formElem.classList.remove('contact-form-loading');
                         });
                     }, _this.reqTimeout);
                 }

@@ -73,13 +73,13 @@ class contactForm {
                         method: this.getFormMethod(),
                         data: this.getFormData()
                     }).then(() => {
-                        formElem.classList.remove('contact-form-loading');
                         formSuccess.open();
                         this.cleanForm();
                     }, () => {
-                        formElem.classList.remove('contact-form-loading');
                         formError.open();
-                    });
+                    }).done(() => {
+                        formElem.classList.remove('contact-form-loading');
+                    });;
                 }, this.reqTimeout);
             }
         });

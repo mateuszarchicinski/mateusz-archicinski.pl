@@ -6,5 +6,5 @@ const runSequence = require('run-sequence');
 exports.task = (callback) => {
     $.util.log($.util.colors.red('BUILD TASK RUNNING...'));
 
-    runSequence('clean', 'sass:lint', 'sass:css', 'js:eslint', 'js', 'pug:lint', 'pug:html', 'html:hint', 'html', 'html:minify', 'copy', 'images', 'upload', callback);
+    runSequence('clean', 'sass:lint', 'sass:css', 'js:eslint', 'js', 'pug:lint', 'pug:html', 'html:hint', 'html', 'html:minify', 'copy', 'images:tinify', 'images', 'upload', callback);
 };
