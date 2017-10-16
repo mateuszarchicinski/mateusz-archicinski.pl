@@ -4,37 +4,45 @@
 
 
 //* FONTS: Raleway & Source Sans Pro & Fontello *//
-@include font-face("Raleway", "../fonts/Raleway/Raleway-Thin", normal, 100, ttf);
-@include font-face("Raleway", "../fonts/Raleway/Raleway-ThinItalic", italic, 100, ttf);
-@include font-face("Raleway", "../fonts/Raleway/Raleway-ExtraLight", normal, 200, ttf);
-@include font-face("Raleway", "../fonts/Raleway/Raleway-ExtraLightItalic", italic, 200, ttf);
-@include font-face("Raleway", "../fonts/Raleway/Raleway-Light", normal, 300, ttf);
-@include font-face("Raleway", "../fonts/Raleway/Raleway-LightItalic", italic, 300, ttf);
-@include font-face("Raleway", "../fonts/Raleway/Raleway-Regular", normal, 400, ttf);
-@include font-face("Raleway", "../fonts/Raleway/Raleway-RegularItalic", italic, 400, ttf);
-@include font-face("Raleway", "../fonts/Raleway/Raleway-Medium", normal, 500, ttf);
-@include font-face("Raleway", "../fonts/Raleway/Raleway-MediumItalic", italic, 500, ttf);
-@include font-face("Raleway", "../fonts/Raleway/Raleway-SemiBold", normal, 600, ttf);
-@include font-face("Raleway", "../fonts/Raleway/Raleway-SemiBoldItalic", italic, 600, ttf);
-@include font-face("Raleway", "../fonts/Raleway/Raleway-Bold", normal, 700, ttf);
-@include font-face("Raleway", "../fonts/Raleway/Raleway-BoldItalic", italic, 700, ttf);
-@include font-face("Raleway", "../fonts/Raleway/Raleway-ExtraBold", normal, 800, ttf);
-@include font-face("Raleway", "../fonts/Raleway/Raleway-ExtraBoldItalic", italic, 800, ttf);
-@include font-face("Raleway", "../fonts/Raleway/Raleway-Black", normal, 900, ttf);
-@include font-face("Raleway", "../fonts/Raleway/Raleway-BlackItalic", italic, 900, ttf);
-@include font-face("Source Sans Pro", "../fonts/Source_Sans_Pro/SourceSansPro-ExtraLight", normal, 200, ttf);
-@include font-face("Source Sans Pro", "../fonts/Source_Sans_Pro/SourceSansPro-ExtraLightItalic", italic, 200, ttf);
-@include font-face("Source Sans Pro", "../fonts/Source_Sans_Pro/SourceSansPro-Light", normal, 300, ttf);
-@include font-face("Source Sans Pro", "../fonts/Source_Sans_Pro/SourceSansPro-LightItalic", italic, 300, ttf);
-@include font-face("Source Sans Pro", "../fonts/Source_Sans_Pro/SourceSansPro-Regular", normal, 400, ttf);
-@include font-face("Source Sans Pro", "../fonts/Source_Sans_Pro/SourceSansPro-RegularItalic", italic, 400, ttf);
-@include font-face("Source Sans Pro", "../fonts/Source_Sans_Pro/SourceSansPro-SemiBold", normal, 600, ttf);
-@include font-face("Source Sans Pro", "../fonts/Source_Sans_Pro/SourceSansPro-SemiBoldItalic", italic, 600, ttf);
-@include font-face("Source Sans Pro", "../fonts/Source_Sans_Pro/SourceSansPro-Bold", normal, 700, ttf);
-@include font-face("Source Sans Pro", "../fonts/Source_Sans_Pro/SourceSansPro-BoldItalic", italic, 700, ttf);
-@include font-face("Source Sans Pro", "../fonts/Source_Sans_Pro/SourceSansPro-Black", normal, 900, ttf);
-@include font-face("Source Sans Pro", "../fonts/Source_Sans_Pro/SourceSansPro-BlackItalic", italic, 900, ttf);
-@include font-face("Fontello", "../fonts/Fontello/Fontello", normal, normal, ttf);
+// All available font formats: eot svg ttf woff woff2
+// Right now, I decided to support only woff
+
+// ~ Raleway
+//@include font-face("Raleway", "../fonts/Raleway/Raleway-Thin", normal, 100, woff);
+//@include font-face("Raleway", "../fonts/Raleway/Raleway-ThinItalic", italic, 100, woff);
+//@include font-face("Raleway", "../fonts/Raleway/Raleway-ExtraLight", normal, 200, woff);
+//@include font-face("Raleway", "../fonts/Raleway/Raleway-ExtraLightItalic", italic, 200, woff);
+//@include font-face("Raleway", "../fonts/Raleway/Raleway-Light", normal, 300, woff);
+//@include font-face("Raleway", "../fonts/Raleway/Raleway-LightItalic", italic, 300, woff);
+@include font-face("Raleway", "../fonts/Raleway/Raleway-Regular", normal, 400, woff);
+//@include font-face("Raleway", "../fonts/Raleway/Raleway-RegularItalic", italic, 400, woff);
+//@include font-face("Raleway", "../fonts/Raleway/Raleway-Medium", normal, 500, woff);
+//@include font-face("Raleway", "../fonts/Raleway/Raleway-MediumItalic", italic, 500, woff);
+@include font-face("Raleway", "../fonts/Raleway/Raleway-SemiBold", normal, 600, woff);
+//@include font-face("Raleway", "../fonts/Raleway/Raleway-SemiBoldItalic", italic, 600, woff);
+//@include font-face("Raleway", "../fonts/Raleway/Raleway-Bold", normal, 700, woff);
+//@include font-face("Raleway", "../fonts/Raleway/Raleway-BoldItalic", italic, 700, woff);
+@include font-face("Raleway", "../fonts/Raleway/Raleway-ExtraBold", normal, 800, woff);
+//@include font-face("Raleway", "../fonts/Raleway/Raleway-ExtraBoldItalic", italic, 800, woff);
+@include font-face("Raleway", "../fonts/Raleway/Raleway-Black", normal, 900, woff);
+//@include font-face("Raleway", "../fonts/Raleway/Raleway-BlackItalic", italic, 900, woff);
+
+// ~ Source Sans Pro
+//@include font-face("Source Sans Pro", "../fonts/Source_Sans_Pro/SourceSansPro-ExtraLight", normal, 200, woff);
+//@include font-face("Source Sans Pro", "../fonts/Source_Sans_Pro/SourceSansPro-ExtraLightItalic", italic, 200, woff);
+@include font-face("Source Sans Pro", "../fonts/Source_Sans_Pro/SourceSansPro-Light", normal, 300, woff);
+//@include font-face("Source Sans Pro", "../fonts/Source_Sans_Pro/SourceSansPro-LightItalic", italic, 300, woff);
+@include font-face("Source Sans Pro", "../fonts/Source_Sans_Pro/SourceSansPro-Regular", normal, 400, woff);
+//@include font-face("Source Sans Pro", "../fonts/Source_Sans_Pro/SourceSansPro-RegularItalic", italic, 400, woff);
+@include font-face("Source Sans Pro", "../fonts/Source_Sans_Pro/SourceSansPro-SemiBold", normal, 600, woff);
+//@include font-face("Source Sans Pro", "../fonts/Source_Sans_Pro/SourceSansPro-SemiBoldItalic", italic, 600, woff);
+@include font-face("Source Sans Pro", "../fonts/Source_Sans_Pro/SourceSansPro-Bold", normal, 700, woff);
+//@include font-face("Source Sans Pro", "../fonts/Source_Sans_Pro/SourceSansPro-BoldItalic", italic, 700, woff);
+@include font-face("Source Sans Pro", "../fonts/Source_Sans_Pro/SourceSansPro-Black", normal, 900, woff);
+//@include font-face("Source Sans Pro", "../fonts/Source_Sans_Pro/SourceSansPro-BlackItalic", italic, 900, woff);
+
+// ~ Fontello
+@include font-face("Fontello", "../fonts/Fontello/Fontello", normal, normal, woff);
 
 
 //* HEADINGS *//

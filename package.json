@@ -7,7 +7,7 @@
     "eslint": "gulp js:eslint",
     "dev": "gulp",
     "test": "gulp js:eslint && gulp js:test",
-    "prod": "gulp build --option advanced --upload",
+    "prod": "gulp build --upload",
     "jsdoc": "jsdoc -c jsdoc.config.json"
   },
   "author": "Mateusz Archiciński",

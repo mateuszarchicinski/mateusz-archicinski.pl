@@ -1,7 +1,4 @@
-import {
-    $document,
-    throttle
-} from '../globals/globals';
+import throttle from '../functions/throttle';
 
 
 class spyScrolling {
@@ -13,7 +10,7 @@ class spyScrolling {
         this.currRangeIndex = 0;
     }
     refresh() {
-        const scrollTop = $document.scrollTop();
+        const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
 
         for (let i = 0; i < this.scrollRanges.length; i++) {
             const item = this.scrollRanges[i].rangeElem;

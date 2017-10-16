@@ -339,7 +339,7 @@ var spyScrolling = function () {
     createClass(spyScrolling, [{
         key: 'refresh',
         value: function refresh() {
-            var scrollTop = $document.scrollTop();
+            var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
 
             for (var i = 0; i < this.scrollRanges.length; i++) {
                 var item = this.scrollRanges[i].rangeElem;

@@ -38,6 +38,7 @@ $heading-separator__square-primary__background-color: $primary-color !default;
         }
         &-bolded-3 {
             height: 3px;
+            margin-top: -1px;
         }
         &.black {
             background-color: $heading-separator__line-black__background-color;
