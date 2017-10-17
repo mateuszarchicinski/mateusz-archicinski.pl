@@ -11,7 +11,7 @@ class mainHeader {
         const minHeight = this.sectionElem.offsetHeight + this.offsetHeight;
 
         if (window.pageYOffset >= (minHeight / 2.5)) {
-            this.headerElem.classList.add('main-header-fixed');
+            if (!this.headerElem.classList.contains('main-header-fixed')) this.headerElem.classList.add('main-header-fixed');
 
             if (window.pageYOffset >= minHeight) {
                 this.show();
@@ -19,18 +19,26 @@ class mainHeader {
                 this.hide();
             }
         } else {
-            this.headerElem.classList.remove('main-header-fixed');
-            this.headerElem.classList.remove('show');
-            this.headerElem.classList.remove('hide');
+            if (this.headerElem.classList.contains('main-header-fixed')) this.headerElem.classList.remove('main-header-fixed');
+            if (this.headerElem.classList.contains('show')) this.headerElem.classList.remove('show');
+            if (this.headerElem.classList.contains('hide')) this.headerElem.classList.remove('hide');
         }
     }
     show() {
+        if (this.isVisible) return;
+
         this.headerElem.classList.remove('hide');
         this.headerElem.classList.add('show');
+
+        this.isVisible = true;
     }
     hide() {
+        if (!this.isVisible) return;
+
         this.headerElem.classList.remove('show');
         this.headerElem.classList.add('hide');
+
+        this.isVisible = false;
     }
     init() {
         if (this.headerElem) return;

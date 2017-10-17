@@ -21,19 +21,19 @@ section(id="contact" class="section contact-wrapper")
                         .contact-form__input-container
                             label(for="contactForm[name]" class="contact-form__label")= data.mainWrapper.contactWrapper.form.inputs.name.label
                                 span(aria-label=data.mainWrapper.contactWrapper.form.inputs.requiredAriaLabel class="contact-form__input-required")
-                            input(id="contactForm[name]" name="name" type="text" required maxlength="150" class="contact-form__input")
+                            input(id="contactForm[name]" name="name" type="text" required maxlength="150" aria-required="true" class="contact-form__input")
                         .contact-form__input-container
                             label(for="contactForm[email]" class="contact-form__label")= data.mainWrapper.contactWrapper.form.inputs.email.label
                                 span(aria-label=data.mainWrapper.contactWrapper.form.inputs.requiredAriaLabel class="contact-form__input-required")
-                            input(id="contactForm[email]" name="email" type="email" required maxlength="150" class="contact-form__input")
+                            input(id="contactForm[email]" name="email" type="email" required maxlength="150" aria-required="true" class="contact-form__input")
                         .contact-form__input-container
                             label(for="contactForm[subject]" class="contact-form__label")= data.mainWrapper.contactWrapper.form.inputs.subject.label
                                 span(aria-label=data.mainWrapper.contactWrapper.form.inputs.requiredAriaLabel class="contact-form__input-required")
-                            input(id="contactForm[subject]" name="subject" type="text" required maxlength="150" class="contact-form__input")
+                            input(id="contactForm[subject]" name="subject" type="text" required maxlength="150" aria-required="true" class="contact-form__input")
                         .contact-form__input-container
                             label(for="contactForm[message]" class="contact-form__label")= data.mainWrapper.contactWrapper.form.inputs.message.label
                                 span(aria-label=data.mainWrapper.contactWrapper.form.inputs.requiredAriaLabel class="contact-form__input-required")
-                            textarea(id="contactForm[message]" name="message" required maxlength="1500" class="contact-form__textarea")
+                            textarea(id="contactForm[message]" name="message" required maxlength="1500" aria-required="true" class="contact-form__textarea")
                         button(type="submit" class="btn to-top btn-primary contact-form__button")
                             span= data.mainWrapper.contactWrapper.form.submitButton
             .col-md-4.col-12

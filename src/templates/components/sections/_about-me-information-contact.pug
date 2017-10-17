@@ -25,18 +25,18 @@
             li.info-block
                 .info-title.i-block.text-bolded #{data.mainWrapper.aboutMeWrapper.informationContact.email.title}:
                 .info-description.i-block
-                    a(href="mailto:" + data.mainWrapper.aboutMeWrapper.informationContact.email.link class="info-link")
-                        | #{data.mainWrapper.aboutMeWrapper.informationContact.email.link}
+                    a(href="mailto:" + data.mainWrapper.aboutMeWrapper.informationContact.email.link.href class="info-link")
+                        | #{data.mainWrapper.aboutMeWrapper.informationContact.email.link.displayedText}
                         span(aria-hidden="true" class="icon icon-mail-alt color-accent-light info-icon")
             li.info-block
                 .info-title.i-block.text-bolded #{data.mainWrapper.aboutMeWrapper.informationContact.website.title}:
                 .info-description.i-block
-                    a(href=data.mainWrapper.aboutMeWrapper.informationContact.website.link class="info-link")
-                        | #{data.mainWrapper.aboutMeWrapper.informationContact.website.link}
+                    a(href=data.mainWrapper.aboutMeWrapper.informationContact.website.link.href class="info-link")
+                        | #{data.mainWrapper.aboutMeWrapper.informationContact.website.link.displayedText}
                         span(aria-hidden="true" class="icon icon-globe color-accent-light info-icon")
             li.info-block
                 .info-title.i-block.text-bolded #{data.mainWrapper.aboutMeWrapper.informationContact.phone.title}:
                 .info-description.i-block
-                    a(href="tel:" + data.mainWrapper.aboutMeWrapper.informationContact.phone.link class="info-link")
-                        | #{data.mainWrapper.aboutMeWrapper.informationContact.phone.link}
+                    a(href="tel:" + data.mainWrapper.aboutMeWrapper.informationContact.phone.link.href class="info-link")
+                        | #{data.mainWrapper.aboutMeWrapper.informationContact.phone.link.displayedText}
                         span(aria-hidden="true" class="icon icon-mobile color-accent-light info-icon")

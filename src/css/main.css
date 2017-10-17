@@ -1398,6 +1398,7 @@ html {
 .main-footer__list > li,
 .btn,
 .btn > span,
+.services-item-description,
 .single-project-description {
   overflow: hidden;
   white-space: nowrap;
@@ -2429,6 +2430,8 @@ body {
     display: block; }
   .services-item-title {
     margin-top: 15px; }
+  .services-item-description {
+    max-height: 253px; }
   .services-item-button {
     background-color: transparent;
     display: block;
@@ -2469,6 +2472,8 @@ body {
 .portfolio-items {
   height: 0;
   position: relative;
+  -webkit-transform: perspective(1px);
+          transform: perspective(1px);
   overflow: hidden;
   transition: 0.3s height ease-in-out; }
 
@@ -2774,7 +2779,8 @@ body {
 
 .single-project-wrapper {
   position: relative;
-  overflow: hidden; }
+  overflow: hidden;
+  box-shadow: 0 1px 3.5px 0 rgba(0, 0, 0, 0.4), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 2.5px 1px -1px rgba(0, 0, 0, 0.1); }
   .single-project-wrapper::after {
     content: '';
     background-color: rgba(0, 0, 0, 0.15);

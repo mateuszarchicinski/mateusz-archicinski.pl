@@ -27,6 +27,8 @@ class spyScrolling {
         }
     }
     setCurrRange(index) {
+        if (this.currRangeIndex === index) return;
+
         this.scrollRanges[this.currRangeIndex].elems.forEach((item) => {
             item.classList.remove(this.scrollActiveClass);
         });

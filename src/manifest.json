@@ -6,7 +6,7 @@
     "background_color": "#f44336",
     "orientation": "portrait",
     "display": "browser",
-    "description": "Strona internetowa młodego frontend developera, freelancera z okolic Warszawy. Zajmuje się odświeżaniem obecnych i tworzeniem nowych stron wizytówek. Ostatnimi czasy zagłebiam się w tajniki webdesignu i poznawaniu bardziej złożonych technologii oraz pozycjoonowania.",
+    "description": "Strona internetowa młodego front-end developera, freelancera z okolic Warszawy. Zajmuje się odświeżaniem obecnych i tworzeniem nowych stron wizytówek. Ostatnimi czasy zagłębiam się w tajniki webdesignu i poznawaniu bardziej złożonych technologii oraz pozycjonowania.",
     "icons": [
         {
             "src": "/images/logo/logo-48x48.png",

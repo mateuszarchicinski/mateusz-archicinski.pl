@@ -183,7 +183,7 @@ var mainHeader = function () {
             var minHeight = this.sectionElem.offsetHeight + this.offsetHeight;
 
             if (window.pageYOffset >= minHeight / 2.5) {
-                this.headerElem.classList.add('main-header-fixed');
+                if (!this.headerElem.classList.contains('main-header-fixed')) this.headerElem.classList.add('main-header-fixed');
 
                 if (window.pageYOffset >= minHeight) {
                     this.show();
@@ -191,22 +191,30 @@ var mainHeader = function () {
                     this.hide();
                 }
             } else {
-                this.headerElem.classList.remove('main-header-fixed');
-                this.headerElem.classList.remove('show');
-                this.headerElem.classList.remove('hide');
+                if (this.headerElem.classList.contains('main-header-fixed')) this.headerElem.classList.remove('main-header-fixed');
+                if (this.headerElem.classList.contains('show')) this.headerElem.classList.remove('show');
+                if (this.headerElem.classList.contains('hide')) this.headerElem.classList.remove('hide');
             }
         }
     }, {
         key: 'show',
         value: function show() {
+            if (this.isVisible) return;
+
             this.headerElem.classList.remove('hide');
             this.headerElem.classList.add('show');
+
+            this.isVisible = true;
         }
     }, {
         key: 'hide',
         value: function hide() {
+            if (!this.isVisible) return;
+
             this.headerElem.classList.remove('show');
             this.headerElem.classList.add('hide');
+
+            this.isVisible = false;
         }
     }, {
         key: 'init',
@@ -359,6 +367,8 @@ var spyScrolling = function () {
         key: 'setCurrRange',
         value: function setCurrRange(index) {
             var _this = this;
+
+            if (this.currRangeIndex === index) return;
 
             this.scrollRanges[this.currRangeIndex].elems.forEach(function (item) {
                 item.classList.remove(_this.scrollActiveClass);

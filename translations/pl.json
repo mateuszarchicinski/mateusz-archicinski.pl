@@ -1,11 +1,11 @@
 {
     "lang": "pl",
     "title": "Mateusz Archiciński / Front-End Developer",
-    "description": "Strona internetowa młodego frontend developera, freelancera z okolic Warszawy. Zajmuje się odświeżaniem obecnych i tworzeniem nowych stron wizytówek. Ostatnimi czasy zagłebiam się w tajniki webdesignu i poznawaniu bardziej złożonych technologii oraz pozycjoonowania.",
-    "keywords": "",
+    "description": "Strona internetowa młodego front-end developera, freelancera z okolic Warszawy. Zajmuje się odświeżaniem obecnych i tworzeniem nowych stron wizytówek. Ostatnimi czasy zagłębiam się w tajniki webdesignu i poznawaniu bardziej złożonych technologii oraz pozycjonowania.",
+    "keywords": " !? uzupełnić",
     "author": "Mateusz Archiciński",
-    "ogTitle": "",
-    "ogDescription": "Strona internetowa młodego frontend developera, freelancera z okolic Warszawy. Zajmuje się odświeżaniem obecnych i tworzeniem nowych stron wizytówek. Ostatnimi czasy zagłebiam się w tajniki webdesignu i poznawaniu bardziej złożonych technologii oraz pozycjoonowania.",
+    "ogTitle": "Mateusz Archiciński / Front-End Developer",
+    "ogDescription": "Strona internetowa młodego front-end developera, freelancera z okolic Warszawy. Zajmuje się odświeżaniem obecnych i tworzeniem nowych stron wizytówek. Ostatnimi czasy zagłębiam się w tajniki webdesignu i poznawaniu bardziej złożonych technologii oraz pozycjonowania.",
     "mainHeader": {
         "siteLogo": {
             "alt": "#MA - Logo strony internetowej"
@@ -62,15 +62,24 @@
                 },
                 "email": {
                     "title": "E-mail",
-                    "link": "mateusz.archicinski@gmail.com"
+                    "link": {
+                        "displayedText": "mateusz.archicinski@gmail.com",
+                        "href": "mateusz.archicinski@gmail.com"
+                    }
                 },
                 "website": {
                     "title": "Strona internetowa",
-                    "link": "https://www.mateusz-archicinski.pl"
+                    "link": {
+                        "displayedText": "www.mateusz-archicinski.pl",
+                        "href": "https://www.mateusz-archicinski.pl"
+                    }
                 },
                 "phone": {
                     "title": "Telefon",
-                    "link": "505-072-776"
+                    "link": {
+                        "displayedText": "505-072-776",
+                        "href": "505072776"
+                    }
                 }
             },
             "attributesQualities": {
@@ -130,9 +139,12 @@
                         "period": "01.2017 - Obecnie",
                         "title": "Front-End Developer / Freelancer",
                         "description": "Krótkoterminowe zlecenia zadań do wykonania zdalnie.",
-                        "link": "https://www.mateusz-archicinski.pl",
-                        "linkIconName": "globe",
-                        "linkIconColor": "primary"
+                        "link": {
+                            "displayedText": "www.mateusz-archicinski.pl",
+                            "href": "https://www.mateusz-archicinski.pl",
+                            "iconName": "globe",
+                            "iconColor": "primary"
+                        }
                     },
                     {
                         "period": "04.2016 - 01.2017",
@@ -153,9 +165,12 @@
                         "period": "10.2015 - Obecnie",
                         "title": "Projekty w ramach nauki",
                         "description": "Wykonane i udostępnione projekty w ramach nauki różnych technologii. Zachęcam do odwiedzenia mojego Githuba.",
-                        "link": "https://github.com/mateuszarchicinski?tab=repositories",
-                        "linkIconName": "github",
-                        "linkIconColor": "github"
+                        "link": {
+                            "displayedText": "github.com/mateuszarchicinski",
+                            "href": "https://github.com/mateuszarchicinski?tab=repositories",
+                            "iconName": "github",
+                            "iconColor": "github"
+                        }
                     },
                     {
                         "period": "10.2015 - Obecnie",
@@ -181,31 +196,31 @@
                 {
                     "iconName": "website",
                     "title": "Kodowanie PSD do HTML/CSS/JS",
-                    "description": "Pocięcie i zakodowanie do HTML5, CSS3 i JavaScript dostarczonego projektu graficznego strony internetowej, mailingu, szablonu WordPress i innych.",
+                    "description": "Pocięcie i zakodowanie do HTML5,<br>CSS3 i JavaScript dostarczonego<br>projektu graficznego strony<br>internetowej, mailingu, szablonu<br>WordPress i innych.",
                     "button": "Więcej"
                 },
                 {
                     "iconName": "devices",
                     "title": "Dostosowanie do różnych przeglądarek i urządzeń",
-                    "description": "Dostosowanie strony internetowej do wybranych przeglądarek i urządzeń mobilnych z uwzględnieniem różnych rozdzielczości (tzw. Responsive Web Design).",
+                    "description": "Dostosowanie strony internetowej do<br>wybranych przeglądarek i urządzeń<br>mobilnych z uwzględnieniem różnych<br>rozdzielczości (tzw. Responsive Web<br>Design).",
                     "button": "Więcej"
                 },
                 {
                     "iconName": "admin",
                     "title": "Administracja stron internetowych",
-                    "description": "Wdrożenie i utrzymanie strony/aplikacji internetowej w tym okresowe raporty z testów automatycznych i manualnych wybranych funkcjonalności.",
+                    "description": "Wdrożenie i utrzymanie<br>strony/aplikacji internetowej w tym<br>okresowe raporty z testów<br>automatycznych i manualnych<br>wybranych funkcjonalności.",
                     "button": "Więcej"
                 },
                 {
                     "iconName": "spa",
                     "title": "SPA / Aplikacje internetowe",
-                    "description": "Tworzenie całej warstwy klienta aplikacji internetowej lub wybranych komponentów w oparciu <br>o framework AngularJS, HTML5, CSS3, ES6/TypeScript.",
+                    "description": "Tworzenie całej warstwy klienta<br>aplikacji internetowej lub wybranych<br>komponentów w oparciu<br>o framework AngularJS, HTML5,<br>CSS3, ES6/TypeScript.",
                     "button": "Więcej"
                 },
                 {
                     "iconName": "api",
                     "title": "API / Interfejsy programowania aplikacji",
-                    "description": "Tworzenie całej warstwy serwera lub wybranych usług zapewniających dostęp do zasobów serwera za pośrednictwem protokołu HTTP <br>w oparciu o framework Express.",
+                    "description": "Tworzenie całej warstwy serwera lub<br>wybranych usług zapewniających<br>dostęp do zasobów serwera za<br>pośrednictwem protokołu HTTP<br>w oparciu o framework Express.",
                     "button": "Więcej"
                 }
             ]

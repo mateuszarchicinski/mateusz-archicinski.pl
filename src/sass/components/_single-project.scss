@@ -3,6 +3,10 @@
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
 
 
+// .single-project-wrapper
+$single-project-wrapper__box-shadow:    0 1px 3.5px 0 rgba(0, 0, 0, 0.4),
+                                        0 1px 1px 0 rgba(0, 0, 0, 0.14),
+                                        0 2.5px 1px -1px rgba(0, 0, 0, 0.10) !default;
 // .single-project-wrapper::after
 $single-project-wrapper__after__background-color: rgba($color__black-1, 0.15) !default;
 // .single-project-wrapper::hover::after
@@ -20,6 +24,7 @@ $single-project-buttons__btn__font-size-lg: 0.72864em !default;
     &-wrapper {
         position: relative;
         overflow: hidden;
+        box-shadow: $single-project-wrapper__box-shadow;
         @extend %no-padding-margin;
         &::after {
             content: '';

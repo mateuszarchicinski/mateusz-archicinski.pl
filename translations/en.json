@@ -1,11 +1,11 @@
 {
     "lang": "en",
     "title": "Mateusz Archiciński / Front-End Developer",
-    "description": "",
-    "keywords": "",
+    "description": "Website of the young front-end developer, freelancer from the vicinity of Warsaw. He deals with refreshing the present and creating new pages of business cards. Recently, I delved into the secrets of web design and explored more complex technologies and positioning.",
+    "keywords": " !? uzupełnić",
     "author": "Mateusz Archiciński",
-    "ogTitle": "",
-    "ogDescription": "",
+    "ogTitle": "Mateusz Archiciński / Front-End Developer",
+    "ogDescription": "Website of the young front-end developer, freelancer from the vicinity of Warsaw. He deals with refreshing the present and creating new pages of business cards. Recently, I delved into the secrets of web design and explored more complex technologies and positioning.",
     "mainHeader": {
         "siteLogo": {
             "alt": "#MA - Site logo"
@@ -32,7 +32,7 @@
         "aboutMeWrapper": {
             "header": {
                 "h2": "About me",
-                "p": "Pełen zestaw informacji na mój temat."
+                "p": "A full set of information about me."
             },
             "devFace": {
                 "imgAlt": "Face photo of Mateusz Archiciński",
@@ -42,9 +42,9 @@
             "profile": {
                 "h3": "Profile",
                 "p": [
-                    "Cześć! Mam na imię Mateusz. Zajmuję się tworzeniem nowoczesnych stron internetowych w oparciu o technologie HTML, CSS i JavaScript.",
-                    "Swoją karierę zawodową powiązaną z zawodem Front-End Developera rozpocząłem na stanowisku Web Content Editora w jednej z Warszawskich korporacji interaktywnych. Wspomniane stanowisko umożliwiło mi wzięcie udziału w wielu ciekawych projektach/kampaniach prowadzonych dla różnych klientów z rynku polskiego i zagranicznego. Miałem przyjemność poznać ciekawych ludzi i wiele się nauczyć.",
-                    "W chwili obecnej ponownie szukam zatrudnienia na stałe lub zdalnie w zależności od potrzeb klienta. Jeżeli jesteś zainteresowany/a współpraca skontaktuj się ze mną!"
+                    "Hi! My name is Mateusz. I am developing modern web pages based on HTML, CSS and JavaScript technologies.",
+                    "I started my career as a Web Content Editor at one of Warsaw's interactive corporations. This position enabled me to participate in many interesting projects/campaigns conducted for various clients from the Polish and foreign markets. I had the pleasure to meet interesting people and learn a lot.",
+                    "At the moment, I am looking for a permanent or a remote work, depending on client needs. If you are interested in cooperation contact me!"
                 ]
             },
             "informationContact": {
@@ -62,15 +62,24 @@
                 },
                 "email": {
                     "title": "E-mail",
-                    "link": "mateusz.archicinski@gmail.com"
+                    "link": {
+                        "displayedText": "mateusz.archicinski@gmail.com",
+                        "href": "mateusz.archicinski@gmail.com"
+                    }
                 },
                 "website": {
                     "title": "Website",
-                    "link": "https://www.mateusz-archicinski.pl"
+                    "link": {
+                        "displayedText": "www.mateusz-archicinski.pl",
+                        "href": "https://www.mateusz-archicinski.pl"
+                    }
                 },
                 "phone": {
                     "title": "Phone",
-                    "link": "505-072-776"
+                    "link": {
+                        "displayedText": "505-072-776",
+                        "href": "505072776"
+                    }
                 }
             },
             "attributesQualities": {
@@ -79,23 +88,23 @@
                     "and qualities"
                 ],
                 "whatAmILike": {
-                    "title": "Jaki jestem",
+                    "title": "What am I like",
                     "array": [
-                        "Dokładny",
-                        "Odpowiedzialny",
-                        "Rzetelny",
-                        "Samodzielny",
-                        "Terminowy"
+                        "Accurate",
+                        "Responsible",
+                        "Honest",
+                        "Individual",
+                        "Forward"
                     ]
                 },
                 "inWhatAmIGood": {
-                    "title": "W czym jestem dobry",
+                    "title": "In what am I good",
                     "array": [
-                        "Dzielę się wiedzą",
-                        "Potrafię szukać",
-                        "Przyjmuję krytykę",
-                        "Skupiam sie na celach",
-                        "Współpracuję w zespole, komunikuję się"
+                        "I share knowledge",
+                        "I can search",
+                        "I accept criticism",
+                        "I focus on goals",
+                        "I work in a team and communicates"
                     ]
                 }
             },
@@ -103,19 +112,19 @@
                 "h3": "Education",
                 "timelinePoints": [
                     {
-                        "period": "10.2015 - Obecnie",
-                        "title": "Edukacja indywidualna",
-                        "description": "Nauka zagadnień zwianych z szeroko pojętym front-endem internetowym i web designem."
+                        "period": "10.2015 - Currently",
+                        "title": "Individual education",
+                        "description": "Learning of issues connecting to widely comprehended concepts of front-end and web design."
                     },
                     {
-                        "period": "09.2012 - Obecnie",
-                        "title": "Wykształcenie: Wyższe",
-                        "description": "Studia inżynierskie w Szkole Głównej Gospodarstwa Wiejskiego w Warszawie, kierunek: Informatyka, specjalizacja: Systemy komputerowe."
+                        "period": "09.2012 - Currently",
+                        "title": "Education: Higher",
+                        "description": "Engineering studies at the Warsaw University of Life Sciences, field of study: Informatics, specialization: Computer Systems."
                     },
                     {
                         "period": "09.2009 - 06.2012",
-                        "title": "Wykształcenie: Średnie",
-                        "description": "Ukończenie nauki w Liceum Ogólnokształcącym im. Marii Sadzewiczowej w Łochowie na profilu matematyczno-informatycznym."
+                        "title": "Education: Secondary",
+                        "description": "Completion of education at the Maria Sadzewiczowa High School in Łochów on mathematical-informatic profile."
                     }
                 ]
             },
@@ -126,40 +135,46 @@
                 ],
                 "timelinePoints": [
                     {
-                        "period": "01.2017 - Obecnie",
+                        "period": "01.2017 - Currently",
                         "title": "Front-End Developer / Freelancer",
-                        "description": "Krótkoterminowe zlecenia zadań do wykonania zdalnie.",
-                        "link": "https://www.mateusz-archicinski.pl",
-                        "linkIconName": "globe",
-                        "linkIconColor": "primary"
+                        "description": "Short-term job orders to be completed remotely.",
+                        "link": {
+                            "displayedText": "www.mateusz-archicinski.pl",
+                            "href": "https://www.mateusz-archicinski.pl",
+                            "iconName": "globe",
+                            "iconColor": "primary"
+                        }
                     },
                     {
                         "period": "04.2016 - 01.2017",
-                        "title": "Web Content Editor w K2 Internet S.A.",
-                        "description": "Do głównych obowiązków zaliczało się obsługiwanie różnorodnych systemów zarządzania treścią w sieci, tworzenie stron kampanijno-produktowych typu landing page, long page i mailingów, a także automatyzacja pracy za pomocą skryptów po stronie serwera/klienta js/nodejs."
+                        "title": "Web Content Editor in K2 Internet S.A.",
+                        "description": "My main responsibilities included serving various content management systems on the Web, creating a landing page, landing page, and mail pages, as well as automating work using js/nodejs server/client scripts."
                     },
                     {
                         "period": "30.11.2015 - 18.12.2015",
-                        "title": "Pracownik biurowy / Praktykant w GUS",
-                        "description": "Praktyka studencka odbywana w Głównym Urzędzie Statystycznym w Warszawie, wykonywane czynności: tester systemu szkoleń wewnętrznych dla pracowników GUS z dostępem do cmsa Moodle."
+                        "title": "Office worker / Apprentice in GUS",
+                        "description": "Student practice held at the Central Statistical Office in Warsaw, executed activities: internal training system tester for GUS employees with access to the Moodle cms."
                     },
                     {
                         "period": "02.11.2015 - 27.11.2015",
-                        "title": "Pracownik biurowy w Kancelarii Adwokackiej",
-                        "description": "Zatrudnienie na umowę zlecenie w Kancelarii Adwokackiej, wykonywane czynności: prace biurowe."
+                        "title": "Office worker in Law Firm",
+                        "description": "Contract employment at the Law Offices, activities performed: office work."
                     },
                     {
-                        "period": "10.2015 - Obecnie",
-                        "title": "Projekty w ramach nauki",
-                        "description": "Wykonane i udostępnione projekty w ramach nauki różnych technologii. Zachęcam do odwiedzenia mojego Githuba.",
-                        "link": "https://github.com/mateuszarchicinski?tab=repositories",
-                        "linkIconName": "github",
-                        "linkIconColor": "github"
+                        "period": "10.2015 - Currently",
+                        "title": "Learning projects",
+                        "description": "Made and made available projects within the framework of learning different technologies. I encourage you to visit my Github.",
+                        "link": {
+                            "displayedText": "github.com/mateuszarchicinski",
+                            "href": "https://github.com/mateuszarchicinski?tab=repositories",
+                            "iconName": "github",
+                            "iconColor": "github"
+                        }
                     },
                     {
-                        "period": "10.2015 - Obecnie",
-                        "title": "Kursy internetowe",
-                        "description": "Ukończenie dużej ilości kursów internetowych z zakresu: HTML5, Pug, JSON, CSS3, Less, Sass, Bootstrap, Materialize, Foundation, RWD, JS, ES6, jQuery, AngularJS, AJAX, Angular Material, NodeJS, NPM, Bower, Gulp, MongoDB, Mongoose, PHP, WordPress, MySql, Git i Photoshop."
+                        "period": "10.2015 - Currently",
+                        "title": "Online courses",
+                        "description": "Completion of a large number of online courses in the field of HTML5, Pug, JSON, CSS3, Less, Sass, Bootstrap, Materialize, Foundation, RWD, JS, ES6, jQuery, AngularJS, AJAX, Angular Material, NodeJS, NPM, Bower, Gulp, MongoDB, Mongoose, PHP, WordPress, MySql, Git and Photoshop."
                     }
                 ]
             },
@@ -168,51 +183,51 @@
                     "Skills",
                     "and technologies"
                 ],
-                "p": "Wybrane umiejętności i technologie, które wykorzystuje w swoich projektach na co dzień."
+                "p": "Selected skills and technologies which I use in his projects on a daily basis."
             }
         },
         "servicesWrapper": {
             "header": {
                 "h2": "Services",
-                "p": "Sprawdź co mogę ci zaoferować."
+                "p": "Check out what I can offer you."
             },
             "services": [
                 {
                     "iconName": "website",
-                    "title": "Kodowanie PSD do HTML/CSS/JS",
-                    "description": "Pocięcie i zakodowanie do HTML5, CSS3 i JavaScript dostarczonego projektu graficznego strony internetowej, mailingu, szablonu WordPress i innych.",
-                    "button": "Więcej"
+                    "title": "Coding PSD to HTML/CSS/JS",
+                    "description": "Cutting and coding to HTML5, CSS3<br>and JavaScript of the delivered<br>graphics project of your websites,<br>mailings, WordPress templates<br>and others.",
+                    "button": "More"
                 },
                 {
                     "iconName": "devices",
-                    "title": "Dostosowanie do różnych przeglądarek i urządzeń",
-                    "description": "Dostosowanie strony internetowej do wybranych przeglądarek i urządzeń mobilnych z uwzględnieniem różnych rozdzielczości (tzw. Responsive Web Design).",
-                    "button": "Więcej"
+                    "title": "Customization for various browsers and devices",
+                    "description": "Customization the websites<br>for all or selected browsers<br>and mobile devices with<br>different resolutions (so-called<br>Responsive web design).",
+                    "button": "More"
                 },
                 {
                     "iconName": "admin",
-                    "title": "Administracja stron internetowych",
-                    "description": "Wdrożenie i utrzymanie strony/aplikacji internetowej w tym okresowe raporty z testów automatycznych i manualnych wybranych funkcjonalności.",
-                    "button": "Więcej"
+                    "title": "Administration of your websites",
+                    "description": "Implementation and maintenance<br>of the website/application<br>including periodical reports<br>from automated and manual tests<br>of all or selected features.",
+                    "button": "More"
                 },
                 {
                     "iconName": "spa",
-                    "title": "SPA / Aplikacje internetowe",
-                    "description": "Tworzenie całej warstwy klienta aplikacji internetowej lub wybranych komponentów w oparciu <br>o framework AngularJS, HTML5, CSS3, ES6/TypeScript.",
-                    "button": "Więcej"
+                    "title": "SPA / Single page applications",
+                    "description": "Creation of an entire<br>web application client layer<br>or selected components based<br>on the AngularJS framework,<br>HTML5, CSS3, ES6/TypeScript.",
+                    "button": "More"
                 },
                 {
                     "iconName": "api",
-                    "title": "API / Interfejsy programowania aplikacji",
-                    "description": "Tworzenie całej warstwy serwera lub wybranych usług zapewniających dostęp do zasobów serwera za pośrednictwem protokołu HTTP <br>w oparciu o framework Express.",
-                    "button": "Więcej"
+                    "title": "API / Application programming interfaces",
+                    "description": "Creation of an entire server layer<br>or selected services to provide<br>access server resources over HTTP<br>protocol based on the Express<br>framework.",
+                    "button": "More"
                 }
             ]
         },
         "portfolioWrapper": {
             "header": {
                 "h2": "Portfolio",
-                "p": "Stworzone przeze mnie projekty, samodzielnie jak i w grupie."
+                "p": "Projects created by me, independently as well as in the group."
             },
             "projects": {
                 "categories": {
@@ -299,34 +314,34 @@
         "contactWrapper": {
             "header": {
                 "h2": "Contact",
-                "p": "Jeżeli masz jakieś pytania skontaktuj się zemną."
+                "p": "If you have any questions please contact me."
             },
             "form": {
-                "h3": "Formularz kontaktowy",
+                "h3": "Contact form",
                 "inputs": {
                     "name": {
-                        "label": "Imię i nazwisko / Nazwa firmy"
+                        "label": "First and last name / Company Name"
                     },
                     "email": {
                         "label": "E-mail"
                     },
                     "subject": {
-                        "label": "Temat"
+                        "label": "Subject"
                     },
                     "message": {
-                        "label": "Treść wiadomości"
+                        "label": "Message content"
                     },
                     "requiredAriaLabel": "This field is required"
                 },
-                "submitButton": "Wyślij wiadomość"
+                "submitButton": "Send a message"
             },
             "info": {
                 "address": {
-                    "h3": "Adres",
-                    "p": "Warszawa"
+                    "h3": "Address",
+                    "p": "Warsaw"
                 },
                 "contactInformation": {
-                    "h3": "Informacje kontaktowe",
+                    "h3": "Contact information",
                     "links": [
                         {
                             "href": "mateusz.archicinski@gmail.com",
@@ -339,8 +354,8 @@
                     ]
                 },
                 "workingHours": {
-                    "h3": "Godziny pracy",
-                    "p": "Codziennie od 10:00 do 20:00<br>(w tym weekendy)"
+                    "h3": "Working hours",
+                    "p": "Daily from 10:00 to 20:00<br>(including weekends)"
                 }
             }
         }
