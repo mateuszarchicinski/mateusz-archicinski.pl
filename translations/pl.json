@@ -1,11 +1,11 @@
 {
     "lang": "pl",
     "title": "Mateusz Archiciński / Front-End Developer",
-    "description": "Strona internetowa młodego front-end developera, freelancera z okolic Warszawy. Zajmuje się odświeżaniem obecnych i tworzeniem nowych stron wizytówek. Ostatnimi czasy zagłębiam się w tajniki webdesignu i poznawaniu bardziej złożonych technologii oraz pozycjonowania.",
-    "keywords": " !? uzupełnić",
+    "description": "Strona internetowa Mateusza Archicińskiego Front-End Developera, freelancera z okolic Warszawy. Świadczącego usługi odświeżania obecny i tworzenia nowych stron/aplikacji internetowych dostosowanych do najnowszych standardów sieciowych, a także zbudowanych w oparciu o nowoczesne i najlepiej dobrane technologie.",
+    "keywords": "tworzenie stron www,tworzenie stron internetowych,tworzenie aplikacji internetowych,praca,strony internetowe,strona internetowa,aplikacje internetowe,aplikacja internetowa,w sieci,html,css,javascript,nodejs,wordpress,front end developer,front end,projekt,przeglądarki internetowe,serwer",
     "author": "Mateusz Archiciński",
     "ogTitle": "Mateusz Archiciński / Front-End Developer",
-    "ogDescription": "Strona internetowa młodego front-end developera, freelancera z okolic Warszawy. Zajmuje się odświeżaniem obecnych i tworzeniem nowych stron wizytówek. Ostatnimi czasy zagłębiam się w tajniki webdesignu i poznawaniu bardziej złożonych technologii oraz pozycjonowania.",
+    "ogDescription": "Strona internetowa Mateusza Archicińskiego Front-End Developera, freelancera z okolic Warszawy. Świadczącego usługi odświeżania obecny i tworzenia nowych stron/aplikacji internetowych dostosowanych do najnowszych standardów sieciowych, a także zbudowanych w oparciu o nowoczesne i najlepiej dobrane technologie.",
     "mainHeader": {
         "siteLogo": {
             "alt": "#MA - Logo strony internetowej"
@@ -17,6 +17,9 @@
             "services": "Usługi",
             "portfolio": "Portfolio",
             "contact": "Kontakt"
+        },
+        "sideNav": {
+            "buttonToggleAriaLabel": "Przełącznik nawigacji bocznej"
         }
     },
     "mainWrapper": {
@@ -240,72 +243,71 @@
                 },
                 "websites": [
                     {
-                        "imgSrc": "https://t4.ftcdn.net/jpg/01/01/91/63/240_F_101916353_CLAc4e3dzc1FPbfNwJctpwVCrbqBZclb.jpg",
-                        "imgAlt": "An example img WEBSITE",
-                        "title": "Strona WEBSITE",
-                        "description": "Lorem ipsum dolor sit amet, consectetur<br>adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+                        "imgSrc": "../images/portfolio/mateusz-archicinski.png",
+                        "imgAlt": "Logo strony internetowej - mateusz-archicinski.pl",
+                        "title": "mateusz-archicinski.pl",
+                        "description": "Strona internetowa, wizytówka<br>ukazująca usługi Mateusza Archicińskigo.",
                         "buttons": [
                             {
                                 "value": "Kod źródłowy",
-                                "link": "#"
+                                "link": "https://github.com/mateuszarchicinski/mateusz-archicinski.pl"
                             },
                             {
                                 "value": "Podgląd",
-                                "link": "#"
+                                "link": "https://www.mateusz-archicinski.pl"
                             }
                         ]
                     }
                 ],
-                "mailings": [
-                    {
-                        "imgSrc": "https://t4.ftcdn.net/jpg/01/01/91/63/240_F_101916353_CLAc4e3dzc1FPbfNwJctpwVCrbqBZclb.jpg",
-                        "imgAlt": "An example img MAILINGS",
-                        "title": "Strona MAILINGS",
-                        "description": "Lorem ipsum dolor sit amet, consectetur<br>adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-                        "buttons": [
-                            {
-                                "value": "Kod źródłowy",
-                                "link": "#"
-                            },
-                            {
-                                "value": "Podgląd",
-                                "link": "#"
-                            }
-                        ]
-                    }
-                ],
+                "mailings": [],
                 "spa": [
                     {
-                        "imgSrc": "https://t4.ftcdn.net/jpg/01/01/91/63/240_F_101916353_CLAc4e3dzc1FPbfNwJctpwVCrbqBZclb.jpg",
-                        "imgAlt": "An example img SPA",
-                        "title": "Strona SPA",
-                        "description": "Lorem ipsum dolor sit amet, consectetur<br>adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+                        "imgSrc": "../images/portfolio/helpdesk--aplikacja-internetowa.png",
+                        "imgAlt": "HD APP - Logo",
+                        "title": "Helpdesk - Aplikacja internetowa",
+                        "description": "Projekt związany z techniką<br>programowania sterowanego testami.",
                         "buttons": [
                             {
                                 "value": "Kod źródłowy",
-                                "link": "#"
+                                "link": "https://github.com/mateuszarchicinski/TDD-Helpdesk-Web-App-Project"
                             },
                             {
                                 "value": "Podgląd",
-                                "link": "#"
+                                "link": "https://www.helpdesk-app.mateusz-archicinski.pl"
                             }
                         ]
                     }
                 ],
                 "api": [
                     {
-                        "imgSrc": "https://t4.ftcdn.net/jpg/01/01/91/63/240_F_101916353_CLAc4e3dzc1FPbfNwJctpwVCrbqBZclb.jpg",
-                        "imgAlt": "An example img API",
-                        "title": "Strona API",
-                        "description": "Lorem ipsum dolor sit amet, consectetur<br>adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+                        "imgSrc": "../images/portfolio/restful-api--nodejs-express.jpg",
+                        "imgAlt": "Kolory - Restful API - NodeJS & ExpressJS",
+                        "title": "Restful API - NodeJS & ExpressJS",
+                        "description": "Project Restful API jest<br>zbudowany na platformie Node.js.",
                         "buttons": [
                             {
                                 "value": "Kod źródłowy",
-                                "link": "#"
+                                "link": "https://github.com/mateuszarchicinski/Restful-API--NodeJS-ExpressJS"
                             },
                             {
                                 "value": "Podgląd",
-                                "link": "#"
+                                "link": "https://restful-api.mateusz-archicinski.pl"
+                            }
+                        ]
+                    },
+                    {
+                        "imgSrc": "../images/portfolio/smogly-data-visualizer.png",
+                        "imgAlt": "Logo projektu/strony internetowej Smogly - http://smogly.pl/",
+                        "title": "Smogly Data Visualizer",
+                        "description": "Projekt stworzony podczas<br>hackatonu Zdrowieton.js.",
+                        "buttons": [
+                            {
+                                "value": "Kod źródłowy",
+                                "link": "https://github.com/WarMaxis/Zdrowieton.js_project_8"
+                            },
+                            {
+                                "value": "Podgląd",
+                                "link": "https://smogly-data-visualizer.mateusz-archicinski.pl/results?find=name:Smogly&select=name,country&limit=4&sort=last_metering.created:-1"
                             }
                         ]
                     }

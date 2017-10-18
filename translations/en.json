@@ -1,14 +1,14 @@
 {
     "lang": "en",
     "title": "Mateusz Archiciński / Front-End Developer",
-    "description": "Website of the young front-end developer, freelancer from the vicinity of Warsaw. He deals with refreshing the present and creating new pages of business cards. Recently, I delved into the secrets of web design and explored more complex technologies and positioning.",
-    "keywords": " !? uzupełnić",
+    "description": "Website of Mateusz Archiciński Front-End Developer, a freelancer from the vicinity of Warsaw. Providing services to refresh the present and create new websites/web applications adapted to the latest web standards as well as built on the basis of modern and best-chosen technologies.",
+    "keywords": "web development,creation of websites,creation of web applications,job,websites,website,web applications,web application,in network,html, css, javascript, nodejs, wordpress, front end developer, front end,project,design,browsers,server",
     "author": "Mateusz Archiciński",
     "ogTitle": "Mateusz Archiciński / Front-End Developer",
-    "ogDescription": "Website of the young front-end developer, freelancer from the vicinity of Warsaw. He deals with refreshing the present and creating new pages of business cards. Recently, I delved into the secrets of web design and explored more complex technologies and positioning.",
+    "ogDescription": "Website of Mateusz Archiciński Front-End Developer, a freelancer from the vicinity of Warsaw. Providing services to refresh the present and create new websites/web applications adapted to the latest web standards as well as built on the basis of modern and best-chosen technologies.",
     "mainHeader": {
         "siteLogo": {
-            "alt": "#MA - Site logo"
+            "alt": "#MA - Website logo"
         },
         "h1": "#Mateusz Archiciński",
         "siteNav": {
@@ -17,6 +17,9 @@
             "services": "Services",
             "portfolio": "Portfolio",
             "contact": "Contact"
+        },
+        "sideNav": {
+            "buttonToggleAriaLabel": "Side navigation toggle button"
         }
     },
     "mainWrapper": {
@@ -42,7 +45,7 @@
             "profile": {
                 "h3": "Profile",
                 "p": [
-                    "Hi! My name is Mateusz. I am developing modern web pages based on HTML, CSS and JavaScript technologies.",
+                    "Hi! My name is Mateusz. I am developing modern websites based on HTML, CSS and JavaScript technologies.",
                     "I started my career as a Web Content Editor at one of Warsaw's interactive corporations. This position enabled me to participate in many interesting projects/campaigns conducted for various clients from the Polish and foreign markets. I had the pleasure to meet interesting people and learn a lot.",
                     "At the moment, I am looking for a permanent or a remote work, depending on client needs. If you are interested in cooperation contact me!"
                 ]
@@ -119,12 +122,12 @@
                     {
                         "period": "09.2012 - Currently",
                         "title": "Education: Higher",
-                        "description": "Engineering studies at the Warsaw University of Life Sciences, field of study: Informatics, specialization: Computer Systems."
+                        "description": "Engineering studies at the Warsaw University of Life Sciences, a field of study: Informatics, specialization: Computer Systems."
                     },
                     {
                         "period": "09.2009 - 06.2012",
                         "title": "Education: Secondary",
-                        "description": "Completion of education at the Maria Sadzewiczowa High School in Łochów on mathematical-informatic profile."
+                        "description": "Completion of education at the Maria Sadzewiczowa High School in Łochów on a mathematical-informatic profile."
                     }
                 ]
             },
@@ -148,22 +151,22 @@
                     {
                         "period": "04.2016 - 01.2017",
                         "title": "Web Content Editor in K2 Internet S.A.",
-                        "description": "My main responsibilities included serving various content management systems on the Web, creating a landing page, landing page, and mail pages, as well as automating work using js/nodejs server/client scripts."
+                        "description": "My main responsibilities included serving various content management systems on the Web, creating a campaign/product pages, landing page, and mailings, as well as automating work using js/nodejs scripts on server/client side."
                     },
                     {
                         "period": "30.11.2015 - 18.12.2015",
                         "title": "Office worker / Apprentice in GUS",
-                        "description": "Student practice held at the Central Statistical Office in Warsaw, executed activities: internal training system tester for GUS employees with access to the Moodle cms."
+                        "description": "Student practice takes place in the Central Statistical Office in Warsaw, activities: tester of an internal training system for GUS employees with access to the Moodle cms."
                     },
                     {
                         "period": "02.11.2015 - 27.11.2015",
-                        "title": "Office worker in Law Firm",
-                        "description": "Contract employment at the Law Offices, activities performed: office work."
+                        "title": "Office worker in Advocate Office",
+                        "description": "Contract employment at the Advocate Office, activities performed: office work."
                     },
                     {
                         "period": "10.2015 - Currently",
                         "title": "Learning projects",
-                        "description": "Made and made available projects within the framework of learning different technologies. I encourage you to visit my Github.",
+                        "description": "Made and shared projects within learning different technologies. I encourage you to visit my Github.",
                         "link": {
                             "displayedText": "github.com/mateuszarchicinski",
                             "href": "https://github.com/mateuszarchicinski?tab=repositories",
@@ -183,7 +186,7 @@
                     "Skills",
                     "and technologies"
                 ],
-                "p": "Selected skills and technologies which I use in his projects on a daily basis."
+                "p": "Selected skills and technologies which I use in my projects on a daily basis."
             }
         },
         "servicesWrapper": {
@@ -195,31 +198,31 @@
                 {
                     "iconName": "website",
                     "title": "Coding PSD to HTML/CSS/JS",
-                    "description": "Cutting and coding to HTML5, CSS3<br>and JavaScript of the delivered<br>graphics project of your websites,<br>mailings, WordPress templates<br>and others.",
+                    "description": "Cutting and coding to HTML5, CSS3<br>and JavaScript of the provided<br>graphics project for a website,<br>mailing, WordPress template<br>and others.",
                     "button": "More"
                 },
                 {
                     "iconName": "devices",
                     "title": "Customization for various browsers and devices",
-                    "description": "Customization the websites<br>for all or selected browsers<br>and mobile devices with<br>different resolutions (so-called<br>Responsive web design).",
+                    "description": "Customization the website<br>for all or selected browsers<br>and mobile devices with<br>different resolutions (so-called<br>Responsive web design).",
                     "button": "More"
                 },
                 {
                     "iconName": "admin",
                     "title": "Administration of your websites",
-                    "description": "Implementation and maintenance<br>of the website/application<br>including periodical reports<br>from automated and manual tests<br>of all or selected features.",
+                    "description": "Implementation and maintenance<br>of the website/web application<br>including periodical reports<br>from automated and manual tests<br>of all or selected features.",
                     "button": "More"
                 },
                 {
                     "iconName": "spa",
                     "title": "SPA / Single page applications",
-                    "description": "Creation of an entire<br>web application client layer<br>or selected components based<br>on the AngularJS framework,<br>HTML5, CSS3, ES6/TypeScript.",
+                    "description": "Creation of an entire web<br>application client layer or selected<br>components based on the AngularJS<br>framework, HTML5, CSS3<br>and ES6/TypeScript.",
                     "button": "More"
                 },
                 {
                     "iconName": "api",
                     "title": "API / Application programming interfaces",
-                    "description": "Creation of an entire server layer<br>or selected services to provide<br>access server resources over HTTP<br>protocol based on the Express<br>framework.",
+                    "description": "Creation of an entire web<br>application server layer or selected<br>services. Providing access to server<br>resources over HTTP protocol based<br>on the Express framework.",
                     "button": "More"
                 }
             ]
@@ -239,72 +242,71 @@
                 },
                 "websites": [
                     {
-                        "imgSrc": "https://t4.ftcdn.net/jpg/01/01/91/63/240_F_101916353_CLAc4e3dzc1FPbfNwJctpwVCrbqBZclb.jpg",
-                        "imgAlt": "An example img WEBSITE",
-                        "title": "Strona WEBSITE",
-                        "description": "Lorem ipsum dolor sit amet, consectetur<br>adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+                        "imgSrc": "../images/portfolio/mateusz-archicinski.png",
+                        "imgAlt": "Website logo - mateusz-archicinski.pl",
+                        "title": "mateusz-archicinski.pl",
+                        "description": "Website, a business card to showing<br>services of Mateusz Archicinski.",
                         "buttons": [
                             {
                                 "value": "Source code",
-                                "link": "#"
+                                "link": "https://github.com/mateuszarchicinski/mateusz-archicinski.pl"
                             },
                             {
                                 "value": "Live preview",
-                                "link": "#"
+                                "link": "https://www.mateusz-archicinski.pl"
                             }
                         ]
                     }
                 ],
-                "mailings": [
-                    {
-                        "imgSrc": "https://t4.ftcdn.net/jpg/01/01/91/63/240_F_101916353_CLAc4e3dzc1FPbfNwJctpwVCrbqBZclb.jpg",
-                        "imgAlt": "An example img MAILINGS",
-                        "title": "Strona MAILINGS",
-                        "description": "Lorem ipsum dolor sit amet, consectetur<br>adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-                        "buttons": [
-                            {
-                                "value": "Source code",
-                                "link": "#"
-                            },
-                            {
-                                "value": "Live preview",
-                                "link": "#"
-                            }
-                        ]
-                    }
-                ],
+                "mailings": [],
                 "spa": [
                     {
-                        "imgSrc": "https://t4.ftcdn.net/jpg/01/01/91/63/240_F_101916353_CLAc4e3dzc1FPbfNwJctpwVCrbqBZclb.jpg",
-                        "imgAlt": "An example img SPA",
-                        "title": "Strona SPA",
-                        "description": "Lorem ipsum dolor sit amet, consectetur<br>adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+                        "imgSrc": "../images/portfolio/helpdesk--aplikacja-internetowa.png",
+                        "imgAlt": "HD APP - Logo",
+                        "title": "Helpdesk - Aplikacja internetowa",
+                        "description": "Project related to Test-driven<br>development technique.",
                         "buttons": [
                             {
                                 "value": "Source code",
-                                "link": "#"
+                                "link": "https://github.com/mateuszarchicinski/TDD-Helpdesk-Web-App-Project"
                             },
                             {
                                 "value": "Live preview",
-                                "link": "#"
+                                "link": "https://www.helpdesk-app.mateusz-archicinski.pl"
                             }
                         ]
                     }
                 ],
                 "api": [
                     {
-                        "imgSrc": "https://t4.ftcdn.net/jpg/01/01/91/63/240_F_101916353_CLAc4e3dzc1FPbfNwJctpwVCrbqBZclb.jpg",
-                        "imgAlt": "An example img API",
-                        "title": "Strona API",
-                        "description": "Lorem ipsum dolor sit amet, consectetur<br>adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+                        "imgSrc": "../images/portfolio/restful-api--nodejs-express.jpg",
+                        "imgAlt": "Colors - Restful API - NodeJS & ExpressJS",
+                        "title": "Restful API - NodeJS & ExpressJS",
+                        "description": "Project Restful API is built<br>on the Node.js platform.",
                         "buttons": [
                             {
                                 "value": "Source code",
-                                "link": "#"
+                                "link": "https://github.com/mateuszarchicinski/Restful-API--NodeJS-ExpressJS"
                             },
                             {
                                 "value": "Live preview",
-                                "link": "#"
+                                "link": "https://restful-api.mateusz-archicinski.pl"
+                            }
+                        ]
+                    },
+                    {
+                        "imgSrc": "../images/portfolio/smogly-data-visualizer.png",
+                        "imgAlt": "Smogly project/website logo - http://smogly.pl/",
+                        "title": "Smogly Data Visualizer",
+                        "description": "Project created during<br>hackaton Zdrowieton.js.",
+                        "buttons": [
+                            {
+                                "value": "Source code",
+                                "link": "https://github.com/WarMaxis/Zdrowieton.js_project_8"
+                            },
+                            {
+                                "value": "Live preview",
+                                "link": "https://smogly-data-visualizer.mateusz-archicinski.pl/results?find=name:Smogly&select=name,country&limit=4&sort=last_metering.created:-1"
                             }
                         ]
                     }

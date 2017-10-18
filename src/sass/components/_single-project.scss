@@ -80,17 +80,18 @@ $single-project-buttons__btn__font-size-lg: 0.72864em !default;
     }
     
     &-title {
+        min-height: 20px;
         margin-top: 0.5em;
     }
     
     &-description {
-        max-height: 38px;
-        @extend %ellipsis;
+        min-height: 38px;
     }
     
     &-title,
     &-description {
         color: $single-project-title-description__color;
+        @extend %ellipsis;
     }
     
     &-buttons {

@@ -7,7 +7,7 @@ header.main-header.main-header-embedded.main-header-js
             a(href="/" class="site-logo-wrapper")
                 img(src="images/logo/logo.png" alt=data.mainHeader.siteLogo.alt width="94" height="28" class="site-logo__img")
             h1(aria-hidden="true" class="text-hidden")= data.mainHeader.h1
-            button(aria-label="Side navigation toggle button" class="side-nav__button-toggle side-nav-toggle-js")
+            button(aria-label=data.mainHeader.sideNav.buttonToggleAriaLabel class="side-nav__button-toggle side-nav-toggle-js")
                     span(aria-hidden="true" class="icon icon-2 icon-menu color-white")
             nav.site-nav-wrapper
                 ul.site-nav__list
@@ -28,7 +28,7 @@ header.main-header.main-header-embedded.main-header-js
                                     li
                                         a(href="/" + value class="site-nav__link language-settings__link")= value
 nav.side-nav-wrapper.side-nav-js
-    button(aria-label="Side navigation toggle button" class="side-nav__button-toggle side-nav-toggle-js")
+    button(aria-label=data.mainHeader.sideNav.buttonToggleAriaLabel class="side-nav__button-toggle side-nav-toggle-js")
         span(aria-hidden="true" class="icon icon-2 icon-cancel color-primary-dark")
     .side-nav-overlay
         ul.side-nav__list

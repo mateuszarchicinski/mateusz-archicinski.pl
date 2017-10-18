@@ -1399,6 +1399,7 @@ html {
 .btn,
 .btn > span,
 .services-item-description,
+.single-project-title,
 .single-project-description {
   overflow: hidden;
   white-space: nowrap;
@@ -2426,16 +2427,17 @@ body {
   margin: 35px auto; }
   .services-item-icon {
     width: 100%;
-    height: 115px;
-    display: block; }
+    height: 115px; }
   .services-item-title {
+    min-height: 48px;
     margin-top: 15px; }
   .services-item-description {
-    max-height: 253px; }
+    min-height: 95px; }
   .services-item-button {
     background-color: transparent;
-    display: block;
     margin: 25px auto 0; }
+  .services-item-icon, .services-item-button {
+    display: block; }
 
 .owl-carousel-services.owl-carousel .owl-dot span {
   transition: 0.15s -webkit-transform cubic-bezier(0.25, 0.95, 0.95, 1.35);
@@ -2833,10 +2835,11 @@ body {
   top: 0; }
 
 .single-project-title {
+  min-height: 20px;
   margin-top: 0.5em; }
 
 .single-project-description {
-  max-height: 38px; }
+  min-height: 38px; }
 
 .single-project-title, .single-project-description {
   color: #fff; }

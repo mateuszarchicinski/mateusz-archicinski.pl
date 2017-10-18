@@ -31,19 +31,22 @@ $services-1-item__border: 1px solid rgba($color__black-1, 0.1) !default;
         &-icon {
             width: 100%;
             height: 115px;
-            display: block;
         }
         &-title {
+            min-height: 48px;
             margin-top: 15px;
         }
         &-description {
-            max-height: 253px;
+            min-height: 95px;
             @extend %ellipsis;
         }
         &-button {
             background-color: transparent;
-            display: block;
             margin: 25px auto 0;
+        }
+        &-icon,
+        &-button {
+            display: block;
         }
     }
 }
