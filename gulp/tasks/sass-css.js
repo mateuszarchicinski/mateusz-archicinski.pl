@@ -16,7 +16,7 @@ exports.task = () => {
             browsers: ['last 5 version'],
             stats: ['> 1%']
         }))
-        .pipe($.sourcemaps.write('./maps/'))
+        .pipe($.sourcemaps.write('./'))
         .pipe(gulp.dest(`${gulpConfig.directories.work}/css/`))
         .pipe(browserSync.stream({
             match: '**/*.css'

@@ -1,16 +1,27 @@
-const nodeResolve = require('rollup-plugin-node-resolve');
-const convertCJS = require('rollup-plugin-commonjs');
-const babel = require('rollup-plugin-babel');
+// ROLLUP PLUGINS - ARRAY
+const rollupPlugins = [
+    require('rollup-plugin-commonjs')(),
+    require('rollup-plugin-node-resolve')({
+        browser: true
+    }),
+    require('rollup-plugin-babel')(require('./babel.config.js'))
+];
+
+
+// Replaces some code only on production environment
+if (env === 'production') {
+    rollupPlugins.push(
+        require('rollup-plugin-replace')({
+            '___browserSync___.socket': 'io()'
+        })
+    );
+}
 
 
 // ROLLUP CONFIG - INPUT
 exports.input = {
     input: `${gulpConfig.directories.work}/js/main.rollup.js`,
-    plugins: [
-        nodeResolve(),
-        convertCJS(),
-        babel(require('./babel.config.js'))
-    ]
+    plugins: rollupPlugins
 };
 
 

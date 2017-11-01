@@ -1,0 +1,62 @@
+//~~~~~~~~~~~~~~~~~~~~~//
+//~~~~~~* BADGE *~~~~~~//+
+//~~~~~~~~~~~~~~~~~~~~~//
+
+
+// .badge
+$badge__background-color: $color__white !default;
+$badge__font-size: 10px !default;
+$badge__font-weight: $font-weight__bolder !default;
+$badge__color: $primary-text-color !default;
+
+// .badge-golden
+$badge-golden__background-color: $color__gold !default;
+
+// .badge-primary
+$badge-primary__background-color: $primary-color !default;
+
+// .badge-accent
+$badge-accent__background-color: $accent-color !default;
+
+// .badge-accent-light
+$badge-accent-light__background-color: $accent-color-light !default;
+
+
+.badge {
+    background-color: $badge__background-color;
+    display: inline-block;
+    white-space: nowrap;
+    font-size: $badge__font-size;
+    font-weight: $badge__font-weight;
+    color: $badge__color;
+    padding: 2px 3px 1px;
+    border-radius: 2px;
+    margin: 2px;
+    &-container {
+        min-width: 70px;
+        width: 70px;
+        @extend %flex;
+        @extend .align-content-center;
+        @extend .align-items-center;
+        @extend .justify-content-end;
+        margin: 0 4px;
+    }
+    &-golden {
+        background-color: $badge-golden__background-color;
+    }
+    &-primary {
+        background-color: $badge-primary__background-color;
+    }
+    &-accent {
+        background-color: $badge-accent__background-color;
+        &-light {
+            background-color: $badge-accent-light__background-color;
+        }
+    }
+    &-icon {
+        margin-right: 2px;
+        &.only {
+            margin-right: 0;
+        }
+    }
+}

@@ -21,7 +21,8 @@ $icon-5__font-size: $icon__font-size * 5 !default;
     &::before {
         display: inline-block;
         font-family: $icon__font-family;
-        font-size: $icon__font-size;
+        //font-size: $icon__font-size; icons should inherit font-size property
+        font-size: inherit;
         font-style: normal;
         font-variant: $icon__font-weight;
         font-weight: normal;
@@ -93,6 +94,9 @@ $icon-5__font-size: $icon__font-size * 5 !default;
     &-gplus::before {
         content: '\f0d5';
     }
+    &-history:before {
+        content: '\f1da';
+    }
     &-laptop::before {
         content: '\f109';
     }
@@ -119,6 +123,9 @@ $icon-5__font-size: $icon__font-size * 5 !default;
     }
     &-mobile:before {
         content: '\f10b';
+    }
+    &-ok:before {
+        content: '\e80f';
     }
     &-phone::before {
         content: '\e802';

@@ -11,6 +11,7 @@ import spyScrolling from './features/spy-scrolling';
 import Services from './features/services';
 import Portfolio from './features/portfolio';
 import contactForm from './features/contact-form';
+import githubUserInfo from './features/github-user-info';
 
 
 $document.ready(() => {
@@ -56,8 +57,12 @@ $document.ready(() => {
     contactFormInstance.init();
 
 
-    // GLOBAL EVENTS ~
+    // GITHUB USER INFO
+    const githubUserInfoInstance = new githubUserInfo();
+    githubUserInfoInstance.init();
 
+
+    // GLOBAL EVENTS ~
     // SCROLL
     window.addEventListener('scroll', throttle(150, () => {
         // These functions should be called also on scroll event with time interval set to 150ms

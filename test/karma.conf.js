@@ -18,6 +18,8 @@ module.exports = function (config) {
         files: [
             // Bower Components
             // bower:js
+            'bower_components/jquery/dist/jquery.js',
+            'bower_components/owl.carousel/dist/owl.carousel.js',
             // endbower
 
             {
@@ -44,11 +46,15 @@ module.exports = function (config) {
         rollupPreprocessor: {
             plugins: [
                 require('rollup-plugin-istanbul')({
-                    exclude: ['tests/**/*.js']
+                    exclude: [
+                        '{node_modules,bower_components,tests}/**/*.js'
+                    ]
                 }),
-                require('rollup-plugin-babel')(require('../gulp/babel.config.js')),
                 require('rollup-plugin-commonjs')(),
-                require('rollup-plugin-node-resolve')()
+                require('rollup-plugin-node-resolve')({
+                    browser: true
+                }),
+                require('rollup-plugin-babel')(require('../gulp/babel.config.js'))
             ],
             format: 'iife',
             name: 'testBundle'

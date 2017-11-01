@@ -11,7 +11,7 @@ exports.task = () => {
         }) /* eslint-enable */
         .pipe($.plumber())
         .pipe(wiredep.stream({ // https://github.com/taptapship/wiredep#configuration
-            exclude: ['bootstrap', 'jquery', 'popper'],
+            exclude: ['bootstrap', 'popper'],
             ignorePath: '../',
             fileTypes: {
                 js: {

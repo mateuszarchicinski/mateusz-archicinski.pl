@@ -13,7 +13,7 @@ exports.task = () => {
 
     const ftpConfig = gulpConfig.ftpConfig; // https://github.com/morris/vinyl-ftp#api
 
-    if (!ftpConfig.host || !ftpConfig.user || !ftpConfig.password || !ftpConfig.destination || !getOption('--upload')) {
+    if (!ftpConfig.host || !ftpConfig.user || !ftpConfig.password || !ftpConfig.destination || !(getOption('--upload') || env === 'production')) {
         return alertHandler({
             type: 'error',
             message: `Task can not be complited.

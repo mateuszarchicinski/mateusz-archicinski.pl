@@ -1,12 +1,13 @@
 // NORMAL - TEMPLATE
 
 
-// GLOBALS & NODE MODULES & GLUP CONFIG
+// GLOBALS & NODE MODULES & GLUP CONFIG & ENVIRONMENT
 global.gulp = require('gulp'); // https://gulp.readme.io/docs/getting-started
 global.$ = require('gulp-load-plugins')({
     lazy: true
 }); // https://github.com/jackfranklin/gulp-load-plugins#options
 global.gulpConfig = require('./gulp/config');
+global.env = require('./gulp/tasks/useful-functions/get-option')('--env').value || 'development';
 const gulpTasksDir = './gulp/tasks/';
 const fs = require('fs');
 

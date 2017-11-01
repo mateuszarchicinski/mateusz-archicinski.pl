@@ -7,6 +7,8 @@
 $main-footer__background-color: $color__nero !default;
 $main-footer__box-shadow: 0 0 8px 0 rgba($color__black-1, 0.8) !default;
 
+// .main-footer__link
+$main-footer__link__font-size: 0.95em !default;
 // .main-footer__link:hover
 $main-footer__link__hover__color: $tertiary-text-color !default;
 
@@ -33,10 +35,16 @@ $main-footer__list-copyright__color: $color__white !default;
         list-style: none;
         padding: 0 20px 25px;
         & > li {
-            @extend %ellipsis;
+            padding-bottom: 8px;
+            &:last-child {
+                padding-bottom: 0;
+            }
         }
     }
     &__link {
+        display: flex;
+        @extend .align-items-center;
+        font-size: $main-footer__link__font-size;
         text-decoration: none;
         color: inherit;
         transition: 0.3s color ease-in-out;
@@ -46,7 +54,6 @@ $main-footer__list-copyright__color: $color__white !default;
     }
     &-findme {
         &-body {
-            min-height: 120px;
             @extend .row;
             @extend .align-content-center;
             @extend .align-items-center;
@@ -57,6 +64,10 @@ $main-footer__list-copyright__color: $color__white !default;
                 margin: 5px;
             }
         }
+    }
+    &__list,
+    &-findme-body {
+        min-height: 120px;
     }
     &-copyright {
         position: relative;

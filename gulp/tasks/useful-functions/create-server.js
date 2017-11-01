@@ -11,7 +11,7 @@ const alertHandler = require('./alert-handler');
 function createServer(baseDir) {
     const serverConfig = gulpConfig.browserSync;
 
-    // Init EXPRESS APP ---> https://expressjs.com/en/4x/api.html
+    // ExpressAPP Init ---> https://expressjs.com/en/4x/api.html
     const app = express();
 
     // Enables all Cross-Origin Resource Sharing (CORS) requests, more info about CORS ---> https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS
@@ -83,6 +83,9 @@ function createServer(baseDir) {
         middleware: [app],
         logPrefix: serverConfig.logPrefix,
         logConnections: serverConfig.logConnections
+    }, (err, bs) => {
+        // Socket.IO Functionality
+        bs.io.sockets.on('connection', (socket) => {});
     });
 };
 

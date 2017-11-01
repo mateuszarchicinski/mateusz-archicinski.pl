@@ -245,7 +245,7 @@
                         "imgSrc": "../images/portfolio/mateusz-archicinski.png",
                         "imgAlt": "Website logo - mateusz-archicinski.pl",
                         "title": "mateusz-archicinski.pl",
-                        "description": "Website, a business card to showing<br>services of Mateusz Archicinski.",
+                        "description": "Website project,<br>my business card on the net.",
                         "buttons": [
                             {
                                 "value": "Source code",
@@ -282,7 +282,7 @@
                         "imgSrc": "../images/portfolio/restful-api--nodejs-express.jpg",
                         "imgAlt": "Colors - Restful API - NodeJS & ExpressJS",
                         "title": "Restful API - NodeJS & ExpressJS",
-                        "description": "Project Restful API is built<br>on the Node.js platform.",
+                        "description": "Project provides a well-configured<br>server environment.",
                         "buttons": [
                             {
                                 "value": "Source code",
