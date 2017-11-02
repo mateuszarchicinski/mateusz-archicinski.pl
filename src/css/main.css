@@ -1650,6 +1650,9 @@ body {
 .icon-star::before {
   content: '\e804'; }
 
+.icon-tag:before {
+  content: '\e810'; }
+
 .icon-twitter::before {
   content: '\f099'; }
 

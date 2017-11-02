@@ -197,6 +197,12 @@
       "css": "history",
       "code": 61914,
       "src": "fontawesome"
+    },
+    {
+      "uid": "3db5347bd219f3bce6025780f5d9ef45",
+      "css": "tag",
+      "code": 59408,
+      "src": "fontawesome"
     }
   ]
 }

@@ -136,6 +136,9 @@ $icon-5__font-size: $icon__font-size * 5 !default;
     &-star::before {
         content: '\e804';
     }
+    &-tag:before {
+        content: '\e810';
+    }
     &-twitter::before {
         content: '\f099';
     }

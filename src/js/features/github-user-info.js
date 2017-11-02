@@ -11,7 +11,7 @@ class githubUserInfo {
                 htmlSelector: '.github-user-info-starred-js',
                 url: `/users/${this.gUser}/starred`,
                 limit: 25,
-                items: 8
+                items: 7
             },
             events: {
                 name: 'Events',
@@ -84,9 +84,23 @@ class githubUserInfo {
 
                 if (opt.type === 'CreateEvent') {
                     link.text = `Created a new repository ${repoName}`;
+                    if (opt.payload.ref_type === 'tag') {
+                        badges.push({
+                            type: 'accent-light',
+                            iconName: 'tag',
+                            text: opt.payload.ref
+                        });
+
+                        link.text = `Tagged ${opt.payload.ref} repository ${repoName}`;
+                    }
                 }
 
                 if (opt.type === 'WatchEvent') {
+                    badges.push({
+                        type: 'accent-light',
+                        iconName: 'eye'
+                    });
+
                     link.text = `Began watching ${repoName}`;
                 }
 
