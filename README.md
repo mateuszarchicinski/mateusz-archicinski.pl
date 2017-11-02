@@ -42,8 +42,8 @@
 <a href="https://www.w3.org/TR/html5/" target="_blank" title="HTML5">
     <img src="https://cdn.rawgit.com/mateuszarchicinski/mateusz-archicinski.pl/dev/src/images/skills-technologies/html5-logo.svg" alt="HTML5" width="48" height="48">
 </a>
-<a href="https://pugjs.org" target="_blank" title="PUG">
-    <img src="https://cdn.rawgit.com/mateuszarchicinski/mateusz-archicinski.pl/dev/src/images/skills-technologies/pug-logo.svg" alt="PUG" width="48" height="48">
+<a href="https://pugjs.org" target="_blank" title="Pug">
+    <img src="https://cdn.rawgit.com/mateuszarchicinski/mateusz-archicinski.pl/dev/src/images/skills-technologies/pug-logo.svg" alt="Pug" width="48" height="48">
 </a>
 <a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON" target="_blank" title="JSON">
     <img src="https://cdn.rawgit.com/mateuszarchicinski/mateusz-archicinski.pl/dev/src/images/skills-technologies/json-logo.svg" alt="JSON" width="48" height="48">

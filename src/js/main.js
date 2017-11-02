@@ -817,6 +817,7 @@ var githubUserInfo = function () {
                                 text: opt.payload.ref
                             });
 
+                            link.href += '/releases/tag/' + opt.payload.ref;
                             link.text = 'Tagged ' + opt.payload.ref + ' repository ' + repoName;
                         }
                     }
@@ -838,6 +839,12 @@ var githubUserInfo = function () {
                             iconName: 'history',
                             text: commitsLength
                         });
+
+                        var branch = opt.payload.ref.split('/')[2];
+
+                        if (branch) {
+                            link.href += '/commits/' + branch;
+                        }
 
                         link.text = 'Pushed ' + commitsLength + ' commit(s) to ' + repoName;
                     }

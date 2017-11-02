@@ -91,6 +91,7 @@ class githubUserInfo {
                             text: opt.payload.ref
                         });
 
+                        link.href += `/releases/tag/${opt.payload.ref}`;
                         link.text = `Tagged ${opt.payload.ref} repository ${repoName}`;
                     }
                 }
@@ -112,6 +113,12 @@ class githubUserInfo {
                         iconName: 'history',
                         text: commitsLength
                     });
+
+                    const branch = opt.payload.ref.split('/')[2];
+
+                    if (branch) {
+                        link.href += `/commits/${branch}`;
+                    }
 
                     link.text = `Pushed ${commitsLength} commit(s) to ${repoName}`;
                 }
