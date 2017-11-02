@@ -1,6 +1,6 @@
 # mateusz-archicinski.pl
 
-> mateusz-archicinski.pl web page redesign project repository.
+> [mateusz-archicinski.pl](https://www.mateusz-archicinski.pl/pl) web page redesign project repository.
 
 
 ## Implemented features
