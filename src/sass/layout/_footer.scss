@@ -33,7 +33,7 @@ $main-footer__list-copyright__color: $color__white !default;
     }
     &__list {
         list-style: none;
-        padding: 0 20px 25px;
+        padding: 0 0 25px;
         & > li {
             padding-bottom: 8px;
             &:last-child {
@@ -50,6 +50,10 @@ $main-footer__list-copyright__color: $color__white !default;
         transition: 0.3s color ease-in-out;
         &:hover {
             color: $main-footer__link__hover__color;
+        }
+        &-description {
+            width: calc(100% - 70px);
+            @extend %break-word;
         }
     }
     &-findme {

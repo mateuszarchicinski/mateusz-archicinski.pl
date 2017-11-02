@@ -1104,6 +1104,7 @@ html {
     position: relative; }
 
 .break-word,
+.main-footer__link-description,
 .about-me-list > li,
 .info-title,
 .info-description,
@@ -1362,7 +1363,7 @@ body {
     margin-top: 10px; }
   .main-footer__list {
     list-style: none;
-    padding: 0 20px 25px; }
+    padding: 0 0 25px; }
     .main-footer__list > li {
       padding-bottom: 8px; }
       .main-footer__list > li:last-child {
@@ -1376,6 +1377,8 @@ body {
     transition: 0.3s color ease-in-out; }
     .main-footer__link:hover {
       color: #bdbdbd; }
+    .main-footer__link-description {
+      width: calc(100% - 70px); }
   .main-footer-findme-body {
     -ms-flex: 1;
         flex: 1;

@@ -64,7 +64,7 @@ class githubUserInfo {
             // Checking for event type
             if (opt.type) {
                 const repoName = opt.repo.name,
-                    evtDate = new Date(opt.created_at).toLocaleString().split(',')[0];
+                    evtDate = new Date(opt.created_at).toLocaleString().split(/(,| )/)[0];
 
                 badges.push({
                     type: 'primary',
@@ -114,7 +114,7 @@ class githubUserInfo {
                 strTemplate += `<span class="badge badge-${badge.type} ${badge.classes || ''}"><span ${badge.iconAriaLabel ? `aria-label="${badge.iconAriaLabel}" ` : ''}class="icon icon-${badge.iconName} badge-icon ${badge.text ? '' : 'only'}"></span>${badge.text || ''}</span>`;
             });
 
-            strTemplate += `</div>${link.text}</a></li>`;
+            strTemplate += `</div><div class="main-footer__link-description">${link.text}</div></a></li>`;
         });
 
         return strTemplate;
